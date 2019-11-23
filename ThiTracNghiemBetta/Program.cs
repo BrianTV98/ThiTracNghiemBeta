@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
+using ThiTracNghiemBetta.connection;
 using ThiTracNghiemBetta.form;
 
 namespace ThiTracNghiemBetta
@@ -17,7 +18,10 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
+            // Hien ServerConnection
+            // AppConnection.type = AppServerType.Server1;
+
+            ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = AppConnection.getConnection().masterConnection;
             Application.Run(new frmLogin());
         }
     }
