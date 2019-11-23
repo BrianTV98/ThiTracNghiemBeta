@@ -16,5 +16,12 @@ namespace ThiTracNghiemBetta.form
         {
             InitializeComponent();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Fill(this.tN_CSDLPTDataSet.V_DS_PHANMANH);
+
+        }
     }
 }
