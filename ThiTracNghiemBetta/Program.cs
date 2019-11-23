@@ -17,6 +17,7 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
+            ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
             Application.Run(new frmLogin());
         }
     }

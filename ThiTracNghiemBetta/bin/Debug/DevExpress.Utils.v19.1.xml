@@ -658,15 +658,15 @@ The following screenshot shows the UltraFlat style applied to a button edit cont
     </member>
     <member name="M:DevExpress.LookAndFeel.UserLookAndFeel.GetCompactScaleFactor">
       <summary>
-        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+        <para></para>
       </summary>
-      <returns>This member supports the internal infrastructure and is not intended to be used directly from your code.</returns>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.LookAndFeel.UserLookAndFeel.GetCompactUI">
       <summary>
-        <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
+        <para></para>
       </summary>
-      <returns>This member supports the internal infrastructure and is not intended to be used directly from your code.</returns>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.LookAndFeel.UserLookAndFeel.GetMaskColor">
       <summary>
@@ -2615,16 +2615,6 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       </summary>
       <param name="rightToLeft">true, if the text is directed from right to left; otherwise, false.</param>
     </member>
-    <member name="N:DevExpress.Utils.Behaviors">
-      <summary>
-        <para>Contains classes that support the Behaviors mechanism for DevExpress controls.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.Behaviors.BehaviorManager">
-      <summary>
-        <para>Attaches additional behaviors (pieces of functionality) to DevExpress controls.</para>
-      </summary>
-    </member>
     <member name="T:DevExpress.Utils.CheckContextButton">
       <summary>
         <para>A context button displaying a check box that can be checked by an end-user.</para>
@@ -3411,648 +3401,6 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
       </summary>
       <value>A Color object that specifies a color, which is not drawn when the image is rendered.</value>
     </member>
-    <member name="N:DevExpress.Utils.DragDrop">
-      <summary>
-        <para>The namespace contains types that support the Drag-and-Drop Behavior.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.BeginDragDropEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.BeginDragDrop"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.BeginDragDropEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new BeginDragDropEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.BeginDragDropEventArgs.#ctor(System.Boolean)">
-      <summary>
-        <para>Initializes a new BeginDragDropEventArgs class instance with the specified settings. For internal use.</para>
-      </summary>
-      <param name="cancel">true to cancel the operation; otherwise, false.</param>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.BeginDragDropEventArgs.Data">
-      <summary>
-        <para>Gets or sets the dragged data elements.</para>
-      </summary>
-      <value>An object that specifies the dragged data elements.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.BeginDragDropEventArgs.PreviewImage">
-      <summary>
-        <para>Gets or sets a preview of dragged data elements (rows/nodes/items).</para>
-      </summary>
-      <value>An Image object that specifies a preview of dragged data elements.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropActions">
-      <summary>
-        <para>Enumerates actions available in a drag-and-drop operation.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.All">
-      <summary>
-        <para>The combination of the Copy, Move, and Scroll actions.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.Copy">
-      <summary>
-        <para>The data from the source control is copied to the target control.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.Link">
-      <summary>
-        <para>The data from the source control is linked to the target control.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.Move">
-      <summary>
-        <para>The data from the source control is moved to the target control.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.None">
-      <summary>
-        <para>The target control does not accept data.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropActions.Scroll">
-      <summary>
-        <para>The target control is scrolled while dragging a node to a position that is not currently visible in the target control.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropBehavior">
-      <summary>
-        <para>Represents the Drag-and-Drop Behavior that can be attached to a data control to allow users to move/reorder data elements with the mouse.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropBehavior.#ctor(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Boolean,DevExpress.Utils.DragDrop.DragDropEvents)">
-      <summary>
-        <para>Initializes a new DragDropBehavior class instance with the specified settings. For internal use.</para>
-      </summary>
-      <param name="dragDropBehaviorSourceType">The Type of the control to which the Behavior is attached.</param>
-      <param name="previewVisible">true to show a preview of dragged data elements; otherwise, false.</param>
-      <param name="insertIndicatorVisible">true to show where dragged data elements will be inserted; otherwise, false.</param>
-      <param name="allowDrop">true to allow users to drop data elements on the attached control; otherwise, false.</param>
-      <param name="allowDrag">true to allow users to drag data elements from the attached control; otherwise, false.</param>
-      <param name="events">A DragDropEvents component that provides access to the drag-and-drop events.</param>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropBehavior.Create(System.Type,System.Boolean,System.Boolean,System.Boolean)">
-      <summary>
-        <para>Returns a new Drag-and-Drop Behavior. For internal use.</para>
-      </summary>
-      <param name="dragDropBehaviorSourceType">The Type of the control to which the Behavior is attached.</param>
-      <param name="previewVisible">true to show a preview of dragged data elements; otherwise, false.</param>
-      <param name="insertIndicatorVisible">true to show where dragged data elements will be inserted; otherwise, false.</param>
-      <param name="allowDrop">true to allow users to drop data elements on the attached control; otherwise, false.</param>
-      <returns>A DragDropBehavior object that specifies the Drag-and-Drop Behavior.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropBehavior.Create(System.Type,System.Boolean,System.Boolean,System.Boolean,DevExpress.Utils.DragDrop.DragDropEvents)">
-      <summary>
-        <para>Returns a new Drag-and-Drop Behavior. For internal use.</para>
-      </summary>
-      <param name="dragDropBehaviorSourceType">The Type of the control to which the Behavior is attached.</param>
-      <param name="previewVisible">true to show a preview of dragged data elements; otherwise, false.</param>
-      <param name="insertIndicatorVisible">true to show where dragged data elements will be inserted; otherwise, false.</param>
-      <param name="allowDrop">true to allow users to drop data elements on the attached control; otherwise, false.</param>
-      <param name="events">A DragDropEvents component that provides access to drag-and-drop events.</param>
-      <returns>A DragDropBehavior object that specifies the Drag-and-Drop Behavior.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropBehavior.Create(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Boolean,DevExpress.Utils.DragDrop.DragDropEvents)">
-      <summary>
-        <para>Returns a new Drag-and-Drop Behavior. For internal use.</para>
-      </summary>
-      <param name="dragDropBehaviorSourceType">The Type of the control to which the Behavior is attached.</param>
-      <param name="previewVisible">true to show a preview of dragged data elements; otherwise, false.</param>
-      <param name="insertIndicatorVisible">true to show where dragged data elements will be inserted; otherwise, false.</param>
-      <param name="allowDrop">true to allow users to drop data elements on the attached control; otherwise, false.</param>
-      <param name="allowDrag">true to allow users to drag data elements from the attached control; otherwise, false.</param>
-      <param name="events">A DragDropEvents component that provides access to drag-and-drop events.</param>
-      <returns>A DragDropBehavior object that specifies the Drag-and-Drop Behavior.</returns>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2">
-      <summary>
-        <para>Represents a base class for the Drag-and-Drop Behavior.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.BeginDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is initiated.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.DragDrop">
-      <summary>
-        <para>Occurs when a data element is dropped on the control.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.DragEnter">
-      <summary>
-        <para>Occurs when a data element is dragged into the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.DragLeave">
-      <summary>
-        <para>Occurs when a data element is dragged out of the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.DragOver">
-      <summary>
-        <para>Occurs when a data element is dragged over the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.EndDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is completed.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorBase`2.Properties">
-      <summary>
-        <para>Provides access to the Drag-and-Drop Behavior options (preview, indicator, etc.).</para>
-      </summary>
-      <value>A TDragDropBehaviorProperties object that contains the Behavior options.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropBehaviorProperties">
-      <summary>
-        <para>Contains the Drag-and-Drop Behavior options.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.#ctor">
-      <summary>
-        <para>Initializes a new DragDropBehaviorProperties class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.AllowDrag">
-      <summary>
-        <para>Gets or sets whether users are allowed to drag data elements from the control.</para>
-      </summary>
-      <value>true if users are allowed to drag data elements from the control; otherwise, false.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.AllowDrop">
-      <summary>
-        <para>Gets or sets whether users are allowed to drop data elements on the attached control.</para>
-      </summary>
-      <value>true to allow users to drop data elements on the attached control; otherwise, false.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.Events">
-      <summary>
-        <para>Provides access to the Drag-and-Drop Behavior events. For internal use.</para>
-      </summary>
-      <value>A DragDropEvents object that contains the Drag-and-Drop Behavior events.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.InsertIndicatorVisible">
-      <summary>
-        <para>Gets or sets whether to display the indicator that shows the position in the target control where dragged elements will be inserted.</para>
-      </summary>
-      <value>true to show the insert indicator; otherwise, false.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropBehaviorProperties.PreviewVisible">
-      <summary>
-        <para>Gets or sets whether a preview of the dragged element is displayed during a drag-and-drop operation.</para>
-      </summary>
-      <value>true to display a preview of the dragged element; otherwise, false.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.DragDrop"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DragDropEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropEventArgs.CustomData">
-      <summary>
-        <para>Gets or sets custom data associated with the operation.</para>
-      </summary>
-      <value>An object that contains data associated with the operation.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropEvents">
-      <summary>
-        <para>Provides access to a control&#39;s Drag-and-Drop Behavior events.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropEvents.#ctor">
-      <summary>
-        <para>Initializes a new DragDropEvents class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropEvents.#ctor(System.ComponentModel.IContainer)">
-      <summary>
-        <para>Initializes a new DragDropEvents class instance with the specified settings. For internal use.</para>
-      </summary>
-      <param name="container">An IContainer object that contains this component.</param>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.BeginDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is initiated.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.DragDrop">
-      <summary>
-        <para>Occurs when a data element is dropped on the control.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.DragEnter">
-      <summary>
-        <para>Occurs when a data element is dragged into the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.DragLeave">
-      <summary>
-        <para>Occurs when a data element is dragged out of the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.DragOver">
-      <summary>
-        <para>Occurs when a data element is dragged over the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropEvents.EndDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is completed.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropKeyState">
-      <summary>
-        <para>Enumerates states that specify pressed keyboard keys and mouse buttons.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.Alt">
-      <summary>
-        <para>The Alt key is pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.Control">
-      <summary>
-        <para>The Ctrl key is pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.LMouseButton">
-      <summary>
-        <para>The left mouse button is pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.MMouseButton">
-      <summary>
-        <para>The middle mouse button is pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.None">
-      <summary>
-        <para>No keyboard keys or mouse buttons are pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.RMouseButton">
-      <summary>
-        <para>The right mouse button is pressed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.DragDropKeyState.Shift">
-      <summary>
-        <para>The Shift key is pressed.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragDropManager">
-      <summary>
-        <para>Represents the Drag-and-Drop Behavior manager.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.BeginDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is initiated.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropManager.CancelDragDrop">
-      <summary>
-        <para>Cancels the currently performed drag-and-drop operation. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropManager.Default">
-      <summary>
-        <para>Provides access to the default Drag-and-Drop Behavior manager.</para>
-      </summary>
-      <value>A DragDropManager object that is the default Drag-and-Drop Behavior manager.</value>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropManager.DoDragDrop(DevExpress.Utils.DragDrop.DoDragDropEventArgs)">
-      <summary>
-        <para>Initiates a drag-and-drop operation. For internal use.</para>
-      </summary>
-      <param name="args">Information about the operation.</param>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropManager.DoDragDrop(System.Object,System.Object,System.Drawing.Image,DevExpress.Utils.DragDrop.DragDropActions)">
-      <summary>
-        <para>Initiates a drag-and-drop operation. For internal use.</para>
-      </summary>
-      <param name="source">A source control.</param>
-      <param name="data">Dragged data elements.</param>
-      <param name="preview">A preview of the dragged data elements.</param>
-      <param name="action">The initial drag-and-drop effect.</param>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.DragDrop">
-      <summary>
-        <para>Occurs when a data element is dropped on the control.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.DragEnter">
-      <summary>
-        <para>Occurs when a data element is dragged into the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.DragLeave">
-      <summary>
-        <para>Occurs when a data element is dragged out of the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.DragOver">
-      <summary>
-        <para>Occurs when a data element is dragged over the control&#39;s bounds.</para>
-      </summary>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.EndDragDrop">
-      <summary>
-        <para>Occurs when a drag-and-drop operation is completed.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropManager.InsertIndicatorVisible">
-      <summary>
-        <para>Gets or sets whether to indicate where dragged data elemets will be inserted.</para>
-      </summary>
-      <value>true to indicate where dragged data elements will be inserted; otherwise, false.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragDropManager.PreviewShowMode">
-      <summary>
-        <para>Gets or sets whether a preview of dragged data elements is displayed near the mouse pointer during drag-and-drop operations.</para>
-      </summary>
-      <value>The PreviewImageShowMode enumeration values that specify whether to show a preview of dragged elements.</value>
-    </member>
-    <member name="E:DevExpress.Utils.DragDrop.DragDropManager.QueryDragPreviewImage">
-      <summary>
-        <para>Allows you to provide a preview of the dragged data elements.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropManager.RegisterBehavior(DevExpress.Utils.DragDrop.IDragDropBehavior)">
-      <summary>
-        <para>Registers the specified Drag-and-Drop Behavior. For internal use.</para>
-      </summary>
-      <param name="behavior">An IDragDropBehavior object that specifies the Drag-and-Drop Behavior to register.</param>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragDropManager.UnregisterBehavior(DevExpress.Utils.DragDrop.IDragDropBehavior)">
-      <summary>
-        <para>Unregisters the specified Drag-and-Drop Behavior. For internal use.</para>
-      </summary>
-      <param name="behavior">The IDragDropBehavior object specifies the Drag-and-Drop Behavior that should be unregistered.</param>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragEnterEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.DragEnter"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragEnterEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DragEnterEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragEnterEventArgs.AllowDrop">
-      <summary>
-        <para>Gets or sets whether it is allowed to drop data elements to the target control.</para>
-      </summary>
-      <value>true to allow users to drop data elements to the target control; otherwise, false.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragLeaveEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.DragLeave"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragLeaveEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DragLeaveEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragLeaveEventArgs.Cursor">
-      <summary>
-        <para>Gets or sets the mouse pointer.</para>
-      </summary>
-      <value>A Cursor enumeration value that specifies the mouse pointer.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragOverEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.DragOver"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragOverEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DragOverEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragOverEventArgs.InsertIndicator">
-      <summary>
-        <para>Gets or sets an image that represents the insert indicator.</para>
-      </summary>
-      <value>An Image object that specifies the insert indicator image.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragOverEventArgs.InsertIndicatorLocation">
-      <summary>
-        <para>Gets or sets the location of the defalt insert indicator.</para>
-      </summary>
-      <value>A Point structure that specifies the location of the default insert indicator.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragOverEventArgs.InsertIndicatorSize">
-      <summary>
-        <para>Gets or sets the size of the default insert indicator.</para>
-      </summary>
-      <value>A Size structure that specifies the size of the default insert indicator.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DragOverEventArgsBase">
-      <summary>
-        <para>Provides basic data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropEvents.DragOver"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DragOverEventArgsBase.#ctor">
-      <summary>
-        <para>Initializes a new DragOverEventArgsBase class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragOverEventArgsBase.InsertType">
-      <summary>
-        <para>Gets or sets whether dragged data elements are inserted before or after a data element under the mouse pointer, or as a child (for tree list only).</para>
-      </summary>
-      <value>An InsertType enumeration value that specifies where dragged elements will be inserted.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DragOverEventArgsBase.Tag">
-      <summary>
-        <para>Gets or sets custom data associated with the drag-and-drop operation.</para>
-      </summary>
-      <value>Custom data associated with the drag-and-drop operation.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DXDefaultEventArgs">
-      <summary>
-        <para>Allows you to invoke or suppress actions the attached control performs on a particular drag-and-drop operation stage.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DXDefaultEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DXDefaultEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DXDefaultEventArgs.Default">
-      <summary>
-        <para>Invokes the default action the attached control performs on the current drag-and-drop operation stage.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDefaultEventArgs.Handled">
-      <summary>
-        <para>Gets or sets whether the event was handled and allows you to suppress the default action.</para>
-      </summary>
-      <value>true to suppress the default action; otherwise, false.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.DXDragEventArgs">
-      <summary>
-        <para>Represents a base class for drag-and-drop event arguments.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DXDragEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new DXDragEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Action">
-      <summary>
-        <para>Gets or sets the drag-and-drop action (Copy, Move, etc.) to perform.</para>
-      </summary>
-      <value>A DragDropActions enumeration value that specifies the drag-and-drop action (Copy, Move, etc.) to perform.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Cursor">
-      <summary>
-        <para>Gets or sets the mouse pointer.</para>
-      </summary>
-      <value>A Cursor enumeration value that specifies the mouse pointer.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Data">
-      <summary>
-        <para>Gets or sets the data elements being dragged.</para>
-      </summary>
-      <value>An object that specifies the data elements being dragged.</value>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.DXDragEventArgs.GetData``1">
-      <summary>
-        <para>Returns the data elements being dragged.</para>
-      </summary>
-      <returns>The data type.</returns>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.KeyState">
-      <summary>
-        <para>Gets the pressed mouse buttons (left, middle, right) and  modifier keys (Shift, Ctrl, Alt).</para>
-      </summary>
-      <value>A DragDropKeyState enumeration value that specifies the pressed mouse buttons and modifier keys.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Location">
-      <summary>
-        <para>Gets the mouse cursor&#39;s position.</para>
-      </summary>
-      <value>A Point structure that specifies the mouse pointer&#39;s position.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Source">
-      <summary>
-        <para>Gets the source control.</para>
-      </summary>
-      <value>An object that specifies the source control.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.DXDragEventArgs.Target">
-      <summary>
-        <para>Gets the target control.</para>
-      </summary>
-      <value>An object that specifies the target control.</value>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.InsertType">
-      <summary>
-        <para>Enumerates types that specify how to drop dragged data elements based on the mouse pointer&#39;s position.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.InsertType.After">
-      <summary>
-        <para>Drop the dragged data element after the data element under the mouse pointer.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.InsertType.AsChild">
-      <summary>
-        <para>Drop the dragged data element as a child of the data element under the mouse pointer (tree list only).</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.InsertType.Before">
-      <summary>
-        <para>Drop the dragged data element before the data element under the mouse pointer.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.InsertType.None">
-      <summary>
-        <para>It is not allowed to drop data elemements on the target control.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.PreviewImageShowMode">
-      <summary>
-        <para>Enumerates modes that specify whether to show a preview of dragged elements next to the mouse pointer.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.PreviewImageShowMode.Always">
-      <summary>
-        <para>A preview of the dragged data element is always displayed.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.PreviewImageShowMode.ForDragDropTargets">
-      <summary>
-        <para>A preview of the dragged data element is only displayed when a user drag it over the target control.</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Utils.DragDrop.PreviewImageShowMode.Never">
-      <summary>
-        <para>A preview of the dragged data element is never displayed.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs">
-      <summary>
-        <para>Provides data for the <see cref="E:DevExpress.Utils.DragDrop.DragDropManager.QueryDragPreviewImage"/> event.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.#ctor">
-      <summary>
-        <para>Initializes a new QueryDragPreviewImageEventArgs class instance with the default settings. For internal use.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.Action">
-      <summary>
-        <para>Gets the drag-and-drop action (Copy, Move, etc.) to perform.</para>
-      </summary>
-      <value>A DragDropActions enumeration value that specifies the drag-and-drop action (Copy, Move, etc.) to perform.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.InsertType">
-      <summary>
-        <para>Gets or sets whether dragged data elements will be inserted before or after data element under the mouse pointer, or as a child (for tree list only).</para>
-      </summary>
-      <value>An InsertType enumeration value that specifies where dragged elements will be inserted.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.KeyState">
-      <summary>
-        <para>Gets the pressed mouse buttons (left, middle, right) and  modifier keys (Shift, Ctrl, Alt).</para>
-      </summary>
-      <value>A DragDropKeyState enumeration value that specifies the pressed mouse buttons and modifier keys.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.PreviewImage">
-      <summary>
-        <para>Gets or sets a preview of dragged data elements (rows/nodes/items).</para>
-      </summary>
-      <value>An Image object that specifies a preview of dragged data elements.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.Source">
-      <summary>
-        <para>Gets the source control.</para>
-      </summary>
-      <value>An object that specifies the source control.</value>
-    </member>
-    <member name="P:DevExpress.Utils.DragDrop.QueryDragPreviewImageEventArgs.Target">
-      <summary>
-        <para>Gets the target control.</para>
-      </summary>
-      <value>An object that specifies the target control.</value>
-    </member>
     <member name="N:DevExpress.Utils.Drawing">
       <summary>
         <para>Contains classes that provide painting facilities for DevExpress controls.</para>
@@ -4610,7 +3958,7 @@ Provides storage for pens, fonts and brushes.</para>
     </member>
     <member name="M:DevExpress.Utils.Drawing.GraphicsCache.DrawImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>
-        <para>Draws the given images at specific coordinates and with specific size.</para>
+        <para></para>
       </summary>
       <param name="image">An Image to draw.</param>
       <param name="x">An Int32 value that is the x-coordinate of the image upper-left corner.</param>
@@ -4992,19 +4340,19 @@ Provides storage for pens, fonts and brushes.</para>
     </member>
     <member name="M:DevExpress.Utils.Drawing.GraphicsCache.DrawSvgImage(DevExpress.Utils.Svg.SvgImage,System.Drawing.Point,DevExpress.Utils.Design.ISvgPaletteProvider)">
       <summary>
-        <para>Draws a vector image at the given coordinates.</para>
+        <para></para>
       </summary>
-      <param name="svgImage">The vector image to draw.</param>
-      <param name="point">A Point structure that specifies the coordinates for the drawn image.</param>
-      <param name="svgPalette">An object that retrieves vector skin palettes. Vector image colors are slighly adjusted depending on the active palette.</param>
+      <param name="svgImage"></param>
+      <param name="point"></param>
+      <param name="svgPalette"></param>
     </member>
     <member name="M:DevExpress.Utils.Drawing.GraphicsCache.DrawSvgImage(DevExpress.Utils.Svg.SvgImage,System.Drawing.Rectangle,DevExpress.Utils.Design.ISvgPaletteProvider)">
       <summary>
-        <para>Draws a vector image</para>
+        <para></para>
       </summary>
-      <param name="svgImage">The image to draw.</param>
-      <param name="destRect">A Rectangle structure that specifies the location and size of the drawn image. The image is scaled to fit the rectangle.</param>
-      <param name="svgPalette">An object that retrieves vector skin palettes. Vector image colors are slighly adjusted depending on the active palette.</param>
+      <param name="svgImage"></param>
+      <param name="destRect"></param>
+      <param name="svgPalette"></param>
     </member>
     <member name="M:DevExpress.Utils.Drawing.GraphicsCache.DrawVString(System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Rectangle,DevExpress.Utils.StringFormatInfo,System.Int32)">
       <summary>
@@ -5655,16 +5003,6 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default"/> value is equal to <s
     <member name="F:DevExpress.Utils.EditorShowMode.MouseUp">
       <summary>
         <para>A cell&#39;s in-place editor is activated when a mouse button is released from a click within the cell.</para>
-      </summary>
-    </member>
-    <member name="N:DevExpress.Utils.Filtering">
-      <summary>
-        <para>Contains classes used to create a filtering UI.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.Filtering.FilteringUIContext">
-      <summary>
-        <para>Generates a filtering UI for a data-aware control (Data Grid, Tree List, Chart Control, etc.) or Data Model.</para>
       </summary>
     </member>
     <member name="T:DevExpress.Utils.FlyoutPanel">
@@ -6899,9 +6237,9 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.Layout.StackPanel.GetViewInfo">
       <summary>
-        <para>Retrieves the object that provides current StackPanel settings.</para>
+        <para></para>
       </summary>
-      <returns>A StackPanelObjectInfoArgs object that provides current StackPanel settings.</returns>
+      <returns></returns>
     </member>
     <member name="P:DevExpress.Utils.Layout.StackPanel.LayoutDirection">
       <summary>
@@ -6962,9 +6300,9 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.Layout.TablePanel.GetViewInfo">
       <summary>
-        <para>Retrieves the object that provides current TablePanel settings.</para>
+        <para></para>
       </summary>
-      <returns>A TablePanelObjectInfoArgs object that provides current TablePanel settings.</returns>
+      <returns></returns>
     </member>
     <member name="P:DevExpress.Utils.Layout.TablePanel.Rows">
       <summary>
@@ -7010,9 +6348,9 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="P:DevExpress.Utils.Layout.TablePanel.ShowGrid">
       <summary>
-        <para>Gets or sets whether this TablePanel should draw its grid lines at runtime.</para>
+        <para></para>
       </summary>
-      <value>Specifies whether this panel should show its grid lines at runtime. The DefaultBoolean.Default setting is equal to DefaultBoolean.False.</value>
+      <value></value>
     </member>
     <member name="T:DevExpress.Utils.Locations">
       <summary>
@@ -7876,16 +7214,6 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
         <para>A menu is displayed as a popup bar.</para>
       </summary>
     </member>
-    <member name="N:DevExpress.Utils.MVVM">
-      <summary>
-        <para>Contains classes used to build MVVM-aware applications.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.MVVM.MVVMContext">
-      <summary>
-        <para>Generates View Models and manages their lifecycle.</para>
-      </summary>
-    </member>
     <member name="T:DevExpress.Utils.RatingContextButton">
       <summary>
         <para>A context item that allows an end-user to rate the content using the grading scale.</para>
@@ -8198,7 +7526,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="E:DevExpress.Utils.SvgImageCollection.Changed">
       <summary>
-        <para>Fires when the collection changes.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Utils.SvgImageCollection.Clear">
@@ -8248,7 +7576,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.SvgImageCollection.GetImage(System.Int32,DevExpress.Utils.Design.ISvgPaletteProvider,System.Nullable{System.Drawing.Size})">
       <summary>
-        <para>Returns a regular raster image of the specific size. This raster image is produced from a source vector image, and colorized according to the provided palette. Throws the System.ArgumentOutOfRangeException if the collection has no vector image with the given index.</para>
+        <para>Returns a regular raster image of the specific size. This raster image is produced from a source vector image, and colorized according to the provided palette.</para>
       </summary>
       <param name="index">An Index of a source vector image within this <see cref="T:DevExpress.Utils.SvgImageCollection"/>.</param>
       <param name="palette">An ISvgPaletteProvider object that specifies a palette according to which the produced raster image should be colorized. See the How To: Draw and Use SVG Images article (the Colors section) to learn why and how images change their colors depending on skins and palettes.</param>
@@ -8257,7 +7585,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.SvgImageCollection.GetImage(System.Int32,System.Nullable{System.Drawing.Size})">
       <summary>
-        <para>Returns a regular raster image of the desired size. The image is produced from a source vector image. Throws the System.ArgumentOutOfRangeException if the collection has no vector image with the given index.</para>
+        <para>Returns a regular raster image of the desired size. The image is produced from a source vector image.</para>
       </summary>
       <param name="index">An Index of a source vector image within this <see cref="T:DevExpress.Utils.SvgImageCollection"/>.</param>
       <param name="size">A Size structure that is the produced image size.</param>
@@ -8265,7 +7593,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.SvgImageCollection.GetImage(System.String,DevExpress.Utils.Design.ISvgPaletteProvider,System.Nullable{System.Drawing.Size})">
       <summary>
-        <para>Returns a regular raster image of the specific size. This raster image is produced from a source vector image, and colorized according to the provided palette. Returns null if the collection has no vector image with the given name.</para>
+        <para>Returns a regular raster image of the specific size. This raster image is produced from a source vector image, and colorized according to the provided palette.</para>
       </summary>
       <param name="name">A String value that is the vector image name within the <see cref="T:DevExpress.Utils.SvgImageCollection"/>.</param>
       <param name="palette">An ISvgPaletteProvider object that specifies a palette according to which the produced raster image should be colorized. See the How To: Draw and Use SVG Images article (the Colors section) to learn why and how images change their colors depending on skins and palettes.</param>
@@ -8274,7 +7602,7 @@ For the <see cref="T:DevExpress.Utils.SharedImageCollection"/>, this property sp
     </member>
     <member name="M:DevExpress.Utils.SvgImageCollection.GetImage(System.String,System.Nullable{System.Drawing.Size})">
       <summary>
-        <para>Returns a regular raster image of the desired size. The image is produced from a source vector image. Returns null if the collection has no vector image with the given name.</para>
+        <para>Returns a regular raster image of the desired size. The image is produced from a source vector image.</para>
       </summary>
       <param name="name">A String value that is the vector image name within the <see cref="T:DevExpress.Utils.SvgImageCollection"/>.</param>
       <param name="size">A Size structure that is the produced image&#39;s size.</param>
@@ -12851,27 +12179,27 @@ When a control&#39;s OptionsFind.Behavior property is set to Default, the actual
     </member>
     <member name="M:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.DefaultDraw">
       <summary>
-        <para>Performs default painting of the control&#39;s caption.</para>
+        <para>Performs default painting of this element.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.DefaultDrawBackground">
       <summary>
-        <para>Performs default painting of the control&#39;s caption background.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.DefaultDrawButtons">
       <summary>
-        <para>Performs default painting of the buttons embedded in the control&#39;s caption.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.DefaultDrawImage">
       <summary>
-        <para>Performs default painting of the control&#39;s caption image.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.DefaultDrawText">
       <summary>
-        <para>Performs default painting of the text in the control&#39;s caption.</para>
+        <para></para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.GroupCaptionCustomDrawEventArgs.Info">
@@ -12980,12 +12308,12 @@ When a control&#39;s OptionsFind.Behavior property is set to Default, the actual
     </member>
     <member name="E:DevExpress.XtraEditors.GroupControl.CustomDrawCaption">
       <summary>
-        <para>Allows you to custom paint the caption region.</para>
+        <para>Enables group caption to be custom painted.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.GroupControl.CustomDrawHeaderButton">
       <summary>
-        <para>Allows you to custom paint header buttons (<see cref="P:DevExpress.XtraEditors.GroupControl.CustomHeaderButtons"/>).</para>
+        <para></para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.GroupControl.CustomHeaderButtons">
@@ -13961,7 +13289,7 @@ When a control&#39;s OptionsFind.Behavior property is set to Default, the actual
     </member>
     <member name="E:DevExpress.XtraEditors.SplitContainerControl.CustomDrawHeaderButton">
       <summary>
-        <para>Not supported for this class.</para>
+        <para></para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.SplitContainerControl.CustomHeaderButtons">
@@ -14835,9 +14163,9 @@ This is a static property.</para>
     </member>
     <member name="M:DevExpress.XtraEditors.XtraForm.ApplyAcrylicAccent(DevExpress.Utils.DirectXPaint.DirectComposition.ISupportDirectComposition)">
       <summary>
-        <para>Applies the Acrylic accent (a semi-partial transparent background) to a control that resides within the current form. The Acrylic accent is only supported for certain controls.</para>
+        <para></para>
       </summary>
-      <param name="control">The target control that supports the Acrylic accent.</param>
+      <param name="control"></param>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.BackColor">
       <summary>
@@ -14871,9 +14199,9 @@ This is a static property.</para>
     </member>
     <member name="M:DevExpress.XtraEditors.XtraForm.ClearAcrylicAccent(DevExpress.Utils.DirectXPaint.DirectComposition.ISupportDirectComposition)">
       <summary>
-        <para>Clears the Acrylic accent (a semi-partial transparent background) for a control that resides within the current form. The Acrylic accent is only supported for certain controls.</para>
+        <para></para>
       </summary>
-      <param name="control">The target control that supports the Acrylic accent.</param>
+      <param name="control"></param>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.CloseBox">
       <summary>
@@ -14889,7 +14217,7 @@ This is a static property.</para>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraForm.EnableAcrylicAccent">
       <summary>
-        <para>Gets or sets whether the Acrylic accent is enabled for the Accordion Control, Layout Control and Calendar Control when they reside within the current form. The property also enables the Reveal Highlight effect for the Accordion Control and Calendar Control.</para>
+        <para>Gets or sets whether the Acrylic effect is enabled. The Acrylic effect is applied to an area occupied by the <see cref="T:DevExpress.XtraBars.Navigation.AccordionControl"/>.</para>
       </summary>
       <value>true, to enable the Acrylic effect; otherwise, false.</value>
     </member>
