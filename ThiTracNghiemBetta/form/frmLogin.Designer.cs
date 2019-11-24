@@ -35,8 +35,6 @@
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.radSinhVien = new System.Windows.Forms.RadioButton();
-            this.radGiangVien = new System.Windows.Forms.RadioButton();
             this.edtPassword = new System.Windows.Forms.TextBox();
             this.edtUserName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableAdapterManager = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
+            this.chitietbaithiTableAdapter1 = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -79,8 +78,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnDangNhap);
-            this.groupBox1.Controls.Add(this.radSinhVien);
-            this.groupBox1.Controls.Add(this.radGiangVien);
             this.groupBox1.Controls.Add(this.edtPassword);
             this.groupBox1.Controls.Add(this.edtUserName);
             this.groupBox1.Controls.Add(this.label4);
@@ -98,7 +95,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(426, 581);
+            this.btnDangNhap.Location = new System.Drawing.Point(448, 514);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(230, 61);
@@ -106,31 +103,6 @@
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // radSinhVien
-            // 
-            this.radSinhVien.AutoSize = true;
-            this.radSinhVien.Checked = true;
-            this.radSinhVien.Location = new System.Drawing.Point(646, 502);
-            this.radSinhVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radSinhVien.Name = "radSinhVien";
-            this.radSinhVien.Size = new System.Drawing.Size(135, 29);
-            this.radSinhVien.TabIndex = 10;
-            this.radSinhVien.TabStop = true;
-            this.radSinhVien.Text = "Sinh Viên";
-            this.radSinhVien.UseVisualStyleBackColor = true;
-            // 
-            // radGiangVien
-            // 
-            this.radGiangVien.AutoSize = true;
-            this.radGiangVien.Location = new System.Drawing.Point(342, 502);
-            this.radGiangVien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radGiangVien.Name = "radGiangVien";
-            this.radGiangVien.Size = new System.Drawing.Size(149, 29);
-            this.radGiangVien.TabIndex = 9;
-            this.radGiangVien.TabStop = true;
-            this.radGiangVien.Text = "Giảng Viên";
-            this.radGiangVien.UseVisualStyleBackColor = true;
             // 
             // edtPassword
             // 
@@ -208,6 +180,10 @@
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // chitietbaithiTableAdapter1
+            // 
+            this.chitietbaithiTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -235,8 +211,6 @@
         private System.Windows.Forms.ComboBox cbbCoSo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.RadioButton radSinhVien;
-        private System.Windows.Forms.RadioButton radGiangVien;
         private System.Windows.Forms.TextBox edtPassword;
         private System.Windows.Forms.TextBox edtUserName;
         private System.Windows.Forms.Label label4;
@@ -244,5 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private TN_CSDLPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter chitietbaithiTableAdapter1;
     }
 }

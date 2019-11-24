@@ -25,9 +25,10 @@ namespace ThiTracNghiemBetta
         public static String remotepassword = "123456";
         public static String mloginDN = "";
         public static String passwordDN = "";
-        public static String mGroup = "";
-        public static String mHoten = "";
-        public static int mChinhanh = 0;
+        public static String mNhom = "";
+        public static String mHoTen = "";
+        public static String mLoai = ""; // giangvien or sinhvien
+        public static int mChiNhanh = 0;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         //public static frmMain frmChinh;
@@ -48,7 +49,7 @@ namespace ThiTracNghiemBetta
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password :(.\n " + e.Message, "", MessageBoxButtons.OK);
                 return 0;
             }
         }
@@ -93,7 +94,7 @@ namespace ThiTracNghiemBetta
             BonusSkins.Register();
             // Hien ServerConnection
             // Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12
-            // ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
+             ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
             Application.Run(new frmLogin());
         }
     }

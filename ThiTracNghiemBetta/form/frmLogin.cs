@@ -30,30 +30,48 @@ namespace ThiTracNghiemBetta.form
             LoginModel loginModel = validateForm();
             if (!loginModel.isValid())
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin :(");
                 return;
             }
 
-            MessageBox.Show("Hợp lí");
+            Program.servername = cbbCoSo.SelectedValue.ToString();
+            Program.mChiNhanh = cbbCoSo.SelectedIndex;
+
+            Program.mlogin = loginModel.userName;
+            Program.password = loginModel.password;
+
+            int kq = Program.KetNoi();
+            if (kq == 0)
+            {
+                return;
+            }
+           
+            String strlenh = "EXEC dbo.SP_DANGNHAP '" + Program.mlogin + "'";
+            Program.myReader = Program.ExecSqlDataReader(strlenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+
+            Program.username = Program.myReader.GetString(0);
+            Program.mHoTen = Program.myReader.GetString(1);
+            Program.mNhom = Program.myReader.GetString(2);
+            Program.mLoai = Program.myReader.GetString(3);
+
+            Program.myReader.Close();
+
+            MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
+
+            /*            Program.frmMain = new frmMain();
+                        Program.frmMain.Activate();
+                        Program.frmMain.Show();
+                        Program.formDangNhap.Hide();*/
 
         }
 
         private LoginModel validateForm()
         {
             LoginModel loginModel = new LoginModel();
-            loginModel.serverName = cbbCoSo.SelectedValue.ToString();
             loginModel.userName = edtUserName.Text.Trim();
             loginModel.password = edtPassword.Text.Trim();
-            UserType userType = UserType.None;
-            if (radSinhVien.Checked)
-            {
-                userType = UserType.SinhVien;
-            } 
-            if (radGiangVien.Checked) 
-            {
-                userType = UserType.GiangVien;
-            }
-            loginModel.userType = userType;
             return loginModel;
         }
     }
