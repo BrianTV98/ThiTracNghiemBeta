@@ -75,15 +75,16 @@
             this.btKHOA,
             this.btnXEMBAITHI,
             this.btnXEMBANGDIEM,
-            this.btnXEMDSDANGKY});
+            this.btnXEMDSDANGKY,
+            this.ribbonControl1.SearchEditItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1475, 179);
+            this.ribbonControl1.Size = new System.Drawing.Size(2107, 246);
             // 
             // btGiaoVien
             // 
@@ -198,6 +199,7 @@
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup2.ImageOptions.Image")));
             this.ribbonPageGroup2.ItemLinks.Add(this.btMonHoc);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
@@ -263,40 +265,41 @@
             this.toolStripStatusMAGV,
             this.toolStripStatusHOTEN,
             this.toolStripStatusNHOM});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 669);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 959);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1475, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(2107, 39);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusMAGV
             // 
             this.toolStripStatusMAGV.Name = "toolStripStatusMAGV";
-            this.toolStripStatusMAGV.Size = new System.Drawing.Size(51, 20);
+            this.toolStripStatusMAGV.Size = new System.Drawing.Size(73, 30);
             this.toolStripStatusMAGV.Text = "MAGV";
             // 
             // toolStripStatusHOTEN
             // 
             this.toolStripStatusHOTEN.Name = "toolStripStatusHOTEN";
-            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(81, 30);
             this.toolStripStatusHOTEN.Text = "HOTEN";
             // 
             // toolStripStatusNHOM
             // 
             this.toolStripStatusNHOM.Name = "toolStripStatusNHOM";
-            this.toolStripStatusNHOM.Size = new System.Drawing.Size(55, 20);
+            this.toolStripStatusNHOM.Size = new System.Drawing.Size(79, 30);
             this.toolStripStatusNHOM.Text = "NHOM";
             // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 694);
+            this.ClientSize = new System.Drawing.Size(2107, 998);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "MAIN FORM";
