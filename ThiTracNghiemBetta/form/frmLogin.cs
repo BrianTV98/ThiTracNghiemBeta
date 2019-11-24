@@ -27,7 +27,7 @@ namespace ThiTracNghiemBetta.form
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            LoginModel loginModel = validateForm();
+            LoginModel loginModel = getLoginData();
             if (!loginModel.isValid())
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin :(");
@@ -60,19 +60,38 @@ namespace ThiTracNghiemBetta.form
 
             MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
 
-            frmMain form = new frmMain();
-            form.Activate();
-            form.Show();
+            switch ("sinhvien")
+            {
+                case "giangvien":
+                    {
+                        frmMain form = new frmMain();
+                        form.Activate();
+                        form.Show();
+                        break;
+                    }
+                case "sinhvien":
+                    {
+                        frmSV form = new frmSV();
+                        form.Activate();
+                        form.Show();
+                        break;
+                    }
+            }
             this.Hide();
 
         }
 
-        private LoginModel validateForm()
+        private LoginModel getLoginData()
         {
             LoginModel loginModel = new LoginModel();
             loginModel.userName = edtUserName.Text.Trim();
             loginModel.password = edtPassword.Text.Trim();
             return loginModel;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
