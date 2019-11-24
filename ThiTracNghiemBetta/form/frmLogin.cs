@@ -60,10 +60,10 @@ namespace ThiTracNghiemBetta.form
 
             MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
 
-            /*            Program.frmMain = new frmMain();
-                        Program.frmMain.Activate();
-                        Program.frmMain.Show();
-                        Program.formDangNhap.Hide();*/
+            frmMain form = new frmMain();
+            form.Activate();
+            form.Show();
+            this.Hide();
 
         }
 
