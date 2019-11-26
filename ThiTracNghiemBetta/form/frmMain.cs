@@ -22,18 +22,18 @@ namespace ThiTracNghiemBetta.form
                     return f;
             return null;
         }
+
         public static bool flag = true;
         private void frmMain_Load(object sender, EventArgs e)
         {
-            /*Program.connstrbf = Program.connstr;
             toolStripStatusHOTEN.Text = "Họ và Tên: " + Program.mHoTen;
-            toolStripStatusMAGV.Text = "Mã GV: " + Program.username;
+            toolStripStatusMAGV.Text = "Mã GV: " + Program.mUserId;
             toolStripStatusNHOM.Text = "Nhóm: " + Program.mNhom;
-            if(Program.mNhom == "GIANGVIEN")
+            if (Program.mNhom == "GIANGVIEN")
             {
-                btKHOA.Enabled=btGiaoVien.Enabled = btLOP.Enabled = btMonHoc.Enabled=btlogin.Enabled = false;
+                btKHOA.Enabled = btGiaoVien.Enabled = btLOP.Enabled = btMonHoc.Enabled = btlogin.Enabled = false;
                 btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
-            }*/
+            }
         }
         private void btMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

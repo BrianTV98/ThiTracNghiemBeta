@@ -51,7 +51,7 @@ namespace ThiTracNghiemBetta.form
             if (Program.myReader == null) return;
             Program.myReader.Read();
 
-            Program.username = Program.myReader.GetString(0);
+            Program.mUserId = Program.myReader.GetString(0);
             Program.mHoTen = Program.myReader.GetString(1);
             Program.mNhom = Program.myReader.GetString(2);
             Program.mLoai = Program.myReader.GetString(3);
@@ -59,7 +59,7 @@ namespace ThiTracNghiemBetta.form
             Program.myReader.Close();
 
             MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
-
+            this.Hide();
             switch (Program.mLoai)
             {
                 case "giangvien":
@@ -77,7 +77,6 @@ namespace ThiTracNghiemBetta.form
                         break;
                     }
             }
-            this.Hide();
 
         }
 

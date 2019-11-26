@@ -124,7 +124,7 @@
             this.edtUserName.Name = "edtUserName";
             this.edtUserName.Size = new System.Drawing.Size(326, 29);
             this.edtUserName.TabIndex = 6;
-            this.edtUserName.Text = "hien";
+            this.edtUserName.Text = "hienho";
             // 
             // label4
             // 

@@ -16,7 +16,7 @@ namespace ThiTracNghiemBetta
         public static String connstr;
         public static SqlDataReader myReader;
         public static String servername = "";
-        public static String username = "";
+        public static String mUserId = "";
         public static String mlogin = "";
         public static String password = "";
 
@@ -94,7 +94,7 @@ namespace ThiTracNghiemBetta
             BonusSkins.Register();
             // Hien ServerConnection
             // Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12
-            ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
+            //ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
             Application.Run(new frmLogin());
         }
     }
