@@ -115,6 +115,7 @@
             this.edtPassword.PasswordChar = '*';
             this.edtPassword.Size = new System.Drawing.Size(326, 29);
             this.edtPassword.TabIndex = 7;
+            this.edtPassword.Text = "12";
             // 
             // edtUserName
             // 
@@ -123,6 +124,7 @@
             this.edtUserName.Name = "edtUserName";
             this.edtUserName.Size = new System.Drawing.Size(326, 29);
             this.edtUserName.TabIndex = 6;
+            this.edtUserName.Text = "hien";
             // 
             // label4
             // 
