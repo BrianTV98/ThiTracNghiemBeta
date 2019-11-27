@@ -1,0 +1,40 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TAOLOGIN]    Script Date: 27-Nov-19 2:48:47 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_TAOLOGIN] @LGNAME VARCHAR(50),
+  @PASS VARCHAR(50),
+  @USERNAME VARCHAR(50),
+  @ROLE VARCHAR(50)
+AS
+  DECLARE @RET INT
+  EXEC @RET= SP_ADDLOGIN @LGNAME, @PASS,'TN_CSDLPT'
+  IF (@RET =1)  -- LOGIN NAME BI TRUNG
+     RETURN 1
+ 
+  EXEC @RET= SP_GRANTDBACCESS @LGNAME, @USERNAME
+  IF (@RET =1)  -- USER  NAME BI TRUNG
+  BEGIN
+       EXEC SP_DROPLOGIN @LGNAME
+       RETURN 2
+  END
+
+	EXEC sp_addrolemember @ROLE, @USERNAME
+	IF @ROLE= 'TRUONG'
+    EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+	EXEC sp_addsrvrolemember @LGNAME, 'processadmin'
+	
+
+	IF @ROLE= 'COSO'
+    EXEC sp_addsrvrolemember @LGNAME, 'serveradmin'
+
+	IF @ROLE= 'GIANGVIEN'
+    EXEC sp_addsrvrolemember @LGNAME, 'public'
+	
+	IF @ROLE= 'GIANGVIEN'
+    EXEC sp_addsrvrolemember @LGNAME, 'public'
+	
+RETURN 0  -- THANH CONG
