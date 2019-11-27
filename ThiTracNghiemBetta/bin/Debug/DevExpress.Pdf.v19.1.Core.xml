@@ -977,11 +977,11 @@
     </member>
     <member name="M:DevExpress.Pdf.PdfAcroFormTextBoxField.#ctor(System.String,System.Int32,DevExpress.Pdf.PdfRectangle)">
       <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfAcroFormTextBoxField"/> class with the specified text box field name, page number, where the field will be created, and the field rectangle.</para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfAcroFormTextBoxField"/> class with the specified text box field name, page number, where the field will be created, and the field rectangle in user coordinate system.</para>
       </summary>
       <param name="name">A <see cref="T:System.String"/> that specifies the name of text box field.</param>
       <param name="pageNumber">An integer value that specifies the page number where the form field will be created.</param>
-      <param name="rectangle">A <see cref="T:DevExpress.Pdf.PdfRectangle"/> object that represents a rectangle inside which a text box field is located on a page.</param>
+      <param name="rectangle">A <see cref="T:DevExpress.Pdf.PdfRectangle"/> object that represents a rectangle in user coordinate system used to place a text box field.</param>
     </member>
     <member name="P:DevExpress.Pdf.PdfAcroFormTextBoxField.MaxLength">
       <summary>
@@ -5378,13 +5378,13 @@
     </member>
     <member name="P:DevExpress.Pdf.PdfRenderingSettings.ExternalDctDecoderModulePath">
       <summary>
-        <para>Specifies the path where the libjpeg-turbo DCT decoder module (dll) should be unpacked.</para>
+        <para></para>
       </summary>
-      <value>A String value that is the path where the DCT decoder module should be unpacked. The default value is &quot;%AppData%/DevExpress/&quot;.</value>
+      <value></value>
     </member>
     <member name="P:DevExpress.Pdf.PdfRenderingSettings.UseExternalDctDecoder">
       <summary>
-        <para>Specifies whether the external  libjpeg-turbo DCT decoder can be used to optimize JPEG image decoding.</para>
+        <para>Specifies whether the external Windows Imaging Component (WIC) decoder can be used to optimize JPEG image decoding.</para>
       </summary>
       <value>true, to allow using the external DCT decoder to optimize JPEG image decoding; false, the GDI+ decoder is used for JPEG image decoding. The default value is true.</value>
     </member>
