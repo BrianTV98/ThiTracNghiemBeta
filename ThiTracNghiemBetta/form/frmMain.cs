@@ -93,10 +93,10 @@ namespace ThiTracNghiemBetta.form
         }
         private void btKHOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* frmKHOA f = new frmKHOA();
+            frmKhoa f = new frmKhoa();
             f.MdiParent = this;
             f.Show();
-            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
+           /* btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
             btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;*/
         }
         private void btCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
