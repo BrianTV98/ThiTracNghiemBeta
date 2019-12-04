@@ -92,5 +92,10 @@ namespace ThiTracNghiemBetta.form
         {
 
         }
+
+        private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

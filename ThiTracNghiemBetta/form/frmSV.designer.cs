@@ -55,13 +55,15 @@
             this.ribbon.ExpandCollapseItem,
             this.btnTHI,
             this.btnTRACUUDIEM,
-            this.btnDANGXUAT});
+            this.btnDANGXUAT,
+            this.ribbon.SearchEditItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbon.MaxItemId = 4;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1552, 179);
+            this.ribbon.Size = new System.Drawing.Size(2217, 246);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnTHI
@@ -120,10 +122,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 525);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 765);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1552, 40);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(2217, 47);
             // 
             // thongTinDangNhap
             // 
@@ -134,51 +137,53 @@
             this.toolStripStatusNHOM,
             this.toolStripStatusMALOP,
             this.toolStripStatusTENLOP});
-            this.thongTinDangNhap.Location = new System.Drawing.Point(0, 500);
+            this.thongTinDangNhap.Location = new System.Drawing.Point(0, 726);
             this.thongTinDangNhap.Name = "thongTinDangNhap";
-            this.thongTinDangNhap.Size = new System.Drawing.Size(1552, 25);
+            this.thongTinDangNhap.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
+            this.thongTinDangNhap.Size = new System.Drawing.Size(2217, 39);
             this.thongTinDangNhap.TabIndex = 3;
             this.thongTinDangNhap.Text = "statusStrip1";
             // 
             // toolStripStatusMAGV
             // 
             this.toolStripStatusMAGV.Name = "toolStripStatusMAGV";
-            this.toolStripStatusMAGV.Size = new System.Drawing.Size(51, 20);
+            this.toolStripStatusMAGV.Size = new System.Drawing.Size(73, 30);
             this.toolStripStatusMAGV.Text = "MAGV";
             // 
             // toolStripStatusHOTEN
             // 
             this.toolStripStatusHOTEN.Name = "toolStripStatusHOTEN";
-            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(81, 30);
             this.toolStripStatusHOTEN.Text = "HOTEN";
             // 
             // toolStripStatusNHOM
             // 
             this.toolStripStatusNHOM.Name = "toolStripStatusNHOM";
-            this.toolStripStatusNHOM.Size = new System.Drawing.Size(55, 20);
+            this.toolStripStatusNHOM.Size = new System.Drawing.Size(79, 30);
             this.toolStripStatusNHOM.Text = "NHOM";
             // 
             // toolStripStatusMALOP
             // 
             this.toolStripStatusMALOP.Name = "toolStripStatusMALOP";
-            this.toolStripStatusMALOP.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusMALOP.Size = new System.Drawing.Size(83, 30);
             this.toolStripStatusMALOP.Text = "MALOP";
             // 
             // toolStripStatusTENLOP
             // 
             this.toolStripStatusTENLOP.Name = "toolStripStatusTENLOP";
-            this.toolStripStatusTENLOP.Size = new System.Drawing.Size(61, 20);
+            this.toolStripStatusTENLOP.Size = new System.Drawing.Size(88, 30);
             this.toolStripStatusTENLOP.Text = "TENLOP";
             // 
             // frmSV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1552, 565);
+            this.ClientSize = new System.Drawing.Size(2217, 812);
             this.Controls.Add(this.thongTinDangNhap);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSV";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
