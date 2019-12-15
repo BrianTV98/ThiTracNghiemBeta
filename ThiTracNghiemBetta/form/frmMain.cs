@@ -38,7 +38,7 @@ namespace ThiTracNghiemBetta.form
         private void btMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            frmMonHoc f = new frmMonHoc();
+            frmMH f = new frmMH();
             f.MdiParent = this;
             f.Show();
             btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
