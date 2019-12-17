@@ -6919,7 +6919,8 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       </summary>
       <param name="range">A <see cref="T:DevExpress.Export.Xl.XlCellRange"/> object which references the cells containing values for calculation.</param>
       <param name="summary">A <see cref="T:DevExpress.Export.Xl.XlSummary"/> enumeration member that specifies the calculation type, i.e. the function used for calculation.</param>
-      <param name="ignoreHidden">True to include hidden rows or columns in the calculation; otherwise, false.</param>
+      <param name="ignoreHidden">True to include hidden rows or columns
+in the calculation; otherwise, false.</param>
       <returns>An <see cref="T:DevExpress.Export.Xl.IXlFormulaParameter"/> object that is the function result.</returns>
     </member>
     <member name="M:DevExpress.Export.Xl.XlFunc.Subtotal(System.Collections.Generic.IList{DevExpress.Export.Xl.XlCellRange},DevExpress.Export.Xl.XlSummary,System.Boolean)">
@@ -6928,7 +6929,8 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       </summary>
       <param name="ranges">A list of <see cref="T:DevExpress.Export.Xl.XlCellRange"/> objects which are the references to cells containing values for calculation.</param>
       <param name="summary">A <see cref="T:DevExpress.Export.Xl.XlSummary"/> enumeration member that specifies the calculation type, i.e., the function used for calculation.</param>
-      <param name="ignoreHidden">True, to include hidden rows or columns in the calculation; otherwise, false.</param>
+      <param name="ignoreHidden">True, to include hidden rows or columns
+in the calculation; otherwise, false.</param>
       <returns>An <see cref="T:DevExpress.Export.Xl.IXlFormulaParameter"/> object that is the function result.</returns>
     </member>
     <member name="M:DevExpress.Export.Xl.XlFunc.Sum(DevExpress.Export.Xl.IXlFormulaParameter[])">
@@ -14263,7 +14265,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.BarCodeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.BarCodeBrick.Alignment">
       <summary>
@@ -14405,7 +14407,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.BookmarkInfo"/> class with the specified settings.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.BrickOwner"/> property.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.BrickOwner"/> property.</param>
       <param name="bookmark">A <see cref="T:System.String"/> value. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.Bookmark"/> property.</param>
       <param name="bookmarkParentInfo">A <see cref="T:DevExpress.XtraPrinting.BookmarkInfo"/> object. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.ParentInfo"/> property.</param>
     </member>
@@ -14419,7 +14421,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Provides access to the bookmark&#39;s owner brick.</para>
       </summary>
-      <value>An object implementing the  interface.</value>
+      <value>An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BookmarkInfo.Empty">
       <summary>
@@ -15193,6 +15195,51 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
         <para>Represents the report header section of the document.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.XtraPrinting.BrickOwnerType">
+      <summary>
+        <para>Lists the values that specify the type of a brick owner object.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.Band">
+      <summary>
+        <para>The brick owner is a <see cref="T:DevExpress.XtraReports.UI.Band"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.Control">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRControl"/> descendant.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.Panel">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRPanel"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.Subreport">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRSubreport"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.Table">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRTable"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.TableCell">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRTableCell"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.TableOfContents">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRTableOfContents"/>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPrinting.BrickOwnerType.TableRow">
+      <summary>
+        <para>The brick owner is an <see cref="T:DevExpress.XtraReports.UI.XRTableRow"/>.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraPrinting.BrickPagePair">
       <summary>
         <para>For internal use. An association of a brick and a page.</para>
@@ -15548,7 +15595,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.CharacterCombBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.CharacterCombBrick.BrickType">
       <summary>
@@ -15639,7 +15686,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.CheckBoxBrick.BrickType">
       <summary>
@@ -15973,9 +16020,9 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptions.FollowReportLayout">
       <summary>
-        <para>Specifies if CSV export should follow the report layout.</para>
+        <para>For internal use.</para>
       </summary>
-      <value>true, to follow the report layout in CSV export; false otherwise.</value>
+      <value>A Boolean value.</value>
     </member>
     <member name="M:DevExpress.XtraPrinting.CsvExportOptions.GetActualSeparator">
       <summary>
@@ -16349,77 +16396,6 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
         <para>Specifies an incline from top to bottom.</para>
       </summary>
     </member>
-    <member name="T:DevExpress.XtraPrinting.Drawing.ImageItem">
-      <summary>
-        <para>An image source that has an assigned ID.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItem.#ctor(System.String,DevExpress.XtraPrinting.Drawing.ImageSource)">
-      <summary>
-        <para>Creates an <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItem"/> object with the specified <see cref="P:DevExpress.XtraPrinting.Drawing.ImageItem.ImageSource"/> and <see cref="P:DevExpress.XtraPrinting.Drawing.ImageItem.Id"/> properties.</para>
-      </summary>
-      <param name="id">The image source ID.</param>
-      <param name="imageSource">An image source object that stores an image.</param>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItem.Dispose">
-      <summary>
-        <para>Disposes of the <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItem"/> object.</para>
-      </summary>
-    </member>
-    <member name="P:DevExpress.XtraPrinting.Drawing.ImageItem.Id">
-      <summary>
-        <para>An ID for the specified image source.</para>
-      </summary>
-      <value>The image source ID.</value>
-    </member>
-    <member name="P:DevExpress.XtraPrinting.Drawing.ImageItem.ImageSource">
-      <summary>
-        <para>The image source that has the ID specified by the <see cref="P:DevExpress.XtraPrinting.Drawing.ImageItem.Id"/> property.</para>
-      </summary>
-      <value>An object that stores an image.</value>
-    </member>
-    <member name="T:DevExpress.XtraPrinting.Drawing.ImageItemCollection">
-      <summary>
-        <para>A collection of <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItem"/> objects.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.#ctor">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItemCollection"/> class.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.Add(System.String,DevExpress.XtraPrinting.Drawing.ImageSource)">
-      <summary>
-        <para>Creates an <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItem"/> object and adds it to the <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItemCollection"/> collection.</para>
-      </summary>
-      <param name="id">The image item&#39;s ID.</param>
-      <param name="imageSource">An object that stores an image.</param>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.AddRange(DevExpress.XtraPrinting.Drawing.ImageItem[])">
-      <summary>
-        <para>Adds an array of image items to the end of the collection.</para>
-      </summary>
-      <param name="items">An array of image items to append to the collection.</param>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.Contains(System.String)">
-      <summary>
-        <para>Determines whether the collection contains the specified image item.</para>
-      </summary>
-      <param name="id">The image item&#39;s ID.</param>
-      <returns>true, if the collection contains the specified image item; otherwise, false.</returns>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.Dispose">
-      <summary>
-        <para>Disposes of the <see cref="T:DevExpress.XtraPrinting.Drawing.ImageItemCollection"/> object.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.Drawing.ImageItemCollection.GetImageSource(System.String)">
-      <summary>
-        <para>Returns the image source of the image item that has the specified ID.</para>
-      </summary>
-      <param name="id">The ID of the requested image item.</param>
-      <returns>An object that stores an image.</returns>
-    </member>
     <member name="T:DevExpress.XtraPrinting.Drawing.ImageSource">
       <summary>
         <para>An object that stores a specified image.</para>
@@ -16433,10 +16409,10 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.#ctor(DevExpress.Utils.Svg.SvgImage,System.Boolean)">
       <summary>
-        <para>Creates an ImageSource object and sets its <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.SvgImage"/> property to the SVG image passed as a parameter.</para>
+        <para></para>
       </summary>
-      <param name="svgImage">An SVG image the ImageSource object stores.</param>
-      <param name="isSharedResource">true, if the created image source is used by multiple objects; otherwise, false.</param>
+      <param name="svgImage"></param>
+      <param name="imageHasOwner"></param>
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.#ctor(System.Drawing.Image)">
       <summary>
@@ -16446,10 +16422,10 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.#ctor(System.Drawing.Image,System.Boolean)">
       <summary>
-        <para>Creates an ImageSource object and sets its <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.Image"/> property to the image passed as a parameter.</para>
+        <para></para>
       </summary>
-      <param name="image">The image the ImageSource object stores.</param>
-      <param name="isSharedResource">true, if the created image source is used by multiple objects; otherwise, false.</param>
+      <param name="image"></param>
+      <param name="isSharedResource"></param>
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.#ctor(System.String,System.String)">
       <summary>
@@ -16460,7 +16436,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.Dispose">
       <summary>
-        <para>Disposes of the <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.Image"/> object and sets the <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.SvgImage"/> property to null.</para>
+        <para>Disposes the <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.Image"/> object and sets the <see cref="P:DevExpress.XtraPrinting.Drawing.ImageSource.SvgImage"/> property to null.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraPrinting.Drawing.ImageSource.Equals(System.Object)">
@@ -18042,6 +18018,247 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
         <para>Specifies the vertical line in HTML export.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.XtraPrinting.IBrickOwner">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.AddToSummaryUpdater(DevExpress.XtraPrinting.VisualBrick,DevExpress.XtraPrinting.VisualBrick)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick">A <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> object.</param>
+      <param name="prototypeBrick">A <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> object.</param>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.AnchorHorizontal">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.AnchorVertical">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraReports.UI.VerticalAnchorStyles"/> enumeration value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.BrickOwnerType">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraPrinting.BrickOwnerType"/> enumeration value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.CanCacheImages">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.ControlsUnityName">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.ConvertHelper">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A DevExpress.XtraPrinting.Native.ConvertHelper object.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.EmptyBookmarkInfo">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraPrinting.BookmarkInfo"/> object.</value>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualBackColor">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:System.Drawing.Color"/> structure.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualBorderColor">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:System.Drawing.Color"/> structure.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualBorderDashStyle">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:DevExpress.XtraPrinting.BorderDashStyle"/> enumeration value.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualBorderSide">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:DevExpress.XtraPrinting.BorderSide"/> enumeration value.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualBorderWidth">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:System.Single"/> value.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualFont">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:System.Drawing.Font"/> object.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualForeColor">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:System.Drawing.Color"/> structure.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.GetActualTextAlignment">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <returns>A <see cref="T:DevExpress.XtraPrinting.TextAlignment"/> enumeration value.</returns>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.HasImage">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.HasPageSummary">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.HasRunningSummary">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.InSubreport">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.IsCrossbandControl">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.IsImageEditable">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.IsNavigationLink">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.IsNavigationTarget">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.IsSeparableHorz(System.Boolean)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="isBrickSeparableHorz">A Boolean value.</param>
+      <returns>A Boolean value.</returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.IsSeparableVert(System.Boolean)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="isBrickSeparableVert">A Boolean value.</param>
+      <returns>A Boolean value.</returns>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.LayoutRules">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.LockedInDesigner">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.Name">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.NeedCalcContainerHeight">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A Boolean value.</value>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.RaiseAfterPrintOnPage(DevExpress.XtraPrinting.VisualBrick,DevExpress.XtraPrinting.Page,System.Int32,System.Int32)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick"></param>
+      <param name="page"></param>
+      <param name="pageNumber"></param>
+      <param name="pageCount"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.RaiseDraw(DevExpress.XtraPrinting.VisualBrick,DevExpress.XtraPrinting.IGraphics,System.Drawing.RectangleF)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick">A <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> object.</param>
+      <param name="gr">An object implementing the <see cref="T:DevExpress.XtraPrinting.IGraphics"/> interface.</param>
+      <param name="bounds">A <see cref="T:System.Drawing.RectangleF"/> structure.</param>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.RaiseHtmlItemCreated(DevExpress.XtraPrinting.VisualBrick,DevExpress.XtraPrinting.Export.Web.IScriptContainer,DevExpress.XtraPrinting.HtmlExport.Controls.DXHtmlContainerControl)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick"></param>
+      <param name="scriptContainer"></param>
+      <param name="contentCell"></param>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.RaiseSummaryCalculated(DevExpress.XtraPrinting.VisualBrick,System.String,System.String,System.Object)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick">A <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> object.</param>
+      <param name="text">A <see cref="T:System.String"/> value.</param>
+      <param name="format">A <see cref="T:System.String"/> value.</param>
+      <param name="value">A <see cref="T:System.Object"/> value.</param>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.RealControl">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:System.Object"/> value.</value>
+    </member>
+    <member name="P:DevExpress.XtraPrinting.IBrickOwner.Text">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value.</value>
+    </member>
+    <member name="M:DevExpress.XtraPrinting.IBrickOwner.UpdateBrickBounds(DevExpress.XtraPrinting.VisualBrick)">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+      <param name="brick">A <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> object.</param>
+    </member>
     <member name="T:DevExpress.XtraPrinting.ICommandHandler">
       <summary>
         <para>If implemented by a class, provides methods for handling commands in Print Preview.</para>
@@ -18140,7 +18357,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ImageBrick.BrickType">
       <summary>
@@ -18447,7 +18664,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.LabelBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.LabelBrick.Angle">
       <summary>
@@ -18493,7 +18710,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.LineBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.LineBrick.BrickType">
       <summary>
@@ -19314,12 +19531,6 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       </summary>
       <value>true to display a non-modal dialog when sending a report by email; otherwise false. The default is false.</value>
     </member>
-    <member name="P:DevExpress.XtraPrinting.Native.PrintingSettings.EnablePageBreakForRollPaper">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
     <member name="P:DevExpress.XtraPrinting.Native.PrintingSettings.MultiColumnDownThenAcrossNewBehavior">
       <summary>
         <para>For internal use.</para>
@@ -19563,15 +19774,15 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="P:DevExpress.XtraPrinting.PageByPageExportOptionsBase.PageRange">
       <summary>
-        <para>Gets or sets the page range to be exported.</para>
+        <para>Gets or sets the range of pages to be exported.</para>
       </summary>
-      <value>A page range.</value>
+      <value>A <see cref="T:System.String"/> specifying the range of pages.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageByPageExportOptionsBase.RasterizationResolution">
       <summary>
-        <para>Specifies the resolution (in DPI) used to rasterize vector images on export to the corresponding document format.</para>
+        <para>Specifies the resolution used to rasterize vector images on export to the corresponding document format.</para>
       </summary>
-      <value>The resolution (in DPI) used to rasterize vector images.</value>
+      <value>An integer value specifying the resolution (in DPI) used to rasterize vector images.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageByPageExportOptionsBase.RasterizeImages">
       <summary>
@@ -19804,7 +20015,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PageInfoTextBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageInfoTextBrick.BrickType">
       <summary>
@@ -19866,7 +20077,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>For internal use. Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PageInfoTextBrickBase"/> class with the specified brick owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageInfoTextBrickBase.Format">
       <summary>
@@ -20250,7 +20461,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PanelBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PanelBrick.Bricks">
       <summary>
@@ -21928,7 +22139,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ProgressBarBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="M:DevExpress.XtraPrinting.ProgressBarBrick.#ctor(System.Int32)">
       <summary>
@@ -22636,7 +22847,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ShapeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ShapeBrick.Angle">
       <summary>
@@ -22811,7 +23022,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.TextBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.TextBrick.BrickType">
       <summary>
@@ -23098,7 +23309,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.VisualBrick.BackColor">
       <summary>
@@ -23140,7 +23351,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Gets the owner of this brick.</para>
       </summary>
-      <value>An object, which implements the  interface.</value>
+      <value>An object, which implements the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.VisualBrick.BrickType">
       <summary>
@@ -24757,7 +24968,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ZipCodeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the  interface.</param>
+      <param name="brickOwner">An object implementing the <see cref="T:DevExpress.XtraPrinting.IBrickOwner"/> interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ZipCodeBrick.BrickType">
       <summary>
