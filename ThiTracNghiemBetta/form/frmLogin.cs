@@ -64,9 +64,9 @@ namespace ThiTracNghiemBetta.form
             {
                 case "giangvien":
                     {
-                        frmMain form = new frmMain();
-                        form.Activate();
-                        form.Show();
+                        Program.frmMain = new frmMain();
+                        Program.frmMain.Activate();
+                        Program.frmMain.Show();
                         break;
                     }
                 case "sinhvien":
@@ -89,6 +89,11 @@ namespace ThiTracNghiemBetta.form
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

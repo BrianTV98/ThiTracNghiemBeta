@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_DELETEMAMH]    Script Date: 12/17/2019 7:08:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_DELETEMAMH] 
+	-- Add the parameters for the stored procedure here
+	
+ @MaMH nchar(5)
+ as 
+BEGIN
+
+    -- Insert statements for procedure here
+	UPDATE MONHOC
+		SET XOA = 1
+		WHERE MAMH = @MaMH ;
+END

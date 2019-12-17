@@ -152,7 +152,6 @@ C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghie
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\bin\Debug\es\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
-C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.csprojAssemblyReference.cache
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.Form1.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmLogin.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.Properties.Resources.resources
