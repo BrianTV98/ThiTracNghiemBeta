@@ -64,9 +64,9 @@ namespace ThiTracNghiemBetta.form
             {
                 case "giangvien":
                     {
-                        frmMain form = new frmMain();
-                        form.Activate();
-                        form.Show();
+                        Program.frmMain = new frmMain();
+                        Program.frmMain.Activate();
+                        Program.frmMain.Show();
                         break;
                     }
                 case "sinhvien":

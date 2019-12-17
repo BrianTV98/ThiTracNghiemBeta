@@ -33,7 +33,7 @@ namespace ThiTracNghiemBetta
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static String Control = "";
 
-        //public static frmMain frmChinh;
+        public static frmMain frmMain;
 
         public static int KetNoi()
         {

@@ -14,7 +14,7 @@
     <Shape ID="DesignTable:GIAOVIEN_DANGKY" ZOrder="19" X="810" Y="594" Height="392" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="317" />
     <Shape ID="DesignTable:KHOA" ZOrder="18" X="1141" Y="1056" Height="237" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="162" />
     <Shape ID="DesignTable:LOP" ZOrder="17" X="810" Y="1056" Height="237" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="162" />
-    <Shape ID="DesignTable:MONHOC" ZOrder="16" X="440" Y="70" Height="237" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="162" />
+    <Shape ID="DesignTable:MONHOC" ZOrder="16" X="440" Y="70" Height="206" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="131" />
     <Shape ID="DesignTable:SINHVIEN" ZOrder="15" X="440" Y="1056" Height="330" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="255" />
     <Shape ID="DesignTable:V_DS_PHANMANH" ZOrder="14" X="1843" Y="70" Height="175" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="100" />
   </Shapes>
@@ -147,7 +147,7 @@
       <RoutePoints>
         <Point>
           <X>723</X>
-          <Y>307</Y>
+          <Y>276</Y>
         </Point>
         <Point>
           <X>723</X>

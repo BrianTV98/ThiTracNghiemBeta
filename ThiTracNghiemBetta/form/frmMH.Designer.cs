@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mAMHLabel;
-            System.Windows.Forms.Label tENMHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMH));
+            this.mAMHLabel = new System.Windows.Forms.Label();
+            this.tENMHLabel = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -51,12 +51,12 @@
             this.DataLayoutMH = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gIAOVIEN_DANGKYGridControl = new DevExpress.XtraGrid.GridControl();
-            this.fKGIAOVIENDANGKYMONHOC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new ThiTracNghiemBetta.TN_CSDLPTDataSet();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bODEGridControl = new DevExpress.XtraGrid.GridControl();
-            this.bODEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsBD = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new DevExpress.XtraEditors.GroupControl();
             this.txtTENMH = new DevExpress.XtraEditors.TextEdit();
@@ -79,20 +79,19 @@
             this.bANGDIEMTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.BANGDIEMTableAdapter();
             this.fKCHITIETBAITHIBANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
-            mAMHLabel = new System.Windows.Forms.Label();
-            tENMHLabel = new System.Windows.Forms.Label();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutMH)).BeginInit();
             this.DataLayoutMH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKGIAOVIENDANGKYMONHOC1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bODEGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -111,21 +110,21 @@
             // 
             // mAMHLabel
             // 
-            mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(197, 41);
-            mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(73, 24);
-            mAMHLabel.TabIndex = 0;
-            mAMHLabel.Text = "MAMH:";
+            this.mAMHLabel.AutoSize = true;
+            this.mAMHLabel.Location = new System.Drawing.Point(197, 41);
+            this.mAMHLabel.Name = "mAMHLabel";
+            this.mAMHLabel.Size = new System.Drawing.Size(73, 24);
+            this.mAMHLabel.TabIndex = 0;
+            this.mAMHLabel.Text = "MAMH:";
             // 
             // tENMHLabel
             // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(197, 106);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(82, 24);
-            tENMHLabel.TabIndex = 2;
-            tENMHLabel.Text = "TENMH:";
+            this.tENMHLabel.AutoSize = true;
+            this.tENMHLabel.Location = new System.Drawing.Point(197, 106);
+            this.tENMHLabel.Name = "tENMHLabel";
+            this.tENMHLabel.Size = new System.Drawing.Size(82, 24);
+            this.tENMHLabel.TabIndex = 2;
+            this.tENMHLabel.Text = "TENMH:";
             // 
             // barManager1
             // 
@@ -146,9 +145,10 @@
             this.btnPhucHoi,
             this.barButtonItem5,
             this.btnHuy,
-            this.barbtSave});
+            this.barbtSave,
+            this.btnThoat});
             this.barManager1.MainMenu = this.bar1;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -172,9 +172,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtDel),
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtEdit),
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtRefesh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnPhucHoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtSave)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar2.Text = "Tools";
             // 
             // barbtAdd
@@ -320,7 +320,7 @@
             // 
             // gIAOVIEN_DANGKYGridControl
             // 
-            this.gIAOVIEN_DANGKYGridControl.DataSource = this.fKGIAOVIENDANGKYMONHOC1BindingSource;
+            this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
             this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(630, 37);
             this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView3;
             this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
@@ -331,10 +331,10 @@
             this.gridView3});
             this.gIAOVIEN_DANGKYGridControl.Visible = false;
             // 
-            // fKGIAOVIENDANGKYMONHOC1BindingSource
+            // bdsGVDK
             // 
-            this.fKGIAOVIENDANGKYMONHOC1BindingSource.DataMember = "FK_GIAOVIEN_DANGKY_MONHOC1";
-            this.fKGIAOVIENDANGKYMONHOC1BindingSource.DataSource = this.bdsMH;
+            this.bdsGVDK.DataMember = "FK_GIAOVIEN_DANGKY_MONHOC1";
+            this.bdsGVDK.DataSource = this.bdsMH;
             // 
             // bdsMH
             // 
@@ -353,7 +353,7 @@
             // 
             // bODEGridControl
             // 
-            this.bODEGridControl.DataSource = this.bODEBindingSource;
+            this.bODEGridControl.DataSource = this.bdsBD;
             this.bODEGridControl.Location = new System.Drawing.Point(6, 37);
             this.bODEGridControl.MainView = this.gridView2;
             this.bODEGridControl.MenuManager = this.barManager1;
@@ -364,10 +364,10 @@
             this.gridView2});
             this.bODEGridControl.Visible = false;
             // 
-            // bODEBindingSource
+            // bdsBD
             // 
-            this.bODEBindingSource.DataMember = "FK_BODE_MONHOC";
-            this.bODEBindingSource.DataSource = this.bdsMH;
+            this.bdsBD.DataMember = "FK_BODE_MONHOC";
+            this.bdsBD.DataSource = this.bdsMH;
             // 
             // gridView2
             // 
@@ -376,9 +376,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(tENMHLabel);
+            this.groupBox1.Controls.Add(this.tENMHLabel);
             this.groupBox1.Controls.Add(this.txtTENMH);
-            this.groupBox1.Controls.Add(mAMHLabel);
+            this.groupBox1.Controls.Add(this.mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMAMH);
             this.groupBox1.Location = new System.Drawing.Point(12, 314);
             this.groupBox1.Name = "groupBox1";
@@ -543,6 +543,16 @@
             // 
             this.cHITIETBAITHITableAdapter.ClearBeforeFill = true;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 8;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            // 
             // frmMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -562,12 +572,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKGIAOVIENDANGKYMONHOC1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bODEGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bODEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -624,7 +634,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private TN_CSDLPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource bODEBindingSource;
+        private System.Windows.Forms.BindingSource bdsBD;
         private TN_CSDLPTDataSetTableAdapters.BODETableAdapter bODETableAdapter;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -632,10 +642,13 @@
         private TN_CSDLPTDataSetTableAdapters.BANGDIEMTableAdapter bANGDIEMTableAdapter;
         private System.Windows.Forms.BindingSource fKCHITIETBAITHIBANGDIEMBindingSource;
         private TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter cHITIETBAITHITableAdapter;
-        private System.Windows.Forms.BindingSource fKGIAOVIENDANGKYMONHOC1BindingSource;
+        private System.Windows.Forms.BindingSource bdsGVDK;
         private DevExpress.XtraGrid.GridControl gIAOVIEN_DANGKYGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.GridControl bODEGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.Label mAMHLabel;
+        private System.Windows.Forms.Label tENMHLabel;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
     }
 }
