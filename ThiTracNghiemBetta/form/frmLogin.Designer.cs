@@ -74,6 +74,7 @@
             this.cbbCoSo.Size = new System.Drawing.Size(326, 32);
             this.cbbCoSo.TabIndex = 1;
             this.cbbCoSo.ValueMember = "TENSERVER";
+            this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
             // 
             // groupBox1
             // 

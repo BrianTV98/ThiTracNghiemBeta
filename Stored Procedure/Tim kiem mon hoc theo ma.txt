@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIMKIEMMH]    Script Date: 12/17/2019 7:08:21 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIMKIEMMH]
+	-- Add the parameters for the stored procedure here
+	@MAMH NCHAR (5)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    SELECT * FROM dbo.MONHOC WHERE dbo.MONHOC.MAMH = @MAMH
+	
+END

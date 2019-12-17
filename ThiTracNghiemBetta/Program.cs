@@ -31,7 +31,9 @@ namespace ThiTracNghiemBetta
         public static int mChiNhanh = 0;
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
-        //public static frmMain frmChinh;
+        public static String Control = "";
+
+        public static frmMain frmMain;
 
         public static int KetNoi()
         {
@@ -92,9 +94,6 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            // Hien ServerConnection
-            // Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12
-            //ThiTracNghiemBetta.Properties.Settings.Default["TN_CSDLPTConnectionString"] = "Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=12";
             Application.Run(new frmLogin());
         }
     }

@@ -3479,7 +3479,7 @@ namespace ThiTracNghiemBetta {
             
             private global::System.Data.DataColumn columnTENMH;
             
-            private global::System.Data.DataColumn columnrowguid;
+            private global::System.Data.DataColumn columnXOA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3532,9 +3532,9 @@ namespace ThiTracNghiemBetta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn rowguidColumn {
+            public global::System.Data.DataColumn XOAColumn {
                 get {
-                    return this.columnrowguid;
+                    return this.columnXOA;
                 }
             }
             
@@ -3575,12 +3575,12 @@ namespace ThiTracNghiemBetta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MONHOCRow AddMONHOCRow(string MAMH, string TENMH, System.Guid rowguid) {
+            public MONHOCRow AddMONHOCRow(string MAMH, string TENMH, bool XOA) {
                 MONHOCRow rowMONHOCRow = ((MONHOCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MAMH,
                         TENMH,
-                        rowguid};
+                        XOA};
                 rowMONHOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMONHOCRow);
                 return rowMONHOCRow;
@@ -3612,7 +3612,7 @@ namespace ThiTracNghiemBetta {
             internal void InitVars() {
                 this.columnMAMH = base.Columns["MAMH"];
                 this.columnTENMH = base.Columns["TENMH"];
-                this.columnrowguid = base.Columns["rowguid"];
+                this.columnXOA = base.Columns["XOA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3622,15 +3622,14 @@ namespace ThiTracNghiemBetta {
                 base.Columns.Add(this.columnMAMH);
                 this.columnTENMH = new global::System.Data.DataColumn("TENMH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENMH);
-                this.columnrowguid = new global::System.Data.DataColumn("rowguid", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrowguid);
+                this.columnXOA = new global::System.Data.DataColumn("XOA", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnXOA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMAMH}, true));
                 this.columnMAMH.AllowDBNull = false;
                 this.columnMAMH.Unique = true;
                 this.columnMAMH.MaxLength = 5;
                 this.columnTENMH.MaxLength = 50;
-                this.columnrowguid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5717,12 +5716,17 @@ namespace ThiTracNghiemBetta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.Guid rowguid {
+            public bool XOA {
                 get {
-                    return ((global::System.Guid)(this[this.tableMONHOC.rowguidColumn]));
+                    try {
+                        return ((bool)(this[this.tableMONHOC.XOAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'XOA\' in table \'MONHOC\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableMONHOC.rowguidColumn] = value;
+                    this[this.tableMONHOC.XOAColumn] = value;
                 }
             }
             
@@ -5736,6 +5740,18 @@ namespace ThiTracNghiemBetta {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTENMHNull() {
                 this[this.tableMONHOC.TENMHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsXOANull() {
+                return this.IsNull(this.tableMONHOC.XOAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetXOANull() {
+                this[this.tableMONHOC.XOAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10151,38 +10167,40 @@ SELECT MALOP, TENLOP, MAKH, rowguid FROM LOP WHERE (MALOP = @MALOP)";
             tableMapping.DataSetTable = "MONHOC";
             tableMapping.ColumnMappings.Add("MAMH", "MAMH");
             tableMapping.ColumnMappings.Add("TENMH", "TENMH");
-            tableMapping.ColumnMappings.Add("rowguid", "rowguid");
+            tableMapping.ColumnMappings.Add("XOA", "XOA");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[MONHOC] WHERE (([MAMH] = @Original_MAMH) AND ((@IsNull_TENMH =" +
-                " 1 AND [TENMH] IS NULL) OR ([TENMH] = @Original_TENMH)) AND ([rowguid] = @Origin" +
-                "al_rowguid))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [MONHOC] WHERE (([MAMH] = @Original_MAMH) AND ((@IsNull_TENMH = 1 AND" +
+                " [TENMH] IS NULL) OR ([TENMH] = @Original_TENMH)) AND ((@IsNull_XOA = 1 AND [XOA" +
+                "] IS NULL) OR ([XOA] = @Original_XOA)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAMH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAMH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TENMH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENMH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_XOA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_XOA", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MONHOC] ([MAMH], [TENMH], [rowguid]) VALUES (@MAMH, @TENMH, @r" +
-                "owguid);\r\nSELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [MONHOC] ([MAMH], [TENMH], [XOA]) VALUES (@MAMH, @TENMH, @XOA);\r\nSELE" +
+                "CT MAMH, TENMH, XOA FROM MONHOC WHERE (MAMH = @MAMH)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAMH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENMH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@XOA", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MONHOC] SET [MAMH] = @MAMH, [TENMH] = @TENMH, [rowguid] = @rowguid WHERE (([MAMH] = @Original_MAMH) AND ((@IsNull_TENMH = 1 AND [TENMH] IS NULL) OR ([TENMH] = @Original_TENMH)) AND ([rowguid] = @Original_rowguid));
-SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [MONHOC] SET [MAMH] = @MAMH, [TENMH] = @TENMH, [XOA] = @XOA WHERE (([MAMH] = @Original_MAMH) AND ((@IsNull_TENMH = 1 AND [TENMH] IS NULL) OR ([TENMH] = @Original_TENMH)) AND ((@IsNull_XOA = 1 AND [XOA] IS NULL) OR ([XOA] = @Original_XOA)));
+SELECT MAMH, TENMH, XOA FROM MONHOC WHERE (MAMH = @MAMH)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAMH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TENMH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@XOA", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MAMH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MAMH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TENMH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TENMH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TENMH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rowguid", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rowguid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_XOA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_XOA", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XOA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10198,7 +10216,7 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MAMH, TENMH, rowguid FROM dbo.MONHOC";
+            this._commandCollection[0].CommandText = "SELECT MAMH, TENMH, XOA FROM MONHOC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10259,7 +10277,7 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_MAMH, string Original_TENMH, System.Guid Original_rowguid) {
+        public virtual int Delete(string Original_MAMH, string Original_TENMH, global::System.Nullable<bool> Original_XOA) {
             if ((Original_MAMH == null)) {
                 throw new global::System.ArgumentNullException("Original_MAMH");
             }
@@ -10274,7 +10292,14 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TENMH));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.Guid)(Original_rowguid));
+            if ((Original_XOA.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_XOA.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10295,7 +10320,7 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MAMH, string TENMH, System.Guid rowguid) {
+        public virtual int Insert(string MAMH, string TENMH, global::System.Nullable<bool> XOA) {
             if ((MAMH == null)) {
                 throw new global::System.ArgumentNullException("MAMH");
             }
@@ -10308,7 +10333,12 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TENMH));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.Guid)(rowguid));
+            if ((XOA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(XOA.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10329,7 +10359,7 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MAMH, string TENMH, System.Guid rowguid, string Original_MAMH, string Original_TENMH, System.Guid Original_rowguid) {
+        public virtual int Update(string MAMH, string TENMH, global::System.Nullable<bool> XOA, string Original_MAMH, string Original_TENMH, global::System.Nullable<bool> Original_XOA) {
             if ((MAMH == null)) {
                 throw new global::System.ArgumentNullException("MAMH");
             }
@@ -10342,7 +10372,12 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TENMH));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.Guid)(rowguid));
+            if ((XOA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(XOA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((Original_MAMH == null)) {
                 throw new global::System.ArgumentNullException("Original_MAMH");
             }
@@ -10357,7 +10392,14 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_TENMH));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.Guid)(Original_rowguid));
+            if ((Original_XOA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_XOA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10378,8 +10420,8 @@ SELECT MAMH, TENMH, rowguid FROM MONHOC WHERE (MAMH = @MAMH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TENMH, System.Guid rowguid, string Original_MAMH, string Original_TENMH, System.Guid Original_rowguid) {
-            return this.Update(Original_MAMH, TENMH, rowguid, Original_MAMH, Original_TENMH, Original_rowguid);
+        public virtual int Update(string TENMH, global::System.Nullable<bool> XOA, string Original_MAMH, string Original_TENMH, global::System.Nullable<bool> Original_XOA) {
+            return this.Update(Original_MAMH, TENMH, XOA, Original_MAMH, Original_TENMH, Original_XOA);
         }
     }
     

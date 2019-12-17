@@ -26,7 +26,8 @@ namespace ThiTracNghiemBetta.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-HIEU\\HIEU1;Initial Catalog=TN_CSDLPT;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-HLI8HSQ;Initial Catalog=TN_CSDLPT;Persist Security Info=True;" +
+            "User ID=sa;Password=12     ")]
         public string TN_CSDLPTConnectionString {
             get {
                 return ((string)(this["TN_CSDLPTConnectionString"]));
