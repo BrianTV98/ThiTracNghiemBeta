@@ -44,6 +44,7 @@ namespace ThiTracNghiemBetta
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
                       Program.database + ";User ID=" +
                       Program.mlogin + ";password=" + Program.password;
+
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
                 return 1;

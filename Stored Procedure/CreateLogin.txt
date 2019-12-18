@@ -34,7 +34,7 @@ AS
 	IF @ROLE= 'GIANGVIEN'
     EXEC sp_addsrvrolemember @LGNAME, 'public'
 	
-	IF @ROLE= 'GIANGVIEN'
+	IF @ROLE= 'SINHVIEN'
     EXEC sp_addsrvrolemember @LGNAME, 'public'
 	
 RETURN 0  -- THANH CONG

@@ -1585,17 +1585,6 @@
         <para>The Report Wizard lists the data connections available in the application&#39;s configuration file.</para>
       </summary>
     </member>
-    <member name="T:DevExpress.Data.Entity.IConnectionConfigProvider">
-      <summary>
-        <para>Provides the path to the file that stores connection strings.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Data.Entity.IConnectionConfigProvider.GetConnectionConfigPath">
-      <summary>
-        <para>Returns the full path to the file that stores connection strings.</para>
-      </summary>
-      <returns>The full path to the file that stores connection strings</returns>
-    </member>
     <member name="T:DevExpress.Data.Entity.IConnectionStringInfo">
       <summary>
         <para>If implemented, provides information about a connection string.</para>
@@ -1897,30 +1886,6 @@
       <param name="type"></param>
       <param name="aggregatedExpression"></param>
       <returns></returns>
-    </member>
-    <member name="T:DevExpress.Data.Filtering.BaseNodeEventArgs">
-      <summary>
-        <para>The base class that provides data for a Filter Control&#39;s events.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Data.Filtering.BaseNodeEventArgs.#ctor(System.String,System.Type)">
-      <summary>
-        <para>Initializes a new instance of the class.</para>
-      </summary>
-      <param name="propertyName">The value used to initialize the PropertyName property.</param>
-      <param name="propertyType">The value used to initialize the PropertyType property.</param>
-    </member>
-    <member name="P:DevExpress.Data.Filtering.BaseNodeEventArgs.PropertyName">
-      <summary>
-        <para>Gets the name of the current property (column/field).</para>
-      </summary>
-      <value>The property name (column/field name).</value>
-    </member>
-    <member name="P:DevExpress.Data.Filtering.BaseNodeEventArgs.PropertyType">
-      <summary>
-        <para>Gets the type of the current property (column/field).</para>
-      </summary>
-      <value>The type of the current property (column/field).</value>
     </member>
     <member name="T:DevExpress.Data.Filtering.BetweenOperator">
       <summary>
@@ -4327,7 +4292,7 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>When implemented by a custom function, creates a LINQ expression.</para>
       </summary>
-      <param name="caseSensitive"></param>
+      <param name="caseSensetive">true, if the custom function is case-sensitive; otherwise, false.</param>
       <param name="operands">An array of Expression objects specifying function operands (parameters).</param>
       <returns>An Expression object that specifies the LINQ expression.</returns>
     </member>
@@ -10641,179 +10606,179 @@ Supported in Excel 2010 and higher.</para>
     </member>
     <member name="N:DevExpress.Security.Resources">
       <summary>
-        <para>Contains classes that allow you to specify security access settings.</para>
+        <para></para>
       </summary>
     </member>
     <member name="T:DevExpress.Security.Resources.AccessPermission">
       <summary>
-        <para>Specifies access permissions.</para>
+        <para></para>
       </summary>
     </member>
     <member name="F:DevExpress.Security.Resources.AccessPermission.Allow">
       <summary>
-        <para>Allows access.</para>
+        <para></para>
       </summary>
     </member>
     <member name="F:DevExpress.Security.Resources.AccessPermission.Deny">
       <summary>
-        <para>Denies access.</para>
+        <para></para>
       </summary>
     </member>
     <member name="T:DevExpress.Security.Resources.AccessSettings">
       <summary>
-        <para>Allows you to restrict external resource locations for security reasons.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.AccessSettings.#ctor">
       <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.Security.Resources.AccessSettings"/> class.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.AccessSettings.CheckRules``1(System.Func{``0,System.Boolean})">
       <summary>
-        <para>For internal use.</para>
+        <para></para>
       </summary>
       <param name="check"></param>
       <returns></returns>
     </member>
     <member name="P:DevExpress.Security.Resources.AccessSettings.DataResources">
       <summary>
-        <para>Provides access to the <see cref="T:DevExpress.Security.Resources.AccessSettings"/> class&#39;s instance that allows you to specify data resource access settings.</para>
+        <para></para>
       </summary>
-      <value>The object that allows you to set access rules to data resources.</value>
+      <value></value>
     </member>
     <member name="P:DevExpress.Security.Resources.AccessSettings.ReportingSpecificResources">
       <summary>
-        <para>Provides access to the <see cref="T:DevExpress.Security.Resources.AccessSettings"/> class&#39;s instance that allows you to specify Reporting-specific resource access settings.</para>
+        <para></para>
       </summary>
-      <value>The object that allows you to set Reporting-specific resource access rules.</value>
+      <value></value>
     </member>
     <member name="M:DevExpress.Security.Resources.AccessSettings.SetRules(DevExpress.Security.Resources.IAccessRule[])">
       <summary>
-        <para>Sets resource access rules. Raises an exception if this method is called for the second time while the application is running.</para>
+        <para></para>
       </summary>
-      <param name="rules">An array of access rules.</param>
+      <param name="rules"></param>
     </member>
     <member name="P:DevExpress.Security.Resources.AccessSettings.StaticResources">
       <summary>
-        <para>Provides access to the <see cref="T:DevExpress.Security.Resources.AccessSettings"/> class&#39;s instance that allows you to specify static resource access settings.</para>
+        <para></para>
       </summary>
-      <value>The object that allows you to set static resource access rules.</value>
+      <value></value>
     </member>
     <member name="M:DevExpress.Security.Resources.AccessSettings.TrySetRules(DevExpress.Security.Resources.IAccessRule[])">
       <summary>
-        <para>Sets resource access rules.</para>
+        <para></para>
       </summary>
-      <param name="rules">An array of access rules.</param>
-      <returns>true, if the specified rule collection is registered successfully. Otherwise, false.</returns>
+      <param name="rules"></param>
+      <returns></returns>
     </member>
     <member name="T:DevExpress.Security.Resources.CustomAccessRule">
       <summary>
-        <para>A rule that uses a custom logic to determine whether to allow or deny access to a URL/file directory.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.CustomAccessRule.#ctor(DevExpress.Security.Resources.AccessPermission)">
       <summary>
-        <para>Creates an instance of the CustomAccessRule class.</para>
+        <para></para>
       </summary>
-      <param name="permission">The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value that specifies whether the created rule allows or denies access.</param>
+      <param name="permission"></param>
     </member>
     <member name="E:DevExpress.Security.Resources.CustomAccessRule.CheckUri">
       <summary>
-        <para>Occurs when URI accessibility is checked.</para>
+        <para></para>
       </summary>
     </member>
     <member name="T:DevExpress.Security.Resources.DirectoryAccessRule">
       <summary>
-        <para>A rule that allows or denies access to a file directory.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.DirectoryAccessRule.#ctor(DevExpress.Security.Resources.AccessPermission)">
       <summary>
-        <para>Creates an instance of the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> that provides the specified access permission to file directories.</para>
+        <para></para>
       </summary>
-      <param name="permission">The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value that specifies whether the created rule allows or denies access to file directories.</param>
+      <param name="permission"></param>
     </member>
     <member name="M:DevExpress.Security.Resources.DirectoryAccessRule.#ctor(DevExpress.Security.Resources.AccessPermission,System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> type rule that provides the specified access permission to the specified file directories.</para>
+        <para></para>
       </summary>
-      <param name="permission">The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value that specifies whether the created rule allows or denies access to the specified file directories.</param>
-      <param name="directories">An array of file directories that the created rule allows or denies.</param>
+      <param name="permission"></param>
+      <param name="directories"></param>
     </member>
     <member name="M:DevExpress.Security.Resources.DirectoryAccessRule.Allow(System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> that allows resource loading only from the file directories passed as the parameter.</para>
+        <para></para>
       </summary>
-      <param name="directories">An array of file directories that this rule allows. Other directories are considered as denied in this application.</param>
-      <returns>An instance of the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> class.</returns>
+      <param name="directories"></param>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.Security.Resources.DirectoryAccessRule.Deny(System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> that denies resource load from the file directories passed as the parameter.</para>
+        <para></para>
       </summary>
-      <param name="directories">An array of file directories that this rule denies. Other directories are considered as allowed in this application.</param>
-      <returns>An instance of the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> class.</returns>
+      <param name="directories"></param>
+      <returns></returns>
     </member>
     <member name="T:DevExpress.Security.Resources.IAccessRule">
       <summary>
-        <para>A rule that allows or denies access.</para>
+        <para></para>
       </summary>
     </member>
     <member name="P:DevExpress.Security.Resources.IAccessRule.Permission">
       <summary>
-        <para>Indicates whether the rule allows or denies access.</para>
+        <para></para>
       </summary>
-      <value>The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value.</value>
+      <value></value>
     </member>
     <member name="T:DevExpress.Security.Resources.IUriAccessRule">
       <summary>
-        <para>A rule that allows or denies access to a URI.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.IUriAccessRule.CheckUri(System.Uri)">
       <summary>
-        <para>Determines whether the rule allows resource load from the specified URI.</para>
+        <para></para>
       </summary>
-      <param name="uri">The URI whose accessibility this method checks.</param>
-      <returns>true, if the application can load resources from the specified URI. Otherwise, false.</returns>
+      <param name="uri"></param>
+      <returns></returns>
     </member>
     <member name="T:DevExpress.Security.Resources.UriAccessRule">
       <summary>
-        <para>A base class for the <see cref="T:DevExpress.Security.Resources.DirectoryAccessRule"/> and <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> classes.</para>
+        <para></para>
       </summary>
     </member>
     <member name="T:DevExpress.Security.Resources.UrlAccessRule">
       <summary>
-        <para>A rule that allows or denies access to a URL.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.Security.Resources.UrlAccessRule.#ctor(DevExpress.Security.Resources.AccessPermission)">
       <summary>
-        <para>Creates an instance of the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> that provides the specified access permission to URLs.</para>
+        <para></para>
       </summary>
-      <param name="permission">The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value that specifies whether the created rule allows or denies access to URls.</param>
+      <param name="permission"></param>
     </member>
     <member name="M:DevExpress.Security.Resources.UrlAccessRule.#ctor(DevExpress.Security.Resources.AccessPermission,System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> that provides the specified access permission to specified URLs.</para>
+        <para></para>
       </summary>
-      <param name="permission">The <see cref="T:DevExpress.Security.Resources.AccessPermission"/> enumeration value that specifies whether the created rule allows or denies access to the specified URls.</param>
-      <param name="urls">An array of Urls that the created rule allows or denies.</param>
+      <param name="permission"></param>
+      <param name="urls"></param>
     </member>
     <member name="M:DevExpress.Security.Resources.UrlAccessRule.Allow(System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> rule that allows resource loading only from the URLs passed as the parameter.</para>
+        <para></para>
       </summary>
-      <param name="urls">An array of URLs that this rule allows. Other URLs are considered as denied in this application.</param>
-      <returns>An instance of the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> class.</returns>
+      <param name="urls"></param>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.Security.Resources.UrlAccessRule.Deny(System.String[])">
       <summary>
-        <para>Creates the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> that denies resource loading from the URLs passed as the parameter.</para>
+        <para></para>
       </summary>
-      <param name="urls">An array of URLs that this rule denies. Other URLs are considered as allowed in this application.</param>
-      <returns>An instance of the <see cref="T:DevExpress.Security.Resources.UrlAccessRule"/> class.</returns>
+      <param name="urls"></param>
+      <returns></returns>
     </member>
     <member name="N:DevExpress.Services">
       <summary>
@@ -13125,161 +13090,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <param name="obj">The object to serialize.</param>
       <returns>A <see cref="T:System.String"/> that represents the serialized object.</returns>
     </member>
-    <member name="N:DevExpress.Utils.Svg">
-      <summary>
-        <para>Provides an API that supports vector images.</para>
-      </summary>
-    </member>
-    <member name="T:DevExpress.Utils.Svg.SvgImage">
-      <summary>
-        <para>A vector image.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.#ctor">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.#ctor(System.IO.Stream)">
-      <summary>
-        <para>Creates a vector image from the given stream.</para>
-      </summary>
-      <param name="stream">A stream from which the vector icon should be created.</param>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.#ctor(System.Type,System.String)">
-      <summary>
-        <para>Creates a vector icon from a resource.</para>
-      </summary>
-      <param name="type">A Type of resource assembly.</param>
-      <param name="resource">Image name.</param>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.Clone">
-      <summary>
-        <para>Copies this vector icon.</para>
-      </summary>
-      <returns>The vector image copy.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.Clone(System.Action{DevExpress.Utils.Svg.SvgElement,System.Collections.Hashtable})">
-      <summary>
-        <para>You cannot modify SvgImage objects directly. Instead, you need to create their copies and modify them in process.</para>
-      </summary>
-      <param name="updateStyle">A Delegate that modifies the icon.</param>
-      <returns>New vector image copy.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.Create(DevExpress.Utils.Svg.SvgRoot)">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <param name="root"></param>
-      <returns></returns>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.DefaultStyle">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Elements">
-      <summary>
-        <para>Provides access to elements (primitives) from which this vector image consists.</para>
-      </summary>
-      <value>A List of vector image elements.</value>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.FromFile(System.String)">
-      <summary>
-        <para>Creates a new SvgImage object from a vector image on local storage.</para>
-      </summary>
-      <param name="path">A path to the image file.</param>
-      <returns>The SvgImage object created from the given file.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.FromResources(System.String,System.Reflection.Assembly)">
-      <summary>
-        <para>Creates a new SvgImage object from a vector image stored in project resources.</para>
-      </summary>
-      <param name="name">The name an icon has in resources.</param>
-      <param name="asm">The assembly name.</param>
-      <returns>A newly created SvgImage.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.FromStream(System.IO.Stream)">
-      <summary>
-        <para>Creates a new SvgImage object from a vector image stored in a stream.</para>
-      </summary>
-      <param name="stream">The stream that stores the image.</param>
-      <returns>A newly created SvgImage object.</returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.GetTransform">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <returns></returns>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.GetViewBoxTransform">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <returns></returns>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Height">
-      <summary>
-        <para>Returns the image height.</para>
-      </summary>
-      <value>The image height.</value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.OffsetX">
-      <summary>
-        <para>Returns the horizontal image offset.</para>
-      </summary>
-      <value>The horizontal image offset.</value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.OffsetY">
-      <summary>
-        <para>Returns the vertical image offset.</para>
-      </summary>
-      <value>The vertical image offset.</value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Root">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.Save(System.String)">
-      <summary>
-        <para>Saves this vector image to the specific file.</para>
-      </summary>
-      <param name="filePath">A path to the file where this vector icon should be stored.</param>
-    </member>
-    <member name="M:DevExpress.Utils.Svg.SvgImage.SetTransform(System.Drawing.Drawing2D.Matrix)">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <param name="transform"></param>
-      <returns></returns>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Styles">
-      <summary>
-        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Tag">
-      <summary>
-        <para>Gets or sets a unique image identifier.</para>
-      </summary>
-      <value>An Object that identifies this image.</value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.UnknownTags">
-      <summary>
-        <para>Returns the collection of image tags that are not supported by DevExpress controls.</para>
-      </summary>
-      <value>Stores unsupported image tags.</value>
-    </member>
-    <member name="P:DevExpress.Utils.Svg.SvgImage.Width">
-      <summary>
-        <para>Returns the image width.</para>
-      </summary>
-      <value>The image width.</value>
-    </member>
     <member name="T:DevExpress.Utils.UrlAccessSecurityLevel">
       <summary>
         <para>Lists the values specifying whether a report control allows loading images using the &quot;file://&quot; protocol.</para>
@@ -13561,9 +13371,9 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
     </member>
     <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.SchedulerAppearanceStyle">
       <summary>
-        <para>Gets or sets the SchedulerControl UI style.</para>
+        <para></para>
       </summary>
-      <value>By default, Outlook2019.</value>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseDateNavigatorInDateEdit">
       <summary>
@@ -13576,12 +13386,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
         <para>Gets or sets whether the Between Dates and On Dates date operators are used.</para>
       </summary>
       <value>true, to use the Between Dates and On Dates date operators; otherwise, false.</value>
-    </member>
-    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyDeleteButtonInButtonEdit">
-      <summary>
-        <para>Gets or sets whether to use the legacy Null Value button in the ButtonEdit editor and its descendants.</para>
-      </summary>
-      <value>true, to use the legacy Null Value button; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyFilterEditor">
       <summary>
@@ -14335,7 +14139,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para></para>
       </summary>
-      <param name="doNotCreateIfFirstTableNotExist"></param>
+      <param name="dontCreateIfFirstTableNotExist"></param>
       <param name="tables"></param>
       <returns></returns>
     </member>
@@ -15463,14 +15267,14 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       </summary>
       <param name="cookie"></param>
       <param name="tables"></param>
-      <param name="doNotCreateIfFirstTableNotExist"></param>
+      <param name="dontCreateIfFirstTableNotExist"></param>
       <returns></returns>
     </member>
     <member name="M:DevExpress.Xpo.DB.Helpers.DataCacheBase.UpdateSchema(System.Boolean,DevExpress.Xpo.DB.DBTable[])">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <param name="doNotCreateIfFirstTableNotExist"></param>
+      <param name="dontCreateIfFirstTableNotExist"></param>
       <param name="tables"></param>
       <returns></returns>
     </member>
@@ -15741,7 +15545,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       </summary>
       <param name="cookie">A Root element&#39;s state stored by a specific cache Node.</param>
       <param name="tables">An array of tables whose structure should be saved in the cached data store.</param>
-      <param name="doNotCreateIfFirstTableNotExist">true if the schema should not be created if the table that corresponds to the first item in the tables array doesn&#39;t exist in the cached data store; otherwise, false.</param>
+      <param name="dontCreateIfFirstTableNotExist">true if the schema should not be created if the table that corresponds to the first item in the tables array doesn&#39;t exist in the cached data store; otherwise, false.</param>
       <returns>An <see cref="T:DevExpress.Xpo.DB.Helpers.DataCacheUpdateSchemaResult"/> denoting the result of the update operation.</returns>
     </member>
     <member name="T:DevExpress.Xpo.DB.IDataStore">
@@ -15773,7 +15577,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>When implemented by a class, updates the storage schema according to the specified class descriptions.</para>
       </summary>
-      <param name="doNotCreateIfFirstTableNotExist">true if the schema should not be created if the table that corresponds to the first item in the tables array doesn&#39;t exist in the data store.</param>
+      <param name="dontCreateIfFirstTableNotExist">true if the schema should not be created if the table that corresponds to the first item in the tables array doesn&#39;t exist in the data store.</param>
       <param name="tables">An array of tables whose structure should be saved in the data store.</param>
       <returns>An <see cref="T:DevExpress.Xpo.DB.UpdateSchemaResult"/> value that specifies the result of the update operation.</returns>
     </member>
@@ -17138,7 +16942,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
     </member>
     <member name="F:DevExpress.XtraGrid.ColumnGroupInterval.DateRange">
       <summary>
-        <para>This option is in effect for columns that store date/time values. Rows are combined into the following non-overlapping groups according to their date value as compared with today&#39;s date:  &quot;Beyond Next Month&quot;,  &quot;Next Month&quot;,  &quot;Later this Month&quot;,  &quot;Three Weeks Away&quot;,  &quot;Two Weeks Away&quot;,  &quot;Next Week&quot;,  &quot;Today&quot;,  &quot;Tomorrow&quot;,  &quot;Yesterday&quot;,  &quot;Sunday&quot;,  &quot;Monday&quot;,  &quot;Tuesday&quot;,  &quot;Wednesday&quot;,  &quot;Thursday&quot;,  &quot;Friday&quot;,  &quot;Saturday&quot;,  &quot;Last Week&quot;,  &quot;Two Weeks Ago&quot;,  &quot;Three Weeks Ago&quot;,  &quot;Earlier this Month&quot;,  &quot;Last Month&quot;,  &quot;Older&quot;.</para>
+        <para>This option is in effect only for columns that store date/time values. Rows are grouped into the following groups according to their date value as compared with the current system date: &quot;Today&quot;, &quot;Tomorrow&quot;, &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Next Week&quot;, &quot;Two Weeks Away&quot;, &quot;Three Weeks Away&quot;, &quot;Next Month&quot;, &quot;Beyond Next Month&quot;, &quot;Yesterday&quot;, &quot;Last Week&quot;, &quot;Two Weeks Ago&quot;, &quot;Three Weeks Ago&quot;, &quot;Last Month&quot;, &quot;Older&quot;.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraGrid.ColumnGroupInterval.DateYear">
@@ -17628,12 +17432,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
         <para>Gets or sets the string value used to support serialization of the <see cref="P:DevExpress.XtraPrinting.BrickStyle.BorderWidth"/> property.</para>
       </summary>
       <value>A <see cref="T:System.String"/> value.</value>
-    </member>
-    <member name="M:DevExpress.XtraPrinting.BrickStyle.ChangeAlignment(DevExpress.XtraPrinting.TextAlignment)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="alignment"></param>
     </member>
     <member name="M:DevExpress.XtraPrinting.BrickStyle.Clone">
       <summary>
@@ -19615,56 +19413,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
         <para>&quot;Select a folder to save the exported document to:&quot;</para>
       </summary>
     </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_Alignment">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_BrushColor">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_BrushOptions">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_BrushSize">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_ChooseImage">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_Clear">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_LoadImage">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_Reset">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_SizeMode">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ImageEditingFieldEditor_SizeModeAndAlignment">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Margin_BottomMargin">
       <summary>
         <para>&quot;Bottom Margin&quot;</para>
@@ -20200,7 +19948,7 @@ Otherwise, the closest matching image side (height or width) will be sized to th
         <para>&quot;Reset&quot;</para>
       </summary>
     </member>
-    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ParametersRequest_SelectedMultiValuesFormat">
+    <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.ParametersRequest_SomeItemsMultiValuesFormat">
       <summary>
         <para></para>
       </summary>
