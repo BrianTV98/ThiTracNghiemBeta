@@ -1,0 +1,4 @@
+﻿user hỗ trợ kết nối cần phải add thêm quyền tạo tài khoản  để support chức năng tạo nhóm trường
+
+EXEC sp_addsrvrolemember HTKN,'SecurityAdmin'
+EXEC sp_addsrvrolemember HTKN, 'processadmin'
