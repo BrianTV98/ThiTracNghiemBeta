@@ -56,9 +56,6 @@ namespace ThiTracNghiemBetta.form
 
         private void reloadData()
         {
-            this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIAOVIENTableAdapter.Fill(this.tN_CSDLPTDataSet.GIAOVIEN);
-
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.v_DS_PHANMANHTableAdapter.Fill(this.tN_CSDLPTDataSet.V_DS_PHANMANH);
@@ -89,7 +86,7 @@ namespace ThiTracNghiemBetta.form
 
         }
 
-        private void gIAOVIENGridControl1_Click(object sender, EventArgs e)
+        private void barbtSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

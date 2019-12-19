@@ -32,12 +32,11 @@
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKHOA));
+            System.Windows.Forms.Label mACSLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtDel = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barbtReset = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtSave = new DevExpress.XtraBars.BarButtonItem();
@@ -47,6 +46,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barbtDel = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barListItem1 = new DevExpress.XtraBars.BarListItem();
             this.groupBox1 = new DevExpress.XtraEditors.PanelControl();
             this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,6 +57,7 @@
             this.tENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCS = new System.Windows.Forms.ComboBox();
@@ -64,10 +67,10 @@
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.bar6 = new DevExpress.XtraBars.Bar();
@@ -87,17 +90,12 @@
             this.v_DS_PHANMANHTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.lOPTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
             this.gIAOVIENTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.GIAOVIENTableAdapter();
-            this.barListItem1 = new DevExpress.XtraBars.BarListItem();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gIAOVIENGridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.mACSTextEdit = new DevExpress.XtraEditors.TextEdit();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
+            mACSLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
@@ -108,6 +106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource1)).BeginInit();
@@ -116,17 +116,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mACSTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAKHLabel
@@ -201,18 +195,6 @@
             this.btnAdd.Id = 0;
             this.btnAdd.Name = "btnAdd";
             // 
-            // barbtDel
-            // 
-            this.barbtDel.Caption = "Xóa";
-            this.barbtDel.Id = 1;
-            this.barbtDel.Name = "barbtDel";
-            // 
-            // barbtEdit
-            // 
-            this.barbtEdit.Caption = "Sửa";
-            this.barbtEdit.Id = 2;
-            this.barbtEdit.Name = "barbtEdit";
-            // 
             // barbtReset
             // 
             this.barbtReset.Caption = "Làm mới";
@@ -230,6 +212,7 @@
             this.barbtSave.Caption = "Lưu";
             this.barbtSave.Id = 5;
             this.barbtSave.Name = "barbtSave";
+            this.barbtSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtSave_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -255,7 +238,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1654, 73);
+            this.barDockControlTop.Size = new System.Drawing.Size(2014, 73);
             // 
             // barDockControlBottom
             // 
@@ -263,7 +246,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 1538);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1654, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2014, 26);
             // 
             // barDockControlLeft
             // 
@@ -277,16 +260,34 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1654, 73);
+            this.barDockControlRight.Location = new System.Drawing.Point(2014, 73);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1465);
+            // 
+            // barbtDel
+            // 
+            this.barbtDel.Caption = "Xóa";
+            this.barbtDel.Id = 1;
+            this.barbtDel.Name = "barbtDel";
+            // 
+            // barbtEdit
+            // 
+            this.barbtEdit.Caption = "Sửa";
+            this.barbtEdit.Id = 2;
+            this.barbtEdit.Name = "barbtEdit";
+            // 
+            // barListItem1
+            // 
+            this.barListItem1.Caption = "barListItem1";
+            this.barListItem1.Id = 8;
+            this.barListItem1.Name = "barListItem1";
             // 
             // groupBox1
             // 
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 1389);
+            this.groupBox1.Location = new System.Drawing.Point(0, 1528);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1654, 149);
+            this.groupBox1.Size = new System.Drawing.Size(2014, 10);
             this.groupBox1.TabIndex = 4;
             // 
             // gIAOVIENBindingSource
@@ -329,7 +330,6 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.groupControl2);
             this.dataLayoutControl1.Controls.Add(this.groupControl1);
             this.dataLayoutControl1.Controls.Add(this.groupControl3);
             this.dataLayoutControl1.Controls.Add(this.kHOAGridControl);
@@ -337,18 +337,33 @@
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 73);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1654, 1316);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(2014, 1455);
             this.dataLayoutControl1.TabIndex = 5;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(mACSLabel);
+            this.groupControl1.Controls.Add(this.mACSTextEdit);
+            this.groupControl1.Controls.Add(tENKHLabel);
+            this.groupControl1.Controls.Add(this.mAKHTextEdit);
+            this.groupControl1.Controls.Add(this.tENKHTextEdit);
+            this.groupControl1.Controls.Add(mAKHLabel);
+            this.groupControl1.Location = new System.Drawing.Point(12, 545);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(1990, 898);
+            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Text = "groupControl1";
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.label1);
             this.groupControl3.Controls.Add(this.cmbCS);
-            this.groupControl3.Location = new System.Drawing.Point(12, 506);
+            this.groupControl3.Location = new System.Drawing.Point(12, 400);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.ShowCaption = false;
-            this.groupControl3.Size = new System.Drawing.Size(1630, 195);
+            this.groupControl3.Size = new System.Drawing.Size(1990, 141);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "groupControl3";
             this.groupControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl3_Paint);
@@ -386,7 +401,7 @@
             this.kHOAGridControl.MainView = this.gridView1;
             this.kHOAGridControl.MenuManager = this.barManager1;
             this.kHOAGridControl.Name = "kHOAGridControl";
-            this.kHOAGridControl.Size = new System.Drawing.Size(1630, 490);
+            this.kHOAGridControl.Size = new System.Drawing.Size(1990, 384);
             this.kHOAGridControl.TabIndex = 0;
             this.kHOAGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -396,8 +411,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKH,
             this.colTENKH,
-            this.colMACS,
-            this.colrowguid});
+            this.colMACS});
             this.gridView1.DetailHeight = 365;
             this.gridView1.GridControl = this.kHOAGridControl;
             this.gridView1.Name = "gridView1";
@@ -429,15 +443,6 @@
             this.colMACS.VisibleIndex = 2;
             this.colMACS.Width = 144;
             // 
-            // colrowguid
-            // 
-            this.colrowguid.FieldName = "rowguid";
-            this.colrowguid.MinWidth = 38;
-            this.colrowguid.Name = "colrowguid";
-            this.colrowguid.Visible = true;
-            this.colrowguid.VisibleIndex = 3;
-            this.colrowguid.Width = 144;
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -445,10 +450,9 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem3,
-            this.layoutControlItem2,
-            this.layoutControlItem4});
+            this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1654, 1316);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(2014, 1455);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -456,18 +460,27 @@
             this.layoutControlItem1.Control = this.kHOAGridControl;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1634, 494);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1994, 388);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.groupControl3;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 494);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 388);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1634, 199);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1994, 145);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.groupControl1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 533);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1994, 902);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // bar4
             // 
@@ -616,52 +629,6 @@
             // 
             this.gIAOVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // barListItem1
-            // 
-            this.barListItem1.Caption = "barListItem1";
-            this.barListItem1.Id = 8;
-            this.barListItem1.Name = "barListItem1";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(tENKHLabel);
-            this.groupControl1.Controls.Add(this.mAKHTextEdit);
-            this.groupControl1.Controls.Add(this.tENKHTextEdit);
-            this.groupControl1.Controls.Add(mAKHLabel);
-            this.groupControl1.Location = new System.Drawing.Point(12, 705);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(1630, 244);
-            this.groupControl1.TabIndex = 4;
-            this.groupControl1.Text = "groupControl1";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.groupControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 693);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1634, 248);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.gIAOVIENGridControl1);
-            this.groupControl2.Location = new System.Drawing.Point(12, 953);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1630, 351);
-            this.groupControl2.TabIndex = 5;
-            this.groupControl2.Text = "groupControl2";
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.groupControl2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 941);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1634, 355);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
             // gIAOVIENGridControl
             // 
             this.gIAOVIENGridControl.DataSource = this.gIAOVIENBindingSource;
@@ -679,30 +646,31 @@
             this.gridView2.GridControl = this.gIAOVIENGridControl;
             this.gridView2.Name = "gridView2";
             // 
-            // gIAOVIENGridControl1
+            // mACSLabel
             // 
-            this.gIAOVIENGridControl1.DataSource = this.gIAOVIENBindingSource;
-            this.gIAOVIENGridControl1.Location = new System.Drawing.Point(6, 37);
-            this.gIAOVIENGridControl1.MainView = this.gridView3;
-            this.gIAOVIENGridControl1.MenuManager = this.barManager1;
-            this.gIAOVIENGridControl1.Name = "gIAOVIENGridControl1";
-            this.gIAOVIENGridControl1.Size = new System.Drawing.Size(1618, 314);
-            this.gIAOVIENGridControl1.TabIndex = 0;
-            this.gIAOVIENGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            this.gIAOVIENGridControl1.Click += new System.EventHandler(this.gIAOVIENGridControl1_Click);
+            mACSLabel.AutoSize = true;
+            mACSLabel.Location = new System.Drawing.Point(72, 213);
+            mACSLabel.Name = "mACSLabel";
+            mACSLabel.Size = new System.Drawing.Size(67, 24);
+            mACSLabel.TabIndex = 4;
+            mACSLabel.Text = "MACS:";
             // 
-            // gridView3
+            // mACSTextEdit
             // 
-            this.gridView3.GridControl = this.gIAOVIENGridControl1;
-            this.gridView3.Name = "gridView3";
+            this.mACSTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MACS", true));
+            this.mACSTextEdit.Enabled = false;
+            this.mACSTextEdit.Location = new System.Drawing.Point(219, 201);
+            this.mACSTextEdit.MenuManager = this.barManager1;
+            this.mACSTextEdit.Name = "mACSTextEdit";
+            this.mACSTextEdit.Size = new System.Drawing.Size(175, 36);
+            this.mACSTextEdit.TabIndex = 5;
             // 
             // frmKHOA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1654, 1564);
+            this.ClientSize = new System.Drawing.Size(2014, 1564);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.barDockControlLeft);
@@ -723,6 +691,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
@@ -732,18 +703,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mACSTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -792,7 +756,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKH;
         private DevExpress.XtraGrid.Columns.GridColumn colMACS;
-        private DevExpress.XtraGrid.Columns.GridColumn colrowguid;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit tENKHTextEdit;
@@ -807,13 +770,10 @@
         private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
         private TN_CSDLPTDataSetTableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
         private DevExpress.XtraBars.BarListItem barListItem1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraGrid.GridControl gIAOVIENGridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.TextEdit mACSTextEdit;
     }
 }
