@@ -263,3 +263,5 @@ E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.dll
 E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.SqlServer.dll
 E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.xml
 E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.SqlServer.xml
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmRegisterUsers.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.register.loginAuthentication.resources

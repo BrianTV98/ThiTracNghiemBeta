@@ -21,7 +21,7 @@ namespace ThiTracNghiemBetta
         public static String password = "";
 
         public static String database = "TN_CSDLPT";
-        public static String remotelogin = "SUPPORT_CONECT";
+        public static String remotelogin = "SUPPORT_CONECT"; //HTKN 
         public static String remotepassword = "123456";
         public static String mloginDN = "";
         public static String passwordDN = "";
@@ -64,6 +64,7 @@ namespace ThiTracNghiemBetta
             try
             {
                 myreader = sqlcmd.ExecuteReader(); return myreader;
+                
 
             }
             catch (SqlException ex)
@@ -73,6 +74,8 @@ namespace ThiTracNghiemBetta
                 return null;
             }
         }
+
+       
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
