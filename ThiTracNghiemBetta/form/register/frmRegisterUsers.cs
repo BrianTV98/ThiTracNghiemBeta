@@ -87,19 +87,10 @@ namespace ThiTracNghiemBetta.form
                 return;
             }
             txt_infor.Text = "";
-            if (!cb_nhom.SelectedItem.Equals("TRUONG"))
-            {
                 String strlenh = "EXEC dbo.SP_TAOLOGIN '" + txt_login.Text + "', '" + txt_password.Text + "','" + cb_MAGV.SelectedItem + "', '" + cb_nhom.SelectedItem + "'";
                 /*DialogResult dialogResult = MessageBox.Show(strlenh, "", MessageBoxButtons.OK);*/
-                int result = ExceSP(strlenh);
-            }
-            else // neu la nhom truong thi phai sang server ben kia tao nua
-            {
-                // Tao o Server Hien Tai
-                String strlenh = "EXEC dbo.SP_TAOLOGIN '" + txt_login.Text + "', '" + txt_password.Text + "','" + cb_MAGV.SelectedItem + "', '" + cb_nhom.SelectedItem + "'";
-                /*DialogResult dialogResult = MessageBox.Show(strlenh, "", MessageBoxButtons.OK);*/
-                int result = ExceSP(strlenh);
-            }
+                 ExceSP(strlenh);
+           
             
         
         }
@@ -126,7 +117,7 @@ namespace ThiTracNghiemBetta.form
             }
             return true;
         }
-        public static int ExceSP(String strLenh)
+        public static void ExceSP(String strLenh)
         {
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
@@ -135,15 +126,13 @@ namespace ThiTracNghiemBetta.form
             try
             {
                 myreader = sqlcmd.ExecuteReader();
-                int returnValue = (int)sqlcmd.Parameters["@returnValue"].Value;
                 MessageBox.Show("Đăng Ký Thành Công! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return returnValue;
+                
             }
             catch (SqlException ex)
             {
                 Program.conn.Close();
                 MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1;
             }
         }
 
