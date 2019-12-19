@@ -265,3 +265,4 @@ E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.xml
 E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\EntityFramework.SqlServer.xml
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmRegisterUsers.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.register.loginAuthentication.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.frmInputStudent.resources

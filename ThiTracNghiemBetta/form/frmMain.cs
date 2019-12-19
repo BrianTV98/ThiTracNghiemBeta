@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ThiTracNghiemBetta.form.register;
+using ThiTracNghiemBetta.form.student;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -95,6 +96,9 @@ namespace ThiTracNghiemBetta.form
         }
         private void btKHOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            frmInputStudent f = new frmInputStudent();
+            f.MdiParent = this;
+            f.Show();
            /* frmKHOA f = new frmKHOA();
             f.MdiParent = this;
             f.Show();
