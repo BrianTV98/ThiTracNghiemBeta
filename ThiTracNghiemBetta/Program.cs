@@ -86,6 +86,17 @@ namespace ThiTracNghiemBetta
             return dt;
         }
 
+        public static int execStoreProcedureWithReturnValue(SqlCommand sqlcmd)
+        {
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlParameter retval = sqlcmd.Parameters.Add("@return_value", SqlDbType.Int);
+            retval.Direction = ParameterDirection.ReturnValue;
+            try { sqlcmd.ExecuteNonQuery(); }
+            catch (Exception) { }
+            return int.Parse(sqlcmd.Parameters["@return_value"].Value.ToString());
+
+        }
+
 
         /// <summary>
         /// The main entry point for the application.

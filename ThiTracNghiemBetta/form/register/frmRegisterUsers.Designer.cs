@@ -31,6 +31,11 @@
             this.cb_nhom = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupGV = new System.Windows.Forms.GroupBox();
+            this.txt_infor = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_confirm = new DevExpress.XtraEditors.TextEdit();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_register = new System.Windows.Forms.Button();
             this.txt_maKhoa = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_name = new DevExpress.XtraEditors.TextEdit();
@@ -41,17 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_login = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_register = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_confirm = new DevExpress.XtraEditors.TextEdit();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_infor = new System.Windows.Forms.Label();
             this.groupGV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_maKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_nhom
@@ -98,6 +98,57 @@
             this.groupGV.Size = new System.Drawing.Size(984, 534);
             this.groupGV.TabIndex = 1;
             this.groupGV.TabStop = false;
+            this.groupGV.Enter += new System.EventHandler(this.groupGV_Enter);
+            // 
+            // txt_infor
+            // 
+            this.txt_infor.AutoSize = true;
+            this.txt_infor.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_infor.ForeColor = System.Drawing.Color.Red;
+            this.txt_infor.Location = new System.Drawing.Point(397, 439);
+            this.txt_infor.Name = "txt_infor";
+            this.txt_infor.Size = new System.Drawing.Size(126, 16);
+            this.txt_infor.TabIndex = 13;
+            this.txt_infor.Text = "Thông báo lỗi ở đây!";
+            this.txt_infor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_infor.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(181, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(669, 68);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "ĐĂNG KÝ TÀI KHOẢN";
+            // 
+            // txt_confirm
+            // 
+            this.txt_confirm.Location = new System.Drawing.Point(250, 376);
+            this.txt_confirm.Name = "txt_confirm";
+            this.txt_confirm.Properties.PasswordChar = '*';
+            this.txt_confirm.Size = new System.Drawing.Size(224, 22);
+            this.txt_confirm.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(98, 381);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "CONFIRM";
+            // 
+            // btn_register
+            // 
+            this.btn_register.Location = new System.Drawing.Point(400, 476);
+            this.btn_register.Name = "btn_register";
+            this.btn_register.Size = new System.Drawing.Size(140, 39);
+            this.btn_register.TabIndex = 0;
+            this.btn_register.Text = "Đăng ký";
+            this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // txt_maKhoa
             // 
@@ -187,56 +238,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "LOGIN";
             // 
-            // btn_register
-            // 
-            this.btn_register.Location = new System.Drawing.Point(400, 476);
-            this.btn_register.Name = "btn_register";
-            this.btn_register.Size = new System.Drawing.Size(140, 39);
-            this.btn_register.TabIndex = 0;
-            this.btn_register.Text = "Đăng ký";
-            this.btn_register.UseVisualStyleBackColor = true;
-            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(98, 381);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "CONFIRM";
-            // 
-            // txt_confirm
-            // 
-            this.txt_confirm.Location = new System.Drawing.Point(250, 376);
-            this.txt_confirm.Name = "txt_confirm";
-            this.txt_confirm.Properties.PasswordChar = '*';
-            this.txt_confirm.Size = new System.Drawing.Size(224, 22);
-            this.txt_confirm.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(181, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(669, 68);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "ĐĂNG KÝ TÀI KHOẢN";
-            // 
-            // txt_infor
-            // 
-            this.txt_infor.AutoSize = true;
-            this.txt_infor.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_infor.ForeColor = System.Drawing.Color.Red;
-            this.txt_infor.Location = new System.Drawing.Point(397, 439);
-            this.txt_infor.Name = "txt_infor";
-            this.txt_infor.Size = new System.Drawing.Size(126, 16);
-            this.txt_infor.TabIndex = 13;
-            this.txt_infor.Text = "Thông báo lỗi ở đây!";
-            this.txt_infor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txt_infor.Click += new System.EventHandler(this.label9_Click);
-            // 
             // frmRegisterUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,11 +250,11 @@
             this.Load += new System.EventHandler(this.frmRegisterUsers_Load);
             this.groupGV.ResumeLayout(false);
             this.groupGV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_maKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
