@@ -357,6 +357,7 @@
             this.GV_SV.DataSource = this.bds_sv;
             this.GV_SV.Location = new System.Drawing.Point(10, 330);
             this.GV_SV.Name = "GV_SV";
+            this.GV_SV.ReadOnly = true;
             this.GV_SV.RowHeadersWidth = 51;
             this.GV_SV.RowTemplate.Height = 24;
             this.GV_SV.Size = new System.Drawing.Size(1135, 220);
@@ -371,6 +372,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "MASV";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -378,6 +380,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "HO";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -385,6 +388,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "TEN";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -392,6 +396,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "NGAYSINH";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -399,6 +404,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "DIACHI";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -406,6 +412,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "MALOP";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // popupSinhVien
             // 

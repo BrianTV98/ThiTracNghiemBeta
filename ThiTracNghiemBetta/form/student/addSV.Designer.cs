@@ -160,9 +160,9 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(106, 332);
+            this.btn_confirm.Location = new System.Drawing.Point(85, 332);
             this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(90, 32);
+            this.btn_confirm.Size = new System.Drawing.Size(126, 32);
             this.btn_confirm.TabIndex = 12;
             this.btn_confirm.Text = "XÁC NHẬN";
             this.btn_confirm.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(242, 332);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(111, 32);
+            this.btn_Cancel.Size = new System.Drawing.Size(153, 32);
             this.btn_Cancel.TabIndex = 13;
             this.btn_Cancel.Text = "HỦY BỎ";
             this.btn_Cancel.UseVisualStyleBackColor = true;
