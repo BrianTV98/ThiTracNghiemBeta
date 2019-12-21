@@ -99,10 +99,12 @@ namespace ThiTracNghiemBetta.form
                 MessageBox.Show("Không để trống các trường", "", MessageBoxButtons.OK);
                 return false;
             }
-            // TODO: check ma is existed
-            bool rs = isMaTontai(ma);
-            if (rs) return false;
-            
+            if (type == "add")
+            {
+                // TODO: check ma is existed
+                bool rs = isMaTontai(ma);
+                if (rs) return false;
+            }
             return true;
         }
 

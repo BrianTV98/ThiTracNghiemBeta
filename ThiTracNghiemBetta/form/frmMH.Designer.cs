@@ -39,14 +39,15 @@
             this.barbtDel = new DevExpress.XtraBars.BarButtonItem();
             this.barbtEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barbtRefesh = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.barbtSave = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.DataLayoutMH = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -79,7 +80,6 @@
             this.bANGDIEMTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.BANGDIEMTableAdapter();
             this.fKCHITIETBAITHIBANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutMH)).BeginInit();
             this.DataLayoutMH.SuspendLayout();
@@ -213,15 +213,6 @@
             this.barbtRefesh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtRefesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLamMoi_ItemClick);
             // 
-            // btnPhucHoi
-            // 
-            this.btnPhucHoi.Caption = "Phục hồi";
-            this.btnPhucHoi.Id = 4;
-            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
-            this.btnPhucHoi.Name = "btnPhucHoi";
-            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
-            // 
             // btnHuy
             // 
             this.btnHuy.Caption = "Hủy";
@@ -239,6 +230,16 @@
             this.barbtSave.Name = "barbtSave";
             this.barbtSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 8;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -283,6 +284,15 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1653, 100);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 779);
+            // 
+            // btnPhucHoi
+            // 
+            this.btnPhucHoi.Caption = "Phục hồi";
+            this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -402,6 +412,7 @@
             this.txtMAMH.Location = new System.Drawing.Point(400, 36);
             this.txtMAMH.MenuManager = this.barManager1;
             this.txtMAMH.Name = "txtMAMH";
+            this.txtMAMH.Properties.MaxLength = 5;
             this.txtMAMH.Size = new System.Drawing.Size(193, 36);
             this.txtMAMH.TabIndex = 1;
             // 
@@ -542,16 +553,6 @@
             // cHITIETBAITHITableAdapter
             // 
             this.cHITIETBAITHITableAdapter.ClearBeforeFill = true;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 8;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // frmMH
             // 

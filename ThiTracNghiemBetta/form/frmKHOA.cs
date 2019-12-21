@@ -20,6 +20,12 @@ namespace ThiTracNghiemBetta.form
 
         private void frmKHOA_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
+            this.bODETableAdapter.Fill(this.dS.BODE);
+            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
+            this.bODETableAdapter.Fill(this.dS.BODE);
+            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
+            this.bODETableAdapter.Fill(this.dS.BODE);
             reloadData();
             normalMode();
 
@@ -39,6 +45,9 @@ namespace ThiTracNghiemBetta.form
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.dS.KHOA);
+
+            this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bODETableAdapter.Fill(this.dS.BODE);
         }
 
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
@@ -358,6 +367,56 @@ namespace ThiTracNghiemBetta.form
 
             d.ShowDialog();
             reloadData();
+        }
+
+        private void btnXoaGV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (bODEBindingSource.Count > 0)
+            {
+                MessageBox.Show("Giáo viên đang có bộ đề, không được xóa", "", MessageBoxButtons.OK);
+                return;
+            }
+            if (!validGVDangKy())
+            {
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa khoa " + txtTENKH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                bdsGV.RemoveAt(bdsGV.Position);
+                this.gIAOVIENTableAdapter.Update(this.dS.GIAOVIEN);
+                MessageBox.Show("Xóa thành công", "", MessageBoxButtons.OK);
+            }
+        }
+
+        private bool validGVDangKy()
+        {
+            try
+            {
+                int kn = Program.KetNoi();
+                if (kn == 0)
+                {
+                    return false;
+                }
+                String strlenh = "EXEC dbo.SP_TIMGVDANGKY '" + txtMAGV.Text + "'";
+                Program.myReader = Program.ExecSqlDataReader(strlenh);
+                if (Program.myReader.Read() != false)
+                {
+                    MessageBox.Show("Giáo viên đã đăng ký thi cho lớp, không thể xóa", "", MessageBoxButtons.OK);
+                    Program.conn.Close();
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Kiểm tra giáo viên đăng ký thất bại: " + e.Message, "", MessageBoxButtons.OK);
+                return false;
+            }
+        }
+
+        private void gcKHOA_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
