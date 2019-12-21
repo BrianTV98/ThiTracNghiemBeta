@@ -131,8 +131,11 @@ namespace ThiTracNghiemBetta.form
             }
             catch (SqlException ex)
             {
-                Program.conn.Close();
+                
                 MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } finally
+            {
+                Program.conn.Close();
             }
         }
 
