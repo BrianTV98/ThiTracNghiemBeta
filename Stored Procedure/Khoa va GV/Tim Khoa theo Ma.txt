@@ -1,0 +1,42 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIMKIEMKHOA]    Script Date: 12/21/2019 4:37:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIMKIEMKHOA]
+	-- Add the parameters for the stored procedure here
+	@MAKHOA nchar(8)
+AS
+DECLARE @MACS nchar(3)
+BEGIN
+	
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	if exists(SELECT TOP 1 * from LINK1.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA)  BEGIN
+		SELECT * from LINK1.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA
+		return
+	END
+
+	-- Insert statements for procedure here
+	if exists(SELECT TOP 1 * from LINK2.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA)  BEGIN
+		SELECT * from LINK2.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA
+		return
+	END
+
+	-- Insert statements for procedure here
+	if exists(SELECT TOP 1 * from LINK0.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA)  BEGIN
+		SELECT * from LINK0.TN_CSDLPT.dbo.KHOA where MAKH = @MAKHOA
+		return
+	END
+
+END
