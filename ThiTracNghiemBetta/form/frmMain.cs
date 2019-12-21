@@ -45,11 +45,9 @@ namespace ThiTracNghiemBetta.form
 
         private void btLOP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmMH f = new frmMH();
+            frmInputStudent f = new frmInputStudent();
             f.MdiParent = this;
             f.Show();
-            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
         }
 
         private void btDSDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -93,9 +91,7 @@ namespace ThiTracNghiemBetta.form
         }
         private void btKHOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmInputStudent f = new frmInputStudent();
-            f.MdiParent = this;
-            f.Show();
+           
            /* frmKHOA f = new frmKHOA();
             f.MdiParent = this;
             f.Show();
