@@ -74,6 +74,22 @@ namespace ThiTracNghiemBetta
                 return null;
             }
         }
+        public static int execStoreProcedureWithReturnValue(String strLenh)
+        {
+            SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlParameter retval = sqlcmd.Parameters.Add("@return_value", SqlDbType.Int);
+            retval.Direction = ParameterDirection.ReturnValue;
+            try { sqlcmd.ExecuteNonQuery(); }
+            catch (Exception ex) {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            return int.Parse(sqlcmd.Parameters["@return_value"].Value.ToString());
+
+        }
+
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
