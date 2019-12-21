@@ -21,7 +21,7 @@ namespace ThiTracNghiemBetta
         public static String password = "";
 
         public static String database = "TN_CSDLPT";
-        public static String remotelogin = "SUPPORT_CONECT";
+        public static String remotelogin = "SUPPORT_CONECT"; //HTKN 
         public static String remotepassword = "123456";
         public static String mloginDN = "";
         public static String passwordDN = "";
@@ -65,6 +65,7 @@ namespace ThiTracNghiemBetta
             try
             {
                 myreader = sqlcmd.ExecuteReader(); return myreader;
+                
 
             }
             catch (SqlException ex)
@@ -73,21 +74,6 @@ namespace ThiTracNghiemBetta
                 MessageBox.Show(ex.Message);
                 return null;
             }
-        }
-        public static int execStoreProcedureWithReturnValue(String strLenh)
-        {
-            SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
-            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
-            SqlParameter retval = sqlcmd.Parameters.Add("@return_value", SqlDbType.Int);
-            retval.Direction = ParameterDirection.ReturnValue;
-            try { sqlcmd.ExecuteNonQuery(); }
-            catch (Exception ex) {
-                Program.conn.Close();
-                MessageBox.Show(ex.Message);
-                return -1;
-            }
-            return int.Parse(sqlcmd.Parameters["@return_value"].Value.ToString());
-
         }
 
         public static DataTable ExecSqlDataTable(String cmd)
@@ -98,6 +84,17 @@ namespace ThiTracNghiemBetta
             da.Fill(dt);
             conn.Close();
             return dt;
+        }
+
+        public static int execStoreProcedureWithReturnValue(SqlCommand sqlcmd)
+        {
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlParameter retval = sqlcmd.Parameters.Add("@return_value", SqlDbType.Int);
+            retval.Direction = ParameterDirection.ReturnValue;
+            try { sqlcmd.ExecuteNonQuery(); }
+            catch (Exception) { }
+            return int.Parse(sqlcmd.Parameters["@return_value"].Value.ToString());
+
         }
 
 

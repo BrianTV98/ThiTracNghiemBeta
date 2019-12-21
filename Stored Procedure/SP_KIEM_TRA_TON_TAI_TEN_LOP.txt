@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_KIEM_TRA_TON_TAI_TEN_LOP]    Script Date: 12/21/2019 4:25:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_KIEM_TRA_TON_TAI_TEN_LOP] 
+	@TENLOP nvarchar(50)
+AS
+BEGIN
+	SELECT * FROM LINK1.TN_CSDLPT.dbo.LOP 
+	IF EXISTS ( SELECT * FROM LINK1.TN_CSDLPT.dbo.LOP  WHERE TENLOP =@TENLOP )
+		RETURN 1;
+	IF EXISTS ( SELECT * FROM LINK2.TN_CSDLPT.dbo.LOP  WHERE TENLOP =@TENLOP )
+		RETURN 2;
+	RETURN 0;
+END
+

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.form.register;
+using ThiTracNghiemBetta.form.student;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -38,24 +40,19 @@ namespace ThiTracNghiemBetta.form
         private void btMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            frmMH f = new frmMH();
-            f.MdiParent = this;
-            f.Show();
-            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
+          
         }
 
         private void btLOP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* frmLop f = new frmLop();
+            frmInputStudent f = new frmInputStudent();
             f.MdiParent = this;
             f.Show();
-            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;*/
         }
 
         private void btDSDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
                 /*frmDSDK f = new frmDSDK();
                 f.MdiParent = this;
                 f.Show();
@@ -75,21 +72,22 @@ namespace ThiTracNghiemBetta.form
 
         private void btlogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmLogin));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-                
-            else
-            {
-                btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-                btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
-                frmLogin f = new frmLogin();
-                f.MdiParent = this;
-                f.Show();
-                
-            }*/
+           
+
+             Form frm = this.CheckExists(typeof(frmRegisterUsers));
+             if (frm != null)
+             {
+                 frm.Activate();
+             }
+
+             else
+             {
+                 //btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
+                 //btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
+                 frmRegisterUsers f = new frmRegisterUsers();
+                 f.MdiParent = this;
+                 f.Show();
+             }
         }
         private void btKHOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

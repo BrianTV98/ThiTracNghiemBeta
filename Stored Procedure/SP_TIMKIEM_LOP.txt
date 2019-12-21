@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIMKIEM_LOP]    Script Date: 12/21/2019 4:24:24 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIMKIEM_LOP]  
+    @MALOP NCHAR(5)
+AS  
+BEGIN
+	SELECT  * FROM  LINK1.TN_CSDLPT.dbo.LOP 
+	WHERE MALOP=@MALOP
+	UNION ALL
+	SELECT  * FROM  LINK2.TN_CSDLPT.dbo.LOP 
+    WHERE MALOP=@MALOP 
+	
+END
+

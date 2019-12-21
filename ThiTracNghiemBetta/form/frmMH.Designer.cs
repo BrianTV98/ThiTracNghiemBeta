@@ -111,18 +111,20 @@
             // mAMHLabel
             // 
             this.mAMHLabel.AutoSize = true;
-            this.mAMHLabel.Location = new System.Drawing.Point(197, 41);
+            this.mAMHLabel.Location = new System.Drawing.Point(143, 27);
+            this.mAMHLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mAMHLabel.Name = "mAMHLabel";
-            this.mAMHLabel.Size = new System.Drawing.Size(73, 24);
+            this.mAMHLabel.Size = new System.Drawing.Size(50, 17);
             this.mAMHLabel.TabIndex = 0;
             this.mAMHLabel.Text = "MAMH:";
             // 
             // tENMHLabel
             // 
             this.tENMHLabel.AutoSize = true;
-            this.tENMHLabel.Location = new System.Drawing.Point(197, 106);
+            this.tENMHLabel.Location = new System.Drawing.Point(143, 71);
+            this.tENMHLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tENMHLabel.Name = "tENMHLabel";
-            this.tENMHLabel.Size = new System.Drawing.Size(82, 24);
+            this.tENMHLabel.Size = new System.Drawing.Size(57, 17);
             this.tENMHLabel.TabIndex = 2;
             this.tENMHLabel.Text = "TENMH:";
             // 
@@ -259,31 +261,44 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1653, 100);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1202, 77);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 879);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 579);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1653, 26);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1202, 24);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 100);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 77);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 779);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 502);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1653, 100);
+            this.barDockControlRight.Location = new System.Drawing.Point(1202, 77);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 779);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 502);
+            // 
+            // btnPhucHoi
+            // 
+            this.btnPhucHoi.Caption = "Phục hồi";
+            this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -309,10 +324,11 @@
             this.DataLayoutMH.Controls.Add(this.gcMH);
             this.DataLayoutMH.DataSource = this.mONHOCTableAdapterBindingSource;
             this.DataLayoutMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataLayoutMH.Location = new System.Drawing.Point(0, 100);
+            this.DataLayoutMH.Location = new System.Drawing.Point(0, 77);
+            this.DataLayoutMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataLayoutMH.Name = "DataLayoutMH";
             this.DataLayoutMH.Root = this.layoutControlGroup1;
-            this.DataLayoutMH.Size = new System.Drawing.Size(1653, 779);
+            this.DataLayoutMH.Size = new System.Drawing.Size(1202, 502);
             this.DataLayoutMH.TabIndex = 4;
             this.DataLayoutMH.Text = "dataLayoutControl1";
             // 
@@ -320,10 +336,11 @@
             // 
             this.groupControl2.Controls.Add(this.gIAOVIEN_DANGKYGridControl);
             this.groupControl2.Controls.Add(this.bODEGridControl);
-            this.groupControl2.Location = new System.Drawing.Point(12, 483);
+            this.groupControl2.Location = new System.Drawing.Point(8, 311);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(1629, 284);
+            this.groupControl2.Size = new System.Drawing.Size(1186, 183);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "groupControl2";
             this.groupControl2.Visible = false;
@@ -331,11 +348,13 @@
             // gIAOVIEN_DANGKYGridControl
             // 
             this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(630, 37);
+            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(458, 25);
             this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView3;
+            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
             this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(697, 77);
+            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(507, 51);
             this.gIAOVIEN_DANGKYGridControl.TabIndex = 1;
             this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -358,17 +377,21 @@
             // 
             // gridView3
             // 
+            this.gridView3.DetailHeight = 233;
+            this.gridView3.FixedLineWidth = 1;
             this.gridView3.GridControl = this.gIAOVIEN_DANGKYGridControl;
             this.gridView3.Name = "gridView3";
             // 
             // bODEGridControl
             // 
             this.bODEGridControl.DataSource = this.bdsBD;
-            this.bODEGridControl.Location = new System.Drawing.Point(6, 37);
+            this.bODEGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bODEGridControl.Location = new System.Drawing.Point(4, 25);
             this.bODEGridControl.MainView = this.gridView2;
+            this.bODEGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bODEGridControl.MenuManager = this.barManager1;
             this.bODEGridControl.Name = "bODEGridControl";
-            this.bODEGridControl.Size = new System.Drawing.Size(587, 77);
+            this.bODEGridControl.Size = new System.Drawing.Size(427, 51);
             this.bODEGridControl.TabIndex = 0;
             this.bODEGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -381,6 +404,8 @@
             // 
             // gridView2
             // 
+            this.gridView2.DetailHeight = 233;
+            this.gridView2.FixedLineWidth = 1;
             this.gridView2.GridControl = this.bODEGridControl;
             this.gridView2.Name = "gridView2";
             // 
@@ -390,26 +415,29 @@
             this.groupBox1.Controls.Add(this.txtTENMH);
             this.groupBox1.Controls.Add(this.mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMAMH);
-            this.groupBox1.Location = new System.Drawing.Point(12, 314);
+            this.groupBox1.Location = new System.Drawing.Point(8, 202);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.ShowCaption = false;
-            this.groupBox1.Size = new System.Drawing.Size(1629, 165);
+            this.groupBox1.Size = new System.Drawing.Size(1186, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.Text = "groupControl1";
             // 
             // txtTENMH
             // 
             this.txtTENMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
-            this.txtTENMH.Location = new System.Drawing.Point(400, 94);
+            this.txtTENMH.Location = new System.Drawing.Point(291, 63);
+            this.txtTENMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTENMH.MenuManager = this.barManager1;
             this.txtTENMH.Name = "txtTENMH";
-            this.txtTENMH.Size = new System.Drawing.Size(420, 36);
+            this.txtTENMH.Size = new System.Drawing.Size(305, 22);
             this.txtTENMH.TabIndex = 3;
             // 
             // txtMAMH
             // 
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
-            this.txtMAMH.Location = new System.Drawing.Point(400, 36);
+            this.txtMAMH.Location = new System.Drawing.Point(291, 24);
+            this.txtMAMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMAMH.MenuManager = this.barManager1;
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Properties.MaxLength = 5;
@@ -419,11 +447,13 @@
             // gcMH
             // 
             this.gcMH.DataSource = this.bdsMH;
-            this.gcMH.Location = new System.Drawing.Point(12, 12);
+            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcMH.Location = new System.Drawing.Point(8, 8);
             this.gcMH.MainView = this.gridView1;
+            this.gcMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1629, 298);
+            this.gcMH.Size = new System.Drawing.Size(1186, 192);
             this.gcMH.TabIndex = 4;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -434,37 +464,38 @@
             this.colMAMH,
             this.colTENMH,
             this.colrowguid});
-            this.gridView1.DetailHeight = 365;
+            this.gridView1.DetailHeight = 243;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.gcMH;
             this.gridView1.Name = "gridView1";
             // 
             // colMAMH
             // 
             this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 38;
+            this.colMAMH.MinWidth = 28;
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.ReadOnly = true;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
-            this.colMAMH.Width = 144;
+            this.colMAMH.Width = 105;
             // 
             // colTENMH
             // 
             this.colTENMH.FieldName = "TENMH";
-            this.colTENMH.MinWidth = 38;
+            this.colTENMH.MinWidth = 28;
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.OptionsColumn.ReadOnly = true;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
-            this.colTENMH.Width = 144;
+            this.colTENMH.Width = 105;
             // 
             // colrowguid
             // 
             this.colrowguid.FieldName = "rowguid";
-            this.colrowguid.MinWidth = 38;
+            this.colrowguid.MinWidth = 28;
             this.colrowguid.Name = "colrowguid";
             this.colrowguid.OptionsColumn.ReadOnly = true;
-            this.colrowguid.Width = 144;
+            this.colrowguid.Width = 105;
             // 
             // mONHOCTableAdapterBindingSource
             // 
@@ -479,7 +510,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1653, 779);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1202, 502);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -487,25 +518,25 @@
             this.layoutControlItem1.Control = this.gcMH;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1633, 302);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1188, 194);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.groupBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 302);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 194);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1633, 169);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1188, 109);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.groupControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 471);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 303);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1633, 288);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1188, 185);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -556,14 +587,15 @@
             // 
             // frmMH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1653, 905);
+            this.ClientSize = new System.Drawing.Size(1202, 603);
             this.Controls.Add(this.DataLayoutMH);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMH";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMH_Load);

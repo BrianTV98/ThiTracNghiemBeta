@@ -1,6 +1,6 @@
 USE [TN_CSDLPT]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_TAOLOGIN]    Script Date: 27-Nov-19 2:48:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[SP_TAOLOGIN]    Script Date: 12/19/2019 7:41:07 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,13 +24,20 @@ AS
 
 	EXEC sp_addrolemember @ROLE, @USERNAME
 	IF @ROLE= 'TRUONG'
-    EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
-	EXEC sp_addsrvrolemember @LGNAME, 'processadmin'
+	BEGIN
+		EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+		EXEC sp_addsrvrolemember @LGNAME, 'processadmin'
+		-- chua dc hay-> chay van bi lap
+		EXEC LINK1.TN_CSDLPT.dbo.SP_TAOLOGIN @LGNAME, @PASS,@USERNAME,@ROLE
+		EXEC LINK2.TN_CSDLPT.dbo.SP_TAOLOGIN @LGNAME, @PASS,@USERNAME,@ROLE
+	END
 	
 
 	IF @ROLE= 'COSO'
-    EXEC sp_addsrvrolemember @LGNAME, 'serveradmin'
-
+	BEGIN
+		EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+		EXEC sp_addsrvrolemember @LGNAME, 'processadmin'
+	END
 	IF @ROLE= 'GIANGVIEN'
     EXEC sp_addsrvrolemember @LGNAME, 'public'
 	

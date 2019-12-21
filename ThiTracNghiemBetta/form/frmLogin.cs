@@ -58,7 +58,7 @@ namespace ThiTracNghiemBetta.form
 
             Program.myReader.Close();
 
-            MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
+            //MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
             this.Hide();
             switch (Program.mLoai)
             {

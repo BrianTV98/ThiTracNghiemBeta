@@ -1,4 +1,4 @@
-Trên mỗi Server chạy các dòng lệnh
+﻿Trên mỗi Server chạy các dòng lệnh
 GRANT EXECUTE ON dbo.SP_DANGNHAP TO  TRUONG  // quyen su dung sp dang nhap cho nhom truong
 
 // QUyền xem de thi va inserde thi cho giang vien
@@ -9,3 +9,8 @@ chưa có gải pháp
 
 // Sinh Vien cập nhập dữ liệu vào bảng điểm của mình
 chưa có giải pháp
+GRANT UPDATE
+(DIEM) ON BANGDIEM
+TO SINHVIEN
+
+// CAP QUYEN SU DUNG SP_
