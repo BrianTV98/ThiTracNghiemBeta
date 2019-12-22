@@ -81,6 +81,11 @@
     </Compile>
     <Compile Include="form\examregistation\frmExamRegistration.Designer.cs">
       <DependentUpon>frmExamRegistration.cs</DependentUpon>
+    <Compile Include="form\frmBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmBD.Designer.cs">
+      <DependentUpon>frmBD.cs</DependentUpon>
     </Compile>
     <Compile Include="form\frmKHOA.cs">
       <SubType>Form</SubType>
@@ -169,6 +174,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\examregistation\frmExamRegistration.resx">
       <DependentUpon>frmExamRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="form\frmBD.resx">
+      <DependentUpon>frmBD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmKHOA.resx">
       <DependentUpon>frmKHOA.cs</DependentUpon>
