@@ -33,6 +33,7 @@ namespace ThiTracNghiemBetta.form.student
             this.CancelButton = this.btn_Cancel;
             txt_malop.Enabled = false;
             txt_validate.Text = "";
+           
        
         }
 

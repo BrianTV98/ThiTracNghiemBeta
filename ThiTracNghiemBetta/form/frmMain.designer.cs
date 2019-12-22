@@ -65,6 +65,7 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
             this.btGiaoVien,
             this.btMonHoc,
             this.btLOP,
@@ -75,16 +76,16 @@
             this.btKHOA,
             this.btnXEMBAITHI,
             this.btnXEMBANGDIEM,
-            this.btnXEMDSDANGKY,
-            this.ribbonControl1.SearchEditItem});
+            this.btnXEMDSDANGKY});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(2107, 246);
+            this.ribbonControl1.Size = new System.Drawing.Size(1352, 178);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btGiaoVien
             // 
@@ -265,41 +266,40 @@
             this.toolStripStatusMAGV,
             this.toolStripStatusHOTEN,
             this.toolStripStatusNHOM});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 959);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 668);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(2107, 39);
+            this.statusStrip1.Size = new System.Drawing.Size(1352, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusMAGV
             // 
             this.toolStripStatusMAGV.Name = "toolStripStatusMAGV";
-            this.toolStripStatusMAGV.Size = new System.Drawing.Size(73, 30);
+            this.toolStripStatusMAGV.Size = new System.Drawing.Size(51, 20);
             this.toolStripStatusMAGV.Text = "MAGV";
             // 
             // toolStripStatusHOTEN
             // 
             this.toolStripStatusHOTEN.Name = "toolStripStatusHOTEN";
-            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(81, 30);
+            this.toolStripStatusHOTEN.Size = new System.Drawing.Size(57, 20);
             this.toolStripStatusHOTEN.Text = "HOTEN";
             // 
             // toolStripStatusNHOM
             // 
             this.toolStripStatusNHOM.Name = "toolStripStatusNHOM";
-            this.toolStripStatusNHOM.Size = new System.Drawing.Size(79, 30);
+            this.toolStripStatusNHOM.Size = new System.Drawing.Size(55, 20);
             this.toolStripStatusNHOM.Text = "NHOM";
             // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2107, 998);
+            this.ClientSize = new System.Drawing.Size(1352, 694);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "MAIN FORM";

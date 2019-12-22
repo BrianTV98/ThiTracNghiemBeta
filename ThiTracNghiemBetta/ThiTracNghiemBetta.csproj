@@ -76,6 +76,12 @@
     <Compile Include="form\dialogGV.Designer.cs">
       <DependentUpon>dialogGV.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\examregistation\frmExamRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\examregistation\frmExamRegistration.Designer.cs">
+      <DependentUpon>frmExamRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\frmKHOA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +161,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="utils\Query.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\dialogGV.resx">
       <DependentUpon>dialogGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\examregistation\frmExamRegistration.resx">
+      <DependentUpon>frmExamRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmKHOA.resx">
       <DependentUpon>frmKHOA.cs</DependentUpon>

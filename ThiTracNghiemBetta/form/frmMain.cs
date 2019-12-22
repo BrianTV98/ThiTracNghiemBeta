@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.form.examregistation;
 using ThiTracNghiemBetta.form.register;
 using ThiTracNghiemBetta.form.student;
 
@@ -49,7 +50,8 @@ namespace ThiTracNghiemBetta.form
 
         private void btLOP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
+            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
+            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
             frmInputStudent f = new frmInputStudent();
             f.MdiParent = this;
             f.Show();
@@ -57,12 +59,12 @@ namespace ThiTracNghiemBetta.form
 
         private void btDSDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
-                /*frmDSDK f = new frmDSDK();
-                f.MdiParent = this;
-                f.Show();
+
+            frmExamRegistration f = new frmExamRegistration();
+            f.MdiParent = this;
+            f.Show();
             btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;*/
+            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
         }
 
         private void btBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -154,6 +156,11 @@ namespace ThiTracNghiemBetta.form
                 f.MdiParent = this;
                 f.Show();
             }*/
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

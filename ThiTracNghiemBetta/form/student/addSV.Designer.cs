@@ -180,6 +180,7 @@
             // 
             // dt_picker
             // 
+            this.dt_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_picker.Location = new System.Drawing.Point(195, 170);
             this.dt_picker.Name = "dt_picker";
             this.dt_picker.Size = new System.Drawing.Size(200, 22);

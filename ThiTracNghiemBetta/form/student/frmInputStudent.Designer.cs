@@ -71,13 +71,13 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.bar5 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bar5 = new DevExpress.XtraBars.Bar();
-            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             tENKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_khoa)).BeginInit();
@@ -470,6 +470,35 @@
             this.barManager2.MaxItemId = 1;
             this.barManager2.StatusBar = this.bar5;
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Tools";
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
+            this.bar3.Text = "Tools";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Caption = "THOÁT";
+            this.btnExit.Id = 0;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Status bar";
+            this.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar5.OptionsBar.AllowQuickCustomization = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.Text = "Status bar";
+            // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
@@ -501,33 +530,6 @@
             this.barDockControl4.Location = new System.Drawing.Point(1183, 36);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 590);
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Tools";
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
-            this.bar3.Text = "Tools";
-            // 
-            // bar5
-            // 
-            this.bar5.BarName = "Status bar";
-            this.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar5.DockCol = 0;
-            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar5.OptionsBar.AllowQuickCustomization = false;
-            this.bar5.OptionsBar.DrawDragBorder = false;
-            this.bar5.OptionsBar.UseWholeRow = true;
-            this.bar5.Text = "Status bar";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Caption = "THOÁT";
-            this.btnExit.Id = 0;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
             // 
             // frmInputStudent
             // 
