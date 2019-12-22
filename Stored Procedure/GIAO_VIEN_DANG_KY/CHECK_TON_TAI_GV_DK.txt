@@ -1,0 +1,29 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[CHECK_TON_TAI_GV_DK]    Script Date: 12/22/2019 9:16:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[CHECK_TON_TAI_GV_DK] 
+	-- Add the parameters for the stored procedure here
+	@MAMH nchar(5),
+	@MALOP nchar(8),
+	@LAN smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	-- Tra ve 1: neu ton tai -> tra ve 0 neu ko ton tai
+	IF EXISTS (SELECT * FROM GIAOVIEN_DANGKY WHERE MAMH=@MAMH AND MALOP=@MALOP AND LAN=@LAN)
+		RETURN 1;
+	RETURN 0;
+END

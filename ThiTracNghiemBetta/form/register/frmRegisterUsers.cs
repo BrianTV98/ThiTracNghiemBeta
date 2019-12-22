@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ThiTracNghiemBetta.form.register;
@@ -96,6 +97,12 @@ namespace ThiTracNghiemBetta.form
         }
         private bool check_validate()
         {
+            /*
+             *Kiểm tra tên tài khoản có trống không!
+             * Kiểm tra tên tài khoản có chứa khoảng trắng không và không chưa các kí tự đặc biệt
+             * Kiểm tra password có trống không
+             * Kiểm tra cofirm có trùng vs pass không
+             */
             string login = txt_login.Text;
             string password = txt_password.Text;
             string confirm = txt_confirm.Text;
@@ -103,6 +110,17 @@ namespace ThiTracNghiemBetta.form
             if (login.Length == 0)
             {
                 message =  "Tên tài khoản không được trống !";
+                return false;
+            }
+            /*if(login.Contains(" ") == true)
+            {
+                message = "Tên đăng nhập không được chứa ký tự space";
+            }*/
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+
+            if (regex.IsMatch(login)==false)
+            {
+                message = "Tên đăng nhập không được chứa ký tự space và kí tự đặc biệt";
                 return false;
             }
             if (password.Length == 0)
@@ -167,6 +185,17 @@ namespace ThiTracNghiemBetta.form
         private void groupGV_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không! ", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (result == DialogResult.Yes)
+            {
+                Program.frmMain.btBD.Enabled = Program.frmMain.btCancel.Enabled = Program.frmMain.btDSDK.Enabled = Program.frmMain.btKHOA.Enabled = Program.frmMain.btlogin.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = true;
+                Program.frmMain.btnXEMBAITHI.Enabled = Program.frmMain.btnXEMBANGDIEM.Enabled = Program.frmMain.btnXEMDSDANGKY.Enabled = true;
+                this.Close();
+            }
         }
     }
 }

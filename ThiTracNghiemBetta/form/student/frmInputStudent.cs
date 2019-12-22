@@ -78,12 +78,17 @@ namespace ThiTracNghiemBetta.form.student
 
         private void btn_addClass_Click(object sender, EventArgs e)
         {
+            /*
+             * show diaglog
+             * chuẩn hóa mã lớp -> Viết IN HOA
+             * chuẩn hóa tên lớp -> Viết IN HOA VA CHỈ CHỨA 1 khoảng trắng giữa các ký tự
+             */
             addClass f = new addClass();
             f.ShowDialog();
             gv_Lop.AddNewRow();
             
-            txt_malop.Text = f.txtMaLop.Text.Trim();
-            txt_tenLop.Text = f.txtTenLop.Text.Trim();
+            txt_malop.Text = f.txtMaLop.Text.Trim().ToUpper();
+            txt_tenLop.Text =chuanHoaTenLop(f.txtTenLop.Text.Trim().ToUpper()) ;
             txt_makhoa.Text = f.cb_makhoa.SelectedValue.ToString();
             if (f.state == true)
             {
@@ -92,6 +97,18 @@ namespace ThiTracNghiemBetta.form.student
             }
             else gv_Lop.DeleteSelectedRows();
            
+        }
+        private string chuanHoaTenLop(String tenlop)
+        {
+            string result = "";
+            Int32 count = 10;
+            char[] spearator = { ' ' };
+            String[] arr = tenlop.Split(spearator, count, StringSplitOptions.RemoveEmptyEntries);
+            foreach(string i in arr)
+            {
+                result = result + i + " ";
+            }
+            return result.Trim().ToUpper();
         }
 
       
@@ -113,7 +130,7 @@ namespace ThiTracNghiemBetta.form.student
             f.ShowDialog();
             string test = f.txtTenLop.Text;
             txt_makhoa.Text = f.txt_maKhoa.Text;
-            txt_tenLop.Text = f.txtTenLop.Text;
+            txt_tenLop.Text = chuanHoaTenLop(f.txtTenLop.Text);
             txt_malop.Text = f.txtMaLop.Text;
 
             bds_lop.EndEdit();
@@ -139,7 +156,6 @@ namespace ThiTracNghiemBetta.form.student
              *  add data vao gridview
              */
 
-
             addSV f = new addSV();
             f.txt_malop.Text= gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
             f.ShowDialog();
@@ -148,11 +164,11 @@ namespace ThiTracNghiemBetta.form.student
             if (f.state == true)
             {     
                 DataRow row = this.ds.SINHVIEN.NewRow();
-                row[0] = f.txt_ma_sv.Text.Trim();
-                row[1] = f.txt_ho_sv.Text.Trim();
-                row[2] = f.txt_ten_sv.Text.Trim();
+                row[0] = f.txt_ma_sv.Text.Trim().ToUpper();
+                row[1] = chuanHoaTenLop(f.txt_ho_sv.Text.Trim());
+                row[2] = chuanHoaTenLop(f.txt_ten_sv.Text.Trim());
                 row[3] =  new DateTime(f.dt_picker.Value.Year, f.dt_picker.Value.Month, f.dt_picker.Value.Day) ;
-                row[4] = f.txt_dia_chi.Text.Trim();
+                row[4] = chuanHoaTenLop(f.txt_dia_chi.Text.Trim());
                 row[5] = f.txt_malop.Text;
                 this.ds.SINHVIEN.Rows.Add(row);
                 bds_sv.EndEdit();
@@ -164,8 +180,6 @@ namespace ThiTracNghiemBetta.form.student
                     {
                         MessageBox.Show("Lỗi không thể tạo tài khoản!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
-
-
                 }
             }
            

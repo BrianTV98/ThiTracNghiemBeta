@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -99,6 +100,13 @@ namespace ThiTracNghiemBetta.form.student
 
         private bool checkValidateAddClass()
         {
+            /*
+             * Kiểm tra mã lớp rỗng ko?
+             * Kiểm tra các ký tự đặc biệt của mã lớp
+             * kiểm tra mã lớp có tồn tại chưa
+             * Kiểm tra lên lớp có rỗng không
+             * kiểm tên lớp có tồn tại chưa (tên lớp khóa unique)
+             */
             string malop = txtMaLop.Text;
             string tenLop = txtTenLop.Text;
 
@@ -107,6 +115,14 @@ namespace ThiTracNghiemBetta.form.student
                 txtValidate.Text = "Mã lớp không được để trống!";
                 return false;
             }
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+
+            if (regex.IsMatch(malop) == false)
+            {
+                txtValidate.Text = "Tên lớp không được chứa khoảng trắng hoặc ký tự đặc biệt";
+                return false;
+            }
+
             if (tenLop.Length == 0)
             {
                 txtValidate.Text = "Tên lớp không được để trống!";

@@ -40,6 +40,8 @@ namespace ThiTracNghiemBetta.form.student
         }
         private bool checkValidate()
         {
+
+
             string tenLop = txtTenLop.Text.Trim();
 
             if (tenLop.Length == 0)

@@ -76,6 +76,7 @@
             // 
             this.txtMaLop.Location = new System.Drawing.Point(197, 62);
             this.txtMaLop.Name = "txtMaLop";
+            this.txtMaLop.Properties.MaxLength = 8;
             this.txtMaLop.Size = new System.Drawing.Size(189, 22);
             this.txtMaLop.TabIndex = 1;
             // 
@@ -93,6 +94,7 @@
             // 
             this.txtTenLop.Location = new System.Drawing.Point(197, 122);
             this.txtTenLop.Name = "txtTenLop";
+            this.txtTenLop.Properties.MaxLength = 50;
             this.txtTenLop.Size = new System.Drawing.Size(189, 22);
             this.txtTenLop.TabIndex = 3;
             // 

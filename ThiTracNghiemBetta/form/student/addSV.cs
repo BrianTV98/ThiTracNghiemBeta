@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -65,6 +66,7 @@ namespace ThiTracNghiemBetta.form.student
         {
             /*TO DO
              * check  rong tat cac cac fiel
+             * kiểm tra ký tự rỗng của fiel mã sinh viên
              * check  check ma sv co ton tai chua
              */
             string maSv = txt_ma_sv.Text.Trim();
@@ -79,11 +81,19 @@ namespace ThiTracNghiemBetta.form.student
                 txt_validate.Text = "Mã sinh viên không được rỗng! ";
                 return false;
             }
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+
+            if (regex.IsMatch(maSv) == false)
+            {
+                txt_validate.Text = "Tên lớp không được chứa khoảng trắng hoặc ký tự đặc biệt";
+                return false;
+            }
             if (ho.Length == 0)
             {
                 txt_validate.Text = "Họ không được rỗng! ";
                 return false;
             }
+
             if (ten.Length == 0)
             {
                 txt_validate.Text = "Tên không được rỗng! ";

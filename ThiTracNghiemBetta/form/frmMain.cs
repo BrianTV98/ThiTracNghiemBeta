@@ -79,9 +79,10 @@ namespace ThiTracNghiemBetta.form
 
         private void btlogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
+            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
 
-             Form frm = this.CheckExists(typeof(frmRegisterUsers));
+            Form frm = this.CheckExists(typeof(frmRegisterUsers));
              if (frm != null)
              {
                  frm.Activate();

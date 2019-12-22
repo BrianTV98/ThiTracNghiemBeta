@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_login = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_maKhoa.Properties)).BeginInit();
@@ -76,6 +77,7 @@
             // groupGV
             // 
             this.groupGV.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupGV.Controls.Add(this.button1);
             this.groupGV.Controls.Add(this.txt_infor);
             this.groupGV.Controls.Add(this.label8);
             this.groupGV.Controls.Add(this.txt_confirm);
@@ -142,11 +144,11 @@
             // 
             // btn_register
             // 
-            this.btn_register.Location = new System.Drawing.Point(400, 476);
+            this.btn_register.Location = new System.Drawing.Point(309, 475);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(140, 39);
             this.btn_register.TabIndex = 0;
-            this.btn_register.Text = "Đăng ký";
+            this.btn_register.Text = "ĐĂNG KÝ";
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
@@ -226,6 +228,7 @@
             // 
             this.txt_login.Location = new System.Drawing.Point(250, 255);
             this.txt_login.Name = "txt_login";
+            this.txt_login.Properties.MaxLength = 20;
             this.txt_login.Size = new System.Drawing.Size(224, 22);
             this.txt_login.TabIndex = 1;
             // 
@@ -237,6 +240,16 @@
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "LOGIN";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(481, 475);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 39);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "THOÁT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmRegisterUsers
             // 
@@ -278,5 +291,6 @@
         private DevExpress.XtraEditors.TextEdit txt_confirm;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label txt_infor;
+        private System.Windows.Forms.Button button1;
     }
 }
