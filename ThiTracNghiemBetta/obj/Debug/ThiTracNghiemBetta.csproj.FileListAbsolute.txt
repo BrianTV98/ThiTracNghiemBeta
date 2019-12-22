@@ -321,3 +321,5 @@ E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.csproj.CopyComplete
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.exe
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.pdb
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.examregistation.frmExamRegistration.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.examregistation.frmExamRegistration.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmBD.resources
