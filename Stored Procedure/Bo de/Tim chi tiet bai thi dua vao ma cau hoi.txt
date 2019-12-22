@@ -1,0 +1,38 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIMCHITIETBAITHI]    Script Date: 12/22/2019 9:20:42 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIMCHITIETBAITHI]
+	-- Add the parameters for the stored procedure here
+	@MACH int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	if exists (SELECT TOP 1 * from LINK1.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH)  BEGIN
+		SELECT * from LINK1.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH
+		return 
+	END  
+	
+	if exists (SELECT TOP 1 * from LINK2.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH)  BEGIN
+		SELECT * from LINK2.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH
+		return
+	END 
+
+	if exists (SELECT TOP 1 * from LINK0.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH)  BEGIN
+		SELECT * from LINK0.TN_CSDLPT.dbo.CHITIETBAITHI where CAUHOI = @MACH
+		return 
+	END 
+END
+
