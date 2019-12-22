@@ -67,11 +67,11 @@ namespace ThiTracNghiemBetta.form
         private void btBD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-                /*frmBD f = new frmBD();
-                f.MdiParent = this;
-                f.Show();
+            frmBD f = new frmBD();
+            f.MdiParent = this;
+            f.Show();
             btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
-            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;*/
+            btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
         }
 
         private void btlogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

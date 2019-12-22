@@ -20,12 +20,6 @@ namespace ThiTracNghiemBetta.form
 
         private void frmKHOA_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
-            this.bODETableAdapter.Fill(this.dS.BODE);
-            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
-            this.bODETableAdapter.Fill(this.dS.BODE);
-            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
-            this.bODETableAdapter.Fill(this.dS.BODE);
             reloadData();
             normalMode();
 
