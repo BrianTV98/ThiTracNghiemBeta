@@ -41,6 +41,10 @@ namespace ThiTracNghiemBetta.form
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Fill(this.dS.BODE);
+            if (Program.mNhom == "GIANGVIEN")
+            {
+                bdsBODE.Filter = "MAGV = '" + Program.mUserId + "'";
+            }
         }
         private void defaultCMB()
         {
@@ -54,9 +58,18 @@ namespace ThiTracNghiemBetta.form
             enableInputs();
             gc_BD.Enabled = false;
             bdsBODE.AddNew();
+            txtIDCH.Enabled = true;
+            if (Program.mNhom == "GIANGVIEN")
+            {
+                txtGV.Text = Program.mUserId;
+                txtGV.Enabled = false;
+                cmbGV.Enabled = false;
+            }
             //txtIDCH.Text = "0";
             txtIDCH.Focus();
             Program.Control = "add";
+            
+
         }
 
         private void disableModify()
@@ -77,6 +90,7 @@ namespace ThiTracNghiemBetta.form
             enableModify();
             disableInputs();
             gc_BD.Enabled = true;
+            barbtSave.Enabled = false;
             if (Program.mNhom == "TRUONG")
             {
                 disableModify();
@@ -85,11 +99,13 @@ namespace ThiTracNghiemBetta.form
             }
             else if (Program.mNhom == "COSO")
             {
-                
 
+
+            } else 
+            if (Program.mNhom == "GIANGVIEN")
+            {
+               
             }
-
-
         }
         private void disableInputs()
         {
@@ -201,12 +217,19 @@ namespace ThiTracNghiemBetta.form
             enableInputs();
             txtIDCH.Enabled = false;
             gc_BD.Enabled = false;
+
+            if (Program.mNhom == "GIANGVIEN")
+            {
+                txtGV.Enabled = false;
+                cmbGV.Enabled = false;
+            }
         }
 
         private void barbtXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (isTonTaiChiTietDeThi(txtIDCH.Text))
             {
+                MessageBox.Show("Mã câu hỏi đã tồn tại trong chi tiết bài thi");
                 return;
             } 
             if (MessageBox.Show("Bạn có muốn xóa câu " + txtIDCH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -219,20 +242,26 @@ namespace ThiTracNghiemBetta.form
 
         private bool isTonTaiChiTietDeThi(String ma)
         {
-            if (cHITIETBAITHIBindingSource.SupportsSearching != true)
-            {
-                MessageBox.Show("Cannot search the list.");
-                return false;
-            }
 
-            else
+            try
             {
-                int foundIndex = cHITIETBAITHIBindingSource.Find("CAUHOI", ma);
-                if (foundIndex >= 0)
+                int kn = Program.KetNoi();
+                if (kn == 0)
                 {
-                    MessageBox.Show("Mã câu hỏi đã tồn tại trong chi tiết bài thi. Không thể xóa");
+                    return false;
+                }
+                String strlenh = "EXEC dbo.SP_TIMCHITIETBAITHI " + ma.Trim();
+                Program.myReader = Program.ExecSqlDataReader(strlenh);
+                if (Program.myReader.Read() != false)
+                {
+                    Program.conn.Close();
                     return true;
                 }
+                return false;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Kiểm tra mã câu hỏi thất bại: " + e.Message, "", MessageBoxButtons.OK);
                 return false;
             }
         }
@@ -261,6 +290,15 @@ namespace ThiTracNghiemBetta.form
                     Program.frmMain.btnXEMBAITHI.Enabled = Program.frmMain.btnXEMBANGDIEM.Enabled = Program.frmMain.btnXEMDSDANGKY.Enabled = true;
                 }
                 this.Close();
+            }
+        }
+
+        private void txtIDCH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr !=8)
+            {
+                e.Handled = true;
             }
         }
     }

@@ -100,18 +100,7 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupF = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.cHITIETBAITHIGridControl = new DevExpress.XtraGrid.GridControl();
             this.cHITIETBAITHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID_CHI_TIET = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMA_BAI_THI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCAUHOI1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDA_CHON = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCAU_SO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -154,14 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
             this.dataLayoutControl2.SuspendLayout();
             this.SuspendLayout();
@@ -367,7 +349,7 @@
             this.gc_BD.MainView = this.gvBD;
             this.gc_BD.MenuManager = this.barManager1;
             this.gc_BD.Name = "gc_BD";
-            this.gc_BD.Size = new System.Drawing.Size(1226, 469);
+            this.gc_BD.Size = new System.Drawing.Size(1226, 405);
             this.gc_BD.TabIndex = 4;
             this.gc_BD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBD});
@@ -487,11 +469,11 @@
             this.dataLayoutControl1.Controls.Add(this.txtDA);
             this.dataLayoutControl1.Controls.Add(this.txtGV);
             this.dataLayoutControl1.DataSource = this.bdsBODE;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(12, 485);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(12, 421);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 345, 650, 400);
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1226, 356);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1226, 468);
             this.dataLayoutControl1.TabIndex = 5;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
@@ -517,7 +499,7 @@
             "B",
             "C",
             "D"});
-            this.cmbDA.Location = new System.Drawing.Point(133, 299);
+            this.cmbDA.Location = new System.Drawing.Point(133, 411);
             this.cmbDA.Name = "cmbDA";
             this.cmbDA.Size = new System.Drawing.Size(1081, 21);
             this.cmbDA.TabIndex = 16;
@@ -559,12 +541,12 @@
             this.txtIDCH.Properties.Appearance.Options.UseTextOptions = true;
             this.txtIDCH.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtIDCH.Properties.Mask.EditMask = "N0";
-            this.txtIDCH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtIDCH.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtIDCH.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtIDCH.Size = new System.Drawing.Size(1081, 20);
             this.txtIDCH.StyleController = this.dataLayoutControl1;
             this.txtIDCH.TabIndex = 4;
+            this.txtIDCH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDCH_KeyPress);
             // 
             // txtMAMH
             // 
@@ -594,14 +576,14 @@
             this.txtND.Location = new System.Drawing.Point(133, 183);
             this.txtND.MenuManager = this.barManager1;
             this.txtND.Name = "txtND";
-            this.txtND.Size = new System.Drawing.Size(1081, 16);
+            this.txtND.Size = new System.Drawing.Size(1081, 128);
             this.txtND.StyleController = this.dataLayoutControl1;
             this.txtND.TabIndex = 7;
             // 
             // txtA
             // 
             this.txtA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "A", true));
-            this.txtA.Location = new System.Drawing.Point(133, 203);
+            this.txtA.Location = new System.Drawing.Point(133, 315);
             this.txtA.MenuManager = this.barManager1;
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(1081, 20);
@@ -611,7 +593,7 @@
             // txtB
             // 
             this.txtB.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "B", true));
-            this.txtB.Location = new System.Drawing.Point(133, 227);
+            this.txtB.Location = new System.Drawing.Point(133, 339);
             this.txtB.MenuManager = this.barManager1;
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(1081, 20);
@@ -621,7 +603,7 @@
             // txtC
             // 
             this.txtC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "C", true));
-            this.txtC.Location = new System.Drawing.Point(133, 251);
+            this.txtC.Location = new System.Drawing.Point(133, 363);
             this.txtC.MenuManager = this.barManager1;
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(1081, 20);
@@ -631,7 +613,7 @@
             // txtD
             // 
             this.txtD.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "D", true));
-            this.txtD.Location = new System.Drawing.Point(133, 275);
+            this.txtD.Location = new System.Drawing.Point(133, 387);
             this.txtD.MenuManager = this.barManager1;
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(1081, 20);
@@ -642,7 +624,7 @@
             // 
             this.txtDA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "DAP_AN", true));
             this.txtDA.Enabled = false;
-            this.txtDA.Location = new System.Drawing.Point(133, 324);
+            this.txtDA.Location = new System.Drawing.Point(133, 436);
             this.txtDA.MenuManager = this.barManager1;
             this.txtDA.Name = "txtDA";
             this.txtDA.Size = new System.Drawing.Size(1081, 20);
@@ -667,7 +649,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1226, 356);
+            this.Root.Size = new System.Drawing.Size(1226, 468);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -691,7 +673,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1206, 336);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1206, 448);
             // 
             // ItemForCAUHOI
             // 
@@ -725,7 +707,7 @@
             this.ItemForNOIDUNG.Control = this.txtND;
             this.ItemForNOIDUNG.Location = new System.Drawing.Point(0, 171);
             this.ItemForNOIDUNG.Name = "ItemForNOIDUNG";
-            this.ItemForNOIDUNG.Size = new System.Drawing.Size(1206, 20);
+            this.ItemForNOIDUNG.Size = new System.Drawing.Size(1206, 132);
             this.ItemForNOIDUNG.StartNewLine = true;
             this.ItemForNOIDUNG.Text = "Nội dung câu hỏi";
             this.ItemForNOIDUNG.TextSize = new System.Drawing.Size(118, 13);
@@ -733,7 +715,7 @@
             // ItemForA
             // 
             this.ItemForA.Control = this.txtA;
-            this.ItemForA.Location = new System.Drawing.Point(0, 191);
+            this.ItemForA.Location = new System.Drawing.Point(0, 303);
             this.ItemForA.Name = "ItemForA";
             this.ItemForA.Size = new System.Drawing.Size(1206, 24);
             this.ItemForA.Text = "A";
@@ -742,7 +724,7 @@
             // ItemForB
             // 
             this.ItemForB.Control = this.txtB;
-            this.ItemForB.Location = new System.Drawing.Point(0, 215);
+            this.ItemForB.Location = new System.Drawing.Point(0, 327);
             this.ItemForB.Name = "ItemForB";
             this.ItemForB.Size = new System.Drawing.Size(1206, 24);
             this.ItemForB.Text = "B";
@@ -751,7 +733,7 @@
             // ItemForC
             // 
             this.ItemForC.Control = this.txtC;
-            this.ItemForC.Location = new System.Drawing.Point(0, 239);
+            this.ItemForC.Location = new System.Drawing.Point(0, 351);
             this.ItemForC.Name = "ItemForC";
             this.ItemForC.Size = new System.Drawing.Size(1206, 24);
             this.ItemForC.Text = "C";
@@ -760,7 +742,7 @@
             // ItemForD
             // 
             this.ItemForD.Control = this.txtD;
-            this.ItemForD.Location = new System.Drawing.Point(0, 263);
+            this.ItemForD.Location = new System.Drawing.Point(0, 375);
             this.ItemForD.Name = "ItemForD";
             this.ItemForD.Size = new System.Drawing.Size(1206, 24);
             this.ItemForD.Text = "D";
@@ -769,7 +751,7 @@
             // ItemForDAP_AN
             // 
             this.ItemForDAP_AN.Control = this.txtDA;
-            this.ItemForDAP_AN.Location = new System.Drawing.Point(0, 312);
+            this.ItemForDAP_AN.Location = new System.Drawing.Point(0, 424);
             this.ItemForDAP_AN.Name = "ItemForDAP_AN";
             this.ItemForDAP_AN.Size = new System.Drawing.Size(1206, 24);
             this.ItemForDAP_AN.Text = "Đáp án  đã chọn";
@@ -805,7 +787,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cmbDA;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 287);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 399);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(1206, 25);
             this.layoutControlItem4.Text = "Chọn đáp án cho câu hỏi";
@@ -826,8 +808,7 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.groupF,
-            this.layoutControlItem7});
+            this.groupF});
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1250, 901);
             this.layoutControlGroup2.TextVisible = false;
@@ -837,124 +818,26 @@
             this.layoutControlItem1.Control = this.gc_BD;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1230, 473);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1230, 409);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // groupF
             // 
             this.groupF.Control = this.dataLayoutControl1;
-            this.groupF.Location = new System.Drawing.Point(0, 473);
+            this.groupF.Location = new System.Drawing.Point(0, 409);
             this.groupF.Name = "groupF";
-            this.groupF.Size = new System.Drawing.Size(1230, 360);
+            this.groupF.Size = new System.Drawing.Size(1230, 472);
             this.groupF.TextSize = new System.Drawing.Size(0, 0);
             this.groupF.TextVisible = false;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.layoutControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 833);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1230, 48);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.cHITIETBAITHIGridControl);
-            this.layoutControl1.Location = new System.Drawing.Point(12, 845);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup3;
-            this.layoutControl1.Size = new System.Drawing.Size(1226, 44);
-            this.layoutControl1.TabIndex = 7;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // cHITIETBAITHIGridControl
-            // 
-            this.cHITIETBAITHIGridControl.DataSource = this.cHITIETBAITHIBindingSource;
-            this.cHITIETBAITHIGridControl.Location = new System.Drawing.Point(12, 12);
-            this.cHITIETBAITHIGridControl.MainView = this.gridView1;
-            this.cHITIETBAITHIGridControl.MenuManager = this.barManager1;
-            this.cHITIETBAITHIGridControl.Name = "cHITIETBAITHIGridControl";
-            this.cHITIETBAITHIGridControl.Size = new System.Drawing.Size(1202, 20);
-            this.cHITIETBAITHIGridControl.TabIndex = 6;
-            this.cHITIETBAITHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
             // 
             // cHITIETBAITHIBindingSource
             // 
             this.cHITIETBAITHIBindingSource.DataMember = "FK_CHITIETBAITHI_BODE";
             this.cHITIETBAITHIBindingSource.DataSource = this.bdsBODE;
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID_CHI_TIET,
-            this.colMA_BAI_THI,
-            this.colCAUHOI1,
-            this.colDA_CHON,
-            this.colCAU_SO});
-            this.gridView1.GridControl = this.cHITIETBAITHIGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colID_CHI_TIET
-            // 
-            this.colID_CHI_TIET.FieldName = "ID_CHI_TIET";
-            this.colID_CHI_TIET.Name = "colID_CHI_TIET";
-            this.colID_CHI_TIET.Visible = true;
-            this.colID_CHI_TIET.VisibleIndex = 0;
-            // 
-            // colMA_BAI_THI
-            // 
-            this.colMA_BAI_THI.FieldName = "MA_BAI_THI";
-            this.colMA_BAI_THI.Name = "colMA_BAI_THI";
-            this.colMA_BAI_THI.Visible = true;
-            this.colMA_BAI_THI.VisibleIndex = 1;
-            // 
-            // colCAUHOI1
-            // 
-            this.colCAUHOI1.FieldName = "CAUHOI";
-            this.colCAUHOI1.Name = "colCAUHOI1";
-            this.colCAUHOI1.Visible = true;
-            this.colCAUHOI1.VisibleIndex = 2;
-            // 
-            // colDA_CHON
-            // 
-            this.colDA_CHON.FieldName = "DA_CHON";
-            this.colDA_CHON.Name = "colDA_CHON";
-            this.colDA_CHON.Visible = true;
-            this.colDA_CHON.VisibleIndex = 3;
-            // 
-            // colCAU_SO
-            // 
-            this.colCAU_SO.FieldName = "CAU_SO";
-            this.colCAU_SO.Name = "colCAU_SO";
-            this.colCAU_SO.Visible = true;
-            this.colCAU_SO.VisibleIndex = 4;
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup3.GroupBordersVisible = false;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem6});
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1226, 44);
-            this.layoutControlGroup3.TextVisible = false;
-            this.layoutControlGroup3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.cHITIETBAITHIGridControl;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1206, 24);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
             // dataLayoutControl2
             // 
-            this.dataLayoutControl2.Controls.Add(this.layoutControl1);
             this.dataLayoutControl2.Controls.Add(this.dataLayoutControl1);
             this.dataLayoutControl2.Controls.Add(this.gc_BD);
             this.dataLayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1024,14 +907,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
             this.dataLayoutControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1115,16 +991,5 @@
         private TN_CSDLPTDataSet dS;
         private System.Windows.Forms.BindingSource cHITIETBAITHIBindingSource;
         private TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter cHITIETBAITHITableAdapter;
-        private DevExpress.XtraGrid.GridControl cHITIETBAITHIGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_CHI_TIET;
-        private DevExpress.XtraGrid.Columns.GridColumn colMA_BAI_THI;
-        private DevExpress.XtraGrid.Columns.GridColumn colCAUHOI1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDA_CHON;
-        private DevExpress.XtraGrid.Columns.GridColumn colCAU_SO;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

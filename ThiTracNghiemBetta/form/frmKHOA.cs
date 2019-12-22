@@ -42,6 +42,7 @@ namespace ThiTracNghiemBetta.form
 
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS.BODE);
+
         }
 
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
@@ -237,12 +238,13 @@ namespace ThiTracNghiemBetta.form
 
             if (Program.mNhom == "TRUONG")
             {
+                disableModify();
                 cmbCS.Enabled = true;
-                barbtAdd.Enabled = false;
-                barbtDel.Enabled = false;
-                barbtEdit.Enabled = false;
-                barbtSave1.Enabled = barbtRefesh1.Enabled = false;
-                groupBox1.Enabled = false;
+                gvControlGV.Enabled = true;
+                barbtCancel1.Enabled = barbtSave1.Enabled = false;
+                barbtRefesh1.Enabled = true;
+                
+                groupBox1.Enabled = true;
                 groupBox3.Enabled = false;
 
                 btnAddGV.Enabled = false;
@@ -415,8 +417,7 @@ namespace ThiTracNghiemBetta.form
 
         private void onRefreshGiaoVien(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
+            reloadData();
         }
     }
 }
