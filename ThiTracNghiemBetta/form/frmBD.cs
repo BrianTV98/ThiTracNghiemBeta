@@ -20,22 +20,27 @@ namespace ThiTracNghiemBetta.form
 
         private void frmBD_Load(object sender, EventArgs e)
         {
+
+            reloadData();
+
+            defaultCMB();
+            normalMode();
+        }
+        private void reloadData()
+        {
+            this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.CHITIETBAITHI' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
 
             this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
-            
+
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.BODE' table. You can move, or remove it, as needed.
             this.bODETableAdapter.Fill(this.dS.BODE);
-
-            defaultCMB();
-            normalMode();
         }
         private void defaultCMB()
         {
@@ -148,17 +153,20 @@ namespace ThiTracNghiemBetta.form
 
         private void cmbGV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbGV.SelectedValue!=null)
             txtGV.Text = cmbGV.SelectedValue.ToString();
         }
 
         private void cmbMH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbMH.SelectedValue!=null)
             txtMAMH.Text = cmbMH.SelectedValue.ToString();
 
         }
 
         private void cmbTRINHDO_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            if (cmbTRINHDO.SelectedItem!=null)
             txtTRINHDO.Text = cmbTRINHDO.SelectedItem.ToString();
         }
 
@@ -167,14 +175,93 @@ namespace ThiTracNghiemBetta.form
             txtDA.Text = cmbDA.SelectedItem.ToString();
         }
 
-        private void barbtSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!validate()) return;
+
+            try
+            {
+                this.Validate();
+                this.bdsBODE.EndEdit();
+                this.bODETableAdapter.Update(this.dS.BODE);
+                MessageBox.Show("Đã ghi lại thành công", "", MessageBoxButtons.OK);
+                normalMode();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi câu hỏi " + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void barbtSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.Control = "edit";
             disableModify();
             enableInputs();
             txtIDCH.Enabled = false;
             gc_BD.Enabled = false;
+        }
 
+        private void barbtXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (isTonTaiChiTietDeThi(txtIDCH.Text))
+            {
+                return;
+            } 
+            if (MessageBox.Show("Bạn có muốn xóa câu " + txtIDCH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                bdsBODE.RemoveAt(bdsBODE.Position);
+                this.gIAOVIENTableAdapter.Update(this.dS.GIAOVIEN);
+                MessageBox.Show("Xóa thành công", "", MessageBoxButtons.OK);
+            }
+        }
+
+        private bool isTonTaiChiTietDeThi(String ma)
+        {
+            if (cHITIETBAITHIBindingSource.SupportsSearching != true)
+            {
+                MessageBox.Show("Cannot search the list.");
+                return false;
+            }
+
+            else
+            {
+                int foundIndex = cHITIETBAITHIBindingSource.Find("CAUHOI", ma);
+                if (foundIndex >= 0)
+                {
+                    MessageBox.Show("Mã câu hỏi đã tồn tại trong chi tiết bài thi. Không thể xóa");
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private void barbtRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            reloadData();
+        }
+
+        private void barbtCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            bdsBODE.CancelEdit();
+            normalMode();
+            Program.Control = "";
+            gc_BD.Enabled = true;
+        }
+
+        private void barbtExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Thoát sẽ mất hết dữ liệu đang thao tác. Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (Program.mNhom == "GIANGVIEN") Program.frmMain.btKHOA.Enabled = Program.frmMain.btGiaoVien.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = Program.frmMain.btlogin.Enabled = false;
+                else
+                {
+                    Program.frmMain.btBD.Enabled = Program.frmMain.btCancel.Enabled = Program.frmMain.btDSDK.Enabled = Program.frmMain.btKHOA.Enabled = Program.frmMain.btlogin.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = true;
+                    Program.frmMain.btnXEMBAITHI.Enabled = Program.frmMain.btnXEMBANGDIEM.Enabled = Program.frmMain.btnXEMDSDANGKY.Enabled = true;
+                }
+                this.Close();
+            }
         }
     }
 }

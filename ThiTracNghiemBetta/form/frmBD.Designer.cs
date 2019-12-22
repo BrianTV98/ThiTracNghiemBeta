@@ -45,6 +45,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new ThiTracNghiemBetta.TN_CSDLPTDataSet();
             this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bODETableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.BODETableAdapter();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -99,10 +100,23 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupF = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cHITIETBAITHIGridControl = new DevExpress.XtraGrid.GridControl();
+            this.cHITIETBAITHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_CHI_TIET = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMA_BAI_THI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAUHOI1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDA_CHON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCAU_SO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.dS = new ThiTracNghiemBetta.TN_CSDLPTDataSet();
+            this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
@@ -140,9 +154,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
             this.dataLayoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -206,36 +227,42 @@
             this.barbtXoa.Caption = "Xóa";
             this.barbtXoa.Id = 1;
             this.barbtXoa.Name = "barbtXoa";
+            this.barbtXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtXoa_ItemClick);
             // 
             // barbtSua
             // 
             this.barbtSua.Caption = "Sửa";
             this.barbtSua.Id = 2;
             this.barbtSua.Name = "barbtSua";
+            this.barbtSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtSua_ItemClick_1);
             // 
             // barbtRefresh
             // 
             this.barbtRefresh.Caption = "Làm mới";
             this.barbtRefresh.Id = 3;
             this.barbtRefresh.Name = "barbtRefresh";
+            this.barbtRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtRefresh_ItemClick);
             // 
             // barbtCancel
             // 
             this.barbtCancel.Caption = "Hủy bỏ";
             this.barbtCancel.Id = 4;
             this.barbtCancel.Name = "barbtCancel";
+            this.barbtCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtCancel_ItemClick);
             // 
             // barbtSave
             // 
             this.barbtSave.Caption = "Lưu";
             this.barbtSave.Id = 5;
             this.barbtSave.Name = "barbtSave";
+            this.barbtSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtSave_ItemClick);
             // 
             // barbtExit
             // 
             this.barbtExit.Caption = "Thoát";
             this.barbtExit.Id = 6;
             this.barbtExit.Name = "barbtExit";
+            this.barbtExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtExit_ItemClick);
             // 
             // bar3
             // 
@@ -255,15 +282,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1213, 49);
+            this.barDockControlTop.Size = new System.Drawing.Size(1250, 49);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 913);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 950);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1213, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1250, 23);
             // 
             // barDockControlLeft
             // 
@@ -271,24 +298,30 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 49);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 864);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 901);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1213, 49);
+            this.barDockControlRight.Location = new System.Drawing.Point(1250, 49);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 864);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 901);
             // 
             // bdsBODE
             // 
             this.bdsBODE.DataMember = "BODE";
             this.bdsBODE.DataSource = this.dS;
             // 
+            // dS
+            // 
+            this.dS.DataSetName = "TN_CSDLPTDataSet";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gIAOVIENBindingSource
             // 
             this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
+            this.gIAOVIENBindingSource.DataSource = this.dS;
             // 
             // bODETableAdapter
             // 
@@ -316,6 +349,7 @@
             // mONHOCBindingSource
             // 
             this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.dS;
             // 
             // mONHOCTableAdapter
             // 
@@ -324,6 +358,7 @@
             // gIAOVIENBindingSource1
             // 
             this.gIAOVIENBindingSource1.DataMember = "GIAOVIEN";
+            this.gIAOVIENBindingSource1.DataSource = this.dS;
             // 
             // gc_BD
             // 
@@ -332,7 +367,7 @@
             this.gc_BD.MainView = this.gvBD;
             this.gc_BD.MenuManager = this.barManager1;
             this.gc_BD.Name = "gc_BD";
-            this.gc_BD.Size = new System.Drawing.Size(1189, 398);
+            this.gc_BD.Size = new System.Drawing.Size(1226, 469);
             this.gc_BD.TabIndex = 4;
             this.gc_BD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBD});
@@ -452,11 +487,11 @@
             this.dataLayoutControl1.Controls.Add(this.txtDA);
             this.dataLayoutControl1.Controls.Add(this.txtGV);
             this.dataLayoutControl1.DataSource = this.bdsBODE;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(12, 414);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(12, 485);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 345, 650, 400);
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1189, 438);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1226, 356);
             this.dataLayoutControl1.TabIndex = 5;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
@@ -468,7 +503,7 @@
             this.cmbGV.FormattingEnabled = true;
             this.cmbGV.Location = new System.Drawing.Point(133, 36);
             this.cmbGV.Name = "cmbGV";
-            this.cmbGV.Size = new System.Drawing.Size(1044, 21);
+            this.cmbGV.Size = new System.Drawing.Size(1081, 21);
             this.cmbGV.TabIndex = 17;
             this.cmbGV.ValueMember = "MAGV";
             this.cmbGV.SelectedIndexChanged += new System.EventHandler(this.cmbGV_SelectedIndexChanged);
@@ -482,9 +517,9 @@
             "B",
             "C",
             "D"});
-            this.cmbDA.Location = new System.Drawing.Point(133, 381);
+            this.cmbDA.Location = new System.Drawing.Point(133, 299);
             this.cmbDA.Name = "cmbDA";
-            this.cmbDA.Size = new System.Drawing.Size(1044, 21);
+            this.cmbDA.Size = new System.Drawing.Size(1081, 21);
             this.cmbDA.TabIndex = 16;
             this.cmbDA.SelectedIndexChanged += new System.EventHandler(this.cmbDA_SelectedIndexChanged);
             // 
@@ -498,7 +533,7 @@
             "C"});
             this.cmbTRINHDO.Location = new System.Drawing.Point(133, 134);
             this.cmbTRINHDO.Name = "cmbTRINHDO";
-            this.cmbTRINHDO.Size = new System.Drawing.Size(1044, 21);
+            this.cmbTRINHDO.Size = new System.Drawing.Size(1081, 21);
             this.cmbTRINHDO.TabIndex = 15;
             this.cmbTRINHDO.SelectedIndexChanged += new System.EventHandler(this.cmbTRINHDO_SelectedIndexChanged_1);
             // 
@@ -510,7 +545,7 @@
             this.cmbMH.FormattingEnabled = true;
             this.cmbMH.Location = new System.Drawing.Point(133, 85);
             this.cmbMH.Name = "cmbMH";
-            this.cmbMH.Size = new System.Drawing.Size(1044, 21);
+            this.cmbMH.Size = new System.Drawing.Size(1081, 21);
             this.cmbMH.TabIndex = 14;
             this.cmbMH.ValueMember = "MAMH";
             this.cmbMH.SelectedIndexChanged += new System.EventHandler(this.cmbMH_SelectedIndexChanged);
@@ -527,27 +562,29 @@
             this.txtIDCH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtIDCH.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtIDCH.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtIDCH.Size = new System.Drawing.Size(1044, 20);
+            this.txtIDCH.Size = new System.Drawing.Size(1081, 20);
             this.txtIDCH.StyleController = this.dataLayoutControl1;
             this.txtIDCH.TabIndex = 4;
             // 
             // txtMAMH
             // 
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "MAMH", true));
+            this.txtMAMH.Enabled = false;
             this.txtMAMH.Location = new System.Drawing.Point(133, 110);
             this.txtMAMH.MenuManager = this.barManager1;
             this.txtMAMH.Name = "txtMAMH";
-            this.txtMAMH.Size = new System.Drawing.Size(1044, 20);
+            this.txtMAMH.Size = new System.Drawing.Size(1081, 20);
             this.txtMAMH.StyleController = this.dataLayoutControl1;
             this.txtMAMH.TabIndex = 5;
             // 
             // txtTRINHDO
             // 
             this.txtTRINHDO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "TRINHDO", true));
+            this.txtTRINHDO.Enabled = false;
             this.txtTRINHDO.Location = new System.Drawing.Point(133, 159);
             this.txtTRINHDO.MenuManager = this.barManager1;
             this.txtTRINHDO.Name = "txtTRINHDO";
-            this.txtTRINHDO.Size = new System.Drawing.Size(1044, 20);
+            this.txtTRINHDO.Size = new System.Drawing.Size(1081, 20);
             this.txtTRINHDO.StyleController = this.dataLayoutControl1;
             this.txtTRINHDO.TabIndex = 6;
             // 
@@ -557,57 +594,58 @@
             this.txtND.Location = new System.Drawing.Point(133, 183);
             this.txtND.MenuManager = this.barManager1;
             this.txtND.Name = "txtND";
-            this.txtND.Size = new System.Drawing.Size(1044, 98);
+            this.txtND.Size = new System.Drawing.Size(1081, 16);
             this.txtND.StyleController = this.dataLayoutControl1;
             this.txtND.TabIndex = 7;
             // 
             // txtA
             // 
             this.txtA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "A", true));
-            this.txtA.Location = new System.Drawing.Point(133, 285);
+            this.txtA.Location = new System.Drawing.Point(133, 203);
             this.txtA.MenuManager = this.barManager1;
             this.txtA.Name = "txtA";
-            this.txtA.Size = new System.Drawing.Size(1044, 20);
+            this.txtA.Size = new System.Drawing.Size(1081, 20);
             this.txtA.StyleController = this.dataLayoutControl1;
             this.txtA.TabIndex = 8;
             // 
             // txtB
             // 
             this.txtB.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "B", true));
-            this.txtB.Location = new System.Drawing.Point(133, 309);
+            this.txtB.Location = new System.Drawing.Point(133, 227);
             this.txtB.MenuManager = this.barManager1;
             this.txtB.Name = "txtB";
-            this.txtB.Size = new System.Drawing.Size(1044, 20);
+            this.txtB.Size = new System.Drawing.Size(1081, 20);
             this.txtB.StyleController = this.dataLayoutControl1;
             this.txtB.TabIndex = 9;
             // 
             // txtC
             // 
             this.txtC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "C", true));
-            this.txtC.Location = new System.Drawing.Point(133, 333);
+            this.txtC.Location = new System.Drawing.Point(133, 251);
             this.txtC.MenuManager = this.barManager1;
             this.txtC.Name = "txtC";
-            this.txtC.Size = new System.Drawing.Size(1044, 20);
+            this.txtC.Size = new System.Drawing.Size(1081, 20);
             this.txtC.StyleController = this.dataLayoutControl1;
             this.txtC.TabIndex = 10;
             // 
             // txtD
             // 
             this.txtD.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "D", true));
-            this.txtD.Location = new System.Drawing.Point(133, 357);
+            this.txtD.Location = new System.Drawing.Point(133, 275);
             this.txtD.MenuManager = this.barManager1;
             this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(1044, 20);
+            this.txtD.Size = new System.Drawing.Size(1081, 20);
             this.txtD.StyleController = this.dataLayoutControl1;
             this.txtD.TabIndex = 11;
             // 
             // txtDA
             // 
             this.txtDA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBODE, "DAP_AN", true));
-            this.txtDA.Location = new System.Drawing.Point(133, 406);
+            this.txtDA.Enabled = false;
+            this.txtDA.Location = new System.Drawing.Point(133, 324);
             this.txtDA.MenuManager = this.barManager1;
             this.txtDA.Name = "txtDA";
-            this.txtDA.Size = new System.Drawing.Size(1044, 20);
+            this.txtDA.Size = new System.Drawing.Size(1081, 20);
             this.txtDA.StyleController = this.dataLayoutControl1;
             this.txtDA.TabIndex = 12;
             // 
@@ -618,7 +656,7 @@
             this.txtGV.Location = new System.Drawing.Point(133, 61);
             this.txtGV.MenuManager = this.barManager1;
             this.txtGV.Name = "txtGV";
-            this.txtGV.Size = new System.Drawing.Size(1044, 20);
+            this.txtGV.Size = new System.Drawing.Size(1081, 20);
             this.txtGV.StyleController = this.dataLayoutControl1;
             this.txtGV.TabIndex = 13;
             // 
@@ -629,7 +667,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1189, 438);
+            this.Root.Size = new System.Drawing.Size(1226, 356);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -653,14 +691,14 @@
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1169, 418);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1206, 336);
             // 
             // ItemForCAUHOI
             // 
             this.ItemForCAUHOI.Control = this.txtIDCH;
             this.ItemForCAUHOI.Location = new System.Drawing.Point(0, 0);
             this.ItemForCAUHOI.Name = "ItemForCAUHOI";
-            this.ItemForCAUHOI.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForCAUHOI.Size = new System.Drawing.Size(1206, 24);
             this.ItemForCAUHOI.Text = "ID câu hỏi";
             this.ItemForCAUHOI.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -669,7 +707,7 @@
             this.ItemForMAMH.Control = this.txtMAMH;
             this.ItemForMAMH.Location = new System.Drawing.Point(0, 98);
             this.ItemForMAMH.Name = "ItemForMAMH";
-            this.ItemForMAMH.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForMAMH.Size = new System.Drawing.Size(1206, 24);
             this.ItemForMAMH.Text = "Mã môn học";
             this.ItemForMAMH.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -678,7 +716,7 @@
             this.ItemForTRINHDO.Control = this.txtTRINHDO;
             this.ItemForTRINHDO.Location = new System.Drawing.Point(0, 147);
             this.ItemForTRINHDO.Name = "ItemForTRINHDO";
-            this.ItemForTRINHDO.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForTRINHDO.Size = new System.Drawing.Size(1206, 24);
             this.ItemForTRINHDO.Text = "Trình độ";
             this.ItemForTRINHDO.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -687,7 +725,7 @@
             this.ItemForNOIDUNG.Control = this.txtND;
             this.ItemForNOIDUNG.Location = new System.Drawing.Point(0, 171);
             this.ItemForNOIDUNG.Name = "ItemForNOIDUNG";
-            this.ItemForNOIDUNG.Size = new System.Drawing.Size(1169, 102);
+            this.ItemForNOIDUNG.Size = new System.Drawing.Size(1206, 20);
             this.ItemForNOIDUNG.StartNewLine = true;
             this.ItemForNOIDUNG.Text = "Nội dung câu hỏi";
             this.ItemForNOIDUNG.TextSize = new System.Drawing.Size(118, 13);
@@ -695,45 +733,45 @@
             // ItemForA
             // 
             this.ItemForA.Control = this.txtA;
-            this.ItemForA.Location = new System.Drawing.Point(0, 273);
+            this.ItemForA.Location = new System.Drawing.Point(0, 191);
             this.ItemForA.Name = "ItemForA";
-            this.ItemForA.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForA.Size = new System.Drawing.Size(1206, 24);
             this.ItemForA.Text = "A";
             this.ItemForA.TextSize = new System.Drawing.Size(118, 13);
             // 
             // ItemForB
             // 
             this.ItemForB.Control = this.txtB;
-            this.ItemForB.Location = new System.Drawing.Point(0, 297);
+            this.ItemForB.Location = new System.Drawing.Point(0, 215);
             this.ItemForB.Name = "ItemForB";
-            this.ItemForB.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForB.Size = new System.Drawing.Size(1206, 24);
             this.ItemForB.Text = "B";
             this.ItemForB.TextSize = new System.Drawing.Size(118, 13);
             // 
             // ItemForC
             // 
             this.ItemForC.Control = this.txtC;
-            this.ItemForC.Location = new System.Drawing.Point(0, 321);
+            this.ItemForC.Location = new System.Drawing.Point(0, 239);
             this.ItemForC.Name = "ItemForC";
-            this.ItemForC.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForC.Size = new System.Drawing.Size(1206, 24);
             this.ItemForC.Text = "C";
             this.ItemForC.TextSize = new System.Drawing.Size(118, 13);
             // 
             // ItemForD
             // 
             this.ItemForD.Control = this.txtD;
-            this.ItemForD.Location = new System.Drawing.Point(0, 345);
+            this.ItemForD.Location = new System.Drawing.Point(0, 263);
             this.ItemForD.Name = "ItemForD";
-            this.ItemForD.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForD.Size = new System.Drawing.Size(1206, 24);
             this.ItemForD.Text = "D";
             this.ItemForD.TextSize = new System.Drawing.Size(118, 13);
             // 
             // ItemForDAP_AN
             // 
             this.ItemForDAP_AN.Control = this.txtDA;
-            this.ItemForDAP_AN.Location = new System.Drawing.Point(0, 394);
+            this.ItemForDAP_AN.Location = new System.Drawing.Point(0, 312);
             this.ItemForDAP_AN.Name = "ItemForDAP_AN";
-            this.ItemForDAP_AN.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForDAP_AN.Size = new System.Drawing.Size(1206, 24);
             this.ItemForDAP_AN.Text = "Đáp án  đã chọn";
             this.ItemForDAP_AN.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -742,7 +780,7 @@
             this.layoutControlItem2.Control = this.cmbMH;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 73);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1169, 25);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1206, 25);
             this.layoutControlItem2.Text = "Chọn mã môn học";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -751,7 +789,7 @@
             this.layoutControlItem3.Control = this.cmbTRINHDO;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 122);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1169, 25);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1206, 25);
             this.layoutControlItem3.Text = "Chọn trình độ ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -760,16 +798,16 @@
             this.ItemForMAGV.Control = this.txtGV;
             this.ItemForMAGV.Location = new System.Drawing.Point(0, 49);
             this.ItemForMAGV.Name = "ItemForMAGV";
-            this.ItemForMAGV.Size = new System.Drawing.Size(1169, 24);
+            this.ItemForMAGV.Size = new System.Drawing.Size(1206, 24);
             this.ItemForMAGV.Text = "Mã giáo viên";
             this.ItemForMAGV.TextSize = new System.Drawing.Size(118, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.cmbDA;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 369);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 287);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1169, 25);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1206, 25);
             this.layoutControlItem4.Text = "Chọn đáp án cho câu hỏi";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -778,7 +816,7 @@
             this.layoutControlItem5.Control = this.cmbGV;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(1169, 25);
+            this.layoutControlItem5.Size = new System.Drawing.Size(1206, 25);
             this.layoutControlItem5.Text = "Chọn mã giáo viên";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(118, 13);
             // 
@@ -788,9 +826,10 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.groupF});
+            this.groupF,
+            this.layoutControlItem7});
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1213, 864);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1250, 901);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem1
@@ -798,21 +837,124 @@
             this.layoutControlItem1.Control = this.gc_BD;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1193, 402);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1230, 473);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // groupF
             // 
             this.groupF.Control = this.dataLayoutControl1;
-            this.groupF.Location = new System.Drawing.Point(0, 402);
+            this.groupF.Location = new System.Drawing.Point(0, 473);
             this.groupF.Name = "groupF";
-            this.groupF.Size = new System.Drawing.Size(1193, 442);
+            this.groupF.Size = new System.Drawing.Size(1230, 360);
             this.groupF.TextSize = new System.Drawing.Size(0, 0);
             this.groupF.TextVisible = false;
             // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.layoutControl1;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 833);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(1230, 48);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.cHITIETBAITHIGridControl);
+            this.layoutControl1.Location = new System.Drawing.Point(12, 845);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup3;
+            this.layoutControl1.Size = new System.Drawing.Size(1226, 44);
+            this.layoutControl1.TabIndex = 7;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // cHITIETBAITHIGridControl
+            // 
+            this.cHITIETBAITHIGridControl.DataSource = this.cHITIETBAITHIBindingSource;
+            this.cHITIETBAITHIGridControl.Location = new System.Drawing.Point(12, 12);
+            this.cHITIETBAITHIGridControl.MainView = this.gridView1;
+            this.cHITIETBAITHIGridControl.MenuManager = this.barManager1;
+            this.cHITIETBAITHIGridControl.Name = "cHITIETBAITHIGridControl";
+            this.cHITIETBAITHIGridControl.Size = new System.Drawing.Size(1202, 20);
+            this.cHITIETBAITHIGridControl.TabIndex = 6;
+            this.cHITIETBAITHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // cHITIETBAITHIBindingSource
+            // 
+            this.cHITIETBAITHIBindingSource.DataMember = "FK_CHITIETBAITHI_BODE";
+            this.cHITIETBAITHIBindingSource.DataSource = this.bdsBODE;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_CHI_TIET,
+            this.colMA_BAI_THI,
+            this.colCAUHOI1,
+            this.colDA_CHON,
+            this.colCAU_SO});
+            this.gridView1.GridControl = this.cHITIETBAITHIGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colID_CHI_TIET
+            // 
+            this.colID_CHI_TIET.FieldName = "ID_CHI_TIET";
+            this.colID_CHI_TIET.Name = "colID_CHI_TIET";
+            this.colID_CHI_TIET.Visible = true;
+            this.colID_CHI_TIET.VisibleIndex = 0;
+            // 
+            // colMA_BAI_THI
+            // 
+            this.colMA_BAI_THI.FieldName = "MA_BAI_THI";
+            this.colMA_BAI_THI.Name = "colMA_BAI_THI";
+            this.colMA_BAI_THI.Visible = true;
+            this.colMA_BAI_THI.VisibleIndex = 1;
+            // 
+            // colCAUHOI1
+            // 
+            this.colCAUHOI1.FieldName = "CAUHOI";
+            this.colCAUHOI1.Name = "colCAUHOI1";
+            this.colCAUHOI1.Visible = true;
+            this.colCAUHOI1.VisibleIndex = 2;
+            // 
+            // colDA_CHON
+            // 
+            this.colDA_CHON.FieldName = "DA_CHON";
+            this.colDA_CHON.Name = "colDA_CHON";
+            this.colDA_CHON.Visible = true;
+            this.colDA_CHON.VisibleIndex = 3;
+            // 
+            // colCAU_SO
+            // 
+            this.colCAU_SO.FieldName = "CAU_SO";
+            this.colCAU_SO.Name = "colCAU_SO";
+            this.colCAU_SO.Visible = true;
+            this.colCAU_SO.VisibleIndex = 4;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem6});
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1226, 44);
+            this.layoutControlGroup3.TextVisible = false;
+            this.layoutControlGroup3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.cHITIETBAITHIGridControl;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1206, 24);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // dataLayoutControl2
             // 
+            this.dataLayoutControl2.Controls.Add(this.layoutControl1);
             this.dataLayoutControl2.Controls.Add(this.dataLayoutControl1);
             this.dataLayoutControl2.Controls.Add(this.gc_BD);
             this.dataLayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -820,20 +962,19 @@
             this.dataLayoutControl2.Name = "dataLayoutControl2";
             this.dataLayoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 243, 650, 400);
             this.dataLayoutControl2.Root = this.layoutControlGroup2;
-            this.dataLayoutControl2.Size = new System.Drawing.Size(1213, 864);
+            this.dataLayoutControl2.Size = new System.Drawing.Size(1250, 901);
             this.dataLayoutControl2.TabIndex = 5;
             this.dataLayoutControl2.Text = "dataLayoutControl2";
             // 
-            // dS
+            // cHITIETBAITHITableAdapter
             // 
-            this.dS.DataSetName = "TN_CSDLPTDataSet";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cHITIETBAITHITableAdapter.ClearBeforeFill = true;
             // 
             // frmBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 936);
+            this.ClientSize = new System.Drawing.Size(1250, 973);
             this.Controls.Add(this.dataLayoutControl2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -845,6 +986,7 @@
             this.Load += new System.EventHandler(this.frmBD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
@@ -882,9 +1024,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
             this.dataLayoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -964,5 +1113,18 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem groupF;
         private TN_CSDLPTDataSet dS;
+        private System.Windows.Forms.BindingSource cHITIETBAITHIBindingSource;
+        private TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter cHITIETBAITHITableAdapter;
+        private DevExpress.XtraGrid.GridControl cHITIETBAITHIGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_CHI_TIET;
+        private DevExpress.XtraGrid.Columns.GridColumn colMA_BAI_THI;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAUHOI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDA_CHON;
+        private DevExpress.XtraGrid.Columns.GridColumn colCAU_SO;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }
