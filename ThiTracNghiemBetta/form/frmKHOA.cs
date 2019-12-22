@@ -412,5 +412,11 @@ namespace ThiTracNghiemBetta.form
         {
 
         }
+
+        private void onRefreshGiaoVien(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
+        }
     }
 }
