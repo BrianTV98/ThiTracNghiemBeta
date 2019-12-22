@@ -129,6 +129,8 @@
             // 
             this.cb_makhoa.DataSource = this.kHOABindingSource;
             this.cb_makhoa.DisplayMember = "TENKH";
+            this.cb_makhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_makhoa.Enabled = false;
             this.cb_makhoa.FormattingEnabled = true;
             this.cb_makhoa.Location = new System.Drawing.Point(197, 183);
             this.cb_makhoa.Name = "cb_makhoa";

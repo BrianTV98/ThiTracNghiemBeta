@@ -281,5 +281,7 @@ namespace ThiTracNghiemBetta.form
                 this.Close();
             }
         }
+
+       
     }
 }

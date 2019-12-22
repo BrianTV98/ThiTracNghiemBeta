@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,6 @@ namespace ThiTracNghiemBetta.form.student
         public frmInputStudent()
         {
             InitializeComponent();
-           
            
         }
 
@@ -146,8 +146,7 @@ namespace ThiTracNghiemBetta.form.student
 
             //get data add data
             if (f.state == true)
-            {
-                
+            {     
                 DataRow row = this.ds.SINHVIEN.NewRow();
                 row[0] = f.txt_ma_sv.Text.Trim();
                 row[1] = f.txt_ho_sv.Text.Trim();
@@ -158,6 +157,16 @@ namespace ThiTracNghiemBetta.form.student
                 this.ds.SINHVIEN.Rows.Add(row);
                 bds_sv.EndEdit();
                 sINHVIENTableAdapter.Update(this.ds.SINHVIEN);
+                // tao tai khoan 
+                if (f.txt_ma_sv.Enabled == true) // chuc nang add thi moi tao
+                {
+                    if (taoTaiKhoan(f.txt_ma_sv.Text) == false)
+                    {
+                        MessageBox.Show("Lỗi không thể tạo tài khoản!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+
+
+                }
             }
            
         }
@@ -213,8 +222,33 @@ namespace ThiTracNghiemBetta.form.student
                 GV_SV.CurrentRow.Cells[4].Value= f.txt_dia_chi.Text.Trim();
                 bds_sv.EndEdit();
                 sINHVIENTableAdapter.Update(this.ds.SINHVIEN);
+
+               
             }
 
+        }
+        private bool taoTaiKhoan(string masv) // tra ve true neu ton tai - false neu khong ton tai
+        {
+            int kn = Program.KetNoi();
+            if (kn == 0)
+            {
+                MessageBox.Show("Lỗi kết nối! ");
+                return true;
+            }
+            SqlCommand sqlCommand = new SqlCommand("SP_TAOLOGIN", Program.conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@LGNAME", masv);
+            sqlCommand.Parameters.AddWithValue("@PASS", "123");
+            sqlCommand.Parameters.AddWithValue("@USERNAME", masv);
+            sqlCommand.Parameters.AddWithValue("@ROLE", "SINHVIEN");
+            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+            if (kq == 0)
+            {
+                Program.conn.Close();
+                return true;
+            }
+            Program.conn.Close();
+            return false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -229,5 +263,20 @@ namespace ThiTracNghiemBetta.form.student
             bds_sv.EndEdit();
             sINHVIENTableAdapter.Update(this.ds.SINHVIEN);
         }
+
+        private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (Program.mNhom == "GIANGVIEN") Program.frmMain.btKHOA.Enabled = Program.frmMain.btGiaoVien.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = Program.frmMain.btlogin.Enabled = false;
+                else
+                {
+                    Program.frmMain.btBD.Enabled = Program.frmMain.btCancel.Enabled = Program.frmMain.btDSDK.Enabled = Program.frmMain.btKHOA.Enabled = Program.frmMain.btlogin.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = true;
+                    Program.frmMain.btnXEMBAITHI.Enabled = Program.frmMain.btnXEMBANGDIEM.Enabled = Program.frmMain.btnXEMDSDANGKY.Enabled = true;
+                }
+                this.Close();
+            }
+        }
     }
+    
 }

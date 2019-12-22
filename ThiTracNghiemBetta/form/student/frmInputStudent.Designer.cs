@@ -68,6 +68,16 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.popupSinhVien = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             tENKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_khoa)).BeginInit();
@@ -83,12 +93,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GV_SV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.SuspendLayout();
             // 
             // tENKHLabel
             // 
             tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(12, 26);
+            tENKHLabel.Location = new System.Drawing.Point(14, 94);
             tENKHLabel.Name = "tENKHLabel";
             tENKHLabel.Size = new System.Drawing.Size(45, 16);
             tENKHLabel.TabIndex = 2;
@@ -134,7 +145,7 @@
             this.tENKHComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tENKHComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tENKHComboBox.FormattingEnabled = true;
-            this.tENKHComboBox.Location = new System.Drawing.Point(119, 12);
+            this.tENKHComboBox.Location = new System.Drawing.Point(121, 80);
             this.tENKHComboBox.Name = "tENKHComboBox";
             this.tENKHComboBox.Size = new System.Drawing.Size(344, 30);
             this.tENKHComboBox.TabIndex = 3;
@@ -148,7 +159,7 @@
             // gc_lop
             // 
             this.gc_lop.DataSource = this.bds_lop;
-            this.gc_lop.Location = new System.Drawing.Point(10, 106);
+            this.gc_lop.Location = new System.Drawing.Point(12, 174);
             this.gc_lop.MainView = this.gv_Lop;
             this.gc_lop.Name = "gc_lop";
             this.gc_lop.Size = new System.Drawing.Size(1135, 206);
@@ -208,7 +219,7 @@
             // btn_addClass
             // 
             this.btn_addClass.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btn_addClass.Location = new System.Drawing.Point(15, 66);
+            this.btn_addClass.Location = new System.Drawing.Point(17, 134);
             this.btn_addClass.Name = "btn_addClass";
             this.btn_addClass.Size = new System.Drawing.Size(150, 35);
             this.btn_addClass.TabIndex = 4;
@@ -257,7 +268,7 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 36);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1183, 0);
             // 
@@ -265,7 +276,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 595);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 626);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1183, 0);
             // 
@@ -273,17 +284,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 36);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 595);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1183, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1183, 36);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 595);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
             // 
             // btn_add_sv
             // 
@@ -309,7 +320,7 @@
             // txt_malop
             // 
             this.txt_malop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "MALOP", true));
-            this.txt_malop.Location = new System.Drawing.Point(238, 341);
+            this.txt_malop.Location = new System.Drawing.Point(240, 409);
             this.txt_malop.MenuManager = this.barManager1;
             this.txt_malop.Name = "txt_malop";
             this.txt_malop.Size = new System.Drawing.Size(0, 22);
@@ -318,7 +329,7 @@
             // txt_tenLop
             // 
             this.txt_tenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "TENLOP", true));
-            this.txt_tenLop.Location = new System.Drawing.Point(535, 343);
+            this.txt_tenLop.Location = new System.Drawing.Point(537, 411);
             this.txt_tenLop.MenuManager = this.barManager1;
             this.txt_tenLop.Name = "txt_tenLop";
             this.txt_tenLop.Size = new System.Drawing.Size(0, 22);
@@ -327,7 +338,7 @@
             // txt_makhoa
             // 
             this.txt_makhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "MAKH", true));
-            this.txt_makhoa.Location = new System.Drawing.Point(827, 343);
+            this.txt_makhoa.Location = new System.Drawing.Point(829, 411);
             this.txt_makhoa.MenuManager = this.barManager1;
             this.txt_makhoa.Name = "txt_makhoa";
             this.txt_makhoa.Size = new System.Drawing.Size(0, 22);
@@ -355,7 +366,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.GV_SV.DataSource = this.bds_sv;
-            this.GV_SV.Location = new System.Drawing.Point(10, 330);
+            this.GV_SV.Location = new System.Drawing.Point(12, 398);
             this.GV_SV.Name = "GV_SV";
             this.GV_SV.ReadOnly = true;
             this.GV_SV.RowHeadersWidth = 51;
@@ -428,12 +439,102 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // bar2
+            // 
+            this.bar2.BarName = "Tools";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 1;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.Text = "Tools";
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 1;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Tools";
+            // 
+            // barManager2
+            // 
+            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3,
+            this.bar5});
+            this.barManager2.DockControls.Add(this.barDockControl1);
+            this.barManager2.DockControls.Add(this.barDockControl2);
+            this.barManager2.DockControls.Add(this.barDockControl3);
+            this.barManager2.DockControls.Add(this.barDockControl4);
+            this.barManager2.Form = this;
+            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnExit});
+            this.barManager2.MaxItemId = 1;
+            this.barManager2.StatusBar = this.bar5;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(1183, 36);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 626);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(1183, 24);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 36);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 590);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1183, 36);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 590);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Tools";
+            this.bar3.DockCol = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
+            this.bar3.Text = "Tools";
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Status bar";
+            this.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar5.DockCol = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar5.OptionsBar.AllowQuickCustomization = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.Text = "Status bar";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Caption = "THOÁT";
+            this.btnExit.Id = 0;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
+            // 
             // frmInputStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1183, 595);
+            this.ClientSize = new System.Drawing.Size(1183, 650);
             this.Controls.Add(this.GV_SV);
             this.Controls.Add(this.txt_makhoa);
             this.Controls.Add(this.txt_tenLop);
@@ -446,6 +547,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmInputStudent";
             this.Text = "frmStudent";
@@ -465,6 +570,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GV_SV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupSinhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +615,15 @@
         private DevExpress.XtraBars.BarButtonItem btn_delete_sv;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         public System.Windows.Forms.DataGridView GV_SV;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarManager barManager2;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarButtonItem btnExit;
+        private DevExpress.XtraBars.Bar bar5;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
     }
 }
