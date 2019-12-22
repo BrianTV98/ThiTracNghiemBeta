@@ -1,0 +1,25 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_DEM_CAU_HOI]    Script Date: 12/22/2019 9:31:15 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_DEM_CAU_HOI]
+	-- Add the parameters for the stored procedure here
+	@MAMH nchar(5),
+	@TRINHDO nchar(1)
+	
+AS
+DECLARE @DEM  INT
+BEGIN
+
+	 SELECT @DEM = COUNT(*) FROM BODE WHERE MAMH =@MAMH AND TRINHDO =@TRINHDO
+	 RETURN @DEM
+
+END
