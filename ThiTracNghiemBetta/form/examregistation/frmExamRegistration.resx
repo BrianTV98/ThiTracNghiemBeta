@@ -120,30 +120,302 @@
   <metadata name="tHOIGIANLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tHOIGIANLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tHOIGIANLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="tHOIGIANLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 486</value>
+  </data>
+  <data name="tHOIGIANLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 16</value>
+  </data>
+  <data name="tHOIGIANLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="tHOIGIANLabel.Text" xml:space="preserve">
+    <value>THỜI GIAN :</value>
+  </data>
+  <data name="&gt;&gt;tHOIGIANLabel.Name" xml:space="preserve">
+    <value>tHOIGIANLabel</value>
+  </data>
+  <data name="&gt;&gt;tHOIGIANLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tHOIGIANLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;tHOIGIANLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <metadata name="sOCAUTHILabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="sOCAUTHILabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sOCAUTHILabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="sOCAUTHILabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 432</value>
+  </data>
+  <data name="sOCAUTHILabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 16</value>
+  </data>
+  <data name="sOCAUTHILabel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="sOCAUTHILabel.Text" xml:space="preserve">
+    <value>SỐ CÂU HỎI :</value>
+  </data>
+  <data name="&gt;&gt;sOCAUTHILabel.Name" xml:space="preserve">
+    <value>sOCAUTHILabel</value>
+  </data>
+  <data name="&gt;&gt;sOCAUTHILabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sOCAUTHILabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;sOCAUTHILabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <metadata name="lANLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="lANLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lANLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="lANLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 378</value>
+  </data>
+  <data name="lANLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 16</value>
+  </data>
+  <data name="lANLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lANLabel.Text" xml:space="preserve">
+    <value>LẦN THI :</value>
+  </data>
+  <data name="&gt;&gt;lANLabel.Name" xml:space="preserve">
+    <value>lANLabel</value>
+  </data>
+  <data name="&gt;&gt;lANLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lANLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;lANLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <metadata name="nGAYTHILabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="nGAYTHILabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nGAYTHILabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="nGAYTHILabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 324</value>
+  </data>
+  <data name="nGAYTHILabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="nGAYTHILabel.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="nGAYTHILabel.Text" xml:space="preserve">
+    <value>NGÀY THI :</value>
+  </data>
+  <data name="&gt;&gt;nGAYTHILabel.Name" xml:space="preserve">
+    <value>nGAYTHILabel</value>
+  </data>
+  <data name="&gt;&gt;nGAYTHILabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nGAYTHILabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;nGAYTHILabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <metadata name="tRINHDOLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="tRINHDOLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tRINHDOLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="tRINHDOLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 270</value>
+  </data>
+  <data name="tRINHDOLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 16</value>
+  </data>
+  <data name="tRINHDOLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="tRINHDOLabel.Text" xml:space="preserve">
+    <value>TRÌNH ĐỘ :</value>
+  </data>
+  <data name="&gt;&gt;tRINHDOLabel.Name" xml:space="preserve">
+    <value>tRINHDOLabel</value>
+  </data>
+  <data name="&gt;&gt;tRINHDOLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tRINHDOLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;tRINHDOLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <metadata name="mALOPLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="mALOPLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mALOPLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="mALOPLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 216</value>
+  </data>
+  <data name="mALOPLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 16</value>
+  </data>
+  <data name="mALOPLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="mALOPLabel.Text" xml:space="preserve">
+    <value>MÃ LỚP :</value>
+  </data>
+  <data name="&gt;&gt;mALOPLabel.Name" xml:space="preserve">
+    <value>mALOPLabel</value>
+  </data>
+  <data name="&gt;&gt;mALOPLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mALOPLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;mALOPLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
   <metadata name="mAMHLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="mAMHLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mAMHLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="mAMHLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 162</value>
+  </data>
+  <data name="mAMHLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 16</value>
+  </data>
+  <data name="mAMHLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="mAMHLabel.Text" xml:space="preserve">
+    <value>MÃ MÔN HỌC :</value>
+  </data>
+  <data name="&gt;&gt;mAMHLabel.Name" xml:space="preserve">
+    <value>mAMHLabel</value>
+  </data>
+  <data name="&gt;&gt;mAMHLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mAMHLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;mAMHLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
   <metadata name="mAGVLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="mAGVLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mAGVLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="mAGVLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 108</value>
+  </data>
+  <data name="mAGVLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 16</value>
+  </data>
+  <data name="mAGVLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="mAGVLabel.Text" xml:space="preserve">
+    <value>MÃ GIẢNG VIÊN :</value>
+  </data>
+  <data name="&gt;&gt;mAGVLabel.Name" xml:space="preserve">
+    <value>mAGVLabel</value>
+  </data>
+  <data name="&gt;&gt;mAGVLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mAGVLabel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;mAGVLabel.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
   <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 36pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 18</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 68</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ĐĂNG KÝ THI</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -156,6 +428,329 @@
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>776, 17</value>
   </metadata>
+  <data name="txt_validate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txt_validate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="txt_validate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 518</value>
+  </data>
+  <data name="txt_validate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="txt_validate.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="txt_validate.Text" xml:space="preserve">
+    <value>Hiển thị lỗi ở đây!</value>
+  </data>
+  <data name="txt_validate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;txt_validate.Name" xml:space="preserve">
+    <value>txt_validate</value>
+  </data>
+  <data name="&gt;&gt;txt_validate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_validate.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;txt_validate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="mONHOCBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>189, 60</value>
+  </metadata>
+  <data name="cb_maMonHoc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 158</value>
+  </data>
+  <data name="cb_maMonHoc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 24</value>
+  </data>
+  <data name="cb_maMonHoc.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;cb_maMonHoc.Name" xml:space="preserve">
+    <value>cb_maMonHoc</value>
+  </data>
+  <data name="&gt;&gt;cb_maMonHoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_maMonHoc.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;cb_maMonHoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="lOPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>982, 17</value>
+  </metadata>
+  <data name="cb_maLop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 208</value>
+  </data>
+  <data name="cb_maLop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 24</value>
+  </data>
+  <data name="cb_maLop.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;cb_maLop.Name" xml:space="preserve">
+    <value>cb_maLop</value>
+  </data>
+  <data name="&gt;&gt;cb_maLop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_maLop.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;cb_maLop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cb_trinhdo.Items" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="cb_trinhdo.Items1" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="cb_trinhdo.Items2" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="cb_trinhdo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 262</value>
+  </data>
+  <data name="cb_trinhdo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 24</value>
+  </data>
+  <data name="cb_trinhdo.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;cb_trinhdo.Name" xml:space="preserve">
+    <value>cb_trinhdo</value>
+  </data>
+  <data name="&gt;&gt;cb_trinhdo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_trinhdo.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;cb_trinhdo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>415, 549</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 34</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>HỦY BỎ</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnRegister.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 7.8pt</value>
+  </data>
+  <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 549</value>
+  </data>
+  <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 34</value>
+  </data>
+  <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>ĐĂNG KÍ</value>
+  </data>
+  <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
+    <value>btnRegister</value>
+  </data>
+  <data name="&gt;&gt;btnRegister.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegister.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;btnRegister.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txt_magv.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txt_magv.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 103</value>
+  </data>
+  <data name="txt_magv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="txt_magv.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;txt_magv.Name" xml:space="preserve">
+    <value>txt_magv</value>
+  </data>
+  <data name="&gt;&gt;txt_magv.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;txt_magv.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;txt_magv.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="spinEdit_thoigian.EditValue" type="System.Decimal, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="spinEdit_thoigian.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 481</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v19.1" name="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="spinEdit_thoigian.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
+    <value>Combo</value>
+  </data>
+  <data name="spinEdit_thoigian.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="spinEdit_thoigian.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_thoigian.Name" xml:space="preserve">
+    <value>spinEdit_thoigian</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_thoigian.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_thoigian.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_thoigian.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="spinEdit_cauhoi.EditValue" type="System.Decimal, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="spinEdit_cauhoi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 427</value>
+  </data>
+  <data name="spinEdit_cauhoi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
+    <value>Combo</value>
+  </data>
+  <data name="spinEdit_cauhoi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="spinEdit_cauhoi.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_cauhoi.Name" xml:space="preserve">
+    <value>spinEdit_cauhoi</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_cauhoi.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_cauhoi.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_cauhoi.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="spinEdit_lanthi.EditValue" type="System.Decimal, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="spinEdit_lanthi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 373</value>
+  </data>
+  <data name="spinEdit_lanthi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
+    <value>Combo</value>
+  </data>
+  <data name="spinEdit_lanthi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="spinEdit_lanthi.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_lanthi.Name" xml:space="preserve">
+    <value>spinEdit_lanthi</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_lanthi.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_lanthi.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;spinEdit_lanthi.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dt_ngaythi.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="dt_ngaythi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 319</value>
+  </data>
+  <data name="dt_ngaythi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
+    <value>Combo</value>
+  </data>
+  <data name="dt_ngaythi.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
+    <value>Combo</value>
+  </data>
+  <data name="dt_ngaythi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 22</value>
+  </data>
+  <data name="dt_ngaythi.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;dt_ngaythi.Name" xml:space="preserve">
+    <value>dt_ngaythi</value>
+  </data>
+  <data name="&gt;&gt;dt_ngaythi.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dt_ngaythi.Parent" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;dt_ngaythi.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="gr_dkthi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 12</value>
+  </data>
+  <data name="gr_dkthi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>806, 594</value>
+  </data>
+  <data name="gr_dkthi.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gr_dkthi.Name" xml:space="preserve">
+    <value>gr_dkthi</value>
+  </data>
+  <data name="&gt;&gt;gr_dkthi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gr_dkthi.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gr_dkthi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="mONHOCBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>189, 60</value>
   </metadata>
@@ -168,7 +763,76 @@
   <metadata name="mONHOCTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>413, 60</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>108</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>850, 618</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ĐĂNG KÝ THI</value>
+  </data>
+  <data name="&gt;&gt;ds.Name" xml:space="preserve">
+    <value>ds</value>
+  </data>
+  <data name="&gt;&gt;ds.Type" xml:space="preserve">
+    <value>ThiTracNghiemBetta.TN_CSDLPTDataSet, TN_CSDLPTDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bds_giaoVienDangKi.Name" xml:space="preserve">
+    <value>bds_giaoVienDangKi</value>
+  </data>
+  <data name="&gt;&gt;bds_giaoVienDangKi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gIAOVIEN_DANGKYTableAdapter.Name" xml:space="preserve">
+    <value>gIAOVIEN_DANGKYTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;gIAOVIEN_DANGKYTableAdapter.Type" xml:space="preserve">
+    <value>ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.GIAOVIEN_DANGKYTableAdapter, TN_CSDLPTDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Name" xml:space="preserve">
+    <value>tableAdapterManager</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
+    <value>ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager, TN_CSDLPTDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mONHOCBindingSource.Name" xml:space="preserve">
+    <value>mONHOCBindingSource</value>
+  </data>
+  <data name="&gt;&gt;mONHOCBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lOPBindingSource.Name" xml:space="preserve">
+    <value>lOPBindingSource</value>
+  </data>
+  <data name="&gt;&gt;lOPBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lOPTableAdapter.Name" xml:space="preserve">
+    <value>lOPTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;lOPTableAdapter.Type" xml:space="preserve">
+    <value>ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter, TN_CSDLPTDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mONHOCTableAdapter.Name" xml:space="preserve">
+    <value>mONHOCTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;mONHOCTableAdapter.Type" xml:space="preserve">
+    <value>ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.MONHOCTableAdapter, TN_CSDLPTDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmExamRegistration</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

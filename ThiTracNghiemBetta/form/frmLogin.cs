@@ -16,6 +16,7 @@ namespace ThiTracNghiemBetta.form
         public frmLogin()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
