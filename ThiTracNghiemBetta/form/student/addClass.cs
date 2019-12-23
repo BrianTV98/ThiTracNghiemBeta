@@ -23,19 +23,14 @@ namespace ThiTracNghiemBetta.form.student
              * Xóa Maxnimize va Minnima
              * default validate
              * Định dạng form nằm giữa màng hình
-            */
+             */
             InitializeComponent();
             this.frm = f;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.CancelButton = this.btnCancel;
-            txtValidate.Text = frm.gv_Lop.GetFocusedRowCellValue("MALOP").ToString() +"1";
+            txtValidate.Text = " ";
             this.CenterToScreen();
-
-                var row = frm.gv_Lop.FocusedRowHandle;
-                txtMaLop.Text = frm.gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
-                txtTenLop.Text = frm.gv_Lop.GetFocusedRowCellValue("TENLOP").ToString();
-                cb_makhoa.Text = frm.gv_Lop.GetFocusedRowCellValue("MAKH").ToString();
             
            
         }

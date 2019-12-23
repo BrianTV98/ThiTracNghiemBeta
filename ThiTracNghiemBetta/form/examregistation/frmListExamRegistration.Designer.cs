@@ -47,14 +47,14 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barbtnRegister = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_gvdk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
@@ -95,10 +95,10 @@
             // 
             this.gIAOVIEN_DANGKYGridControl.DataSource = this.bds_gvdk;
             this.gIAOVIEN_DANGKYGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(0, 37);
+            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(0, 48);
             this.gIAOVIEN_DANGKYGridControl.MainView = this.gv_gvdk;
             this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(1007, 532);
+            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(1007, 521);
             this.gIAOVIEN_DANGKYGridControl.TabIndex = 1;
             this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_gvdk});
@@ -220,6 +220,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnExit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.bar1.OptionsBar.DisableCustomization = true;
             this.bar1.Text = "Tools";
             // 
             // barbtnRegister
@@ -227,8 +228,18 @@
             this.barbtnRegister.Caption = "Đăng Ký Mới";
             this.barbtnRegister.Id = 0;
             this.barbtnRegister.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnRegister.ImageOptions.SvgImage")));
+            this.barbtnRegister.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtnRegister.Name = "barbtnRegister";
             this.barbtnRegister.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Làm mới";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // barbtnExit
             // 
@@ -236,8 +247,14 @@
             this.barbtnExit.Id = 1;
             this.barbtnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnExit.ImageOptions.Image")));
             this.barbtnExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barbtnExit.ImageOptions.LargeImage")));
+            this.barbtnExit.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtnExit.Name = "barbtnExit";
             this.barbtnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // bar3
             // 
@@ -257,7 +274,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1007, 37);
+            this.barDockControlTop.Size = new System.Drawing.Size(1007, 48);
             // 
             // barDockControlBottom
             // 
@@ -271,30 +288,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 37);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 532);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1007, 37);
+            this.barDockControlRight.Location = new System.Drawing.Point(1007, 48);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 532);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Làm mới";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // frmListExamRegistration
             // 
