@@ -4,6 +4,8 @@ using DevExpress.UserSkins;
 using ThiTracNghiemBetta.form;
 using System.Data;
 using System.Data.SqlClient;
+using ThiTracNghiemBetta.thi;
+
 namespace ThiTracNghiemBetta
 {
     static class Program
@@ -111,7 +113,7 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmLogin());
+            Application.Run(new Thi());
         }
     }
 }
