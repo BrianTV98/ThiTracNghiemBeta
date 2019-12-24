@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using ThiTracNghiemBetta.form.thi;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -26,6 +27,9 @@ namespace ThiTracNghiemBetta.form
         }
         private void btnTHI_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+            frmChonMonThi frm = new frmChonMonThi();
+            frm.ShowDialog();
            /* Form frm = this.CheckExists(typeof(frmThi));
             if (frm != null)
             {
@@ -60,11 +64,11 @@ namespace ThiTracNghiemBetta.form
 
         private void frmSV_Load(object sender, EventArgs e)
         {
- /*           toolStripStatusHOTEN.Text = "Họ và tên: " + Program.mHoTen;
-            toolStripStatusMAGV.Text = "Mã SV:" + Program.username;
+            toolStripStatusHOTEN.Text = "Họ Tên: " + Program.mHoTen;
+            toolStripStatusMAGV.Text = "Mã SV:" + Program.mUserId;
             toolStripStatusNHOM.Text = "nhóm: SINHVIEN";
-            toolStripStatusMALOP.Text = "mã lớp: " + Program.svMaLop;
-            toolStripStatusTENLOP.Text = "tên lớp: " + Program.svTenLop;*/
+            toolStripStatusMALOP.Text = "Mã lớp: " + Program.malop;
+            toolStripStatusTENLOP.Text = "Tên lớp: " + Program.tenlop;
         }
 
         private void btnTRACUUDIEM_ItemClick(object sender, ItemClickEventArgs e)
