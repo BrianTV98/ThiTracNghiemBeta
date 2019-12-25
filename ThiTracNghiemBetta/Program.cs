@@ -40,6 +40,9 @@ namespace ThiTracNghiemBetta
 
         public static frmMain frmMain;
 
+        public static String svMaLop = "";
+        public static String svTenLop = "";
+
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -113,7 +116,7 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new Thi());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using ThiTracNghiemBetta.form.thi;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -26,17 +27,19 @@ namespace ThiTracNghiemBetta.form
         }
         private void btnTHI_ItemClick(object sender, ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmThi));
-            if (frm != null)
-            {
-                Program.formThi.Activate();
-            }
-            else
-            {
-                Program.formThi = new frmThi();
-                Program.formThi.MdiParent = Program.formSV;
-                Program.formThi.Show();
-            }*/
+            /* Form frm = this.CheckExists(typeof(frmThi));
+             if (frm != null)
+             {
+                 Program.formThi.Activate();
+             }
+             else
+             {
+                 Program.formThi = new frmThi();
+                 Program.formThi.MdiParent = Program.formSV;
+                 Program.formThi.Show();
+             }*/
+
+            new frmTracNghiem().ShowDialog();
         }
 
         private void btnDANGXUAT_ItemClick(object sender, ItemClickEventArgs e)
@@ -60,11 +63,11 @@ namespace ThiTracNghiemBetta.form
 
         private void frmSV_Load(object sender, EventArgs e)
         {
- /*           toolStripStatusHOTEN.Text = "Họ và tên: " + Program.mHoTen;
-            toolStripStatusMAGV.Text = "Mã SV:" + Program.username;
+            toolStripStatusHOTEN.Text = "Họ và tên: " + Program.mHoTen;
+            toolStripStatusMAGV.Text = "Mã SV:" + Program.mUserId;
             toolStripStatusNHOM.Text = "nhóm: SINHVIEN";
             toolStripStatusMALOP.Text = "mã lớp: " + Program.svMaLop;
-            toolStripStatusTENLOP.Text = "tên lớp: " + Program.svTenLop;*/
+            toolStripStatusTENLOP.Text = "tên lớp: " + Program.svTenLop;
         }
 
         private void btnTRACUUDIEM_ItemClick(object sender, ItemClickEventArgs e)
