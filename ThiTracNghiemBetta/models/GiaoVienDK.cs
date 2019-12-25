@@ -12,7 +12,7 @@ namespace ThiTracNghiemBetta.models
         private String maMH;
         private String maLop;
         private String trinhDo;
-        private String ngayThi;
+        private DateTime ngayThi;
         private int lan;
         private int soCauThi;
         private int thoiGian;
@@ -20,7 +20,7 @@ namespace ThiTracNghiemBetta.models
         public string MaMH { get => maMH; set => maMH = value; }
         public string MaLop { get => maLop; set => maLop = value; }
         public string TrinhDo { get => trinhDo; set => trinhDo = value; }
-        public string NgayThi { get => ngayThi; set => ngayThi = value; }
+        public DateTime NgayThi { get => ngayThi; set => ngayThi = value; }
         public int Lan { get => lan; set => lan = value; }
         public int SoCauThi { get => soCauThi; set => soCauThi = value; }
         public int ThoiGian { get => thoiGian; set => thoiGian = value; }
@@ -29,8 +29,8 @@ namespace ThiTracNghiemBetta.models
             String maGV, 
             String maMH, 
             String maLop, 
-            String trinhDo, 
-            String ngayThi, 
+            String trinhDo,
+            DateTime ngayThi, 
             int lan, int soCauThi, int thoiGian) 
         {
             base.MaGV = maGV;

@@ -68,6 +68,7 @@ namespace ThiTracNghiemBetta.models
         {
             String strlenh = "EXEC SP_GHIBANGDIEM '" + this.maSV + "', '" + this.maMH + "', " + this.lan + ","
                 + "'" + this.ngayThi + "', " + this.diem;
+
             Program.myReader = Program.ExecSqlDataReader(strlenh);
             Program.myReader.Close();
         }

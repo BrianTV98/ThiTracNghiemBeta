@@ -56,10 +56,10 @@ namespace ThiTracNghiemBetta.form.thi
             Program.myReader.Close();
             lblLOP.Text = "Lớp: " + Program.tenlop;
             lblMONHOC.Text = "Môn học: " + tenMH;
-            lblNGAYTHI.Text = "Ngày thi: " + g.NgayThi.Substring(0, 10);
+            lblNGAYTHI.Text = "Ngày thi: " + g.NgayThi.ToString("dd/MM/yyyy");
             lblTRINHDO.Text = "Trình độ: " + g.TrinhDo;
             btnCAUTRUOC.Enabled = false;
-            mm = 1;
+            mm = g.ThoiGian;
             t.Interval = 1000;
 
             t.Tick += new EventHandler(this.t_Tick);
@@ -415,7 +415,7 @@ namespace ThiTracNghiemBetta.form.thi
         private void ghiBangDiemVaBaiThi()
         {
              GiaoVienDK g = GiaoVienDK.gv_dk;
-             BangDiem bd = new BangDiem(Program.mUserId, g.MaMH, g.Lan, g.NgayThi, tongDiem);
+             BangDiem bd = new BangDiem(Program.mUserId, g.MaMH, g.Lan, g.NgayThi.ToString(), tongDiem);
              bd.ghiDiem();
              String strlenh = "EXEC SP_TIMBANGDIEM_THI '" + Program.mUserId + "', '" + g.MaMH + "', " + g.Lan;
              Program.myReader.Close();

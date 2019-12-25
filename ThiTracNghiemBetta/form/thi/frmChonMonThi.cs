@@ -61,7 +61,7 @@ namespace ThiTracNghiemBetta.form.thi
                 dkthi.GetString(1),
                  dkthi.GetString(2),
                  trinhdo,
-                 dkthi.GetDateTime(4).ToString(),
+                 dkthi.GetDateTime(4),
                  dkthi.GetInt16(5),
                  socauthi,
                  thoigianthi
@@ -118,7 +118,6 @@ namespace ThiTracNghiemBetta.form.thi
              */
             return true;
         }
-
         private void frmChonMonThi_Load(object sender, EventArgs e)
         {
             /*
