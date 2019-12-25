@@ -1,18 +1,11 @@
 USE [TN_CSDLPT]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_GET_DE_THI]    Script Date: 12/25/2019 9:23:32 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GET_DE_THI]    Script Date: 12/25/2019 10:38:21 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
--- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
--- =============================================
-ALTER PROCEDURE [dbo].[SP_GET_DE_THI] 
-	-- Add the parameters for the stored procedure here
-	@MAMH nchar(5),
+ALTER PROCEDURE [dbo].[SP_GET_DE_THI] @MAMH nchar(5),
 	@TRINHDO nchar(1),
 	@SOCAUTHI INT
 	
@@ -21,15 +14,10 @@ BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
-	DECLARE @SOCAUTRINHDOA INT;
-	DECLARE @SOCAUTRINHDOB INT;
-	DECLARE @SOCAUTRINHDOC INT;
-	DECLARE @CHECK INT;
 	
 	IF @TRINHDO='A'
 	BEGIN
-		SELECT @SOCAUTRINHDOA=COUNT(*) FROM (SELECT TOP (@SOCAUTHI) * FROM BODE WHERE MAMH =@MAMH AND TRINHDO=TRINHDO ORDER BY NEWID() ) trinhdoa;
-	
+		SELECT TOP (@SOCAUTHI) * FROM BODE WHERE MAMH =@MAMH AND TRINHDO=@TRINHDO ORDER BY NEWID() ;
 	END
 
 	
