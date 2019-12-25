@@ -1,0 +1,26 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GET_SO_LAN_DANG_KI_MON_THI_THEO_LOP]    Script Date: 12/25/2019 9:25:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GET_SO_LAN_DANG_KI_MON_THI_THEO_LOP] 
+	@MALOP nvarchar(8), 
+	@MAMH nchar(5)
+AS
+
+BEGIN
+
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	DECLARE @DEM INT
+	SELECT @DEM=COUNT(*) FROM GIAOVIEN_DANGKY WHERE MALOP=@MALOP AND MAMH=@MAMH
+	RETURN @DEM;
+END
