@@ -108,6 +108,7 @@
             this.toolStripStatusMALOP.Name = "toolStripStatusMALOP";
             this.toolStripStatusMALOP.Size = new System.Drawing.Size(48, 17);
             this.toolStripStatusMALOP.Text = "MALOP";
+            this.toolStripStatusMALOP.Click += new System.EventHandler(this.toolStripStatusMALOP_Click);
             // 
             // toolStripStatusTENLOP
             // 
@@ -206,6 +207,7 @@
             this.rdoB.TabStop = true;
             this.rdoB.Text = "B";
             this.rdoB.UseVisualStyleBackColor = true;
+            this.rdoB.CheckedChanged += new System.EventHandler(this.rdoB_CheckedChanged);
             // 
             // rdoA
             // 
@@ -315,12 +317,6 @@
             this.lblTHOIGIANTHI.Size = new System.Drawing.Size(71, 19);
             this.lblTHOIGIANTHI.TabIndex = 6;
             this.lblTHOIGIANTHI.Text = "Còn lại:";
-            // 
-            // clock
-            // 
-            this.clock.Enabled = true;
-            this.clock.Interval = 1000;
-            this.clock.Tick += new System.EventHandler(this.clock_Tick);
             // 
             // lblTHONGBAO
             // 

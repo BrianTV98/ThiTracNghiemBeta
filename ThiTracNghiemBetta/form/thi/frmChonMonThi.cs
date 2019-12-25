@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.models;
 
 namespace ThiTracNghiemBetta.form.thi
 {
@@ -37,9 +38,10 @@ namespace ThiTracNghiemBetta.form.thi
             string query = "EXEC SP_GET_DK_THI '" + malop + "','" + mamh + "','" + lanthi + "'";
             MessageBox.Show(query);
             SqlDataReader dkthi= Program.ExecSqlDataReader(query);
-           
+            
             if (dkthi == null)
             {
+                
                 MessageBox.Show("Đợt thi này không tồn tại trong hệ thống");
             }
             else
@@ -50,10 +52,21 @@ namespace ThiTracNghiemBetta.form.thi
                     MessageBox.Show("Đợt thi này đã không còn tồn tại trong hệ thống! ");
                     return;
                 }
+                
                 trinhdo = dkthi.GetString(3).Trim();
                 socauthi = dkthi.GetInt16(6);
                 thoigianthi = dkthi.GetInt16(7);
-
+                GiaoVienDK gv = new GiaoVienDK(
+                dkthi.GetString(0),
+                dkthi.GetString(1),
+                 dkthi.GetString(2),
+                 trinhdo,
+                 dkthi.GetDateTime(4).ToString(),
+                 dkthi.GetInt16(5),
+                 socauthi,
+                 thoigianthi
+                );
+                GiaoVienDK.gv_dk = gv;
                 dkthi.Close();
                 DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI '" + mamh + "','" + trinhdo + "','" + socauthi + "'");
                 
@@ -65,13 +78,38 @@ namespace ThiTracNghiemBetta.form.thi
                 }
                 else
                 {
-                    MessageBox.Show("Có thể thi! ");
+                    this.Close();
+                    List<BoDe> list = convertToListBD(db);
+                    BoDe.boDe = list;
+                    
+                    frmTracNghiem form = new frmTracNghiem();
+                    form.ShowDialog();
+
                 }
             }
-
-
         }
         
+        private List<BoDe> convertToListBD(DataTable ds)
+        {
+            List<BoDe> list = new List<BoDe>();
+            foreach (DataRow row in ds.Rows) {
+                BoDe bd = new BoDe(
+                    Convert.ToInt32(row["CAUHOI"].ToString()),
+                    row["MAMH"].ToString(),
+                    row["TRINHDO"].ToString(),
+                    row["NOIDUNG"].ToString(),
+                    row["A"].ToString(),
+                    row["B"].ToString(),
+                    row["C"].ToString(),
+                    row["D"].ToString(),
+                    row["DAP_AN"].ToString(),
+                    row["MAGV"].ToString()
+                    );
+                list.Add(bd);
+            }
+            return list;
+        }
+
         private bool check_validate()
         {
             /*

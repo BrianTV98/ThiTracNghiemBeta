@@ -8,7 +8,7 @@ namespace ThiTracNghiemBetta.models
 {
     class BoDe
     {
-        private String cauHoi;
+        private int cauHoi;
         private String maMH;
         private String trinhDo;
         private String noiDung;
@@ -19,7 +19,7 @@ namespace ThiTracNghiemBetta.models
         private String dapAnDung;
         private String maGV;
 
-        public string CauHoi { get => cauHoi; set => cauHoi = value; }
+        public int CauHoi { get => cauHoi; set => cauHoi = value; }
         public string MaMH { get => maMH; set => maMH = value; }
         public string TrinhDo { get => trinhDo; set => trinhDo = value; }
         public string NoiDung { get => noiDung; set => noiDung = value; }
@@ -30,7 +30,9 @@ namespace ThiTracNghiemBetta.models
         public string DapAnDung { get => dapAnDung; set => dapAnDung = value; }
         public string MaGV { get => maGV; set => maGV = value; }
 
-        public BoDe(string cauHoi, string maMH, string trinhDo, string noiDung, 
+
+        public static List<BoDe> boDe;
+        public BoDe(int cauHoi, string maMH, string trinhDo, string noiDung, 
             string dapAnA, string dapAnB, string dapAnC, string dapAnD, string dapAnDung, string maGV)
         {
             this.cauHoi = cauHoi;

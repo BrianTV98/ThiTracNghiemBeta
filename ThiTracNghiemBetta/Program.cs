@@ -4,7 +4,6 @@ using DevExpress.UserSkins;
 using ThiTracNghiemBetta.form;
 using System.Data;
 using System.Data.SqlClient;
-using ThiTracNghiemBetta.thi;
 
 namespace ThiTracNghiemBetta
 {
@@ -42,9 +41,6 @@ namespace ThiTracNghiemBetta
         public static String Control = "";
 
         public static frmMain frmMain;
-
-        public static String svMaLop = "";
-        public static String svTenLop = "";
 
         public static int KetNoi()
         {
