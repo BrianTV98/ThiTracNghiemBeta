@@ -30,7 +30,7 @@ namespace ThiTracNghiemBetta.form.student
             // disable Minimize va Maxnimax
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
+            this.CenterToScreen();
             this.CancelButton = this.btn_Cancel;
             txt_malop.Enabled = false;
             txt_validate.Text = "";

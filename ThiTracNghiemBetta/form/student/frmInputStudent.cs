@@ -37,7 +37,7 @@ namespace ThiTracNghiemBetta.form.student
             // TODO: This line of code loads data into the 'ds.SINHVIEN' table. You can move, or remove it, as needed.
             this.sINHVIENTableAdapter.Fill(this.ds.SINHVIEN);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.ds.LOP);
+            this.adapterLop.Fill(this.ds.LOP);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Fill(this.ds.KHOA);
 
@@ -80,36 +80,12 @@ namespace ThiTracNghiemBetta.form.student
         {
             /*
              * show diaglog
-             * chuẩn hóa mã lớp -> Viết IN HOA
-             * chuẩn hóa tên lớp -> Viết IN HOA VA CHỈ CHỨA 1 khoảng trắng giữa các ký tự
              */
-            addClass f = new addClass();
+            addClass f = new addClass(this);
             f.ShowDialog();
-            gv_Lop.AddNewRow();
-            
-            txt_malop.Text = f.txtMaLop.Text.Trim().ToUpper();
-            txt_tenLop.Text =chuanHoaTenLop(f.txtTenLop.Text.Trim().ToUpper()) ;
-            txt_makhoa.Text = f.cb_makhoa.SelectedValue.ToString();
-            if (f.state == true)
-            {
-                bds_lop.EndEdit();
-                this.lOPTableAdapter.Update(this.ds.LOP);
-            }
-            else gv_Lop.DeleteSelectedRows();
            
         }
-        private string chuanHoaTenLop(String tenlop)
-        {
-            string result = "";
-            Int32 count = 10;
-            char[] spearator = { ' ' };
-            String[] arr = tenlop.Split(spearator, count, StringSplitOptions.RemoveEmptyEntries);
-            foreach(string i in arr)
-            {
-                result = result + i + " ";
-            }
-            return result.Trim().ToUpper();
-        }
+
 
       
         private void sINHVIENDataGridView_MouseClick(object sender, MouseEventArgs e)
@@ -122,19 +98,9 @@ namespace ThiTracNghiemBetta.form.student
 
         private void btn_edit_lop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var row = gv_Lop.FocusedRowHandle;
             frmEditClass f = new frmEditClass();
-            f.txtMaLop.Text = gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
-            f.txtTenLop.Text = gv_Lop.GetFocusedRowCellValue("TENLOP").ToString();
-            f.txt_maKhoa.Text = gv_Lop.GetFocusedRowCellValue("MAKH").ToString();
+            f.txtMaLop.Enabled = false;
             f.ShowDialog();
-            string test = f.txtTenLop.Text;
-            txt_makhoa.Text = f.txt_maKhoa.Text;
-            txt_tenLop.Text = chuanHoaTenLop(f.txtTenLop.Text);
-            txt_malop.Text = f.txtMaLop.Text;
-
-            bds_lop.EndEdit();
-            this.lOPTableAdapter.Update(this.ds.LOP);
         }
 
         private void btn_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -144,7 +110,7 @@ namespace ThiTracNghiemBetta.form.student
                 var row = gv_Lop.FocusedRowHandle;
                 gv_Lop.DeleteRow(row);
                 bds_lop.EndEdit();
-                this.lOPTableAdapter.Update(this.ds.LOP);
+                this.adapterLop.Update(this.ds.LOP);
             }
         }
 
@@ -165,10 +131,10 @@ namespace ThiTracNghiemBetta.form.student
             {     
                 DataRow row = this.ds.SINHVIEN.NewRow();
                 row[0] = f.txt_ma_sv.Text.Trim().ToUpper();
-                row[1] = chuanHoaTenLop(f.txt_ho_sv.Text.Trim());
-                row[2] = chuanHoaTenLop(f.txt_ten_sv.Text.Trim());
-                row[3] =  new DateTime(f.dt_picker.Value.Year, f.dt_picker.Value.Month, f.dt_picker.Value.Day) ;
-                row[4] = chuanHoaTenLop(f.txt_dia_chi.Text.Trim());
+                row[1] = utils.utils.chuanHoaTen(f.txt_ho_sv.Text.Trim());
+                row[2] = utils.utils.chuanHoaTen(f.txt_ten_sv.Text.Trim());
+                row[3] = new DateTime(f.dt_picker.Value.Year, f.dt_picker.Value.Month, f.dt_picker.Value.Day) ;
+                row[4] = utils.utils.chuanHoaTen(f.txt_dia_chi.Text.Trim());
                 row[5] = f.txt_malop.Text;
                 this.ds.SINHVIEN.Rows.Add(row);
                 bds_sv.EndEdit();
@@ -290,6 +256,12 @@ namespace ThiTracNghiemBetta.form.student
                 }
                 this.Close();
             }
+        }
+
+        private void barbtnaddClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            addClass f = new addClass(this);
+            f.ShowDialog();
         }
     }
     

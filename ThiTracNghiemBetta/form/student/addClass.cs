@@ -9,19 +9,30 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.utils;
 
 namespace ThiTracNghiemBetta.form.student
 {
     public partial class addClass : Form
     {
         protected internal bool state=false;
-        public addClass()
+        frmInputStudent frm = new frmInputStudent();
+        public addClass(frmInputStudent f)
         {
+            /*
+             * Xóa Maxnimize va Minnima
+             * default validate
+             * Định dạng form nằm giữa màng hình
+             */
             InitializeComponent();
+            this.frm = f;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.CancelButton = this.btnCancel;
-            txtValidate.Text = "";
+            txtValidate.Text = " ";
+            this.CenterToScreen();
+            
+           
         }
 
         private void kHOABindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -39,16 +50,23 @@ namespace ThiTracNghiemBetta.form.student
             this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Fill(this.tN_CSDLPTDataSet.KHOA);
-           
-
         }
 
         private void btn_addClass_Click(object sender, EventArgs e)
         {
+            /*
+             * Nếu check ok -> thêm vào lớp
+             */
             if (checkValidateAddClass() == true)
             {
-                  state = true;
-                  this.Close();
+                DataRow dr= frm.ds.LOP.NewRow();
+                dr[0] = txtMaLop.Text.Trim().ToUpper();
+                dr[1] = utils.utils.chuanHoaTen(txtTenLop.Text);
+                dr[2] = cb_makhoa.SelectedValue.ToString();
+                frm.ds.LOP.Rows.Add(dr);
+                frm.bds_lop.EndEdit();
+                frm.adapterLop.Update(frm.ds.LOP);  
+                this.Close();
             }  
         }
         private bool checkExistTenLop(string tenlop)
