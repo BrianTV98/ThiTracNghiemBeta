@@ -34,7 +34,7 @@ namespace ThiTracNghiemBetta.form.thi
             soCauThi = boDe.Count;
             this.cT_BAITHITableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.CT_BAITHI' table. You can move, or remove it, as needed.
-            this.cT_BAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);
+            //this.cT_BAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);
             // TODO: This line of code loads data into the 'dSQLTN.CT_BAITHI' table. You can move, or remove it, as needed.
             toolStripStatusHOTEN.Text = "Họ và tên: " + Program.mHoTen;
             toolStripStatusMAGV.Text = "Mã SV:" + Program.mUserId;
@@ -423,7 +423,7 @@ namespace ThiTracNghiemBetta.form.thi
              Program.myReader = Program.ExecSqlDataReader(strlenh);
              Program.myReader.Read();
 
-             int idBangDiem = Program.myReader.GetInt32(6);
+             int idBangDiem = Program.myReader.GetInt32(5);
              Program.myReader.Close();
              foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
              {

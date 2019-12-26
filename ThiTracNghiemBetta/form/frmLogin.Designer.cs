@@ -116,7 +116,7 @@
             this.edtPassword.PasswordChar = '*';
             this.edtPassword.Size = new System.Drawing.Size(239, 22);
             this.edtPassword.TabIndex = 7;
-            this.edtPassword.Text = "12";
+            this.edtPassword.Text = "123";
             // 
             // edtUserName
             // 
@@ -125,7 +125,7 @@
             this.edtUserName.Name = "edtUserName";
             this.edtUserName.Size = new System.Drawing.Size(239, 22);
             this.edtUserName.TabIndex = 6;
-            this.edtUserName.Text = "taolasinhvien";
+            this.edtUserName.Text = "a";
             // 
             // label4
             // 
@@ -191,12 +191,10 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(827, 526);
             this.Controls.Add(this.groupBox1);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
