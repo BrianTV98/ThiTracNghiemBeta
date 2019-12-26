@@ -1,0 +1,74 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GET_DE_THI]    Script Date: 12/25/2019 9:36:52 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GET_DE_THI]  @soCauThi INT, 
+                                  @maMH  NCHAR(5), 
+                                  @trinhDo NCHAR(1)
+AS 
+    DECLARE  
+            @maBD        INT, 
+            @res         INT, 
+            @subRes      INT, 
+            @TrinhDoDuoi NCHAR(1), 
+            @CauDuoi     INT, 
+            @CauDuoi2    INT, 
+            @CauCUng     INT 
+
+    -- res: so cau tim duoc trong BO DE 
+  BEGIN
+      -- random cau hoi + insert bai thi 
+      --Trình độ A 
+      IF( @trinhDo = 'A' ) 
+        BEGIN
+			exec dbo.SP_TaoBaiThiAB @soCauThi, @maMH, @trinhDo
+			return
+        END 
+      --Trình độ B 
+      ELSE IF( @trinhDo = 'B' ) 
+        BEGIN 
+			exec dbo.SP_TaoBaiThiAB @soCauThi, @maMH, @trinhDo
+			return
+        END 
+
+      --Trình độ C 
+      IF( @trinhDo = 'C' ) 
+        BEGIN 
+            -- Tất cả các câu hỏi của giáo viên thuộc khoa đó trong cơ sở đó với MH đó + trình độ đó 
+			select @res = count(cauhoi) from dbo.layBoDeCSHienTai('C',@maMH)
+            -- Case bộ đề đủ đáp ứng với yêu cầu 
+            IF( @res >= @soCauThi ) 
+              BEGIN 
+                  -- Trả về kết quả  
+                  SELECT top (@soCauThi) * FROM  dbo.layBoDeCSHienTai('C',@maMH) 
+				  order by newid() 
+				  return
+              END 
+            -- Case không đủ đáp ứng <
+            ELSE IF( @res < @soCauThi ) 
+              BEGIN 
+                  select @subRes = count(cauhoi) from dbo.layBoDeCSKhac('C',@maMH) 
+                  IF( @subRes < @soCauThi - @res ) 
+                    BEGIN 
+                        return
+                    --SELECT N'Không đủ số câu để tạo đề!'  
+                    END 
+                  ELSE IF( @subRes >= @soCauThi - @res ) 
+                    BEGIN 
+						-- Select lại bộ đề cũ chưa đủ
+                        SELECT * FROM dbo.layBoDeCSHienTai('C',@maMH)
+						Union ALL
+						Select TOP (@soCauThi - @res) * from dbo.layBoDeCSKhac('C',@maMH)
+                        --ORDER  BY Newid() 
+                    END 
+              END 
+        END 
+  END 

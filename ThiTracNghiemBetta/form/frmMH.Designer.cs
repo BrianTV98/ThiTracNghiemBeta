@@ -33,7 +33,6 @@
             this.mAMHLabel = new System.Windows.Forms.Label();
             this.tENMHLabel = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barbtAdd = new DevExpress.XtraBars.BarButtonItem();
             this.barbtDel = new DevExpress.XtraBars.BarButtonItem();
@@ -130,8 +129,8 @@
             // 
             // barManager1
             // 
+            this.barManager1.AllowMoveBarOnToolbar = false;
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -149,26 +148,16 @@
             this.btnHuy,
             this.barbtSave,
             this.btnThoat});
-            this.barManager1.MainMenu = this.bar1;
             this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "MainMenu";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.OptionsBar.MultiLine = true;
-            this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.Text = "MainMenu";
             // 
             // bar2
             // 
             this.bar2.BarName = "Tools";
             this.bar2.DockCol = 0;
-            this.bar2.DockRow = 1;
+            this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatSize = new System.Drawing.Size(0, 50);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtAdd),
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtDel),
@@ -177,13 +166,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
+            this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.Text = "Tools";
             // 
             // barbtAdd
             // 
             this.barbtAdd.Caption = "Thêm";
             this.barbtAdd.Id = 0;
-            this.barbtAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtAdd.ImageOptions.Image")));
+            this.barbtAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtAdd.ImageOptions.SvgImage")));
+            this.barbtAdd.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtAdd.Name = "barbtAdd";
             this.barbtAdd.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
@@ -192,7 +183,8 @@
             // 
             this.barbtDel.Caption = "Xóa";
             this.barbtDel.Id = 1;
-            this.barbtDel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtDel.ImageOptions.Image")));
+            this.barbtDel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtDel.ImageOptions.SvgImage")));
+            this.barbtDel.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtDel.Name = "barbtDel";
             this.barbtDel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
@@ -201,7 +193,8 @@
             // 
             this.barbtEdit.Caption = "Sửa";
             this.barbtEdit.Id = 2;
-            this.barbtEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtEdit.ImageOptions.Image")));
+            this.barbtEdit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtEdit.ImageOptions.SvgImage")));
+            this.barbtEdit.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtEdit.Name = "barbtEdit";
             this.barbtEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
@@ -210,7 +203,8 @@
             // 
             this.barbtRefesh.Caption = "Làm mới";
             this.barbtRefesh.Id = 3;
-            this.barbtRefesh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtRefesh.ImageOptions.Image")));
+            this.barbtRefesh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtRefesh.ImageOptions.SvgImage")));
+            this.barbtRefesh.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtRefesh.Name = "barbtRefesh";
             this.barbtRefesh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtRefesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLamMoi_ItemClick);
@@ -219,7 +213,8 @@
             // 
             this.btnHuy.Caption = "Hủy";
             this.btnHuy.Id = 6;
-            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
+            this.btnHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHuy.ImageOptions.SvgImage")));
+            this.btnHuy.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
@@ -228,7 +223,8 @@
             // 
             this.barbtSave.Caption = "Lưu";
             this.barbtSave.Id = 7;
-            this.barbtSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtSave.ImageOptions.Image")));
+            this.barbtSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtSave.ImageOptions.SvgImage")));
+            this.barbtSave.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtSave.Name = "barbtSave";
             this.barbtSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
@@ -237,10 +233,13 @@
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 8;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.btnThoat.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ItemAppearance.Disabled.Options.UseFont = true;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.Size = new System.Drawing.Size(0, 40);
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
@@ -261,8 +260,8 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1202, 77);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1202, 61);
             // 
             // barDockControlBottom
             // 
@@ -270,35 +269,26 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 579);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlBottom.Size = new System.Drawing.Size(1202, 24);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 77);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 502);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 518);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1202, 77);
+            this.barDockControlRight.Location = new System.Drawing.Point(1202, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 502);
-            // 
-            // btnPhucHoi
-            // 
-            this.btnPhucHoi.Caption = "Phục hồi";
-            this.btnPhucHoi.Id = 4;
-            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
-            this.btnPhucHoi.Name = "btnPhucHoi";
-            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 518);
             // 
             // btnPhucHoi
             // 
@@ -324,11 +314,11 @@
             this.DataLayoutMH.Controls.Add(this.gcMH);
             this.DataLayoutMH.DataSource = this.mONHOCTableAdapterBindingSource;
             this.DataLayoutMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataLayoutMH.Location = new System.Drawing.Point(0, 77);
-            this.DataLayoutMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataLayoutMH.Location = new System.Drawing.Point(0, 61);
+            this.DataLayoutMH.Margin = new System.Windows.Forms.Padding(2);
             this.DataLayoutMH.Name = "DataLayoutMH";
             this.DataLayoutMH.Root = this.layoutControlGroup1;
-            this.DataLayoutMH.Size = new System.Drawing.Size(1202, 502);
+            this.DataLayoutMH.Size = new System.Drawing.Size(1202, 518);
             this.DataLayoutMH.TabIndex = 4;
             this.DataLayoutMH.Text = "dataLayoutControl1";
             // 
@@ -336,11 +326,11 @@
             // 
             this.groupControl2.Controls.Add(this.gIAOVIEN_DANGKYGridControl);
             this.groupControl2.Controls.Add(this.bODEGridControl);
-            this.groupControl2.Location = new System.Drawing.Point(8, 311);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupControl2.Location = new System.Drawing.Point(12, 321);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(1186, 183);
+            this.groupControl2.Size = new System.Drawing.Size(1178, 185);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "groupControl2";
             this.groupControl2.Visible = false;
@@ -348,10 +338,10 @@
             // gIAOVIEN_DANGKYGridControl
             // 
             this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
-            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(458, 25);
             this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView3;
-            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
             this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
             this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(507, 51);
@@ -385,10 +375,10 @@
             // bODEGridControl
             // 
             this.bODEGridControl.DataSource = this.bdsBD;
-            this.bODEGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bODEGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.bODEGridControl.Location = new System.Drawing.Point(4, 25);
             this.bODEGridControl.MainView = this.gridView2;
-            this.bODEGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bODEGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.bODEGridControl.MenuManager = this.barManager1;
             this.bODEGridControl.Name = "bODEGridControl";
             this.bODEGridControl.Size = new System.Drawing.Size(427, 51);
@@ -415,11 +405,11 @@
             this.groupBox1.Controls.Add(this.txtTENMH);
             this.groupBox1.Controls.Add(this.mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMAMH);
-            this.groupBox1.Location = new System.Drawing.Point(8, 202);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 210);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.ShowCaption = false;
-            this.groupBox1.Size = new System.Drawing.Size(1186, 107);
+            this.groupBox1.Size = new System.Drawing.Size(1178, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.Text = "groupControl1";
             // 
@@ -427,7 +417,7 @@
             // 
             this.txtTENMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
             this.txtTENMH.Location = new System.Drawing.Point(291, 63);
-            this.txtTENMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTENMH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTENMH.MenuManager = this.barManager1;
             this.txtTENMH.Name = "txtTENMH";
             this.txtTENMH.Size = new System.Drawing.Size(305, 22);
@@ -437,23 +427,23 @@
             // 
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
             this.txtMAMH.Location = new System.Drawing.Point(291, 24);
-            this.txtMAMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMAMH.Margin = new System.Windows.Forms.Padding(2);
             this.txtMAMH.MenuManager = this.barManager1;
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Properties.MaxLength = 5;
-            this.txtMAMH.Size = new System.Drawing.Size(193, 36);
+            this.txtMAMH.Size = new System.Drawing.Size(193, 22);
             this.txtMAMH.TabIndex = 1;
             // 
             // gcMH
             // 
             this.gcMH.DataSource = this.bdsMH;
-            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gcMH.Location = new System.Drawing.Point(8, 8);
+            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gcMH.Location = new System.Drawing.Point(12, 12);
             this.gcMH.MainView = this.gridView1;
-            this.gcMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gcMH.Margin = new System.Windows.Forms.Padding(2);
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1186, 192);
+            this.gcMH.Size = new System.Drawing.Size(1178, 194);
             this.gcMH.TabIndex = 4;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -510,7 +500,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1202, 502);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1202, 518);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -518,25 +508,25 @@
             this.layoutControlItem1.Control = this.gcMH;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1188, 194);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1182, 198);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.groupBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 194);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 198);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1188, 109);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1182, 111);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.groupControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 303);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 309);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1188, 185);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1182, 189);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -595,7 +585,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMH";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMH_Load);
@@ -634,7 +624,6 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;

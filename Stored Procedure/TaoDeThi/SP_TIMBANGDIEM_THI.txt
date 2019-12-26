@@ -1,0 +1,27 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIMBANGDIEM_THI]    Script Date: 12/26/2019 8:08:27 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIMBANGDIEM_THI]
+	-- Add the parameters for the stored procedure here
+	@MASV nchar(8),
+	@MAMH nchar(5),
+	@LAN smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM BANGDIEM WHERE MASV=@MASV AND MAMH=@MAMH AND LAN=@LAN
+END
+

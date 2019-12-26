@@ -1,0 +1,25 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  UserDefinedFunction [dbo].[layBoDeCSKhac]    Script Date: 12/25/2019 9:40:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER FUNCTION [dbo].[layBoDeCSKhac] (
+    @trinhDo   NCHAR(1), 
+	@maMH  NCHAR(5)
+)
+RETURNS Table
+AS return SELECT * FROM bode 
+                  WHERE  mamh = @maMH 
+                         AND trinhdo = @trinhDo 
+                         AND magv not IN (SELECT magv 
+                                      FROM   giaovien 
+                                      WHERE  makh IN (SELECT makh 
+                                                      FROM   khoa))
+

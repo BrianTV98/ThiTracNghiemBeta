@@ -1,0 +1,117 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TaoBaiThiAB]    Script Date: 12/25/2019 8:55:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TaoBaiThiAB] @soCauThi INT, 
+                                  @maMH  NCHAR(5), 
+                                  @trinhDo NCHAR(1)
+AS 
+    DECLARE  
+            @maBD        INT, 
+            @res         INT, 
+            @subRes      INT, 
+			@res2     INT,
+			@subres2     INT,
+			@tmp  INT,
+            @TrinhDoDuoi NCHAR(1), 
+            @CauDuoi     INT, 
+            @CauDuoi2    INT, 
+            @CauCUng     INT 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+    -- trình độ A hoặc B 
+       IF( @trinhDo = 'A' ) 
+        BEGIN 
+            SET @TrinhDoDuoi = 'B' 
+        END 
+      --Trình độ B 
+      ELSE IF( @trinhDo = 'B' ) 
+        BEGIN 
+            SET @TrinhDoDuoi = 'C' 
+        END 
+
+	select @res = count(cauhoi) from dbo.layBoDeCSHienTai(@trinhDo,@maMH) 
+	select @subRes = count(cauhoi) from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+	select @res2 = count(cauhoi) from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+	select @subres2 = count(cauhoi) from dbo.layBoDeCSKhac(@TrinhDoDuoi,@maMH)
+
+    if (@res >= @soCauThi) begin 
+		SELECT top (@soCauThi) * FROM dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+				  order by newid() 
+		return
+	end 
+
+	if (@soCauThi * 0.7 <= @res) begin 
+		if ( @soCauThi <= @res + @subRes ) begin 
+			select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+			union all
+			select top (@soCauThi - @res) * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+			return
+		end else begin 
+			if (@res2 + @subRes + @res >= @soCauThi) begin
+				select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+				union all
+				select * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+				union all 
+				select top (@soCauThi - @subRes - @res) * from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+				return
+			end else begin 
+				if (@subres2 + @subRes + @res2 + @res >= @soCauThi) begin 
+					select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+					union all
+					select * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+					union all 
+					select * from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+					union all
+					select top (@soCauThi - ( @subRes + @res2 + @res)) * from dbo.layBoDeCSKhac(@TrinhDoDuoi,@maMH)
+					return
+				end else begin 
+					return
+				end
+			end
+		end
+	end 
+
+	if (@subRes >= @soCauThi * 0.3) begin 
+		Set @tmp = Floor(@soCauThi * 0.3)
+		if (@res2 + @tmp + @res >= @soCauThi) begin 
+			select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+			union all
+			select top (@tmp) * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+			union all 
+			select top (@soCauThi - @res - @tmp) * from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+			return
+		end 
+		return
+	end
+
+	if (@res + @subRes + @res2 >= @soCauThi) begin 
+			select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+			union all
+			select * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+			union all 
+			select top (@soCauThi - @res - @subRes) * from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+			return
+	end
+
+	if (@res + @subRes + @res2 + @subres2 >= @soCauThi) begin
+		select * from dbo.layBoDeCSHienTai(@trinhDo,@maMH)
+		union all
+		select * from dbo.layBoDeCSHienTai(@TrinhDoDuoi,@maMH)
+		union all 
+		select * from dbo.layBoDeCSKhac(@trinhDo,@maMH)
+		union all
+		select top (@soCauThi - (@res + @subRes + @res2)) * from dbo.layBoDeCSKhac(@TrinhDoDuoi,@maMH)
+		return
+	end 
+	return
+    END-- end trình độ A hoặc B  

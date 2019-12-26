@@ -19,6 +19,7 @@ namespace ThiTracNghiemBetta.form.student
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             txt_validate.Text = "";
+            this.CenterToScreen();
 
         }
 

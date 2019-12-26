@@ -13,16 +13,19 @@ namespace ThiTracNghiemBetta.form.examregistation
 {
     public partial class frmExamRegistration : Form
     {
-        public frmExamRegistration()
+        frmListExamRegistration frmRoot;
+        public frmExamRegistration(frmListExamRegistration f)
         {
             InitializeComponent();
+            this.frmRoot = f;
             txt_magv.Text = Program.mUserId.Trim();
             // default trinh do
             cb_trinhdo.SelectedIndex = 0;
             txt_validate.Text = "";
             this.CancelButton = btnCancel;
-            gr_dkthi.Left = this.Width*2/ 3;
-            gr_dkthi.Top = this.Height / 5;
+            this.CenterToScreen();
+            /*gr_dkthi.Left = this.Width*2/ 3;
+            gr_dkthi.Top = this.Height / 5;*/
 
         }
 
@@ -105,6 +108,7 @@ namespace ThiTracNghiemBetta.form.examregistation
                 this.ds.GIAOVIEN_DANGKY.Rows.Add(row);
                 bds_giaoVienDangKi.EndEdit();
                 this.gIAOVIEN_DANGKYTableAdapter.Update(this.ds.GIAOVIEN_DANGKY);
+                this.frmRoot.adapter_gvdk.Fill(this.frmRoot.ds.GIAOVIEN_DANGKY);
                 return true;
             }
             catch(Exception e)
@@ -237,16 +241,7 @@ namespace ThiTracNghiemBetta.form.examregistation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                if (Program.mNhom == "GIANGVIEN") Program.frmMain.btKHOA.Enabled = Program.frmMain.btGiaoVien.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = Program.frmMain.btlogin.Enabled = false;
-                else
-                {
-                    Program.frmMain.btBD.Enabled = Program.frmMain.btCancel.Enabled = Program.frmMain.btDSDK.Enabled = Program.frmMain.btKHOA.Enabled = Program.frmMain.btlogin.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = true;
-                    Program.frmMain.btnXEMBAITHI.Enabled = Program.frmMain.btnXEMBANGDIEM.Enabled = Program.frmMain.btnXEMDSDANGKY.Enabled = true;
-                }
-                this.Close();
-            }
+            this.Close();
             
         }
     }
