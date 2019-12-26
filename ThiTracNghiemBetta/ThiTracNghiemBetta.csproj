@@ -124,10 +124,16 @@
     <Compile Include="form\register\frmRegisterUsers.Designer.cs">
       <DependentUpon>frmRegisterUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\frmSV.cs">
+    <Compile Include="form\thi\frmChonMonThi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\frmSV.designer.cs">
+    <Compile Include="form\thi\frmChonMonThi.Designer.cs">
+      <DependentUpon>frmChonMonThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\thi\frmSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\thi\frmSV.designer.cs">
       <DependentUpon>frmSV.cs</DependentUpon>
     </Compile>
     <Compile Include="form\register\loginAuthentication.cs">
@@ -160,7 +166,17 @@
     <Compile Include="form\student\frmInputStudent.Designer.cs">
       <DependentUpon>frmInputStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\thi\frmTracNghiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\thi\frmTracNghiem.Designer.cs">
+      <DependentUpon>frmTracNghiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\BangDiem.cs" />
+    <Compile Include="models\BoDe.cs" />
+    <Compile Include="models\CT_BaiThi.cs" />
     <Compile Include="models\GiaoVien.cs" />
+    <Compile Include="models\GiaoVienDK.cs" />
     <Compile Include="models\LoginModel.cs" />
     <Compile Include="models\Student.cs" />
     <Compile Include="Program.cs" />
@@ -204,7 +220,10 @@
     <EmbeddedResource Include="form\register\frmRegisterUsers.resx">
       <DependentUpon>frmRegisterUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\frmSV.resx">
+    <EmbeddedResource Include="form\thi\frmChonMonThi.resx">
+      <DependentUpon>frmChonMonThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\frmSV.resx">
       <DependentUpon>frmSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\register\loginAuthentication.resx">
@@ -221,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\student\frmInputStudent.resx">
       <DependentUpon>frmInputStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\frmTracNghiem.resx">
+      <DependentUpon>frmTracNghiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,0 +1,25 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GET_DE_THI]    Script Date: 12/25/2019 10:38:21 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_GET_DE_THI] @MAMH nchar(5),
+	@TRINHDO nchar(1),
+	@SOCAUTHI INT
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	IF @TRINHDO='A'
+	BEGIN
+		SELECT TOP (@SOCAUTHI) * FROM BODE WHERE MAMH =@MAMH AND TRINHDO=@TRINHDO ORDER BY NEWID() ;
+	END
+
+	
+	
+END

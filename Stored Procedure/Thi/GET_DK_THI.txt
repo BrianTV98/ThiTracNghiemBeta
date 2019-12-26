@@ -1,0 +1,26 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GET_DK_THI]    Script Date: 12/25/2019 9:24:25 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GET_DK_THI]
+	-- Add the parameters for the stored procedure here
+	@MALOP nchar(8),
+	@MAMH  nchar(5),
+	@LAN   smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * FROM GIAOVIEN_DANGKY WHERE MALOP=@MALOP AND MAMH=@MAMH AND LAN=@LAN;
+END

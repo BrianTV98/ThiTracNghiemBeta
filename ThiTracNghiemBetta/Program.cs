@@ -4,6 +4,7 @@ using DevExpress.UserSkins;
 using ThiTracNghiemBetta.form;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace ThiTracNghiemBetta
 {
     static class Program
@@ -19,6 +20,9 @@ namespace ThiTracNghiemBetta
         public static String mUserId = "";
         public static String mlogin = "";
         public static String password = "";
+        public static String malop = "";
+        public static String tenlop = "";
+
 
         public static String database = "TN_CSDLPT";
         public static String remotelogin = "SUPPORT_CONECT"; //HTKN 
@@ -96,7 +100,12 @@ namespace ThiTracNghiemBetta
             retval.Direction = ParameterDirection.ReturnValue;
             try { sqlcmd.ExecuteNonQuery(); }
             catch (Exception) { }
-            return int.Parse(sqlcmd.Parameters["@return_value"].Value.ToString());
+            string tmp = sqlcmd.Parameters["@return_value"].Value.ToString();
+            if (tmp == null)
+            {
+                MessageBox.Show("Lỗi lập trình! Sp hoặc đối số của sp có vấn đề!");
+            }
+            return int.Parse(tmp);
 
         }
 

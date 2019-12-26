@@ -56,6 +56,8 @@ namespace ThiTracNghiemBetta.form
             Program.mHoTen = Program.myReader.GetString(1);
             Program.mNhom = Program.myReader.GetString(2);
             Program.mLoai = Program.myReader.GetString(3);
+            Program.malop = Program.myReader.GetString(4);
+            Program.tenlop = Program.myReader.GetString(5);
 
             Program.myReader.Close();
 
@@ -91,7 +93,7 @@ namespace ThiTracNghiemBetta.form
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
