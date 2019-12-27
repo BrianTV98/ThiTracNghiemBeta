@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btGiaoVien = new DevExpress.XtraBars.BarButtonItem();
@@ -56,8 +57,10 @@
             this.toolStripStatusMAGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusHOTEN = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusNHOM = new System.Windows.Forms.ToolStripStatusLabel();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -290,6 +293,10 @@
             this.toolStripStatusNHOM.Size = new System.Drawing.Size(55, 20);
             this.toolStripStatusNHOM.Text = "NHOM";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -308,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +350,7 @@
         public DevExpress.XtraBars.BarButtonItem btnXEMBAITHI;
         public DevExpress.XtraBars.BarButtonItem btnXEMBANGDIEM;
         public DevExpress.XtraBars.BarButtonItem btnXEMDSDANGKY;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 
