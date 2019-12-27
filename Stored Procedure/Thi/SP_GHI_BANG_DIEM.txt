@@ -1,0 +1,30 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GHIBANGDIEM]    Script Date: 12/26/2019 8:07:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GHIBANGDIEM]
+	-- Add the parameters for the stored procedure here
+	@MASV nchar(8), 
+	@MAMH nchar(5),
+	@LAN smallint,
+	@NGAYTHI datetime,
+	@DIEM float
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO BANGDIEM (MASV,MAMH,LAN,NGAYTHI,DIEM,MA_BAI_THI)
+	VALUES (@MASV,@MAMH,@LAN,@NGAYTHI,@DIEM,1)
+END
+

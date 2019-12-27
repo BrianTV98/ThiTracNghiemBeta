@@ -327,3 +327,4 @@ E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmBD.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.examregistation.frmListExamRegistration.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmChonMonThi.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmTracNghiem.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.frmNhapLop.resources

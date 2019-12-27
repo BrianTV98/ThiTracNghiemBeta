@@ -52,7 +52,7 @@ namespace ThiTracNghiemBetta.form
         {
             btlogin.Enabled = btBD.Enabled = btDSDK.Enabled = btKHOA.Enabled = btLOP.Enabled = btCancel.Enabled = btMonHoc.Enabled = false;
             btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
-            frmInputStudent f = new frmInputStudent();
+            frmNhapLop f = new frmNhapLop();
             f.MdiParent = this;
             f.Show();
         }
