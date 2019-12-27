@@ -50,9 +50,12 @@
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnLop = new System.Windows.Forms.Panel();
             this.pnNhapLop = new System.Windows.Forms.Panel();
+            this.txtMaKhoa = new System.Windows.Forms.ComboBox();
+            this.cbMaKhoa = new System.Windows.Forms.ComboBox();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.txtMaKhoa = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -65,7 +68,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.pnGcLop = new System.Windows.Forms.Panel();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
@@ -94,9 +96,9 @@
             this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             this.v_DS_PHANMANHTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             this.popupMenuLop = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barbtnThemLop = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnEditLop = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnDeleteLop = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnThemLop = new DevExpress.XtraBars.BarButtonItem();
             this.barManagerLop = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
@@ -114,6 +116,7 @@
             this.barBtnXoaSV = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenuSV = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenuThemLop = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.kHOATableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
@@ -129,10 +132,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             this.pnLop.SuspendLayout();
             this.pnNhapLop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
             this.pnGcLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
@@ -178,7 +181,7 @@
             // mAKHLabel
             // 
             mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(106, 139);
+            mAKHLabel.Location = new System.Drawing.Point(106, 146);
             mAKHLabel.Name = "mAKHLabel";
             mAKHLabel.Size = new System.Drawing.Size(75, 17);
             mAKHLabel.TabIndex = 4;
@@ -319,10 +322,11 @@
             // pnNhapLop
             // 
             this.pnNhapLop.AutoScroll = true;
+            this.pnNhapLop.Controls.Add(this.txtMaKhoa);
+            this.pnNhapLop.Controls.Add(this.cbMaKhoa);
             this.pnNhapLop.Controls.Add(this.btnCancel);
             this.pnNhapLop.Controls.Add(this.btnLuu);
             this.pnNhapLop.Controls.Add(mAKHLabel);
-            this.pnNhapLop.Controls.Add(this.txtMaKhoa);
             this.pnNhapLop.Controls.Add(tENLOPLabel);
             this.pnNhapLop.Controls.Add(this.txtTenLop);
             this.pnNhapLop.Controls.Add(mALOPLabel);
@@ -332,10 +336,39 @@
             this.pnNhapLop.Name = "pnNhapLop";
             this.pnNhapLop.Size = new System.Drawing.Size(438, 281);
             this.pnNhapLop.TabIndex = 1;
+            this.pnNhapLop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnNhapLop_Paint);
+            // 
+            // txtMaKhoa
+            // 
+            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_lop, "MAKH", true));
+            this.txtMaKhoa.FormattingEnabled = true;
+            this.txtMaKhoa.Location = new System.Drawing.Point(202, 169);
+            this.txtMaKhoa.Name = "txtMaKhoa";
+            this.txtMaKhoa.Size = new System.Drawing.Size(0, 25);
+            this.txtMaKhoa.TabIndex = 10;
+            this.txtMaKhoa.SelectedIndexChanged += new System.EventHandler(this.txtMaKhoa_SelectedIndexChanged);
+            this.txtMaKhoa.TextChanged += new System.EventHandler(this.mAKHComboBox_TextChanged);
+            // 
+            // cbMaKhoa
+            // 
+            this.cbMaKhoa.DataSource = this.kHOABindingSource;
+            this.cbMaKhoa.DisplayMember = "MAKH";
+            this.cbMaKhoa.FormattingEnabled = true;
+            this.cbMaKhoa.Location = new System.Drawing.Point(202, 139);
+            this.cbMaKhoa.Name = "cbMaKhoa";
+            this.cbMaKhoa.Size = new System.Drawing.Size(121, 24);
+            this.cbMaKhoa.TabIndex = 9;
+            this.cbMaKhoa.ValueMember = "MAKH";
+            this.cbMaKhoa.SelectedIndexChanged += new System.EventHandler(this.cbMaKhoa_SelectedIndexChanged);
+            // 
+            // kHOABindingSource
+            // 
+            this.kHOABindingSource.DataMember = "KHOA";
+            this.kHOABindingSource.DataSource = this.ds;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(250, 193);
+            this.btnCancel.Location = new System.Drawing.Point(238, 198);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -345,7 +378,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(109, 193);
+            this.btnLuu.Location = new System.Drawing.Point(117, 198);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 6;
@@ -353,14 +386,14 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // txtMaKhoa
+            // txtTenLop
             // 
-            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "MAKH", true));
-            this.txtMaKhoa.Location = new System.Drawing.Point(202, 134);
-            this.txtMaKhoa.MenuManager = this.barManager1;
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(125, 22);
-            this.txtMaKhoa.TabIndex = 5;
+            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "TENLOP", true));
+            this.txtTenLop.Location = new System.Drawing.Point(202, 90);
+            this.txtTenLop.MenuManager = this.barManager1;
+            this.txtTenLop.Name = "txtTenLop";
+            this.txtTenLop.Size = new System.Drawing.Size(125, 22);
+            this.txtTenLop.TabIndex = 3;
             // 
             // barManager1
             // 
@@ -454,7 +487,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 752);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 815);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1924, 0);
             // 
@@ -464,7 +497,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 704);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 767);
             // 
             // barDockControlRight
             // 
@@ -472,16 +505,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1924, 48);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 704);
-            // 
-            // txtTenLop
-            // 
-            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "TENLOP", true));
-            this.txtTenLop.Location = new System.Drawing.Point(202, 90);
-            this.txtTenLop.MenuManager = this.barManager1;
-            this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(125, 22);
-            this.txtTenLop.TabIndex = 3;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
             // 
             // txtMaLop
             // 
@@ -559,7 +583,7 @@
             this.pnSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnSV.Location = new System.Drawing.Point(0, 393);
             this.pnSV.Name = "pnSV";
-            this.pnSV.Size = new System.Drawing.Size(1924, 359);
+            this.pnSV.Size = new System.Drawing.Size(1924, 422);
             this.pnSV.TabIndex = 5;
             // 
             // pnGCSV
@@ -568,7 +592,7 @@
             this.pnGCSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnGCSV.Location = new System.Drawing.Point(0, 0);
             this.pnGCSV.Name = "pnGCSV";
-            this.pnGCSV.Size = new System.Drawing.Size(1489, 359);
+            this.pnGCSV.Size = new System.Drawing.Size(1489, 422);
             this.pnGCSV.TabIndex = 1;
             // 
             // gvSV
@@ -663,12 +687,12 @@
             this.pnNhapSV.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnNhapSV.Location = new System.Drawing.Point(1489, 0);
             this.pnNhapSV.Name = "pnNhapSV";
-            this.pnNhapSV.Size = new System.Drawing.Size(435, 359);
+            this.pnNhapSV.Size = new System.Drawing.Size(435, 422);
             this.pnNhapSV.TabIndex = 0;
             // 
             // btnCancelSV
             // 
-            this.btnCancelSV.Location = new System.Drawing.Point(234, 321);
+            this.btnCancelSV.Location = new System.Drawing.Point(247, 321);
             this.btnCancelSV.Name = "btnCancelSV";
             this.btnCancelSV.Size = new System.Drawing.Size(75, 23);
             this.btnCancelSV.TabIndex = 13;
@@ -677,7 +701,7 @@
             // 
             // btnLuuSV
             // 
-            this.btnLuuSV.Location = new System.Drawing.Point(129, 321);
+            this.btnLuuSV.Location = new System.Drawing.Point(109, 321);
             this.btnLuuSV.Name = "btnLuuSV";
             this.btnLuuSV.Size = new System.Drawing.Size(75, 23);
             this.btnLuuSV.TabIndex = 12;
@@ -757,6 +781,13 @@
             this.popupMenuLop.Manager = this.barManagerLop;
             this.popupMenuLop.Name = "popupMenuLop";
             // 
+            // barbtnThemLop
+            // 
+            this.barbtnThemLop.Caption = "Thêm";
+            this.barbtnThemLop.Id = 2;
+            this.barbtnThemLop.Name = "barbtnThemLop";
+            this.barbtnThemLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThemLop_ItemClick);
+            // 
             // barBtnEditLop
             // 
             this.barBtnEditLop.Caption = "Chỉnh Sửa";
@@ -770,13 +801,6 @@
             this.barBtnDeleteLop.Id = 1;
             this.barBtnDeleteLop.Name = "barBtnDeleteLop";
             this.barBtnDeleteLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDeleteLop_ItemClick);
-            // 
-            // barbtnThemLop
-            // 
-            this.barbtnThemLop.Caption = "Thêm";
-            this.barbtnThemLop.Id = 2;
-            this.barbtnThemLop.Name = "barbtnThemLop";
-            this.barbtnThemLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThemLop_ItemClick);
             // 
             // barManagerLop
             // 
@@ -803,7 +827,7 @@
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 752);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 815);
             this.barDockControl2.Manager = this.barManagerLop;
             this.barDockControl2.Size = new System.Drawing.Size(1924, 0);
             // 
@@ -813,7 +837,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManagerLop;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 752);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 815);
             // 
             // barDockControl4
             // 
@@ -821,7 +845,7 @@
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl4.Location = new System.Drawing.Point(1924, 0);
             this.barDockControl4.Manager = this.barManagerLop;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 752);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 815);
             // 
             // popupMenu1
             // 
@@ -854,7 +878,7 @@
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 752);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 815);
             this.barDockControl6.Manager = this.barManagerSV;
             this.barDockControl6.Size = new System.Drawing.Size(1924, 0);
             // 
@@ -864,7 +888,7 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl7.Location = new System.Drawing.Point(0, 0);
             this.barDockControl7.Manager = this.barManagerSV;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 752);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 815);
             // 
             // barDockControl8
             // 
@@ -872,7 +896,7 @@
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl8.Location = new System.Drawing.Point(1924, 0);
             this.barDockControl8.Manager = this.barManagerSV;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 752);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 815);
             // 
             // barButtonItem6
             // 
@@ -917,12 +941,16 @@
             this.popupMenuThemLop.Manager = this.barManagerLop;
             this.popupMenuThemLop.Name = "popupMenuThemLop";
             // 
+            // kHOATableAdapter
+            // 
+            this.kHOATableAdapter.ClearBeforeFill = true;
+            // 
             // frmNhapLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1924, 752);
+            this.ClientSize = new System.Drawing.Size(1924, 815);
             this.Controls.Add(this.pnSV);
             this.Controls.Add(this.pnLop);
             this.Controls.Add(this.pnChiNhanh);
@@ -950,10 +978,10 @@
             this.pnLop.ResumeLayout(false);
             this.pnNhapLop.ResumeLayout(false);
             this.pnNhapLop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).EndInit();
             this.pnGcLop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
@@ -993,7 +1021,6 @@
         private System.Windows.Forms.Panel pnNhapLop;
         private System.Windows.Forms.Panel pnGcLop;
         private System.Windows.Forms.Panel pnSV;
-        private DevExpress.XtraEditors.TextEdit txtMaKhoa;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -1058,5 +1085,9 @@
         private DevExpress.XtraBars.PopupMenu popupMenu2;
         private DevExpress.XtraBars.BarButtonItem barbtnThemLop;
         private DevExpress.XtraBars.PopupMenu popupMenuThemLop;
+        private System.Windows.Forms.BindingSource kHOABindingSource;
+        private TN_CSDLPTDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
+        private System.Windows.Forms.ComboBox cbMaKhoa;
+        private System.Windows.Forms.ComboBox txtMaKhoa;
     }
 }

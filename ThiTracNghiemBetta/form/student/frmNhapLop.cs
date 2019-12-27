@@ -64,6 +64,8 @@ namespace ThiTracNghiemBetta.form.student
 
         private void frmNhapLop_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ds.KHOA' table. You can move, or remove it, as needed.
+            this.kHOATableAdapter.Fill(this.ds.KHOA);
             this.ds.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -172,12 +174,12 @@ namespace ThiTracNghiemBetta.form.student
                 if (trangthaifrmLop == true)
                 {
                     txtMaLop.Enabled = true;
-                    txtMaKhoa.Enabled = true;
+                    cbMaKhoa.Enabled = true;
                 }
                 else
                 {
                     txtMaLop.Enabled = false;
-                    txtMaKhoa.Enabled = false;
+                    cbMaKhoa.Enabled = false;
                 }
                 pnNhapLop.Enabled = true;
                 txtTenLop.Enabled = true;
@@ -490,6 +492,26 @@ namespace ThiTracNghiemBetta.form.student
             trangthaifrmLop = true;
             pressEdit(true);
             gv_Lop.AddNewRow();
+        }
+
+        private void pnNhapLop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mAKHComboBox_TextChanged(object sender, EventArgs e)
+        {
+            cbMaKhoa.Text = txtMaKhoa.Text;
+        }
+
+        private void txtMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
     }
 }
