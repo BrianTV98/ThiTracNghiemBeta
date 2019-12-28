@@ -344,7 +344,7 @@
             this.txtMaKhoa.FormattingEnabled = true;
             this.txtMaKhoa.Location = new System.Drawing.Point(202, 169);
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(0, 25);
+            this.txtMaKhoa.Size = new System.Drawing.Size(0, 24);
             this.txtMaKhoa.TabIndex = 10;
             this.txtMaKhoa.SelectedIndexChanged += new System.EventHandler(this.txtMaKhoa_SelectedIndexChanged);
             this.txtMaKhoa.TextChanged += new System.EventHandler(this.mAKHComboBox_TextChanged);
@@ -537,6 +537,7 @@
             this.lOPGridControl.TabIndex = 0;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Lop});
+            this.lOPGridControl.Click += new System.EventHandler(this.lOPGridControl_Click);
             this.lOPGridControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lOPGridControl_MouseUp);
             // 
             // gv_Lop

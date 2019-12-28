@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ThiTracNghiemBetta.form.examregistation;
 using ThiTracNghiemBetta.form.register;
+using ThiTracNghiemBetta.form.report;
 using ThiTracNghiemBetta.form.student;
 
 namespace ThiTracNghiemBetta.form
@@ -115,47 +116,37 @@ namespace ThiTracNghiemBetta.form
 
         private void btnXEMBAITHI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmXemBaiThi));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                frmXemBaiThi f = new frmXemBaiThi();
-                f.MdiParent = this;
-                f.Show();
-            }*/
+           
         }
 
         private void btnXEMBANGDIEM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmXemBangDiem));
+            Form frm = this.CheckExists(typeof(BangDiemMonHoc));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                frmXemBangDiem f = new frmXemBangDiem();
+                BangDiemMonHoc f = new BangDiemMonHoc();
                 f.MdiParent = this;
                 f.Show();
-            }*/
+            }
         }
 
         private void btnXEMDSDANGKY_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            /*Form frm = this.CheckExists(typeof(frmXemDSDangKy));
+            Form frm = this.CheckExists(typeof(frmBaoCao));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                frmXemDSDangKy f = new frmXemDSDangKy();
+                frmBaoCao f = new frmBaoCao();
                 f.MdiParent = this;
                 f.Show();
-            }*/
+            }
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
