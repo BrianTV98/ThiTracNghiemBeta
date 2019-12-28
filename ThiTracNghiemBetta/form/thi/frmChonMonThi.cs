@@ -139,7 +139,9 @@ namespace ThiTracNghiemBetta.form.thi
             }
             else
             {
+                this.Close();
                 MessageBox.Show("Lớp của bạn hiện chưa có môn thi!");
+                return;
             }
             
 
