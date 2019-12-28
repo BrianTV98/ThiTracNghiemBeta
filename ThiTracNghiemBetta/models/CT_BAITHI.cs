@@ -128,32 +128,6 @@ namespace ThiTracNghiemBetta.models
             {
                 this.dapAnDaChon = dapAn;
             }
-
-            public void ghiBaiThi(int idBangDiem)
-            {
-                String strlenh = "EXEC SP_GHIBAITHI @ID_BANGDIEM, @CAUHOI, @THUTU, @NOIDUNG, @A, @B, @C, @D, @DAPANDUNG, @DAPANDACHON";
-                SqlCommand sqlcommand = new SqlCommand(strlenh, Program.conn);
-                sqlcommand.Parameters.AddWithValue("@ID_BANGDIEM", idBangDiem);
-                sqlcommand.Parameters.AddWithValue("@CAUHOI", this.cauHoi);
-                sqlcommand.Parameters.AddWithValue("@THUTU", this.thuTu);
-                sqlcommand.Parameters.AddWithValue("@NOIDUNG", this.noiDung);
-                sqlcommand.Parameters.AddWithValue("@A", this.A);
-                sqlcommand.Parameters.AddWithValue("@B", this.B);
-                sqlcommand.Parameters.AddWithValue("@C", this.C);
-                sqlcommand.Parameters.AddWithValue("@D", this.D);
-                sqlcommand.Parameters.AddWithValue("@DAPANDUNG", this.dapAnDung);
-                sqlcommand.Parameters.AddWithValue("@DAPANDACHON", this.dapAnDaChon);
-                SqlDataReader dataReader = null;
-                try
-                {
-                    dataReader = sqlcommand.ExecuteReader();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                dataReader.Close();
-            }
         }
     
 }

@@ -329,3 +329,4 @@ C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghie
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmChonMonThi.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmChonMonThi.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.examregistation.frmListExamRegistration.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.examregistation.frmListExamRegistration.resources

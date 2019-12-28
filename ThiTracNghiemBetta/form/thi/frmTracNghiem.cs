@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ThiTracNghiemBetta.models;
+using System.Data.SqlClient;
 
 namespace ThiTracNghiemBetta.form.thi
 {
@@ -423,33 +424,31 @@ namespace ThiTracNghiemBetta.form.thi
              Program.myReader = Program.ExecSqlDataReader(strlenh);
              Program.myReader.Read();
 
-             int idBangDiem = Program.myReader.GetInt32(6);
+             int idBangDiem = Program.myReader.GetInt32(5);
              Program.myReader.Close();
-             foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
-             {
-                 bdsCT_BAITHI.AddNew();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["THUTU"] = ct.getThuTu();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["NOIDUNG"] = ct.getNoiDung();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["A"] = ct.getA();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["B"] = ct.getB();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["C"] = ct.getC();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["D"] = ct.getD();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANDUNG"] = ct.getDapAnDung();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANCHON"] = ct.getDapAnDaChon();
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["ID_BANGDIEM"] = idBangDiem;
-                 ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["CAUHOI"] = ct.getCauHoi();
-                 bdsCT_BAITHI.EndEdit();
-             }
-             try
-             {
-                 cT_BAITHITableAdapter.Update(this.dS.CHITIETBAITHI);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
 
-             DialogResult dialogResult = MessageBox.Show("Số câu đúng: " + soCauDung + "/" + soCauThi + "\nTổng điểm: " + tongDiem + "\nBạn có muốn xem lại bài thi?", "KẾT QUẢ", MessageBoxButtons.YesNoCancel);
+            strlenh = "EXEC SP_GHIBAITHI @mach, @dachon, @mabaithi, @sothutu";
+            try
+            {
+                foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
+                {
+                    SqlCommand sqlcommand = new SqlCommand(strlenh, Program.conn);
+                    sqlcommand.Parameters.AddWithValue("@mach", ct.getCauHoi());
+                    sqlcommand.Parameters.AddWithValue("@sothutu", ct.getThuTu());
+                    sqlcommand.Parameters.AddWithValue("@mabaithi", idBangDiem);
+                    sqlcommand.Parameters.AddWithValue("@dachon", ct.getDapAnDaChon() == null?"": ct.getDapAnDaChon());
+                    SqlDataReader dataReader = null;
+                    dataReader = sqlcommand.ExecuteReader();
+                    dataReader.Close();
+                    int milliseconds = 200;
+                    System.Threading.Thread.Sleep(milliseconds);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Số câu đúng: " + soCauDung + "/" + soCauThi + "\nTổng điểm: " + tongDiem + "\nBạn có muốn xem lại bài thi?", "KẾT QUẢ", MessageBoxButtons.YesNoCancel);
              if (dialogResult == DialogResult.Yes)
              {
                  /*frmReportXemBaiThiSV rp = new frmReportXemBaiThiSV(idBangDiem);

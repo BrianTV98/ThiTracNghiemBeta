@@ -12,7 +12,7 @@ namespace ThiTracNghiemBetta.models
         private String maMH;
         private int lan;
         private String ngayThi;
-        private float diem;
+        private float diem = 0;
         private int idBangDiem;
 
         public BangDiem(String maSV, String maMH, int lan, String ngayThi, float diem)

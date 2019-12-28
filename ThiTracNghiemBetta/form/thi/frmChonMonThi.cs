@@ -36,7 +36,6 @@ namespace ThiTracNghiemBetta.form.thi
             int thoigianthi = -1;
             Program.KetNoi();
             string query = "EXEC SP_GET_DK_THI '" + malop + "','" + mamh + "','" + lanthi + "'";
-            MessageBox.Show(query);
             SqlDataReader dkthi= Program.ExecSqlDataReader(query);
             
             if (dkthi == null)
@@ -52,7 +51,6 @@ namespace ThiTracNghiemBetta.form.thi
                     MessageBox.Show("Đợt thi này đã không còn tồn tại trong hệ thống! ");
                     return;
                 }
-                
                 trinhdo = dkthi.GetString(3).Trim();
                 socauthi = dkthi.GetInt16(6);
                 thoigianthi = dkthi.GetInt16(7);
@@ -66,18 +64,18 @@ namespace ThiTracNghiemBetta.form.thi
                  socauthi,
                  thoigianthi
                 );
-                GiaoVienDK.gv_dk = gv;
                 dkthi.Close();
-                DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI '" + mamh + "','" + trinhdo + "','" + socauthi + "'");
+
+                DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI "+socauthi+",'" + mamh + "','" + trinhdo +"'");
                 
                 int checkCount = db.Rows.Count;
-                if (checkCount < socauthi)
+                if (checkCount == 0)
                 {
                     MessageBox.Show("Số câu hỏi thi trong hệ thống không đáp ứng đủ để thi!");
-
                 }
                 else
                 {
+                    GiaoVienDK.gv_dk = gv;
                     this.Close();
                     List<BoDe> list = convertToListBD(db);
                     BoDe.boDe = list;
