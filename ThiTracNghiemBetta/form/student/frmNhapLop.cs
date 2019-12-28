@@ -511,6 +511,7 @@ namespace ThiTracNghiemBetta.form.student
 
         private void cbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbMaKhoa.SelectedValue!=null)
             txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
     }
