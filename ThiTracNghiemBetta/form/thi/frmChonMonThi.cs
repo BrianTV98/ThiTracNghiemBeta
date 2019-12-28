@@ -65,9 +65,7 @@ namespace ThiTracNghiemBetta.form.thi
                  thoigianthi
                 );
                 dkthi.Close();
-
                 DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI "+socauthi+",'" + mamh + "','" + trinhdo +"'");
-                
                 int checkCount = db.Rows.Count;
                 if (checkCount == 0)
                 {
@@ -79,7 +77,7 @@ namespace ThiTracNghiemBetta.form.thi
                     this.Close();
                     List<BoDe> list = convertToListBD(db);
                     BoDe.boDe = list;
-                    
+
                     frmTracNghiem form = new frmTracNghiem();
                     form.ShowDialog();
 
@@ -136,6 +134,7 @@ namespace ThiTracNghiemBetta.form.thi
             if (cb_monHoc.Items.Count > 0)
             {
                 cb_monHoc.SelectedIndex = 0;
+                cb_lanThi.SelectedIndex = 0;
             }
             else
             {
@@ -148,7 +147,7 @@ namespace ThiTracNghiemBetta.form.thi
             // set time
             dtPicker.Value = DateTime.Now;
 
-            cb_lanThi.SelectedIndex = 0;
+           
         }
         private int getSoLanDKThi()
         {

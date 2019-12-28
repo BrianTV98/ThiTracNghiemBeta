@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace ThiTracNghiemBetta.form.student
 {
     public partial class frmInputStudent : Form
     {
+        private string message = "";
         public frmInputStudent()
         {
             InitializeComponent();
@@ -27,19 +29,21 @@ namespace ThiTracNghiemBetta.form.student
         private void kHOABindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.bds_khoa.EndEdit();
             this.tableAdapterManager.UpdateAll(this.ds);
 
         }
 
         private void frmInputStudent_Load(object sender, EventArgs e)
         {
+            ds.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'ds.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.ds.SINHVIEN);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
+            this.adapterLop.Connection.ConnectionString = Program.connstr;
             this.adapterLop.Fill(this.ds.LOP);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
-            this.kHOATableAdapter.Fill(this.ds.KHOA);
+            ds.EnforceConstraints = true;
 
         }
 
@@ -59,7 +63,10 @@ namespace ThiTracNghiemBetta.form.student
 
         private void gv_Lop_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right) return;
+            if (e.Button != MouseButtons.Right)
+            {
+                return;
+            };
             var rowH = gv_Lop.FocusedRowHandle;
             var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
             if (focusRowView == null || focusRowView.IsNew) return;
@@ -67,6 +74,7 @@ namespace ThiTracNghiemBetta.form.student
             if (rowH >= 0)
             {
                 popupMenuLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
+               
             }
             else popupMenuLop.HidePopup();
         }
@@ -122,7 +130,7 @@ namespace ThiTracNghiemBetta.form.student
              *  add data vao gridview
              */
 
-            addSV f = new addSV();
+           /* addSV f = new addSV();
             f.txt_malop.Text= gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
             f.ShowDialog();
 
@@ -147,13 +155,17 @@ namespace ThiTracNghiemBetta.form.student
                         MessageBox.Show("Lỗi không thể tạo tài khoản!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
-            }
+            }*/
            
         }
 
         private void GV_SV_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Right) return;
+            if (e.Button != MouseButtons.Right)
+            {
+               
+                return;
+            }
             var rowH = gv_Lop.FocusedRowHandle;
             var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
             if (focusRowView == null || focusRowView.IsNew)
@@ -164,6 +176,7 @@ namespace ThiTracNghiemBetta.form.student
             if (rowH >= 0)
             {
                 popupSinhVien.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
+                txtTenLop.Text = gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
             }
             else popupSinhVien.HidePopup();
         }
@@ -260,8 +273,146 @@ namespace ThiTracNghiemBetta.form.student
 
         private void barbtnaddClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            addClass f = new addClass(this);
-            f.ShowDialog();
+
+            txtTenLop.Text = gv_Lop.GetFocusedRowCellValue("MALOP").ToString();
+            //bds_lop.AddNew();
+            txtMaLop.Focus();
+            gb_lop.Enabled = true;
+            
+           
+        }
+
+        private void tENLOPLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private bool checkValidateAddClass()
+        {
+            /*
+             * Kiểm tra mã lớp rỗng ko?
+             * Kiểm tra các ký tự đặc biệt của mã lớp
+             * kiểm tra mã lớp có tồn tại chưa
+             * Kiểm tra lên lớp có rỗng không
+             * kiểm tên lớp có tồn tại chưa (tên lớp khóa unique)
+             */
+            string malop = txtMaLop.Text;
+            string tenLop = txtTenLop.Text;
+
+            if (malop.Length == 0)
+            {
+                message = "Mã lớp không được để trống!";
+                return false;
+            }
+            Regex regex = new Regex("^[a-zA-Z0-9]*$");
+
+            if (regex.IsMatch(malop) == false)
+            {
+                message = "Tên lớp không được chứa khoảng trắng hoặc ký tự đặc biệt";
+                return false;
+            }
+
+            if (tenLop.Length == 0)
+            {
+                message = "Tên lớp không được để trống!";
+                return false;
+            }
+            if (checkExistMaLop(txtMaLop.Text.Trim()))
+            {
+                message = "Mã lớp đã tồn tại!!";
+                return false;
+            }
+            if (checkExistTenLop(txtTenLop.Text.Trim()))
+            {
+                message = "Tên lớp đã tồn tại !";
+                return false;
+            }
+            return true;
+        }
+        private bool checkExistMaLop(string strLenh)
+        {
+            try
+            {
+                int kn = Program.KetNoi();
+                if (kn == 0)
+                {
+                    MessageBox.Show("Sự cố kết nối!", "", MessageBoxButtons.OK);
+                    return true;
+                }
+
+                String strlenh = "EXEC dbo.SP_TIMKIEM_LOP '" + strLenh + "'";
+                Program.myReader = Program.ExecSqlDataReader(strlenh);
+                if (Program.myReader.Read() != false)
+                {
+                    //MessageBox.Show("Mã lớp đã tồn tại", "", MessageBoxButtons.OK);
+                    message = "Mã lớp đã tồn tại";
+                    Program.conn.Close();
+                    return true;
+                }
+
+                else
+                {
+                    Program.conn.Close();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return true;
+        }
+        private bool checkExistTenLop(string tenlop)
+        {
+            int kn = Program.KetNoi();
+            SqlCommand sqlCommand = new SqlCommand("SP_KIEM_TRA_TON_TAI_TEN_LOP", Program.conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@TENLOP", txtTenLop.Text);
+            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+            if (kq != 0) // ton tai
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void btnLuuLop_Click(object sender, EventArgs e)
+        {
+            bool check=checkValidateAddClass();
+            if (check == false)
+            {
+                MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void gc_lop_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void gc_lop_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void gv_Lop_Click(object sender, EventArgs e)
+        {
+            txtTenLop.Text = "afsdfa";
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
     
