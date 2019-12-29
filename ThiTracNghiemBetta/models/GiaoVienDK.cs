@@ -16,6 +16,9 @@ namespace ThiTracNghiemBetta.models
         private int lan;
         private int soCauThi;
         private int thoiGian;
+
+        public static GiaoVienDK thithu;
+
         public static GiaoVienDK gv_dk;
         public string MaMH { get => maMH; set => maMH = value; }
         public string MaLop { get => maLop; set => maLop = value; }

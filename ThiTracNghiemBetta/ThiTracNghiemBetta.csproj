@@ -183,11 +183,23 @@
     <Compile Include="form\student\frmNhapLop.Designer.cs">
       <DependentUpon>frmNhapLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\thi\formXemBaiThiSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\thi\formXemBaiThiSV.Designer.cs">
+      <DependentUpon>formXemBaiThiSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\thi\frmChonMonThi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\thi\frmChonMonThi.Designer.cs">
       <DependentUpon>frmChonMonThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\thi\frmKQThiThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\thi\frmKQThiThu.Designer.cs">
+      <DependentUpon>frmKQThiThu.cs</DependentUpon>
     </Compile>
     <Compile Include="form\thi\frmSV.cs">
       <SubType>Form</SubType>
@@ -225,11 +237,23 @@
     <Compile Include="form\student\frmInputStudent.Designer.cs">
       <DependentUpon>frmInputStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\thi\frmThiThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\thi\frmThiThu.Designer.cs">
+      <DependentUpon>frmThiThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\thi\frmTracNghiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\thi\frmTracNghiem.Designer.cs">
       <DependentUpon>frmTracNghiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\thi\rpXemBaiThi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="form\thi\rpXemBaiThi.Designer.cs">
+      <DependentUpon>rpXemBaiThi.cs</DependentUpon>
     </Compile>
     <Compile Include="models\BangDiem.cs" />
     <Compile Include="models\BoDe.cs" />
@@ -294,8 +318,17 @@
     <EmbeddedResource Include="form\student\frmNhapLop.resx">
       <DependentUpon>frmNhapLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\student\frmNhapLop.resx">
+      <DependentUpon>frmNhapLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\formXemBaiThiSV.resx">
+      <DependentUpon>formXemBaiThiSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\thi\frmChonMonThi.resx">
       <DependentUpon>frmChonMonThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\frmKQThiThu.resx">
+      <DependentUpon>frmKQThiThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\thi\frmSV.resx">
       <DependentUpon>frmSV.cs</DependentUpon>
@@ -315,8 +348,14 @@
     <EmbeddedResource Include="form\student\frmInputStudent.resx">
       <DependentUpon>frmInputStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\frmThiThu.resx">
+      <DependentUpon>frmThiThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\thi\frmTracNghiem.resx">
       <DependentUpon>frmTracNghiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\thi\rpXemBaiThi.resx">
+      <DependentUpon>rpXemBaiThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -199,5 +199,21 @@
         </Point>
       </RoutePoints>
     </Connector>
+    <Connector ID="DesignRelation:FK_CT_BAITHI_BODE" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>827</X>
+          <Y>389</Y>
+        </Point>
+        <Point>
+          <X>827</X>
+          <Y>1481</Y>
+        </Point>
+        <Point>
+          <X>672</X>
+          <Y>1481</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
   </Connectors>
 </DiagramLayout>

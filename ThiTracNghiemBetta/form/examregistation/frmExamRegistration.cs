@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.form.thi;
+using ThiTracNghiemBetta.models;
 
 namespace ThiTracNghiemBetta.form.examregistation
 {
@@ -249,6 +251,67 @@ namespace ThiTracNghiemBetta.form.examregistation
         {
             this.Close();
             
+        }
+
+        private void btnThi_Click(object sender, EventArgs e)
+        {
+            if (!checkValidate()) return;
+
+            string malop = cb_maLop.SelectedValue.ToString();
+            string mamh = cb_maMonHoc.SelectedValue.ToString();
+            string lanthi = spinEdit_lanthi.Text;
+            string trinhdo = cb_trinhdo.SelectedItem.ToString();
+            int socauthi = Int32.Parse(spinEdit_cauhoi.Text);
+            int thoigianthi = Int32.Parse(spinEdit_thoigian.Text);
+
+            DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI " + socauthi + ",'" + mamh + "','" + trinhdo + "'");
+                int checkCount = db.Rows.Count;
+                if (checkCount == 0)
+                {
+                    MessageBox.Show("Số câu hỏi thi trong hệ thống không đáp ứng đủ để thi!");
+                }
+                else
+                {
+              
+                GiaoVienDK gv = new GiaoVienDK(
+               Program.mUserId,
+               mamh,
+                malop,
+                trinhdo,
+                dt_ngaythi.DateTime,
+                int.Parse(lanthi),
+                socauthi,
+                thoigianthi
+               );
+                GiaoVienDK.thithu = gv;
+                List<BoDe> list = convertToListBD(db);
+                    BoDe.thithu = list;
+                    frmThiThu form = new frmThiThu();
+                    form.ShowDialog();
+                }
+            
+        }
+
+        private List<BoDe> convertToListBD(DataTable ds)
+        {
+            List<BoDe> list = new List<BoDe>();
+            foreach (DataRow row in ds.Rows)
+            {
+                BoDe bd = new BoDe(
+                    Convert.ToInt32(row["CAUHOI"].ToString()),
+                    row["MAMH"].ToString(),
+                    row["TRINHDO"].ToString(),
+                    row["NOIDUNG"].ToString(),
+                    row["A"].ToString(),
+                    row["B"].ToString(),
+                    row["C"].ToString(),
+                    row["D"].ToString(),
+                    row["DAP_AN"].ToString(),
+                    row["MAGV"].ToString()
+                    );
+                list.Add(bd);
+            }
+            return list;
         }
     }
 }

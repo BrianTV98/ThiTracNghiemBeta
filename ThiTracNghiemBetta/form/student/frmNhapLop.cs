@@ -511,7 +511,8 @@ namespace ThiTracNghiemBetta.form.student
 
         private void cbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
+            if (cbMaKhoa.SelectedValue != null)
+                txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
 
         private void lOPGridControl_Click(object sender, EventArgs e)
