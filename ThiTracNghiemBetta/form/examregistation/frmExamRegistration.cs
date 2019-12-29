@@ -39,13 +39,19 @@ namespace ThiTracNghiemBetta.form.examregistation
 
         private void formExamRegistration_Load(object sender, EventArgs e)
         {
+            this.ds.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.ds.MONHOC);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.ds.LOP);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
+
+            this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.ds.GIAOVIEN_DANGKY);
 
+            this.ds.EnforceConstraints = true;
         }
 
         private void sOCAUTHILabel_Click(object sender, EventArgs e)

@@ -1,0 +1,34 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GET_BANG_DIEM_THEO_LOP]    Script Date: 12/28/2019 5:01:54 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GET_BANG_DIEM_THEO_LOP]
+	-- Add the parameters for the stored procedure here
+	@MALOP nchar(8),
+	@MAMH nchar(5),
+	@LAN  int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT BANGDIEM.MASV ,
+	HOTEN=SINHVIEN.HO+' ' +SINHVIEN.TEN,
+	DIEM,
+	GHICHU=''
+	 FROM BANGDIEM 
+	 INNER JOIN SINHVIEN ON SINHVIEN.MASV = BANGDIEM.MASV 
+	 WHERE BANGDIEM.MASV IN (SELECT MASV  FROM SINHVIEN WHERE SINHVIEN.MALOP=@MALOP)
+	 AND BANGDIEM.MAMH =@MAMH  AND BANGDIEM.LAN= @LAN
+
+END

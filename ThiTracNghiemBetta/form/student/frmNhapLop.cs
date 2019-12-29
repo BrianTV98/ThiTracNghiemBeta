@@ -513,5 +513,10 @@ namespace ThiTracNghiemBetta.form.student
         {
             txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
+
+        private void lOPGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
