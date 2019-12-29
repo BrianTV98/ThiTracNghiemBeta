@@ -14,11 +14,14 @@ using DevExpress.XtraReports.UI;
 
 namespace ThiTracNghiemBetta.form.thi
 {
-    public partial class frmTracNghiem : DevExpress.XtraEditors.XtraForm
+    public partial class frmThiThu : DevExpress.XtraEditors.XtraForm
     {
-        public frmTracNghiem()
+        List<BoDe> boDe = BoDe.thithu;
+        GiaoVienDK g = GiaoVienDK.thithu;
+        public frmThiThu()
         {
             InitializeComponent();
+
         }
         int index = 0;
         int soCauThi = 0;
@@ -27,12 +30,11 @@ namespace ThiTracNghiemBetta.form.thi
         int ss = 0;
         float tongDiem = 0;
         int soCauDung = 0;
-        List<BoDe> boDe;
-        List <GiaoVien> gv_dk = new List<GiaoVien>();
+        
 
         private void frmTracNghiem_Load(object sender, EventArgs e)
         {
-            boDe = BoDe.boDe;
+      
             soCauThi = boDe.Count;
             this.cT_BAITHITableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS.CT_BAITHI' table. You can move, or remove it, as needed.
@@ -41,22 +43,23 @@ namespace ThiTracNghiemBetta.form.thi
             toolStripStatusHOTEN.Text = "Họ và tên: " + Program.mHoTen;
             toolStripStatusMAGV.Text = "Mã SV:" + Program.mUserId;
             toolStripStatusNHOM.Text = "nhóm: SINHVIEN";
-            toolStripStatusMALOP.Text = "mã lớp: " + Program.malop;
-            toolStripStatusTENLOP.Text = "tên lớp: " + Program.tenlop;
+            toolStripStatusMALOP.Text = "mã lớp: ";
+            toolStripStatusTENLOP.Text = "tên lớp: ";
+
             BoDe b = (BoDe)boDe[index];
             lblNOIDUNG.Text = "Câu " + index + 1 + ": " + b.NoiDung;
             rdoA.Text = b.DapAnA;
             rdoB.Text = b.DapAnB;
             rdoC.Text = b.DapAnC;
             rdoD.Text = b.DapAnD;
-            GiaoVienDK g = GiaoVienDK.gv_dk;
+            
             soCauThi = g.SoCauThi;
             String lenh = "EXEC SP_TIMKIEMMH '" + g.MaMH + "'";
             Program.myReader = Program.ExecSqlDataReader(lenh);
             Program.myReader.Read();
             String tenMH = Program.myReader.GetString(1);
             Program.myReader.Close();
-            lblLOP.Text = "Lớp: " + Program.tenlop;
+            lblLOP.Text = "Lớp: " + "";
             lblMONHOC.Text = "Môn học: " + tenMH;
             lblNGAYTHI.Text = "Ngày thi: " + g.NgayThi.ToString("dd/MM/yyyy");
             lblTRINHDO.Text = "Trình độ: " + g.TrinhDo;
@@ -69,7 +72,7 @@ namespace ThiTracNghiemBetta.form.thi
             t.Start();
             //Copy dữ liệu từ bộ đề sang chi tiết bài thi
             int i = 1;
-            foreach (BoDe b2 in BoDe.boDe)
+            foreach (BoDe b2 in boDe)
             {
                 int cauHoi = b2.CauHoi;
                 String maMH = b2.MaMH;
@@ -83,7 +86,7 @@ namespace ThiTracNghiemBetta.form.thi
                 String maGV = b2.MaGV;
                 String dapAnDaChon = "";
                 CT_BaiThi ct = new CT_BaiThi(cauHoi, i, noiDung, A, B, C, D, dapAn, dapAnDaChon);
-                CT_BaiThi.ct_baiThi.Add(ct);
+                CT_BaiThi.thithu.Add(ct);
                 i++;
             }
             /*cập nhật thông báo đáp án đã chọn*/
@@ -94,7 +97,7 @@ namespace ThiTracNghiemBetta.form.thi
             summarylistview.View = View.Details;
             summarylistview.GridLines = true;
             summarylistview.FullRowSelect = true;
-            foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
+            foreach (CT_BaiThi ct in CT_BaiThi.thithu)
             {
                 String[] arr = new string[2];
                 arr[0] = ct.getThuTu().ToString();
@@ -166,33 +169,33 @@ namespace ThiTracNghiemBetta.form.thi
 
         private void rdoA_CheckedChanged(object sender, EventArgs e)
         {
-            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[index];
+            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[index];
             ct.setDapDaChon("A");
-            CT_BaiThi.ct_baiThi[index] = ct;
+            CT_BaiThi.thithu[index] = ct;
             capNhatThongBaoDapAnDaChon(index);
         }
 
         private void rdoB_CheckedChanged(object sender, EventArgs e)
         {
-            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[index];
+            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[index];
             ct.setDapDaChon("B");
-            CT_BaiThi.ct_baiThi[index] = ct;
+            CT_BaiThi.thithu[index] = ct;
             capNhatThongBaoDapAnDaChon(index);
         }
 
         private void rdoC_CheckedChanged(object sender, EventArgs e)
         {
-            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[index];
+            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[index];
             ct.setDapDaChon("C");
-            CT_BaiThi.ct_baiThi[index] = ct;
+            CT_BaiThi.thithu[index] = ct;
             capNhatThongBaoDapAnDaChon(index);
         }
 
         private void rdoD_CheckedChanged(object sender, EventArgs e)
         {
-            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[index];
+            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[index];
             ct.setDapDaChon("D");
-            CT_BaiThi.ct_baiThi[index] = ct;
+            CT_BaiThi.thithu[index] = ct;
             capNhatThongBaoDapAnDaChon(index);
         }
 
@@ -250,7 +253,7 @@ namespace ThiTracNghiemBetta.form.thi
 
         private void checkDapAnDaChon()
         {
-             CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[index];
+             CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[index];
              if (ct.getDapAnDaChon().Equals(""))
              {
                  rdoA.Checked = false;
@@ -301,7 +304,7 @@ namespace ThiTracNghiemBetta.form.thi
         private void chamDiem()
         {
             float diemMoiCau = (float)10 / soCauThi;
-             foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
+             foreach (CT_BaiThi ct in CT_BaiThi.thithu)
              {
                  if (ct.getDapAnDaChon().Equals(ct.getDapAnDung()))
                  {
@@ -350,15 +353,6 @@ namespace ThiTracNghiemBetta.form.thi
             }
             this.checkDapAnDaChon();
         }
-
-        private void cT_BAITHIBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsCT_BAITHI.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dS);
-
-        }
-
         private void summarylistview_SelectedIndexChanged(object sender, EventArgs e)
         {
             rdoA.Checked = false;
@@ -414,70 +408,24 @@ namespace ThiTracNghiemBetta.form.thi
 
         private void ghiBangDiemVaBaiThi()
         {
-             GiaoVienDK g = GiaoVienDK.gv_dk;
-             BangDiem bd = new BangDiem(Program.mUserId, g.MaMH, g.Lan, g.NgayThi.ToString(), tongDiem);
-             bd.ghiDiem();
-             String strlenh = "EXEC SP_TIMBANGDIEM_THI '" + Program.mUserId + "', '" + g.MaMH + "', " + g.Lan;
-             Program.myReader.Close();
 
-             Program.myReader = Program.ExecSqlDataReader(strlenh);
-             Program.myReader.Read();
-
-             int idBangDiem = Program.myReader.GetInt32(5);
-             Program.myReader.Close();
-
-            foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
-            {
-                bdsCT_BAITHI.AddNew();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["THUTU"] = ct.getThuTu();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["NOIDUNG"] = ct.getNoiDung();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["A"] = ct.getA().Trim();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["B"] = ct.getB().Trim();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["C"] = ct.getC().Trim();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["D"] = ct.getD().Trim();
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANDUNG"] = ct.getDapAnDung().Trim().ElementAt(0);
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANDACHON"] = ct.getDapAnDaChon().Length == 0 ? ' ': ct.getDapAnDaChon().ElementAt(0);
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["MA_BAI_THI"] = idBangDiem;
-                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["CAU_HOI"] = ct.getCauHoi();
-                bdsCT_BAITHI.EndEdit();
-            }
-            try
-            {
-                cT_BAITHITableAdapter.Update(this.dS.CHITIETBAITHI);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            this.Hide();
             DialogResult dialogResult = MessageBox.Show("Số câu đúng: " + soCauDung + "/" + soCauThi + "\nTổng điểm: " + tongDiem + "\nBạn có muốn xem lại bài thi?", "KẾT QUẢ", MessageBoxButtons.YesNoCancel);
-             if (dialogResult == DialogResult.Yes)
-             {
-                rpXemBaiThi rp = new rpXemBaiThi(idBangDiem);
-                rp.lbHoTen.Text = "HỌ TÊN: " + Program.mHoTen;
-                rp.lbLop.Text = "LỚP: " + Program.tenlop;
-                rp.lbMonHoc.Text = "MÔN THI" + this.lblMONHOC.Text;
-                rp.lbNgayThi.Text = "NGÀY THI: " + lblNGAYTHI.Text;
+            if (dialogResult == DialogResult.Yes)
+            {
+                frmKQThiThu kq = new frmKQThiThu();
+                kq.Show();
 
-                rp.lbLanThi.Text = "LẦN: " + g.Lan;
-                ReportPrintTool print = new ReportPrintTool(rp);
-                print.ShowPreviewDialog();
-             }
-             else if (dialogResult == DialogResult.No)
-             {
-             }
-             else if (dialogResult == DialogResult.Cancel)
-             {
-
-             }
-             GiaoVienDK.gv_dk = null;
-             CT_BaiThi.ct_baiThi.Clear();
-             BoDe.boDe.Clear();
+            }
+            GiaoVienDK.thithu = null;
+            CT_BaiThi.thithu.Clear();
+            BoDe.thithu.Clear();
+            
         }
 
         private void capNhatThongBaoDapAnDaChon(int cau)
         {
-            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.ct_baiThi[cau];
+            CT_BaiThi ct = (CT_BaiThi)CT_BaiThi.thithu[cau];
             String[] arr = new string[2];
             arr[0] = ct.getThuTu().ToString();
             arr[1] = ct.getDapAnDaChon().ToString();
