@@ -1243,7 +1243,6 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP FROM SINHVIEN WHERE (MASV = @MASV)
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-
         <xs:element name="V_DS_GV" msprop:Generator_TableClassName="V_DS_GVDataTable" msprop:Generator_TableVarName="tableV_DS_GV" msprop:Generator_TablePropName="V_DS_GV" msprop:Generator_RowDeletingName="V_DS_GVRowDeleting" msprop:Generator_RowChangingName="V_DS_GVRowChanging" msprop:Generator_RowEvHandlerName="V_DS_GVRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DS_GVRowDeleted" msprop:Generator_UserTableName="V_DS_GV" msprop:Generator_RowChangedName="V_DS_GVRowChanged" msprop:Generator_RowEvArgName="V_DS_GVRowChangeEvent" msprop:Generator_RowClassName="V_DS_GVRow">
           <xs:complexType>
             <xs:sequence>

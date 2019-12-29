@@ -532,3 +532,7 @@ C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghie
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.frmNhapLop.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmChonMonThi.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmTracNghiem.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.formXemBaiThiSV.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmKQThiThu.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmThiThu.resources
+C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.rpXemBaiThi.resources
