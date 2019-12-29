@@ -1,0 +1,36 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GHIBANGDIEM]    Script Date: 12/29/2019 1:38:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_GHIBANGDIEM]
+	@MASV nchar(8),
+	@MAMH nchar(5),
+	@LAN TINYINT ,
+	@NGAY datetime,
+	@DIEM float
+AS
+DECLARE @MABT  INT
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+	SELECT TOP 1 @MABT = MA_BAI_THI from LINK0.TN_CSDLPT.dbo.BANGDIEM ORDER BY MA_BAI_THI DESC
+
+	if @MABT is null BEGIN 
+		SET @MABT = 0
+	END else begin 
+		SET @MABT = @MABT + 1
+	end
+    -- Insert statements for procedure here
+	INSERT INTO BANGDIEM(MA_BAI_THI,MASV, MAMH, LAN, NGAYTHI, DIEM)
+	VALUES (@MABT,@MASV, @MAMH, @LAN, @NGAY, @DIEM);
+END

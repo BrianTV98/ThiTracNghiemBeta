@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ThiTracNghiemBetta.models;
 using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace ThiTracNghiemBetta.form.thi
 {
@@ -115,6 +116,7 @@ namespace ThiTracNghiemBetta.form.thi
                 lblTHONGBAO.Text = "Hết giờ làm bài!";
                 chamDiem();
                 ghiBangDiemVaBaiThi();
+                this.Close();
             }
             if (ss != 0)
             {
@@ -228,10 +230,7 @@ namespace ThiTracNghiemBetta.form.thi
                 lblTHOIGIANTHI.Text = "Còn lại: 0 : 0";
                 chamDiem();
                 ghiBangDiemVaBaiThi();
-                /*Program.formSV = new frmSV();
-                Program.formSV.Activate();
-                Program.formSV.Show();
-                Program.formTracNghiem.Hide();*/
+                this.Close();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -427,23 +426,26 @@ namespace ThiTracNghiemBetta.form.thi
              int idBangDiem = Program.myReader.GetInt32(5);
              Program.myReader.Close();
 
-            strlenh = "EXEC SP_GHIBAITHI @mach, @dachon, @mabaithi, @sothutu";
+            foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
+            {
+                bdsCT_BAITHI.AddNew();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["THUTU"] = ct.getThuTu();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["NOIDUNG"] = ct.getNoiDung();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["A"] = ct.getA().Trim();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["B"] = ct.getB().Trim();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["C"] = ct.getC().Trim();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["D"] = ct.getD().Trim();
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANDUNG"] = ct.getDapAnDung().Trim().ElementAt(0);
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["DAPANDACHON"] = ct.getDapAnDaChon().Length == 0 ? ' ': ct.getDapAnDaChon().ElementAt(0);
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["MA_BAI_THI"] = idBangDiem;
+                ((DataRowView)bdsCT_BAITHI[bdsCT_BAITHI.Position])["CAU_HOI"] = ct.getCauHoi();
+                bdsCT_BAITHI.EndEdit();
+            }
             try
             {
-                foreach (CT_BaiThi ct in CT_BaiThi.ct_baiThi)
-                {
-                    SqlCommand sqlcommand = new SqlCommand(strlenh, Program.conn);
-                    sqlcommand.Parameters.AddWithValue("@mach", ct.getCauHoi());
-                    sqlcommand.Parameters.AddWithValue("@sothutu", ct.getThuTu());
-                    sqlcommand.Parameters.AddWithValue("@mabaithi", idBangDiem);
-                    sqlcommand.Parameters.AddWithValue("@dachon", ct.getDapAnDaChon() == null?"": ct.getDapAnDaChon());
-                    SqlDataReader dataReader = null;
-                    dataReader = sqlcommand.ExecuteReader();
-                    dataReader.Close();
-                    int milliseconds = 200;
-                    System.Threading.Thread.Sleep(milliseconds);
-                }
-            }catch (Exception ex)
+                cT_BAITHITableAdapter.Update(this.dS.CHITIETBAITHI);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -451,15 +453,15 @@ namespace ThiTracNghiemBetta.form.thi
             DialogResult dialogResult = MessageBox.Show("Số câu đúng: " + soCauDung + "/" + soCauThi + "\nTổng điểm: " + tongDiem + "\nBạn có muốn xem lại bài thi?", "KẾT QUẢ", MessageBoxButtons.YesNoCancel);
              if (dialogResult == DialogResult.Yes)
              {
-                 /*frmReportXemBaiThiSV rp = new frmReportXemBaiThiSV(idBangDiem);
-                 rp.lblHOTEN.Text = "HỌ TÊN: " + Program.mHoTen;
-                 rp.lblLOP.Text = "LỚP: " + Program.svTenLop;
-                 rp.lblMONTHI.Text = this.lblMONHOC.Text;
-                 rp.lblNGAYTHI.Text = "NGÀY THI: " + lblNGAYTHI.Text;
+                rpXemBaiThi rp = new rpXemBaiThi(idBangDiem);
+                rp.lbHoTen.Text = "HỌ TÊN: " + Program.mHoTen;
+                rp.lbLop.Text = "LỚP: " + Program.tenlop;
+                rp.lbMonHoc.Text = "MÔN THI" + this.lblMONHOC.Text;
+                rp.lbNgayThi.Text = "NGÀY THI: " + lblNGAYTHI.Text;
 
-                 rp.lblLAN.Text = "LẦN: " + g.getLan();
-                 ReportPrintTool print = new ReportPrintTool(rp);
-                 print.ShowPreviewDialog();*/
+                rp.lbLanThi.Text = "LẦN: " + g.Lan;
+                ReportPrintTool print = new ReportPrintTool(rp);
+                print.ShowPreviewDialog();
              }
              else if (dialogResult == DialogResult.No)
              {

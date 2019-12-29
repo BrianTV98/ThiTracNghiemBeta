@@ -44,6 +44,7 @@
             this.gIAOVIEN_DANGKYTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             this.tableAdapterManager = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
             this.gr_dkthi = new System.Windows.Forms.GroupBox();
+            this.btnThi = new System.Windows.Forms.Button();
             this.txt_validate = new System.Windows.Forms.Label();
             this.cb_maMonHoc = new System.Windows.Forms.ComboBox();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -157,6 +158,7 @@
             // 
             // gr_dkthi
             // 
+            this.gr_dkthi.Controls.Add(this.btnThi);
             this.gr_dkthi.Controls.Add(this.txt_validate);
             this.gr_dkthi.Controls.Add(this.cb_maMonHoc);
             this.gr_dkthi.Controls.Add(this.cb_maLop);
@@ -181,6 +183,13 @@
             this.gr_dkthi.Name = "gr_dkthi";
             this.gr_dkthi.TabStop = false;
             this.gr_dkthi.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnThi
+            // 
+            resources.ApplyResources(this.btnThi, "btnThi");
+            this.btnThi.Name = "btnThi";
+            this.btnThi.UseVisualStyleBackColor = true;
+            this.btnThi.Click += new System.EventHandler(this.btnThi_Click);
             // 
             // txt_validate
             // 
@@ -332,5 +341,6 @@
         private TN_CSDLPTDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private System.Windows.Forms.ComboBox cb_maMonHoc;
         private System.Windows.Forms.Label txt_validate;
+        private System.Windows.Forms.Button btnThi;
     }
 }

@@ -22,8 +22,9 @@ namespace ThiTracNghiemBetta.models
             private String C;
             private String D;
             private String dapAnDung;
-            private String dapAnDaChon;
-            public static ArrayList ct_baiThi = new ArrayList();
+            private String dapAnDaChon = "";
+        public static ArrayList thithu = new ArrayList();
+        public static ArrayList ct_baiThi = new ArrayList();
             public CT_BaiThi(int idCTBaiThi, int idBangDiem, int cauHoi, int thuTu, String noiDung, String A, String B, String C, String D, String dapAnDung, String dapAnDaChon)
             {
                 this.idCTBaiThi = idCTBaiThi;

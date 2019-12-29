@@ -114,6 +114,7 @@ namespace ThiTracNghiemBetta.form.thi
              */
             return true;
         }
+        List<GiaoVienDK> list = new List<GiaoVienDK>();
         private void frmChonMonThi_Load(object sender, EventArgs e)
         {
             /*
@@ -124,11 +125,23 @@ namespace ThiTracNghiemBetta.form.thi
 
             // load mon hoc
             Program.KetNoi();
-            DataTable dtMonHoc = Program.ExecSqlDataTable("EXEC SP_TIM_MON_HOC_DK_THI_THEO_LOP '"+Program.malop.Trim()+"'");
+            DataTable dtMonHoc = Program.ExecSqlDataTable("EXEC SP_TIM_MON_HOC_DK_THI_THEO_LOP '"+Program.malop.Trim()+"', '"+Program.mUserId+"'");
            
             foreach (DataRow row in dtMonHoc.Rows)
             {
+                GiaoVienDK gv = new GiaoVienDK(
+                    row["MAGV"].ToString(),
+                    row["MAMH"].ToString(),
+                    row["MALOP"].ToString(),
+                    row["TRINHDO"].ToString(),
+                    DateTime.Parse(row["NGAYTHI"].ToString()),
+                    int.Parse(row["LAN"].ToString()),
+                    int.Parse(row["SOCAUTHI"].ToString()),
+                    int.Parse(row["THOIGIAN"].ToString())
+                    );
+                list.Add(gv);
                 string name = row["MAMH"].ToString();
+
                 cb_monHoc.Items.Add(name);
             }
             if (cb_monHoc.Items.Count > 0)
@@ -149,6 +162,7 @@ namespace ThiTracNghiemBetta.form.thi
 
            
         }
+
         private int getSoLanDKThi()
         {
             SqlCommand sqlCommand = new SqlCommand("SP_GET_SO_LAN_DANG_KI_MON_THI_THEO_LOP", Program.conn);
@@ -161,6 +175,11 @@ namespace ThiTracNghiemBetta.form.thi
 
         private void cb_monHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cb_monHoc.SelectedItem == null) { return; }
+            lbSoCau.Text = list[cb_monHoc.SelectedIndex].SoCauThi+"";
+            lbThoiGian.Text = list[cb_monHoc.SelectedIndex].ThoiGian + "";
+            lbTrinhDo.Text = list[cb_monHoc.SelectedIndex].TrinhDo + "";
+            dtPicker.Value = list[cb_monHoc.SelectedIndex].NgayThi;
 
             cb_lanThi.Items.Clear();
             int valueCbLanThi = getSoLanDKThi();
@@ -170,7 +189,6 @@ namespace ThiTracNghiemBetta.form.thi
                 for (int i = 1; i <= valueCbLanThi; i++)
                 {
                     cb_lanThi.Items.Add(i);
-                    
                 }
             }
             else
@@ -179,5 +197,7 @@ namespace ThiTracNghiemBetta.form.thi
             }
             cb_lanThi.SelectedIndex = 0;
         }
+
+        
     }
 }
