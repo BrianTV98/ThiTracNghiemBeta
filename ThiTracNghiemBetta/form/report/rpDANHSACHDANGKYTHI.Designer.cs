@@ -280,7 +280,7 @@
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel3.Text = "TỪ NGÀY: ";
+            this.xrLabel3.Text = "ĐẾN NGÀY: ";
             // 
             // lbNgayBD
             // 

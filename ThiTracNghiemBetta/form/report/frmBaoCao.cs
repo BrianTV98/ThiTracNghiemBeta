@@ -22,24 +22,28 @@ namespace ThiTracNghiemBetta.form.report
         {
             if (chechValidate() == false)
             {
-                MessageBox.Show("Lỗi");
+                MessageBox.Show("Ngày bắt đầu phải sớm hơn hoặc bằng Ngày kết thúc",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //MessageBox.Show(dtNgayBD.Value.ToString());
-            rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value, dtNgayKT.Value);
-            ReportPrintTool print = new ReportPrintTool(f);
-            f.lbNgayBD.Text = dtNgayBD.Value.ToShortDateString();
-            f.lbNgayKT.Text = dtNgayKT.Value.ToShortDateString(); 
-            print.ShowPreviewDialog();
-
+            else
+            {
+                rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value.Date, dtNgayKT.Value.Date);
+                ReportPrintTool print = new ReportPrintTool(f);
+                f.lbNgayBD.Text = dtNgayBD.Value.ToShortDateString();
+                f.lbNgayKT.Text = dtNgayKT.Value.ToShortDateString();
+                print.ShowPreviewDialog();
+            }    
         }
         private bool chechValidate()
         {
-            int datetime =  DateTime.Compare(dtNgayBD.Value, dtNgayKT.Value);
-            if (datetime >= 0)
+            
+            int datetime =  DateTime.Compare(dtNgayBD.Value.Date, dtNgayKT.Value.Date);
+
+            if (datetime > 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }
