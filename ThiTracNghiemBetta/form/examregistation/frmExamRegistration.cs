@@ -258,13 +258,6 @@ namespace ThiTracNghiemBetta.form.examregistation
             int socauthi = Int32.Parse(spinEdit_cauhoi.Text);
             int thoigianthi = Int32.Parse(spinEdit_thoigian.Text);
 
-            if (socauthi < 15 || socauthi > 100)
-            {
-                txt_validate.Text = "Số câu hỏi phải nằm trong khoản 15-100!";
-                return;
-            }
-
-
             DataTable db = Program.ExecSqlDataTable("EXEC SP_GET_DE_THI " + socauthi + ",'" + mamh + "','" + trinhdo + "'");
                 int checkCount = db.Rows.Count;
                 if (checkCount == 0)
