@@ -50,6 +50,12 @@
             this.sP_GET_BANG_DIEM_THEO_LOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_GET_BANG_DIEM_THEO_LOPTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.SP_GET_BANG_DIEM_THEO_LOPTableAdapter();
             this.gvBangDiem = new System.Windows.Forms.DataGridView();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.tENCNComboBox = new System.Windows.Forms.ComboBox();
+            this.pnPrint = new System.Windows.Forms.Panel();
+            this.pngridview = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             mALOPLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
@@ -61,6 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_GET_BANG_DIEM_THEO_LOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBangDiem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            this.pnPrint.SuspendLayout();
+            this.pngridview.SuspendLayout();
             this.SuspendLayout();
             // 
             // mALOPLabel
@@ -155,9 +164,19 @@
             0,
             0,
             0});
+            this.txtLan.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtLan.Name = "txtLan";
             this.txtLan.Size = new System.Drawing.Size(120, 22);
             this.txtLan.TabIndex = 5;
+            this.txtLan.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -170,19 +189,21 @@
             // 
             // pnChiNhanh
             // 
+            this.pnChiNhanh.Controls.Add(this.tENCNComboBox);
             this.pnChiNhanh.Controls.Add(this.label2);
             this.pnChiNhanh.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnChiNhanh.Location = new System.Drawing.Point(0, 0);
             this.pnChiNhanh.Name = "pnChiNhanh";
-            this.pnChiNhanh.Size = new System.Drawing.Size(949, 65);
+            this.pnChiNhanh.Size = new System.Drawing.Size(949, 79);
             this.pnChiNhanh.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 29);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(263, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "CHI NHÁNH";
             // 
@@ -196,14 +217,14 @@
             this.pnControl.Controls.Add(mAMHLabel);
             this.pnControl.Controls.Add(this.cbMaLop);
             this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnControl.Location = new System.Drawing.Point(0, 65);
+            this.pnControl.Location = new System.Drawing.Point(0, 79);
             this.pnControl.Name = "pnControl";
             this.pnControl.Size = new System.Drawing.Size(949, 149);
             this.pnControl.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(355, 102);
+            this.button1.Location = new System.Drawing.Point(365, 93);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 41);
             this.button1.TabIndex = 7;
@@ -229,20 +250,71 @@
             // 
             this.gvBangDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvBangDiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvBangDiem.Location = new System.Drawing.Point(0, 214);
+            this.gvBangDiem.Location = new System.Drawing.Point(0, 0);
             this.gvBangDiem.Name = "gvBangDiem";
+            this.gvBangDiem.ReadOnly = true;
             this.gvBangDiem.RowHeadersWidth = 51;
             this.gvBangDiem.RowTemplate.Height = 24;
-            this.gvBangDiem.Size = new System.Drawing.Size(949, 321);
+            this.gvBangDiem.Size = new System.Drawing.Size(949, 267);
             this.gvBangDiem.TabIndex = 9;
             this.gvBangDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvBangDiem_CellContentClick);
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.tN_CSDLPTDataSet;
+            // 
+            // v_DS_PHANMANHTableAdapter
+            // 
+            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // tENCNComboBox
+            // 
+            this.tENCNComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.v_DS_PHANMANHBindingSource, "TENCN", true));
+            this.tENCNComboBox.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.tENCNComboBox.DisplayMember = "TENCN";
+            this.tENCNComboBox.FormattingEnabled = true;
+            this.tENCNComboBox.Location = new System.Drawing.Point(384, 29);
+            this.tENCNComboBox.Name = "tENCNComboBox";
+            this.tENCNComboBox.Size = new System.Drawing.Size(251, 24);
+            this.tENCNComboBox.TabIndex = 2;
+            this.tENCNComboBox.ValueMember = "TENSERVER";
+            // 
+            // pnPrint
+            // 
+            this.pnPrint.Controls.Add(this.btnPrint);
+            this.pnPrint.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnPrint.Location = new System.Drawing.Point(0, 495);
+            this.pnPrint.Name = "pnPrint";
+            this.pnPrint.Size = new System.Drawing.Size(949, 40);
+            this.pnPrint.TabIndex = 9;
+            // 
+            // pngridview
+            // 
+            this.pngridview.Controls.Add(this.gvBangDiem);
+            this.pngridview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pngridview.Location = new System.Drawing.Point(0, 228);
+            this.pngridview.Name = "pngridview";
+            this.pngridview.Size = new System.Drawing.Size(949, 267);
+            this.pngridview.TabIndex = 10;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(838, 6);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 0;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // BangDiemMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 535);
-            this.Controls.Add(this.gvBangDiem);
+            this.Controls.Add(this.pngridview);
+            this.Controls.Add(this.pnPrint);
             this.Controls.Add(this.pnControl);
             this.Controls.Add(this.pnChiNhanh);
             this.Name = "BangDiemMonHoc";
@@ -260,6 +332,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_GET_BANG_DIEM_THEO_LOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBangDiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            this.pnPrint.ResumeLayout(false);
+            this.pngridview.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -285,5 +360,11 @@
         private System.Windows.Forms.BindingSource sP_GET_BANG_DIEM_THEO_LOPBindingSource;
         private TN_CSDLPTDataSetTableAdapters.SP_GET_BANG_DIEM_THEO_LOPTableAdapter sP_GET_BANG_DIEM_THEO_LOPTableAdapter;
         private System.Windows.Forms.DataGridView gvBangDiem;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
+        private TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private System.Windows.Forms.ComboBox tENCNComboBox;
+        private System.Windows.Forms.Panel pnPrint;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Panel pngridview;
     }
 }

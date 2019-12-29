@@ -68,8 +68,6 @@ namespace ThiTracNghiemBetta.form
             //txtIDCH.Text = "0";
             txtIDCH.Focus();
             Program.Control = "add";
-            
-
         }
 
         private void disableModify()
