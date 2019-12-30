@@ -241,7 +241,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(365, 93);
+            this.button1.Location = new System.Drawing.Point(384, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 41);
             this.button1.TabIndex = 7;
@@ -272,9 +272,8 @@
             this.gvBangDiem.ReadOnly = true;
             this.gvBangDiem.RowHeadersWidth = 51;
             this.gvBangDiem.RowTemplate.Height = 24;
-            this.gvBangDiem.Size = new System.Drawing.Size(949, 267);
+            this.gvBangDiem.Size = new System.Drawing.Size(949, 247);
             this.gvBangDiem.TabIndex = 9;
-            this.gvBangDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvBangDiem_CellContentClick);
             // 
             // v_DS_PHANMANHTableAdapter
             // 
@@ -284,17 +283,17 @@
             // 
             this.pnPrint.Controls.Add(this.btnPrint);
             this.pnPrint.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnPrint.Location = new System.Drawing.Point(0, 495);
+            this.pnPrint.Location = new System.Drawing.Point(0, 475);
             this.pnPrint.Name = "pnPrint";
-            this.pnPrint.Size = new System.Drawing.Size(949, 40);
+            this.pnPrint.Size = new System.Drawing.Size(949, 60);
             this.pnPrint.TabIndex = 9;
             // 
             // btnPrint
             // 
             this.btnPrint.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPrint.Location = new System.Drawing.Point(790, 0);
+            this.btnPrint.Location = new System.Drawing.Point(776, 0);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(159, 40);
+            this.btnPrint.Size = new System.Drawing.Size(173, 60);
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "IN";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -306,7 +305,7 @@
             this.pngridview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pngridview.Location = new System.Drawing.Point(0, 228);
             this.pngridview.Name = "pngridview";
-            this.pngridview.Size = new System.Drawing.Size(949, 267);
+            this.pngridview.Size = new System.Drawing.Size(949, 247);
             this.pngridview.TabIndex = 10;
             // 
             // BangDiemMonHoc

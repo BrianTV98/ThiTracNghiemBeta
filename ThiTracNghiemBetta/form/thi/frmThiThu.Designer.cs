@@ -108,7 +108,6 @@
             this.toolStripStatusMALOP.Name = "toolStripStatusMALOP";
             this.toolStripStatusMALOP.Size = new System.Drawing.Size(48, 17);
             this.toolStripStatusMALOP.Text = "MALOP";
-            this.toolStripStatusMALOP.Click += new System.EventHandler(this.toolStripStatusMALOP_Click);
             // 
             // toolStripStatusTENLOP
             // 

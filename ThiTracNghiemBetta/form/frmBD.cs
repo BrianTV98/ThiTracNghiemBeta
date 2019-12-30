@@ -28,14 +28,14 @@ namespace ThiTracNghiemBetta.form
         }
         private void reloadData()
         {
-            this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
-            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);
+
+            /*this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);*/
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.CHITIETBAITHI' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-
             this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
 
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;

@@ -157,36 +157,6 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-        private void txt_Khoa_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmRegisterUsers_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cb_nhom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupGV_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không! ", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Error);

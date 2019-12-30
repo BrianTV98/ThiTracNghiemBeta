@@ -129,14 +129,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="tHOIGIANLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 395</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tHOIGIANLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 486</value>
   </data>
   <data name="tHOIGIANLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 14</value>
+    <value>86, 16</value>
   </data>
   <data name="tHOIGIANLabel.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -154,7 +150,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;tHOIGIANLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <metadata name="sOCAUTHILabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -166,13 +162,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="sOCAUTHILabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 351</value>
-  </data>
-  <data name="sOCAUTHILabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 432</value>
   </data>
   <data name="sOCAUTHILabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>93, 16</value>
   </data>
   <data name="sOCAUTHILabel.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -190,7 +183,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;sOCAUTHILabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <metadata name="lANLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -202,13 +195,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="lANLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 307</value>
-  </data>
-  <data name="lANLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 378</value>
   </data>
   <data name="lANLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 14</value>
+    <value>69, 16</value>
   </data>
   <data name="lANLabel.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -226,7 +216,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;lANLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <metadata name="nGAYTHILabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -238,13 +228,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="nGAYTHILabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 263</value>
-  </data>
-  <data name="nGAYTHILabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 324</value>
   </data>
   <data name="nGAYTHILabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 14</value>
+    <value>80, 16</value>
   </data>
   <data name="nGAYTHILabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -262,7 +249,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;nGAYTHILabel.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <metadata name="tRINHDOLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -274,13 +261,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="tRINHDOLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 219</value>
-  </data>
-  <data name="tRINHDOLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 270</value>
   </data>
   <data name="tRINHDOLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 14</value>
+    <value>81, 16</value>
   </data>
   <data name="tRINHDOLabel.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -298,7 +282,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;tRINHDOLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <metadata name="mALOPLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -310,13 +294,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="mALOPLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 176</value>
-  </data>
-  <data name="mALOPLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 217</value>
   </data>
   <data name="mALOPLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 14</value>
+    <value>66, 16</value>
   </data>
   <data name="mALOPLabel.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -334,7 +315,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;mALOPLabel.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <metadata name="mAMHLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -346,13 +327,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="mAMHLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 132</value>
-  </data>
-  <data name="mAMHLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 162</value>
   </data>
   <data name="mAMHLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 14</value>
+    <value>105, 16</value>
   </data>
   <data name="mAMHLabel.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -370,7 +348,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;mAMHLabel.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <metadata name="mAGVLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -382,13 +360,10 @@
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="mAGVLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 88</value>
-  </data>
-  <data name="mAGVLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>157, 108</value>
   </data>
   <data name="mAGVLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 14</value>
+    <value>122, 16</value>
   </data>
   <data name="mAGVLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -406,7 +381,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;mAGVLabel.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -418,13 +393,10 @@
     <value>Times New Roman, 36pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 15</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>181, 18</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 55</value>
+    <value>432, 68</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -442,7 +414,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -456,14 +428,18 @@
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>776, 17</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnThi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnThi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 446</value>
+    <value>619, 549</value>
+  </data>
+  <data name="btnThi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnThi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 28</value>
+    <value>128, 34</value>
   </data>
   <data name="btnThi.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -483,53 +459,17 @@
   <data name="&gt;&gt;btnThi.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txt_validate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txt_validate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 7.8pt</value>
-  </data>
-  <data name="txt_validate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 421</value>
-  </data>
-  <data name="txt_validate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="txt_validate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 14</value>
-  </data>
-  <data name="txt_validate.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="txt_validate.Text" xml:space="preserve">
-    <value>Hiển thị lỗi ở đây!</value>
-  </data>
-  <data name="txt_validate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;txt_validate.Name" xml:space="preserve">
-    <value>txt_validate</value>
-  </data>
-  <data name="&gt;&gt;txt_validate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_validate.Parent" xml:space="preserve">
-    <value>gr_dkthi</value>
-  </data>
-  <data name="&gt;&gt;txt_validate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="mONHOCBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>189, 60</value>
   </metadata>
   <data name="cb_maMonHoc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 128</value>
+    <value>307, 158</value>
   </data>
   <data name="cb_maMonHoc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="cb_maMonHoc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>263, 24</value>
   </data>
   <data name="cb_maMonHoc.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -544,19 +484,19 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;cb_maMonHoc.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <metadata name="lOPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>982, 17</value>
   </metadata>
   <data name="cb_maLop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 169</value>
+    <value>307, 208</value>
   </data>
   <data name="cb_maLop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="cb_maLop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>263, 24</value>
   </data>
   <data name="cb_maLop.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -571,7 +511,7 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;cb_maLop.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cb_trinhdo.Items" xml:space="preserve">
     <value>A</value>
@@ -583,13 +523,13 @@
     <value>C</value>
   </data>
   <data name="cb_trinhdo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 213</value>
+    <value>307, 262</value>
   </data>
   <data name="cb_trinhdo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="cb_trinhdo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>263, 24</value>
   </data>
   <data name="cb_trinhdo.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -604,19 +544,19 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;cb_trinhdo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 446</value>
+    <value>415, 549</value>
   </data>
   <data name="btnCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>133, 34</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -634,19 +574,19 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnRegister.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 7.8pt</value>
   </data>
   <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 446</value>
+    <value>229, 549</value>
   </data>
   <data name="btnRegister.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>133, 34</value>
   </data>
   <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -664,19 +604,19 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;btnRegister.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="txt_magv.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txt_magv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 84</value>
+    <value>307, 103</value>
   </data>
   <data name="txt_magv.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="txt_magv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="txt_magv.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -691,23 +631,23 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;txt_magv.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="spinEdit_thoigian.EditValue" type="System.Decimal, mscorlib">
     <value>15</value>
   </data>
   <data name="spinEdit_thoigian.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 391</value>
+    <value>307, 481</value>
   </data>
   <data name="spinEdit_thoigian.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <assembly alias="DevExpress.Utils.v19.1" name="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="spinEdit_thoigian.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
     <value>Combo</value>
   </data>
   <data name="spinEdit_thoigian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="spinEdit_thoigian.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -722,22 +662,22 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;spinEdit_thoigian.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="spinEdit_cauhoi.EditValue" type="System.Decimal, mscorlib">
     <value>10</value>
   </data>
   <data name="spinEdit_cauhoi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 347</value>
+    <value>307, 427</value>
   </data>
   <data name="spinEdit_cauhoi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="spinEdit_cauhoi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
     <value>Combo</value>
   </data>
   <data name="spinEdit_cauhoi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="spinEdit_cauhoi.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -752,22 +692,22 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;spinEdit_cauhoi.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="spinEdit_lanthi.EditValue" type="System.Decimal, mscorlib">
     <value>1</value>
   </data>
   <data name="spinEdit_lanthi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 303</value>
+    <value>307, 373</value>
   </data>
   <data name="spinEdit_lanthi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="spinEdit_lanthi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
     <value>Combo</value>
   </data>
   <data name="spinEdit_lanthi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="spinEdit_lanthi.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -782,16 +722,16 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;spinEdit_lanthi.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="dt_ngaythi.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="dt_ngaythi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 259</value>
+    <value>307, 319</value>
   </data>
   <data name="dt_ngaythi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="dt_ngaythi.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.1">
     <value>Combo</value>
@@ -800,7 +740,7 @@
     <value>Combo</value>
   </data>
   <data name="dt_ngaythi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>263, 22</value>
   </data>
   <data name="dt_ngaythi.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -815,19 +755,19 @@
     <value>gr_dkthi</value>
   </data>
   <data name="&gt;&gt;dt_ngaythi.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="gr_dkthi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 10</value>
+    <value>21, 12</value>
   </data>
   <data name="gr_dkthi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="gr_dkthi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="gr_dkthi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 483</value>
+    <value>805, 594</value>
   </data>
   <data name="gr_dkthi.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -844,6 +784,12 @@
   <data name="&gt;&gt;gr_dkthi.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="mONHOCBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>189, 60</value>
+  </metadata>
+  <metadata name="lOPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>982, 17</value>
+  </metadata>
   <metadata name="lOPTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 60</value>
   </metadata>
@@ -857,16 +803,19 @@
     <value>108</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>638, 502</value>
+    <value>851, 618</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 0</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ĐĂNG KÝ THI</value>

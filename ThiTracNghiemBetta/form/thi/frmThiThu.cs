@@ -401,11 +401,6 @@ namespace ThiTracNghiemBetta.form.thi
             this.checkDapAnDaChon();
         }
 
-        private void toolStripStatusMALOP_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ghiBangDiemVaBaiThi()
         {
 

@@ -63,7 +63,7 @@
             this.cb_nhom.Name = "cb_nhom";
             this.cb_nhom.Size = new System.Drawing.Size(224, 24);
             this.cb_nhom.TabIndex = 1;
-            this.cb_nhom.SelectedIndexChanged += new System.EventHandler(this.cb_nhom_SelectedIndexChanged);
+            
             // 
             // label1
             // 
@@ -100,7 +100,7 @@
             this.groupGV.Size = new System.Drawing.Size(984, 534);
             this.groupGV.TabIndex = 1;
             this.groupGV.TabStop = false;
-            this.groupGV.Enter += new System.EventHandler(this.groupGV_Enter);
+    
             // 
             // txt_infor
             // 
@@ -113,7 +113,7 @@
             this.txt_infor.TabIndex = 13;
             this.txt_infor.Text = "Thông báo lỗi ở đây!";
             this.txt_infor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txt_infor.Click += new System.EventHandler(this.label9_Click);
+         
             // 
             // label8
             // 
@@ -169,7 +169,7 @@
             this.label6.Size = new System.Drawing.Size(47, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "KHOA";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+         
             // 
             // txt_name
             // 
@@ -260,7 +260,6 @@
             this.Name = "frmRegisterUsers";
             this.Text = "Đăng Ký";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmRegisterUsers_Load);
             this.groupGV.ResumeLayout(false);
             this.groupGV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_confirm.Properties)).EndInit();

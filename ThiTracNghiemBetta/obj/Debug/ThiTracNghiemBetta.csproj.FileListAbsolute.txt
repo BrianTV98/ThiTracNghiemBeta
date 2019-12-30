@@ -310,10 +310,6 @@ E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmMH.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmRegisterUsers.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.frmSV.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.register.loginAuthentication.resources
-E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.addClass.resources
-E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.addSV.resources
-E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.frmEditClass.resources
-E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.student.frmInputStudent.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.Properties.Resources.resources
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.csproj.GenerateResource.cache
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.exe.licenses
@@ -536,3 +532,7 @@ C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghie
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmKQThiThu.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmThiThu.resources
 C:\Users\hienh\Documents\GitHub\ThiTracNghiemBeta\ThiTracNghiemBeta\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.rpXemBaiThi.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.formXemBaiThiSV.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmKQThiThu.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.frmThiThu.resources
+E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.form.thi.rpXemBaiThi.resources

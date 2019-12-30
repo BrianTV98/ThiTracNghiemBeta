@@ -80,7 +80,6 @@ namespace ThiTracNghiemBetta.form.thi
 
                     frmTracNghiem form = new frmTracNghiem();
                     form.ShowDialog();
-
                 }
             }
         }
@@ -106,14 +105,6 @@ namespace ThiTracNghiemBetta.form.thi
             return list;
         }
 
-        private bool check_validate()
-        {
-            /*
-             * check so lan thi co hop le khong
-             * 
-             */
-            return true;
-        }
         List<GiaoVienDK> list = new List<GiaoVienDK>();
         private void frmChonMonThi_Load(object sender, EventArgs e)
         {

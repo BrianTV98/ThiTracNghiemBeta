@@ -149,9 +149,9 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-        private void ribbonControl1_Click(object sender, EventArgs e)
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Program.frmLogin.Close();
         }
     }
 }

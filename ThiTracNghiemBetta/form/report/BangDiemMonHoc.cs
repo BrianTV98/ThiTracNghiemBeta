@@ -31,8 +31,7 @@ namespace ThiTracNghiemBetta.form.report
 
         private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-           
+            this.Validate();    
         }
 
         private void BangDiemMonHoc_Load(object sender, EventArgs e)
@@ -58,8 +57,6 @@ namespace ThiTracNghiemBetta.form.report
         private void gIAOVIEN_DANGKYBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-           
-
         }
 
         private void lOPBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -67,13 +64,6 @@ namespace ThiTracNghiemBetta.form.report
             this.Validate();
             this.lOPBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.tN_CSDLPTDataSet);
-
-        }
-
-        
-
-        private void gvBangDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -104,7 +94,7 @@ namespace ThiTracNghiemBetta.form.report
             f.lbTenMH.Text = tenMH;
             ReportPrintTool print = new ReportPrintTool(f);
             print.ShowPreviewDialog();
-
         }
+
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ThiTracNghiemBetta.models
 {
-    class GiaoVienDK: GiaoVien
+    public class GiaoVienDK: GiaoVien
     {
         private String maMH;
         private String maLop;

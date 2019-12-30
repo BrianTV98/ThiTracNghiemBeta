@@ -16,6 +16,9 @@ namespace ThiTracNghiemBetta.form.examregistation
     public partial class frmExamRegistration : Form
     {
         frmListExamRegistration frmRoot;
+        private GiaoVienDK giaoVienDk;
+        public bool isDKMoi = true;
+        private string message = "";
         public frmExamRegistration(frmListExamRegistration f)
         {
             InitializeComponent();
@@ -23,20 +26,37 @@ namespace ThiTracNghiemBetta.form.examregistation
             txt_magv.Text = Program.mUserId.Trim();
             // default trinh do
             cb_trinhdo.SelectedIndex = 0;
-            txt_validate.Text = "";
+           
             this.CancelButton = btnCancel;
             this.CenterToScreen();
             /*gr_dkthi.Left = this.Width*2/ 3;
             gr_dkthi.Top = this.Height / 5;*/
 
+
         }
+        public frmExamRegistration(frmListExamRegistration f, GiaoVienDK gvdk)
+        {
+            InitializeComponent();
+            this.frmRoot = f;
+            this.giaoVienDk = gvdk;
+            txt_magv.Text = Program.mUserId.Trim();
+            // default trinh do
+            cb_trinhdo.SelectedIndex = 0;
+           
+            this.CancelButton = btnCancel;
+            this.CenterToScreen();
+            /*gr_dkthi.Left = this.Width*2/ 3;
+            gr_dkthi.Top = this.Height / 5;*/
+
+
+        }
+
 
         private void gIAOVIEN_DANGKYBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.bds_giaoVienDangKi.EndEdit();
             this.tableAdapterManager.UpdateAll(this.ds);
-
         }
 
         private void formExamRegistration_Load(object sender, EventArgs e)
@@ -52,28 +72,33 @@ namespace ThiTracNghiemBetta.form.examregistation
 
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.ds.GIAOVIEN_DANGKY);
-
+            
             this.ds.EnforceConstraints = true;
+
+            IsFormDKMoi(isDKMoi);
         }
-
-        private void sOCAUTHILabel_Click(object sender, EventArgs e)
+        private void IsFormDKMoi(bool c)
         {
-
-        }
-
-        private void mAGVLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nGAYTHILabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+           
+            cb_maMonHoc.Enabled = c;
+            cb_maLop.Enabled = c;
+            if (c == true)
+            {
+                btnRegister.Text = "ĐĂNG KÍ";
+               
+            }
+            else
+            {
+                cb_maMonHoc.Text =giaoVienDk.MaMH;
+                cb_maLop.Text = giaoVienDk.MaLop;
+                cb_trinhdo.Text = giaoVienDk.TrinhDo;
+                dt_ngaythi.Text = giaoVienDk.NgayThi.ToString();
+                spinEdit_lanthi.Text = giaoVienDk.Lan.ToString();
+                spinEdit_thoigian.Text = giaoVienDk.ThoiGian.ToString();
+                spinEdit_cauhoi.Text = giaoVienDk.SoCauThi.ToString();
+                btnRegister.Text = "HOÀN TẤT";
+            }
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,19 +107,44 @@ namespace ThiTracNghiemBetta.form.examregistation
              * checkvaldiate
              * Đăng kí
             */
-            if (checkValidate() == true)
+            if (isDKMoi == true)
             {
-                if (DANGKY() == true)
+                if (checkValidate() == true)
                 {
-                    MessageBox.Show("Đăng KÝ Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_validate.Text = "";
+                    if (DANGKY() == true)
+                    {
+                        MessageBox.Show("Đăng KÝ Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng ký thất bại !", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Đăng ký thất bại !", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_validate.Text = "";
+                    MessageBox.Show(message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+            }
+            else
+            {
+                if (checkDKEdit() == true)
+                {
+                    string query= "UPDATE GIAOVIEN_DANGKY " +
+                        "SET  TRINHDO = '"+cb_trinhdo.SelectedItem+"', NGAYTHI = '"+dt_ngaythi.DateTime+"', LAN = '"+spinEdit_lanthi.Text.ToString()+"', SOCAUTHI = '"+spinEdit_cauhoi.Text.ToString()+"', THOIGIAN = '"+spinEdit_thoigian.Text.ToString()+"'"+
+                        "WHERE MAMH = '"+cb_maMonHoc.SelectedValue.ToString()+"' AND MALOP = '"+cb_maLop.Text.ToString()+"' AND LAN = "+spinEdit_lanthi.Text.ToString();
+                    MessageBox.Show(query);
+                    SqlCommand sqlcmd = new SqlCommand(query, Program.conn);
+                    sqlcmd.CommandType = CommandType.Text;
+                    if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+                    sqlcmd.ExecuteReader();
+                    frmRoot.adapter_gvdk.Fill(frmRoot.ds.GIAOVIEN_DANGKY);
+                   
+                    
+                }
+                else
+                {
+                    MessageBox.Show(message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private bool DANGKY()
@@ -126,13 +176,34 @@ namespace ThiTracNghiemBetta.form.examregistation
             }
             
         }
+        private bool checkDKEdit()
+        {
+            
+            int socauhoi = Int32.Parse(spinEdit_cauhoi.Text);
+            int thoigianthi = Int32.Parse(spinEdit_thoigian.Text); ;
+            int datetime = DateTime.Compare(DateTime.Now, dt_ngaythi.DateTime);
+            int soCauHoiHeThong = getSoCauHoiCuaHeThong(cb_maMonHoc.SelectedValue.ToString(), cb_trinhdo.SelectedItem.ToString());
+            if (datetime > 0)
+            {
+                message = "Thời gian đăng ký không hợp lệ! ";
+                return false;
+            }
+
+            if (socauhoi > soCauHoiHeThong)
+            {
+                message = "Số lượng câu hỏi trong hệ thống không đáp ứng được!";
+                return false;
+            }
+            //
+            return true;
+        }
         private bool checkValidate()
         {
             /*
              * Kiem tra Trinh do -> chi nhan a, b,c 
              * Kiem tra Ngay THi ->  không được trong thời gian của quá khứ
              * Kiem tra Lan Thi  ->  chi nhan 1 va 2
-             * Kiem tra Thoi Gian THi -> =>15 and <6=0
+             * Kiem tra Thoi Gian THi -> =>15 and <60
              * kiem tra so cau thi -> >=10 and <=100;
              * kiểm tra số câu hỏi : Số câu hỏi  phải nhỏ hơn số câu hỏi của bộ đề môn học ;
              */
@@ -145,12 +216,12 @@ namespace ThiTracNghiemBetta.form.examregistation
             
             if (lanthi <0)
             {
-                txt_validate.Text = "Số lần thi không hợp lệ!";
+                message = "Số lần thi không hợp lệ!";
                 return false;
             }
             if (lanthi > 2)
             {
-                txt_validate.Text = "Chỉ cho phép tối đa thi 2 lần";
+                message = "Chỉ cho phép tối đa thi 2 lần";
                 return false;
             }
             if (lanthi == 1)
@@ -158,7 +229,7 @@ namespace ThiTracNghiemBetta.form.examregistation
                 bool check=checkTonTaiDKThi(cb_maMonHoc.SelectedValue.ToString(), cb_maLop.SelectedValue.ToString(), lanthi);
                 if (check == true)
                 {
-                    txt_validate.Text="Đã đăng kí thi lần 1";
+                    message = "Đã đăng kí thi lần 1";
                     return false;
                 }
             }
@@ -172,37 +243,37 @@ namespace ThiTracNghiemBetta.form.examregistation
                 bool check = checkTonTaiDKThi(cb_maMonHoc.SelectedValue.ToString(), cb_maLop.SelectedValue.ToString(), lanthi-1);
                 if (check == false)
                 {
-                    txt_validate.Text = "Bạn phải đăng kí thi lần 1 trước khi đăng kí thi lần 2";
+                    message = "Bạn phải đăng kí thi lần 1 trước khi đăng kí thi lần 2";
                     return false;
                 }
                 bool check2 = checkTonTaiDKThi(cb_maMonHoc.SelectedValue.ToString(), cb_maLop.SelectedValue.ToString(), lanthi);
                 if (check2 == true)
                 {
-                    txt_validate.Text = "Đã đăng kí thi lần 2 !";
+                    message = "Đã đăng kí thi lần 2 !";
                     return false;
                 }
 
             }
-            if (socauhoi < 15 || socauhoi>100)
+            if (socauhoi < 10 || socauhoi>100)
             {
-                txt_validate.Text = "Số câu hỏi phải nằm trong khoản 15-100!";
+                message = "Số câu hỏi phải nằm trong khoản 10-100!";
                 return false;
             }
           
             if (thoigianthi < 15|| thoigianthi >60)
             {
-                txt_validate.Text = "Thời gian thi phải nằm trong khoản 15- 60 p";
+                message = "Thời gian thi phải nằm trong khoản 15- 60 p";
                 return false;
             }
             if (datetime > 0)
             {
-                txt_validate.Text = "Thời gian đăng ký không hợp lệ! ";
+                message = "Thời gian đăng ký không hợp lệ! ";
                 return false;
             }
 
             if (socauhoi>soCauHoiHeThong)
             {
-                txt_validate.Text = "Số lượng câu hỏi trong hệ thống không đáp ứng được!";
+                message = "Số lượng câu hỏi trong hệ thống không đáp ứng được!";
                 return false;
             }
             //
@@ -219,8 +290,18 @@ namespace ThiTracNghiemBetta.form.examregistation
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@MAMH",maMH);
             sqlCommand.Parameters.AddWithValue("@TRINHDO", trinhdo);
-            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
-            return kq;
+            try
+            {   
+                int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+                return kq;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không kiểm tra được số câu hỏi có trong hệ thống " + ex, "Lỗi Phần Mềm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+            
+           
         }
 
         /* Trả về true: nếu đã tồn tại lần thi này
@@ -239,24 +320,40 @@ namespace ThiTracNghiemBetta.form.examregistation
             sqlCommand.Parameters.AddWithValue("@MAMH", maMH);
             sqlCommand.Parameters.AddWithValue("@MALOP", malop);
             sqlCommand.Parameters.AddWithValue("@LAN", lanthi);
-            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
-            if (kq == 1)
+            try
             {
-                return true;
+                int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+                if (kq == 1)
+                {
+                    return true;
+                }
+                return false;
+
             }
-            return false;
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không thể kiểm tra đăng ký thí! \n" +ex, "Lỗi do thằng lập trình ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void btnThi_Click(object sender, EventArgs e)
         {
-            if (!checkValidate()) return;
-
+            if (isDKMoi == true)
+            {
+                if (!checkValidate()) return;
+            }
+            else
+            {
+                if (!checkDKEdit()) return;
+            }
+           
+            MessageBox.Show("Vao thi nè! ");
             string malop = cb_maLop.SelectedValue.ToString();
             string mamh = cb_maMonHoc.SelectedValue.ToString();
             string lanthi = spinEdit_lanthi.Text;

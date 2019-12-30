@@ -33,9 +33,9 @@ namespace ThiTracNghiemBetta
         public static String mHoTen = "";
         public static String mLoai = ""; // giangvien or sinhvien
         public static int mChiNhanh = 0;
-
+        public static frmLogin frmLogin; 
         //
-       
+
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static String Control = "";
@@ -120,7 +120,8 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmLogin());
+            frmLogin = new frmLogin();
+            Application.Run(frmLogin);
         }
     }
 }

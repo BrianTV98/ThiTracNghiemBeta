@@ -45,7 +45,6 @@
             this.tableAdapterManager = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
             this.gr_dkthi = new System.Windows.Forms.GroupBox();
             this.btnThi = new System.Windows.Forms.Button();
-            this.txt_validate = new System.Windows.Forms.Label();
             this.cb_maMonHoc = new System.Windows.Forms.ComboBox();
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cb_maLop = new System.Windows.Forms.ComboBox();
@@ -159,7 +158,6 @@
             // gr_dkthi
             // 
             this.gr_dkthi.Controls.Add(this.btnThi);
-            this.gr_dkthi.Controls.Add(this.txt_validate);
             this.gr_dkthi.Controls.Add(this.cb_maMonHoc);
             this.gr_dkthi.Controls.Add(this.cb_maLop);
             this.gr_dkthi.Controls.Add(this.cb_trinhdo);
@@ -182,7 +180,6 @@
             resources.ApplyResources(this.gr_dkthi, "gr_dkthi");
             this.gr_dkthi.Name = "gr_dkthi";
             this.gr_dkthi.TabStop = false;
-            this.gr_dkthi.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnThi
             // 
@@ -190,12 +187,6 @@
             this.btnThi.Name = "btnThi";
             this.btnThi.UseVisualStyleBackColor = true;
             this.btnThi.Click += new System.EventHandler(this.btnThi_Click);
-            // 
-            // txt_validate
-            // 
-            resources.ApplyResources(this.txt_validate, "txt_validate");
-            this.txt_validate.ForeColor = System.Drawing.Color.Red;
-            this.txt_validate.Name = "txt_validate";
             // 
             // cb_maMonHoc
             // 
@@ -261,6 +252,16 @@
             this.spinEdit_thoigian.Name = "spinEdit_thoigian";
             this.spinEdit_thoigian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("spinEdit_thoigian.Properties.Buttons"))))});
+            this.spinEdit_thoigian.Properties.MaxValue = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.spinEdit_thoigian.Properties.MinValue = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             // 
             // spinEdit_cauhoi
             // 
@@ -268,6 +269,16 @@
             this.spinEdit_cauhoi.Name = "spinEdit_cauhoi";
             this.spinEdit_cauhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("spinEdit_cauhoi.Properties.Buttons"))))});
+            this.spinEdit_cauhoi.Properties.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.spinEdit_cauhoi.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // spinEdit_lanthi
             // 
@@ -275,6 +286,16 @@
             this.spinEdit_lanthi.Name = "spinEdit_lanthi";
             this.spinEdit_lanthi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("spinEdit_lanthi.Properties.Buttons"))))});
+            this.spinEdit_lanthi.Properties.MaxValue = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.spinEdit_lanthi.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // dt_ngaythi
             // 
@@ -340,7 +361,6 @@
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private TN_CSDLPTDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private System.Windows.Forms.ComboBox cb_maMonHoc;
-        private System.Windows.Forms.Label txt_validate;
         private System.Windows.Forms.Button btnThi;
     }
 }

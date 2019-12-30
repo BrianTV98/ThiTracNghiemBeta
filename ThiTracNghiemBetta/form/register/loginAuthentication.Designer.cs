@@ -47,7 +47,6 @@
             this.txtAuthentication.Size = new System.Drawing.Size(522, 49);
             this.txtAuthentication.TabIndex = 0;
             this.txtAuthentication.Text = "XÁC THỰC ĐĂNG NHẬP";
-            this.txtAuthentication.Click += new System.EventHandler(this.label1_Click);
             // 
             // aut_lb_login
             // 
@@ -57,7 +56,7 @@
             this.aut_lb_login.Size = new System.Drawing.Size(51, 17);
             this.aut_lb_login.TabIndex = 1;
             this.aut_lb_login.Text = "Login :";
-            this.aut_lb_login.Click += new System.EventHandler(this.authentication_txt_login_Click);
+           
             // 
             // aut_lb_password
             // 
@@ -106,7 +105,7 @@
             this.Controls.Add(this.txtAuthentication);
             this.Name = "loginAuthentication";
             this.Text = "loginAuthentication";
-            this.Load += new System.EventHandler(this.loginAuthentication_Load);
+           
             ((System.ComponentModel.ISupportInitialize)(this.aut_txt_login.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aut_txt_passw.Properties)).EndInit();
             this.ResumeLayout(false);

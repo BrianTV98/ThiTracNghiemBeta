@@ -213,30 +213,6 @@
     <Compile Include="form\register\loginAuthentication.Designer.cs">
       <DependentUpon>loginAuthentication.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\student\addClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\student\addClass.Designer.cs">
-      <DependentUpon>addClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="form\student\addSV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\student\addSV.Designer.cs">
-      <DependentUpon>addSV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="form\student\frmEditClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\student\frmEditClass.Designer.cs">
-      <DependentUpon>frmEditClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="form\student\frmInputStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\student\frmInputStudent.Designer.cs">
-      <DependentUpon>frmInputStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="form\thi\frmThiThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +236,7 @@
     <Compile Include="models\CT_BaiThi.cs" />
     <Compile Include="models\GiaoVien.cs" />
     <Compile Include="models\GiaoVienDK.cs" />
+    <Compile Include="models\Log.cs" />
     <Compile Include="models\LoginModel.cs" />
     <Compile Include="models\Student.cs" />
     <Compile Include="Program.cs" />
@@ -332,18 +309,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\register\loginAuthentication.resx">
       <DependentUpon>loginAuthentication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\student\addClass.resx">
-      <DependentUpon>addClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\student\addSV.resx">
-      <DependentUpon>addSV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\student\frmEditClass.resx">
-      <DependentUpon>frmEditClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\student\frmInputStudent.resx">
-      <DependentUpon>frmInputStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\thi\frmThiThu.resx">
       <DependentUpon>frmThiThu.cs</DependentUpon>

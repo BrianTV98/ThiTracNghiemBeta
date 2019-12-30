@@ -17,16 +17,6 @@ namespace ThiTracNghiemBetta.form.register
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void authentication_txt_login_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void aut_btn_aut_Click(object sender, EventArgs e)
         {
             String login = aut_txt_login.Text.Trim();
@@ -51,11 +41,6 @@ namespace ThiTracNghiemBetta.form.register
                    
                 }
             }
-        }
-
-        private void loginAuthentication_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
