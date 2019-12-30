@@ -77,11 +77,12 @@
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnGCSV = new System.Windows.Forms.Panel();
-            this.bds_sv = new System.Windows.Forms.BindingSource(this.components);
+            this.gvSV = new System.Windows.Forms.DataGridView();
             this.pnNhapSV = new System.Windows.Forms.Panel();
             this.btnCancelSV = new System.Windows.Forms.Button();
             this.btnLuuSV = new System.Windows.Forms.Button();
             this.txtMaLopSv = new DevExpress.XtraEditors.TextEdit();
+            this.bds_sv = new System.Windows.Forms.BindingSource(this.components);
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.dtNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.txtTenSV = new DevExpress.XtraEditors.TextEdit();
@@ -110,7 +111,15 @@
             this.popupMenuSV = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenuThemLop = new DevExpress.XtraBars.PopupMenu(this.components);
             this.kHOATableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
-            this.gvSV = new System.Windows.Forms.DataGridView();
+            this.mASVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nGAYSINHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mALOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
@@ -136,9 +145,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_Lop)).BeginInit();
             this.pnSV.SuspendLayout();
             this.pnGCSV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_sv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSV)).BeginInit();
             this.pnNhapSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLopSv.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_sv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).BeginInit();
@@ -151,7 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuThemLop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSV)).BeginInit();
             this.SuspendLayout();
             // 
             // mALOPLabel
@@ -403,8 +412,11 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5});
-            this.barManager1.MaxItemId = 5;
+            this.barButtonItem5,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9});
+            this.barManager1.MaxItemId = 8;
             // 
             // bar1
             // 
@@ -416,7 +428,10 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem9, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem8, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
@@ -592,10 +607,25 @@
             this.pnGCSV.Size = new System.Drawing.Size(1489, 422);
             this.pnGCSV.TabIndex = 1;
             // 
-            // bds_sv
+            // gvSV
             // 
-            this.bds_sv.DataMember = "FK_SINHVIEN_LOP";
-            this.bds_sv.DataSource = this.bds_lop;
+            this.gvSV.AutoGenerateColumns = false;
+            this.gvSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mASVDataGridViewTextBoxColumn,
+            this.hODataGridViewTextBoxColumn,
+            this.tENDataGridViewTextBoxColumn,
+            this.nGAYSINHDataGridViewTextBoxColumn,
+            this.dIACHIDataGridViewTextBoxColumn,
+            this.mALOPDataGridViewTextBoxColumn});
+            this.gvSV.DataSource = this.bds_sv;
+            this.gvSV.Location = new System.Drawing.Point(0, 0);
+            this.gvSV.Name = "gvSV";
+            this.gvSV.RowHeadersWidth = 51;
+            this.gvSV.RowTemplate.Height = 24;
+            this.gvSV.Size = new System.Drawing.Size(1534, 470);
+            this.gvSV.TabIndex = 0;
+            this.gvSV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gvSV_MouseUp);
             // 
             // pnNhapSV
             // 
@@ -646,6 +676,11 @@
             this.txtMaLopSv.Name = "txtMaLopSv";
             this.txtMaLopSv.Size = new System.Drawing.Size(125, 22);
             this.txtMaLopSv.TabIndex = 11;
+            // 
+            // bds_sv
+            // 
+            this.bds_sv.DataMember = "FK_SINHVIEN_LOP";
+            this.bds_sv.DataSource = this.bds_lop;
             // 
             // txtDiaChi
             // 
@@ -874,16 +909,74 @@
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
             // 
-            // gvSV
+            // mASVDataGridViewTextBoxColumn
             // 
-            this.gvSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSV.Location = new System.Drawing.Point(0, 0);
-            this.gvSV.Name = "gvSV";
-            this.gvSV.RowHeadersWidth = 51;
-            this.gvSV.RowTemplate.Height = 24;
-            this.gvSV.Size = new System.Drawing.Size(1534, 470);
-            this.gvSV.TabIndex = 0;
-            this.gvSV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gvSV_MouseUp);
+            this.mASVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mASVDataGridViewTextBoxColumn.DataPropertyName = "MASV";
+            this.mASVDataGridViewTextBoxColumn.HeaderText = "MASV";
+            this.mASVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mASVDataGridViewTextBoxColumn.Name = "mASVDataGridViewTextBoxColumn";
+            // 
+            // hODataGridViewTextBoxColumn
+            // 
+            this.hODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hODataGridViewTextBoxColumn.DataPropertyName = "HO";
+            this.hODataGridViewTextBoxColumn.HeaderText = "HO";
+            this.hODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hODataGridViewTextBoxColumn.Name = "hODataGridViewTextBoxColumn";
+            // 
+            // tENDataGridViewTextBoxColumn
+            // 
+            this.tENDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tENDataGridViewTextBoxColumn.DataPropertyName = "TEN";
+            this.tENDataGridViewTextBoxColumn.HeaderText = "TEN";
+            this.tENDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENDataGridViewTextBoxColumn.Name = "tENDataGridViewTextBoxColumn";
+            // 
+            // nGAYSINHDataGridViewTextBoxColumn
+            // 
+            this.nGAYSINHDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nGAYSINHDataGridViewTextBoxColumn.DataPropertyName = "NGAYSINH";
+            this.nGAYSINHDataGridViewTextBoxColumn.HeaderText = "NGAYSINH";
+            this.nGAYSINHDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nGAYSINHDataGridViewTextBoxColumn.Name = "nGAYSINHDataGridViewTextBoxColumn";
+            // 
+            // dIACHIDataGridViewTextBoxColumn
+            // 
+            this.dIACHIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
+            this.dIACHIDataGridViewTextBoxColumn.HeaderText = "DIACHI";
+            this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
+            // 
+            // mALOPDataGridViewTextBoxColumn
+            // 
+            this.mALOPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mALOPDataGridViewTextBoxColumn.DataPropertyName = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.HeaderText = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mALOPDataGridViewTextBoxColumn.Name = "mALOPDataGridViewTextBoxColumn";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Undo";
+            this.barButtonItem7.Id = 5;
+            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Redo";
+            this.barButtonItem8.Id = 6;
+            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Refresh";
+            this.barButtonItem9.Id = 7;
+            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.barButtonItem9.Name = "barButtonItem9";
             // 
             // frmNhapLop
             // 
@@ -928,10 +1021,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_Lop)).EndInit();
             this.pnSV.ResumeLayout(false);
             this.pnGCSV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bds_sv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSV)).EndInit();
             this.pnNhapSV.ResumeLayout(false);
             this.pnNhapSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLopSv.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_sv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).EndInit();
@@ -944,7 +1038,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuThemLop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1023,5 +1116,14 @@
         private System.Windows.Forms.ComboBox cbMaKhoa;
         private System.Windows.Forms.ComboBox txtMaKhoa;
         private System.Windows.Forms.DataGridView gvSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mASVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nGAYSINHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dIACHIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }

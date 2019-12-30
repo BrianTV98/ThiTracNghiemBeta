@@ -1,0 +1,35 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_XOA_GVDK]    Script Date: 12/31/2019 1:35:08 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_XOA_GVDK]
+	-- Add the parameters for the stored procedure here
+	@MAMH nchar(5),
+	@MALOP nchar(8),
+	@LAN smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	-- xoa thanh cong : 0 , that bai 1;
+	DECLARE @check int ;
+	exec @check= SP_KIEM_TRA_GVDK_DA_THI_CHUA @MAMH , @MALOP, @LAN
+	if(@check=0)
+	BEGIN
+		DELETE FROM GIAOVIEN_DANGKY WHERE MALOP=@MALOP AND MAMH=@MAMH AND LAN=@LAN
+		RETURN 0;
+	END
+	ELSE RETURN 1;
+END
+
