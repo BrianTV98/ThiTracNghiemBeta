@@ -21,19 +21,21 @@ namespace ThiTracNghiemBetta.form
 
         private void frmMH_Load(object sender, EventArgs e)
         {
-           
+            // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
+
             // TODO: This line of code loads data into the 'dS.CHITIETBAITHI' table. You can move, or remove it, as needed.
-           /* this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
-            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);*/
+            /* this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
+             this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);*/
             // TODO: This line of code loads data into the 'dS.BANGDIEM' table. You can move, or remove it, as needed.
-           /* this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);*/
+            /* this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+             this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);*/
             // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
-           /* this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
-            this.bODETableAdapter.Fill(this.dS.BODE);*/
+            /* this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
+             this.bODETableAdapter.Fill(this.dS.BODE);*/
             // TODO: This line of code loads data into the 'dS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-           /* this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);*/
+            /* this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);*/
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -43,9 +45,11 @@ namespace ThiTracNghiemBetta.form
             if (Program.mNhom == "TRUONG")
             {
                btnHuy.Enabled = barbtAdd.Enabled = barbtDel.Enabled = barbtEdit.Enabled = barbtSave.Enabled = groupBox1.Enabled = false;
+
             }
             else
             {
+                pnChiNhanh.Enabled = false;
                 groupBox1.Enabled = false;
                 barbtSave.Enabled = false;
             }
@@ -283,6 +287,6 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-       
+      
     }
 }

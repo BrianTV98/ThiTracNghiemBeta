@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ThiTracNghiemBetta.models;
 using System.Collections.Generic;
+using ThiTracNghiemBetta.form.report;
 
 namespace ThiTracNghiemBetta
 {
@@ -35,7 +36,7 @@ namespace ThiTracNghiemBetta
         public static String mHoTen = "";
         public static String mLoai = ""; // giangvien or sinhvien
         public static int mChiNhanh = 0;
-        public static frmLogin frmLogin; 
+       
         
 
 
@@ -43,6 +44,9 @@ namespace ThiTracNghiemBetta
         public static String Control = "";
 
         public static frmMain frmMain;
+        public static frmLogin frmLogin;
+        public static BangDiemMonHoc bangDiemMonHoc;
+        public static frmBaoCao frmBaoCao;
 
         //Log
         public static List<DataLogGVDK> logGVDK = new List<DataLogGVDK>();

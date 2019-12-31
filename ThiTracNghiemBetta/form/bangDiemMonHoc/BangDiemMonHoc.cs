@@ -146,5 +146,15 @@ namespace ThiTracNghiemBetta.form.report
             ReportPrintTool print = new ReportPrintTool(rp);
             print.ShowPreviewDialog();
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.bangDiemMonHoc.Close();
+        }
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
     }
 }

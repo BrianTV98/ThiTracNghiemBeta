@@ -58,12 +58,20 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.pngridview = new System.Windows.Forms.Panel();
             this.popupMenuBangDiem = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barChiTietBaiThi = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barChiTietBaiThi = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             mALOPLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
@@ -80,6 +88,7 @@
             this.pngridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuBangDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.SuspendLayout();
             // 
             // mALOPLabel
@@ -202,7 +211,7 @@
             this.pnChiNhanh.Controls.Add(this.tENCNComboBox);
             this.pnChiNhanh.Controls.Add(this.label2);
             this.pnChiNhanh.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnChiNhanh.Location = new System.Drawing.Point(0, 0);
+            this.pnChiNhanh.Location = new System.Drawing.Point(0, 48);
             this.pnChiNhanh.Name = "pnChiNhanh";
             this.pnChiNhanh.Size = new System.Drawing.Size(949, 79);
             this.pnChiNhanh.TabIndex = 7;
@@ -244,7 +253,7 @@
             this.pnControl.Controls.Add(mAMHLabel);
             this.pnControl.Controls.Add(this.cbMaLop);
             this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnControl.Location = new System.Drawing.Point(0, 79);
+            this.pnControl.Location = new System.Drawing.Point(0, 127);
             this.pnControl.Name = "pnControl";
             this.pnControl.Size = new System.Drawing.Size(949, 149);
             this.pnControl.TabIndex = 8;
@@ -282,7 +291,7 @@
             this.gvBangDiem.ReadOnly = true;
             this.gvBangDiem.RowHeadersWidth = 51;
             this.gvBangDiem.RowTemplate.Height = 24;
-            this.gvBangDiem.Size = new System.Drawing.Size(949, 247);
+            this.gvBangDiem.Size = new System.Drawing.Size(949, 199);
             this.gvBangDiem.TabIndex = 9;
             this.gvBangDiem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gvBangDiem_MouseUp);
             // 
@@ -314,9 +323,9 @@
             // 
             this.pngridview.Controls.Add(this.gvBangDiem);
             this.pngridview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pngridview.Location = new System.Drawing.Point(0, 228);
+            this.pngridview.Location = new System.Drawing.Point(0, 276);
             this.pngridview.Name = "pngridview";
-            this.pngridview.Size = new System.Drawing.Size(949, 247);
+            this.pngridview.Size = new System.Drawing.Size(949, 199);
             this.pngridview.TabIndex = 10;
             // 
             // popupMenuBangDiem
@@ -325,6 +334,14 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barChiTietBaiThi)});
             this.popupMenuBangDiem.Manager = this.barManager1;
             this.popupMenuBangDiem.Name = "popupMenuBangDiem";
+            // 
+            // barChiTietBaiThi
+            // 
+            this.barChiTietBaiThi.Caption = "Xem Chi Tiết";
+            this.barChiTietBaiThi.Id = 0;
+            this.barChiTietBaiThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barChiTietBaiThi.ImageOptions.SvgImage")));
+            this.barChiTietBaiThi.Name = "barChiTietBaiThi";
+            this.barChiTietBaiThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barManager1
             // 
@@ -341,7 +358,7 @@
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 48);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(949, 0);
             // 
@@ -357,25 +374,91 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 48);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 535);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 487);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(949, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(949, 48);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 535);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 487);
             // 
-            // barChiTietBaiThi
+            // barManager2
             // 
-            this.barChiTietBaiThi.Caption = "Xem Chi Tiết";
-            this.barChiTietBaiThi.Id = 0;
-            this.barChiTietBaiThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barChiTietBaiThi.Name = "barChiTietBaiThi";
-            this.barChiTietBaiThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager2.DockControls.Add(this.barDockControl1);
+            this.barManager2.DockControls.Add(this.barDockControl2);
+            this.barManager2.DockControls.Add(this.barDockControl3);
+            this.barManager2.DockControls.Add(this.barDockControl4);
+            this.barManager2.Form = this;
+            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager2.MaxItemId = 2;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(949, 48);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 535);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(949, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 48);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 487);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(949, 48);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 487);
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Refresh";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Thoát";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // BangDiemMonHoc
             // 
@@ -390,6 +473,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.Name = "BangDiemMonHoc";
             this.Text = "BangDiemMonHoc";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -410,6 +497,7 @@
             this.pngridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuBangDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +537,13 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarManager barManager2;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
     }
 }

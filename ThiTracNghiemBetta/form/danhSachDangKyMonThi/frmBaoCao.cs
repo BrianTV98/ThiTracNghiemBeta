@@ -45,5 +45,10 @@ namespace ThiTracNghiemBetta.form.report
             }
             return true;
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

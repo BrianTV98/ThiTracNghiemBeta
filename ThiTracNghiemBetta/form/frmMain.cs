@@ -109,7 +109,7 @@ namespace ThiTracNghiemBetta.form
         {
             if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                //Program.formDangNhap.Show();
+                Program.frmLogin.Show();
                 this.Close();
             }
         }
@@ -122,30 +122,37 @@ namespace ThiTracNghiemBetta.form
         private void btnXEMBANGDIEM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(BangDiemMonHoc));
-            if (frm != null)
+            if (Program.bangDiemMonHoc != null)
             {
-                frm.Activate();
+                Program.bangDiemMonHoc.Activate();
             }
             else
             {
-                BangDiemMonHoc f = new BangDiemMonHoc();
-                f.MdiParent = this;
-                f.Show();
+                Program.bangDiemMonHoc = new BangDiemMonHoc();
+                Program.bangDiemMonHoc.MdiParent = this;
+                Program.bangDiemMonHoc.Show();
             }
         }
 
         private void btnXEMDSDANGKY_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(frmBaoCao));
-            if (frm != null)
+            if (Program.mNhom.Equals("TRUONG")|| Program.mNhom.Equals("COSO"))
             {
-                frm.Activate();
+                Form frm = this.CheckExists(typeof(frmBaoCao));
+                if (frm != null)
+                {
+                    frm.Activate();
+                }
+                else
+                {
+                    frmBaoCao f = new frmBaoCao();
+                    f.MdiParent = this;
+                    f.Show();
+                }
             }
             else
             {
-                frmBaoCao f = new frmBaoCao();
-                f.MdiParent = this;
-                f.Show();
+                MessageBox.Show("Bạn không có quyền xem mục này!");
             }
         }
 
