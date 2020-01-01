@@ -13,7 +13,6 @@ namespace ThiTracNghiemBetta.form
 {
     public partial class frmKHOA : Form
     {
-        int lastCOSO = Program.mChiNhanh;
         public frmKHOA()
         {
             InitializeComponent();
@@ -47,6 +46,7 @@ namespace ThiTracNghiemBetta.form
             cmbCS.SelectedIndex = lastCOSO;
         }
 
+        int lastCOSO = Program.mChiNhanh;
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCS.SelectedItem == null)
