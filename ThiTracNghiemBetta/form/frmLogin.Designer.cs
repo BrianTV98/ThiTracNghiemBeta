@@ -116,7 +116,7 @@
             this.edtPassword.PasswordChar = '*';
             this.edtPassword.Size = new System.Drawing.Size(239, 22);
             this.edtPassword.TabIndex = 7;
-            this.edtPassword.Text = "456";
+            this.edtPassword.Text = "123";
             // 
             // edtUserName
             // 

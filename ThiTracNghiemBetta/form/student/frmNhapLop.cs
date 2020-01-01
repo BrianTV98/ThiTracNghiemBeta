@@ -27,6 +27,12 @@ namespace ThiTracNghiemBetta.form.student
                 pnChiNhanh.Enabled = true;
                 pnLop.Enabled = false;
                 pnSV.Enabled = false;
+                barbtnThem.Enabled = false;
+                barBtnSua.Enabled = false;
+                barBtnXoa.Enabled = false;
+                barBtnUndo.Enabled = false;
+                barBtnRedo.Enabled = false;
+                barbtnSave.Enabled = false;
             }
             else
             {
@@ -504,10 +510,7 @@ namespace ThiTracNghiemBetta.form.student
             cbMaKhoa.Text = txtMaKhoa.Text;
         }
 
-        private void txtMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+    
 
         private void cbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -515,17 +518,44 @@ namespace ThiTracNghiemBetta.form.student
                 txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
 
-        private void lOPGridControl_Click(object sender, EventArgs e)
+        
+
+
+        private void barbtnRefesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // TODO: This line of code loads data into the 'ds.KHOA' table. You can move, or remove it, as needed.
+            this.kHOATableAdapter.Fill(this.ds.KHOA);
+            this.ds.EnforceConstraints = false;
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
+
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
+            this.adaterSv.Connection.ConnectionString = Program.connstr;
+            this.adaterSv.Fill(this.ds.SINHVIEN);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
+            this.adapterLop.Connection.ConnectionString = Program.connstr;
+            this.adapterLop.Fill(this.ds.LOP);
+
+            this.ds.EnforceConstraints = true;
+        }
+
+        private void cbChiNhanh_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try {
+                
+                Program.servername = cbChiNhanh.SelectedValue.ToString();
+                Program.KetNoi();
+                barbtnRefesh.PerformClick();
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

@@ -187,9 +187,15 @@ namespace ThiTracNghiemBetta.form.examregistation
         {
             try
             {
+
                 Program.servername = tENCNComboBox.SelectedValue.ToString();
+                int check =Program.KetNoi();
+                if (check == 0)
+                {
+                    MessageBox.Show("Kết nối thất bại! ");
+                    return;
+                }
                 this.adapter_gvdk.Connection.ConnectionString = Program.connstr;
-                MessageBox.Show(this.ds.GIAOVIEN_DANGKY.Rows.Count.ToString());
                 this.adapter_gvdk.Fill(this.ds.GIAOVIEN_DANGKY);
             }
             catch (Exception)

@@ -37,22 +37,7 @@ namespace ThiTracNghiemBetta.form.report
 
         private void BangDiemMonHoc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.tN_CSDLPTDataSet.EnforceConstraints = false;
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.v_DS_PHANMANHTableAdapter.Fill(this.tN_CSDLPTDataSet.V_DS_PHANMANH);
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.BANGDIEM' table. You can move, or remove it, as needed.
-            this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.bANGDIEMTableAdapter.Fill(this.tN_CSDLPTDataSet.BANGDIEM);
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.mONHOCTableAdapter.Fill(this.tN_CSDLPTDataSet.MONHOC);
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-
-            this.tN_CSDLPTDataSet.EnforceConstraints = true;
+            barBtnRefresh.PerformClick();
         }
 
         private void gIAOVIEN_DANGKYBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -154,7 +139,41 @@ namespace ThiTracNghiemBetta.form.report
 
         private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.tN_CSDLPTDataSet.EnforceConstraints = false;
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Fill(this.tN_CSDLPTDataSet.V_DS_PHANMANH);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.BANGDIEM' table. You can move, or remove it, as needed.
+            this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.bANGDIEMTableAdapter.Fill(this.tN_CSDLPTDataSet.BANGDIEM);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.mONHOCTableAdapter.Fill(this.tN_CSDLPTDataSet.MONHOC);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
+
+            this.tN_CSDLPTDataSet.EnforceConstraints = true;
+        }
+
+        private void tENCNComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.servername = tENCNComboBox.SelectedValue.ToString();
+                int check = Program.KetNoi();
+                if (check == 0)
+                {
+                    MessageBox.Show("Kết nối thất bại! ");
+                    return;
+                }
+                barBtnRefresh.PerformClick();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
