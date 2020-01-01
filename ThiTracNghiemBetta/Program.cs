@@ -16,6 +16,7 @@ namespace ThiTracNghiemBetta
         /// The main entry point for the application.
         /// </summary>
         /// 
+        public static String rootSeverName = "Data Source=HIEU\\HIEU;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=123";
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataReader myReader;

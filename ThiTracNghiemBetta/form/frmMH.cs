@@ -22,7 +22,7 @@ namespace ThiTracNghiemBetta.form
         private void frmMH_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.rootSeverName;
             this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -299,9 +299,7 @@ namespace ThiTracNghiemBetta.form
                     return;
                 else
                 {
-                    // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-                    this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
+                    // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed
 
                     this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.mONHOCTableAdapter.Fill(this.dS.MONHOC);

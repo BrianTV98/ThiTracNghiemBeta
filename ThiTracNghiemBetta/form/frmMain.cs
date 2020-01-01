@@ -109,6 +109,7 @@ namespace ThiTracNghiemBetta.form
         {
             if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                Program.frmLogin = new frmLogin();
                 Program.frmLogin.Show();
                 this.Close();
             }

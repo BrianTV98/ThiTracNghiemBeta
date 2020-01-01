@@ -134,6 +134,7 @@ namespace ThiTracNghiemBetta.form
         }
         public static void ExceSP(String strLenh)
         {
+            Program.KetNoi();
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
             sqlcmd.CommandType = CommandType.Text;

@@ -38,14 +38,15 @@
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label mALOPLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapLop));
             System.Windows.Forms.Label tENCNLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapLop));
             this.ds = new ThiTracNghiemBetta.TN_CSDLPTDataSet();
             this.bds_lop = new System.Windows.Forms.BindingSource(this.components);
             this.adapterLop = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
             this.tableAdapterManager = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
             this.adaterSv = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.SINHVIENTableAdapter();
             this.pnChiNhanh = new System.Windows.Forms.Panel();
+            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnLop = new System.Windows.Forms.Panel();
             this.pnNhapLop = new System.Windows.Forms.Panel();
@@ -119,7 +120,6 @@
             this.popupMenuSV = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenuThemLop = new DevExpress.XtraBars.PopupMenu(this.components);
             this.kHOATableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
-            this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
@@ -245,6 +245,15 @@
             mALOPLabel1.TabIndex = 10;
             mALOPLabel1.Text = "MALOP:";
             // 
+            // tENCNLabel
+            // 
+            tENCNLabel.AutoSize = true;
+            tENCNLabel.Location = new System.Drawing.Point(751, 22);
+            tENCNLabel.Name = "tENCNLabel";
+            tENCNLabel.Size = new System.Drawing.Size(59, 17);
+            tENCNLabel.TabIndex = 0;
+            tENCNLabel.Text = "TENCN:";
+            // 
             // ds
             // 
             this.ds.DataSetName = "TN_CSDLPTDataSet";
@@ -287,6 +296,20 @@
             this.pnChiNhanh.Name = "pnChiNhanh";
             this.pnChiNhanh.Size = new System.Drawing.Size(1924, 78);
             this.pnChiNhanh.TabIndex = 3;
+            // 
+            // cbChiNhanh
+            // 
+            this.cbChiNhanh.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cbChiNhanh.DisplayMember = "TENCN";
+            this.cbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbChiNhanh.FormattingEnabled = true;
+            this.cbChiNhanh.Location = new System.Drawing.Point(843, 19);
+            this.cbChiNhanh.Name = "cbChiNhanh";
+            this.cbChiNhanh.Size = new System.Drawing.Size(187, 24);
+            this.cbChiNhanh.TabIndex = 1;
+            this.cbChiNhanh.ValueMember = "TENSERVER";
+            this.cbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cbChiNhanh_SelectedIndexChanged);
+            this.cbChiNhanh.SelectedValueChanged += new System.EventHandler(this.cbChiNhanh_SelectedValueChanged);
             // 
             // v_DS_PHANMANHBindingSource
             // 
@@ -422,7 +445,7 @@
             this.barbtnThem.Caption = "Thêm";
             this.barbtnThem.DropDownControl = this.popupMenu2;
             this.barbtnThem.Id = 0;
-            this.barbtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barbtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnThem.ImageOptions.SvgImage")));
             this.barbtnThem.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtnThem.Name = "barbtnThem";
             this.barbtnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThem_ItemClick);
@@ -436,7 +459,7 @@
             // 
             this.barBtnSua.Caption = "Sửa";
             this.barBtnSua.Id = 1;
-            this.barBtnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barBtnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnSua.ImageOptions.SvgImage")));
             this.barBtnSua.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barBtnSua.Name = "barBtnSua";
             // 
@@ -444,7 +467,7 @@
             // 
             this.barBtnXoa.Caption = "Xóa";
             this.barBtnXoa.Id = 2;
-            this.barBtnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barBtnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnXoa.ImageOptions.SvgImage")));
             this.barBtnXoa.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barBtnXoa.Name = "barBtnXoa";
             // 
@@ -460,7 +483,7 @@
             // 
             this.barbtnSave.Caption = "Lưu";
             this.barbtnSave.Id = 3;
-            this.barbtnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barbtnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnSave.ImageOptions.SvgImage")));
             this.barbtnSave.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barbtnSave.Name = "barbtnSave";
             // 
@@ -468,14 +491,14 @@
             // 
             this.barBtnUndo.Caption = "Undo";
             this.barBtnUndo.Id = 5;
-            this.barBtnUndo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barBtnUndo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnUndo.ImageOptions.SvgImage")));
             this.barBtnUndo.Name = "barBtnUndo";
             // 
             // barBtnRedo
             // 
             this.barBtnRedo.Caption = "Redo";
             this.barBtnRedo.Id = 6;
-            this.barBtnRedo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.barBtnRedo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnRedo.ImageOptions.SvgImage")));
             this.barBtnRedo.Name = "barBtnRedo";
             // 
             // barButtonItem5
@@ -566,6 +589,7 @@
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 25;
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.ReadOnly = true;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
             this.colMALOP.Width = 94;
@@ -956,30 +980,6 @@
             // kHOATableAdapter
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
-            // 
-            // tENCNLabel
-            // 
-            tENCNLabel.AutoSize = true;
-            tENCNLabel.Location = new System.Drawing.Point(751, 22);
-            tENCNLabel.Name = "tENCNLabel";
-            tENCNLabel.Size = new System.Drawing.Size(59, 17);
-            tENCNLabel.TabIndex = 0;
-            tENCNLabel.Text = "TENCN:";
-            // 
-            // cbChiNhanh
-            // 
-            this.cbChiNhanh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.v_DS_PHANMANHBindingSource, "TENCN", true));
-            this.cbChiNhanh.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.v_DS_PHANMANHBindingSource, "TENSERVER", true));
-            this.cbChiNhanh.DataSource = this.v_DS_PHANMANHBindingSource;
-            this.cbChiNhanh.DisplayMember = "TENCN";
-            this.cbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbChiNhanh.FormattingEnabled = true;
-            this.cbChiNhanh.Location = new System.Drawing.Point(843, 19);
-            this.cbChiNhanh.Name = "cbChiNhanh";
-            this.cbChiNhanh.Size = new System.Drawing.Size(187, 24);
-            this.cbChiNhanh.TabIndex = 1;
-            this.cbChiNhanh.ValueMember = "TENSERVER";
-            this.cbChiNhanh.SelectedValueChanged += new System.EventHandler(this.cbChiNhanh_SelectedValueChanged);
             // 
             // frmNhapLop
             // 

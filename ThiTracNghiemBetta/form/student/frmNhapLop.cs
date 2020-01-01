@@ -25,7 +25,7 @@ namespace ThiTracNghiemBetta.form.student
             if (Program.mNhom == "TRUONG")
             {
                 pnChiNhanh.Enabled = true;
-                pnLop.Enabled = false;
+                
                 pnSV.Enabled = false;
                 barbtnThem.Enabled = false;
                 barBtnSua.Enabled = false;
@@ -74,7 +74,7 @@ namespace ThiTracNghiemBetta.form.student
             this.kHOATableAdapter.Fill(this.ds.KHOA);
             this.ds.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.rootSeverName;
             this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
 
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
@@ -526,9 +526,6 @@ namespace ThiTracNghiemBetta.form.student
             // TODO: This line of code loads data into the 'ds.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Fill(this.ds.KHOA);
             this.ds.EnforceConstraints = false;
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
 
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             this.adaterSv.Connection.ConnectionString = Program.connstr;
@@ -556,6 +553,11 @@ namespace ThiTracNghiemBetta.form.student
         }
 
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
