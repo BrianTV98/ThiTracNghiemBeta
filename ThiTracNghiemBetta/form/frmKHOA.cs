@@ -43,23 +43,33 @@ namespace ThiTracNghiemBetta.form
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS.BODE);
 
+            cmbCS.SelectedIndex = lastCOSO;
         }
 
+        int lastCOSO = Program.mChiNhanh;
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (cmbCS.SelectedIndex != Program.mChiNhanh && cmbCS.SelectedIndex >= 0)
+            if (cmbCS.SelectedItem == null)
+            {
+                return;
+            }
+            if (cmbCS.SelectedIndex == 2 )
+            {
+                MessageBox.Show("Cơ sở tra cứu không chứa dữ liệu khoa và giảng viên");
+                cmbCS.SelectedIndex = lastCOSO;
+                return;
+            }
+            if (cmbCS.SelectedIndex != lastCOSO && cmbCS.SelectedIndex >= 0)
             {
                 
                 Program.servername = cmbCS.SelectedValue.ToString();
-                
+                lastCOSO = cmbCS.SelectedIndex;
                 if (Program.KetNoi() == 0)
-                    MessageBox.Show("Lỗi kết nối về cơ sở mới", "", MessageBoxButtons.OK);
+                    return;
                 else
                 {
                     reloadData();
                 }
-
             }
         }
 

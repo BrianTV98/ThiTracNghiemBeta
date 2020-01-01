@@ -22,20 +22,8 @@ namespace ThiTracNghiemBetta.form
         private void frmMH_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
-
-            // TODO: This line of code loads data into the 'dS.CHITIETBAITHI' table. You can move, or remove it, as needed.
-            /* this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
-             this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);*/
-            // TODO: This line of code loads data into the 'dS.BANGDIEM' table. You can move, or remove it, as needed.
-            /* this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
-             this.bANGDIEMTableAdapter.Fill(this.dS.BANGDIEM);*/
-            // TODO: This line of code loads data into the 'dS.BODE' table. You can move, or remove it, as needed.
-            /* this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
-             this.bODETableAdapter.Fill(this.dS.BODE);*/
-            // TODO: This line of code loads data into the 'dS.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-            /* this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.dS.GIAOVIEN_DANGKY);*/
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -53,6 +41,8 @@ namespace ThiTracNghiemBetta.form
                 groupBox1.Enabled = false;
                 barbtSave.Enabled = false;
             }
+
+            cmbCS.SelectedIndex = Program.mChiNhanh;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -287,6 +277,39 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-      
+        int lastCOSO = Program.mChiNhanh;
+        private void tENCNComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCS.SelectedItem == null)
+            {
+                return;
+            }
+            if (cmbCS.SelectedIndex == 2)
+            {
+                MessageBox.Show("Cơ sở tra cứu không chứa dữ liệu môn học");
+                cmbCS.SelectedIndex = lastCOSO;
+                return;
+            }
+            if (cmbCS.SelectedIndex != lastCOSO && cmbCS.SelectedIndex >= 0)
+            {
+
+                Program.servername = cmbCS.SelectedValue.ToString();
+                lastCOSO = cmbCS.SelectedIndex;
+                if (Program.KetNoi() == 0)
+                    return;
+                else
+                {
+                    // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+                    this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
+
+                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+                    cmbCS.SelectedIndex = lastCOSO;
+                    bdsMH.Filter = "XOA = 0";
+                }
+            }
+        }
+
     }
 }
