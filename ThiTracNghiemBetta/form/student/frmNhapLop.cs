@@ -146,27 +146,7 @@ namespace ThiTracNghiemBetta.form.student
             return true;
         }
 
-        private void lOPGridControl_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Right)
-            {
-
-                return;
-            }
-            var rowH = gv_Lop.FocusedRowHandle;
-            var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
-            if (focusRowView == null || focusRowView.IsNew)
-            {
-                return;
-            }
-
-            if (rowH >= 0)
-            {
-                popupMenuLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
-               
-            }
-            else popupMenuLop.HidePopup();
-        }
+        
 
         private void barBtnEditLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -351,19 +331,26 @@ namespace ThiTracNghiemBetta.form.student
         }
         private void barBtnXoaSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            gvSV.Rows.Remove(gvSV.CurrentRow);
+            bds_sv.EndEdit();
+            this.adaterSv.Update(this.ds.SINHVIEN);
         }
 
         private void gvSV_MouseUp(object sender, MouseEventArgs e)
         {
+            barBtnThemSV.Enabled = true;
+            barBtnSuaSV.Enabled = true;
+            barBtnXoaSV.Enabled = true;
 
             if (e.Button != MouseButtons.Right) return;
             
             var rowH = gvSV.Rows.Count;
             var focusRowView = gvSV.CurrentRow;
             if (focusRowView == null || focusRowView.IsNewRow)
-            {
-                //popupMenuThemLop.ShowPopup(new Point(MousePosition.X, MousePosition.Y));
+            {     
+                barBtnSuaSV.Enabled = false;
+                barBtnXoaSV.Enabled = false;
+                popupMenuSV.ShowPopup(new Point(MousePosition.X, MousePosition.Y));
                 return;
             }
 
@@ -378,7 +365,27 @@ namespace ThiTracNghiemBetta.form.student
             }
             
         }
+        private void lOPGridControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+            if (e.Button != MouseButtons.Right)
+            {
 
+                return;
+            }
+            var rowH = gv_Lop.FocusedRowHandle;
+            var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
+            if (focusRowView == null || focusRowView.IsNew)
+            {
+                return;
+            }
+            if (rowH >= 0)
+            {
+                popupMenuLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
+
+            }
+            else popupMenuLop.HidePopup();
+        }
         private void btnLuuSV_Click(object sender, EventArgs e)
         {
             if (checkValidateSV() == false)
@@ -554,12 +561,27 @@ namespace ThiTracNghiemBetta.form.student
 
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            //popupMenuThemLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
         }
 
         private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelSV_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Mọi sự thay đổi sẽ không được lưu! Bạn có muốn cancel không?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);   
+            if(dialogResult== DialogResult.Yes)
+            {
+                pnNhapSV.Enabled = false;
+                pnGcLop.Enabled = true;
+                pnGCSV.Enabled = true;
+                bds_sv.CancelEdit();
+                
+            }
+            
+                
         }
     }
 }

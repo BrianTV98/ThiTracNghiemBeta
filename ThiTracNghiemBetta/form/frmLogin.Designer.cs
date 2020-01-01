@@ -68,10 +68,10 @@
             this.cbbCoSo.DisplayMember = "TENCN";
             this.cbbCoSo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCoSo.FormattingEnabled = true;
-            this.cbbCoSo.Location = new System.Drawing.Point(224, 123);
-            this.cbbCoSo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbCoSo.Location = new System.Drawing.Point(299, 151);
+            this.cbbCoSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbCoSo.Name = "cbbCoSo";
-            this.cbbCoSo.Size = new System.Drawing.Size(180, 21);
+            this.cbbCoSo.Size = new System.Drawing.Size(239, 24);
             this.cbbCoSo.TabIndex = 1;
             this.cbbCoSo.ValueMember = "TENSERVER";
             this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
@@ -86,21 +86,21 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbbCoSo);
-            this.groupBox1.Location = new System.Drawing.Point(31, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(41, 30);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(541, 375);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(721, 462);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(224, 267);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangNhap.Location = new System.Drawing.Point(299, 329);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(115, 32);
+            this.btnDangNhap.Size = new System.Drawing.Size(153, 39);
             this.btnDangNhap.TabIndex = 11;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
@@ -109,52 +109,49 @@
             // edtPassword
             // 
             this.edtPassword.AccessibleRole = System.Windows.Forms.AccessibleRole.Client;
-            this.edtPassword.Location = new System.Drawing.Point(224, 217);
-            this.edtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtPassword.Location = new System.Drawing.Point(299, 267);
+            this.edtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edtPassword.MaxLength = 16;
             this.edtPassword.Name = "edtPassword";
             this.edtPassword.PasswordChar = '*';
-            this.edtPassword.Size = new System.Drawing.Size(180, 20);
+            this.edtPassword.Size = new System.Drawing.Size(239, 22);
             this.edtPassword.TabIndex = 7;
-            this.edtPassword.Text = "123";
+            this.edtPassword.Text = "12";
             // 
             // edtUserName
             // 
-            this.edtUserName.Location = new System.Drawing.Point(224, 171);
-            this.edtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtUserName.Location = new System.Drawing.Point(299, 210);
+            this.edtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edtUserName.Name = "edtUserName";
-            this.edtUserName.Size = new System.Drawing.Size(180, 20);
+            this.edtUserName.Size = new System.Drawing.Size(239, 22);
             this.edtUserName.TabIndex = 6;
-            this.edtUserName.Text = "thien";
+            this.edtUserName.Text = "coso";
             this.edtUserName.TextChanged += new System.EventHandler(this.edtUserName_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(122, 214);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(163, 263);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(69, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Password";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 171);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(163, 210);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "User Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(122, 127);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(163, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Cơ sở";
             // 
@@ -162,10 +159,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(191, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(255, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 55);
+            this.label1.Size = new System.Drawing.Size(222, 69);
             this.label1.TabIndex = 2;
             this.label1.Text = "LOGIN";
             // 
@@ -191,13 +187,13 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(620, 427);
+            this.ClientSize = new System.Drawing.Size(827, 526);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
