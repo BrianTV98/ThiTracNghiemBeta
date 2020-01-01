@@ -63,30 +63,40 @@ namespace ThiTracNghiemBetta.form
         {
             try
             {
-                if (bdsGVDK.Count > 0)
-                {
-                    MessageBox.Show("Mã môn học có đăng kí thi nên không được xóa", "", MessageBoxButtons.OK);
-                    return;
-                }
-                if (bdsBD.Count > 0)
-                {
-                    MessageBox.Show("Mã môn học có câu hỏi thi nên không được xóa", "", MessageBoxButtons.OK);
-                    return;
-                }
                 if (MessageBox.Show("Bạn có muốn xóa mã môn học " + txtMAMH.Text + " không?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     int kq = Program.KetNoi();
                     if (kq == 0) return;
-                    String strlenh = "EXEC dbo.SP_DELETEMAMH '" + txtMAMH.Text.Trim() + "'";
-                    SqlCommand cmd = new SqlCommand(strlenh, Program.conn);
-                    int temp = cmd.ExecuteNonQuery();
-                    if (temp == 1)
-                    {
-                        MessageBox.Show("Bạn đã xóa thành công", "", MessageBoxButtons.OK);
-                    }
+                    SqlCommand sqlCommand = new SqlCommand("SP_DELETEMAMH", Program.conn);
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@MaMH", txtMAMH.Text.Trim());
+                    kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
                     Program.conn.Close();
+                    if (kq == 1) // ton tai
+                    {
+                        MessageBox.Show("Môn học đã có dữ liệu trên bảng điểm");
+                        return;
+                    }
+                    if (kq == 2) // ton tai
+                    {
+                        MessageBox.Show("Môn học đã có dữ liệu trên bộ đề");
+                        return;
+                    }
+                    if (kq == 3) // ton tai
+                    {
+                        MessageBox.Show("Môn học đã có dữ liệu trên giáo viên đăng kí");
+                        return;
+                    }
+
+                    var row = gvMonHoc.FocusedRowHandle;
+                    gvMonHoc.DeleteRow(row);
+                    mONHOCTableAdapterBindingSource.EndEdit();
+                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
+                   
+                   /* MessageBox.Show("" + mONHOCTableAdapterBindingSource.Position);
+                    mONHOCTableAdapterBindingSource.RemoveAt(mONHOCTableAdapterBindingSource.Position);
                     this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);*/
                     bdsMH.Filter = "XOA = 0";
                 }
             }

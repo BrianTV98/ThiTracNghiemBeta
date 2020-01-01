@@ -361,16 +361,18 @@ namespace ThiTracNghiemBetta.form
         {            
             dialogGV d = new dialogGV();
             d.type = "add";
-
+            d.maKhoa = txtMAK.Text; 
             d.ShowDialog();
             reloadData();
         }
 
         private void btnSuaGV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            var positionGiaoVien = gvGV.FocusedRowHandle;
+            String idGV = txtMAGV.Text;
             dialogGV d = new dialogGV();
+            d.idGV = idGV;
             d.type = "edit";
-
             d.ShowDialog();
             reloadData();
         }
@@ -386,7 +388,7 @@ namespace ThiTracNghiemBetta.form
             {
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa khoa " + txtTENKH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn xóa giáo viên mã: " + txtMAGV.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 bdsGV.RemoveAt(bdsGV.Position);
                 this.gIAOVIENTableAdapter.Update(this.dS.GIAOVIEN);

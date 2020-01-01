@@ -25,8 +25,10 @@ namespace ThiTracNghiemBetta.form.thi
             this.bANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.bANGDIEMTableAdapter.Fill(this.tN_CSDLPTDataSet.BANGDIEM);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
-          
-            bANGDIEMBindingSource.Filter = " MASV= '"+Program.mUserId+"'";
+            if (Program.mNhom == "SINHVIEN")
+            {
+                bANGDIEMBindingSource.Filter = " MASV= '" + Program.mUserId + "'";
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -35,7 +37,10 @@ namespace ThiTracNghiemBetta.form.thi
             this.bANGDIEMTableAdapter.Fill(this.tN_CSDLPTDataSet.BANGDIEM);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
 
-            bANGDIEMBindingSource.Filter = " MASV= '" + Program.mUserId + "'";
+            if (Program.mNhom == "SINHVIEN")
+            {
+                bANGDIEMBindingSource.Filter = " MASV= '" + Program.mUserId + "'";
+            }
         }
 
         private void btnXemBaiThi_Click(object sender, EventArgs e)

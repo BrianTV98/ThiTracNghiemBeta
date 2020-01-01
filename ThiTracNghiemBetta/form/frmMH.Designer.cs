@@ -56,7 +56,7 @@
             this.txtTENMH = new DevExpress.XtraEditors.TextEdit();
             this.txtMAMH = new DevExpress.XtraEditors.TextEdit();
             this.gcMH = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTENMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCTableAdapterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCHITIETBAITHIBANGDIEMBindingSource)).BeginInit();
@@ -351,25 +351,25 @@
             this.gcMH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcMH.Location = new System.Drawing.Point(0, 0);
-            this.gcMH.MainView = this.gridView1;
+            this.gcMH.MainView = this.gvMonHoc;
             this.gcMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
             this.gcMH.Size = new System.Drawing.Size(1203, 409);
             this.gcMH.TabIndex = 4;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvMonHoc});
             // 
-            // gridView1
+            // gvMonHoc
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvMonHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAMH,
             this.colTENMH,
             this.colrowguid});
-            this.gridView1.DetailHeight = 242;
-            this.gridView1.FixedLineWidth = 1;
-            this.gridView1.GridControl = this.gcMH;
-            this.gridView1.Name = "gridView1";
+            this.gvMonHoc.DetailHeight = 242;
+            this.gvMonHoc.FixedLineWidth = 1;
+            this.gvMonHoc.GridControl = this.gcMH;
+            this.gvMonHoc.Name = "gvMonHoc";
             // 
             // colMAMH
             // 
@@ -529,7 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTENMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCTableAdapterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCHITIETBAITHIBANGDIEMBindingSource)).EndInit();
@@ -568,7 +568,7 @@
         private DevExpress.XtraEditors.TextEdit txtTENMH;
         private DevExpress.XtraEditors.TextEdit txtMAMH;
         private DevExpress.XtraGrid.GridControl gcMH;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvMonHoc;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private DevExpress.XtraGrid.Columns.GridColumn colrowguid;

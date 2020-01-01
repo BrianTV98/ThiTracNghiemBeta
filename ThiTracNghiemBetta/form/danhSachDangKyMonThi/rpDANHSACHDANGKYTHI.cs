@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
+using static ThiTracNghiemBetta.TN_CSDLPTDataSet;
 
 namespace ThiTracNghiemBetta.form.report
 {
@@ -13,7 +14,16 @@ namespace ThiTracNghiemBetta.form.report
         {
             InitializeComponent();  
             this.tN_CSDLPTDataSet1.EnforceConstraints = false;
-            this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt);
+            SP_XEM_DANH_SACH_DANG_KY_THIDataTable datatable = this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI;
+
+            if (Program.mNhom.Equals("TRUONG"))
+            {
+                this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt,"CS0");
+            }
+            else {
+                this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt, "CSK");
+            }
+            
         }
 
     }

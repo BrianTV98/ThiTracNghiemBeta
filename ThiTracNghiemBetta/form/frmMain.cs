@@ -10,6 +10,7 @@ using ThiTracNghiemBetta.form.examregistation;
 using ThiTracNghiemBetta.form.register;
 using ThiTracNghiemBetta.form.report;
 using ThiTracNghiemBetta.form.student;
+using ThiTracNghiemBetta.form.thi;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -109,15 +110,14 @@ namespace ThiTracNghiemBetta.form
         {
             if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Program.frmLogin = new frmLogin();
+                Program.frmMain.Hide();
                 Program.frmLogin.Show();
-                this.Close();
             }
         }
 
         private void btnXEMBAITHI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            new formXemBaiThiSV().Show();
         }
 
         private void btnXEMBANGDIEM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

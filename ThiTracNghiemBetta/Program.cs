@@ -48,7 +48,7 @@ namespace ThiTracNghiemBetta
         public static frmLogin frmLogin;
         public static BangDiemMonHoc bangDiemMonHoc;
         public static frmBaoCao frmBaoCao;
-
+       
         //Log
         public static List<DataLogGVDK> logGVDK = new List<DataLogGVDK>();
         public static int indexLogGVDK = -1;

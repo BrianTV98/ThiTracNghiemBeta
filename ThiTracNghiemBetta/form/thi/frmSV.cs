@@ -31,17 +31,7 @@ namespace ThiTracNghiemBetta.form
 
             frmChonMonThi frm = new frmChonMonThi();
             frm.ShowDialog();
-           /* Form frm = this.CheckExists(typeof(frmThi));
-            if (frm != null)
-            {
-                Program.formThi.Activate();
-            }
-            else
-            {
-                Program.formThi = new frmThi();
-                Program.formThi.MdiParent = Program.formSV;
-                Program.formThi.Show();
-            }*/
+           
         }
 
         private void btnDANGXUAT_ItemClick(object sender, ItemClickEventArgs e)
@@ -74,24 +64,7 @@ namespace ThiTracNghiemBetta.form
 
         private void btnTRACUUDIEM_ItemClick(object sender, ItemClickEventArgs e)
         {
-            /* Form frm = this.CheckExists(typeof(frmXemBaiThiSV));
-             if (frm != null) Program.formXemBaiThiSV.Activate();
-             else
-             {
-                 Program.formXemBaiThiSV = new frmXemBaiThiSV();
-                 Program.formXemBaiThiSV.MdiParent = Program.formSV;
-                 Program.formXemBaiThiSV.Show();
-             }*/
             new formXemBaiThiSV().Show();
-           /* rpXemBaiThi rp = new rpXemBaiThi(0);
-            rp.lbHoTen.Text = "HỌ TÊN: " + Program.mHoTen;
-            rp.lbLop.Text = "LỚP: " + Program.tenlop;
-            rp.lbMonHoc.Text = "MÔN THI" + "MM";
-            rp.lbNgayThi.Text = "NGÀY THI: " + "2019-12";
-
-            rp.lbLanThi.Text = "LẦN: " + 5;
-            ReportPrintTool print = new ReportPrintTool(rp);
-            print.ShowPreviewDialog();*/
         }
     }
 }

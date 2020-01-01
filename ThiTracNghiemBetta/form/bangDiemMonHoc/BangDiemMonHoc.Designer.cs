@@ -417,7 +417,7 @@
             // 
             this.barBtnRefresh.Caption = "Refresh";
             this.barBtnRefresh.Id = 0;
-            this.barBtnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barBtnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnRefresh.ImageOptions.SvgImage")));
             this.barBtnRefresh.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
             this.barBtnRefresh.Name = "barBtnRefresh";
             this.barBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
