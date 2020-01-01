@@ -242,8 +242,8 @@ namespace ThiTracNghiemBetta.form.student
              * Kiểm tra lên lớp có rỗng không
              * kiểm tên lớp có tồn tại chưa (tên lớp khóa unique)
              */
-            string malop = txtMaLop.Text;
-            string tenLop = txtTenLop.Text;
+            string malop = txtMaLop.Text.Trim();
+            string tenLop = txtTenLop.Text.Trim();
 
             if (malop.Length == 0)
             {
@@ -252,11 +252,11 @@ namespace ThiTracNghiemBetta.form.student
             }
             Regex regex = new Regex("^[a-zA-Z0-9]*$");
 
-            if (regex.IsMatch(malop) == false)
+/*            if (regex.IsMatch(malop) == false)
             {
                 message = "Tên lớp không được chứa khoảng trắng hoặc ký tự đặc biệt";
                 return false;
-            }
+            }*/
 
             if (tenLop.Length == 0)
             {
