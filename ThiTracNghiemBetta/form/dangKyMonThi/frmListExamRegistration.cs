@@ -42,10 +42,12 @@ namespace ThiTracNghiemBetta.form.examregistation
         private void frmListExamRegistration_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ds.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.adapter_gvdk.Connection.ConnectionString = Program.connstr;
             this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN_DANGKY' table. You can move, or remove it, as needed.
             this.adapter_gvdk.Connection.ConnectionString = Program.connstr;
             this.adapter_gvdk.Fill(this.ds.GIAOVIEN_DANGKY);
+            tENCNComboBox.SelectedIndex = Program.mChiNhanh;
 
         }
 

@@ -37,10 +37,7 @@ namespace ThiTracNghiemBetta
         public static String mHoTen = "";
         public static String mLoai = ""; // giangvien or sinhvien
         public static int mChiNhanh = 0;
-       
-        
-
-
+             
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static String Control = "";
 

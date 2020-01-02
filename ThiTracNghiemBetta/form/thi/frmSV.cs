@@ -36,21 +36,11 @@ namespace ThiTracNghiemBetta.form
 
         private void btnDANGXUAT_ItemClick(object sender, ItemClickEventArgs e)
         {
-           /* DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn đăng xuất?", "CẢNH BÁO", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Program.username = "";
-                Program.mlogin = "";
-                Program.password = "";
-                GiaoVien_DangKy.gv_dk.Clear();
-                GiaoVien_DangKy.gv_dkIndex = -1;
-                Program.formDangNhap.Show();
-                Program.formSV.Hide();
+                this.Hide();
+                Program.frmLogin.Show();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }*/
         }
 
         private void frmSV_Load(object sender, EventArgs e)

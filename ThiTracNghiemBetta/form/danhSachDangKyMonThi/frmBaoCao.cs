@@ -23,14 +23,16 @@ namespace ThiTracNghiemBetta.form.report
             if (chechValidate() == false)
             {
                 MessageBox.Show("Ngày bắt đầu phải sớm hơn hoặc bằng Ngày kết thúc",
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value.Date, dtNgayKT.Value.Date);
+                rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value.Date, dtNgayKT.Value.Date, Program.mChiNhanh.ToString());
                 ReportPrintTool print = new ReportPrintTool(f);
+                MessageBox.Show(Program.mChiNhanh.ToString());
                 f.lbNgayBD.Text = dtNgayBD.Value.ToShortDateString();
                 f.lbNgayKT.Text = dtNgayKT.Value.ToShortDateString();
+               
                 print.ShowPreviewDialog();
             }    
         }

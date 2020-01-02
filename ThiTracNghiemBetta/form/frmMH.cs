@@ -27,7 +27,7 @@ namespace ThiTracNghiemBetta.form
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
-           
+
             bdsMH.Filter = "XOA = 0";
 
             if (Program.mNhom == "TRUONG")
