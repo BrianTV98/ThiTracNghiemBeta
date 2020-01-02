@@ -18,6 +18,17 @@ namespace ThiTracNghiemBetta.form.examregistation
         public frmListExamRegistration()
         {
             InitializeComponent();
+
+            if (Program.mNhom.Equals("TRUONG"))
+            {
+                pnChiNhanh.Enabled = true;
+                barbtnRegister.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = false;
+                barBtnThem.Enabled = barBtnChinhSua.Enabled = barBtnXoa.Enabled = false;
+            }
+            else
+            {
+                pnChiNhanh.Enabled = false;
+            }
             
         }
 

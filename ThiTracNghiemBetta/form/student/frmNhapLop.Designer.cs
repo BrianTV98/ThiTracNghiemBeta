@@ -63,7 +63,6 @@
             this.barBtnSua = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnRefesh = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnSave = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRedo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -71,6 +70,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barbtnSave = new DevExpress.XtraBars.BarButtonItem();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.pnGcLop = new System.Windows.Forms.Panel();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
@@ -442,7 +442,7 @@
             this.barbtnThem.ActAsDropDown = true;
             this.barbtnThem.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barbtnThem.Caption = "Thêm";
-            this.barbtnThem.DropDownControl = this.popupMenu2;
+            this.barbtnThem.DropDownControl = this.popupMenuThemLop;
             this.barbtnThem.Id = 0;
             this.barbtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnThem.ImageOptions.SvgImage")));
             this.barbtnThem.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
@@ -477,14 +477,6 @@
             this.barbtnRefesh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnRefesh.ImageOptions.SvgImage")));
             this.barbtnRefesh.Name = "barbtnRefesh";
             this.barbtnRefesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnRefesh_ItemClick);
-            // 
-            // barbtnSave
-            // 
-            this.barbtnSave.Caption = "Lưu";
-            this.barbtnSave.Id = 3;
-            this.barbtnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnSave.ImageOptions.SvgImage")));
-            this.barbtnSave.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
-            this.barbtnSave.Name = "barbtnSave";
             // 
             // barBtnUndo
             // 
@@ -540,6 +532,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1924, 48);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
+            // 
+            // barbtnSave
+            // 
+            this.barbtnSave.Caption = "Lưu";
+            this.barbtnSave.Id = 3;
+            this.barbtnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnSave.ImageOptions.SvgImage")));
+            this.barbtnSave.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barbtnSave.Name = "barbtnSave";
             // 
             // txtMaLop
             // 

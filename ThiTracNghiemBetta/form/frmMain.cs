@@ -38,6 +38,9 @@ namespace ThiTracNghiemBetta.form
             {
                 btKHOA.Enabled = btGiaoVien.Enabled = btLOP.Enabled = btMonHoc.Enabled = btlogin.Enabled = false;
                 btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
+                btDSDK.Enabled = false;
+                btBD.Enabled = true;
+                btCancel.Enabled = true;
             }
         }
         private void btMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
