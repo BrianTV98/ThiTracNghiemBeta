@@ -25,14 +25,14 @@ namespace ThiTracNghiemBetta.form.student
             if (Program.mNhom == "TRUONG")
             {
                 pnChiNhanh.Enabled = true;
-                
+                pnLop.Enabled = false;
                 pnSV.Enabled = false;
                 barbtnThem.Enabled = false;
-                barBtnSua.Enabled = false;
+               /* barBtnSua.Enabled = false;
                 barBtnXoa.Enabled = false;
                 barBtnUndo.Enabled = false;
                 barBtnRedo.Enabled = false;
-                barbtnSave.Enabled = false;
+                barbtnSave.Enabled = false;*/
             }
             else
             {
@@ -42,7 +42,7 @@ namespace ThiTracNghiemBetta.form.student
             pnNhapSV.Enabled = false;
             closeAll.Click += new EventHandler(this.CloseBtn_Click);
             this.CancelButton = closeAll;
-            
+
         }
         private void CloseBtn_Click(Object sender,
                            EventArgs e)
@@ -57,7 +57,7 @@ namespace ThiTracNghiemBetta.form.student
                 }
                 this.Close();
             }
-          
+
         }
 
         private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -71,14 +71,13 @@ namespace ThiTracNghiemBetta.form.student
         private void frmNhapLop_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ds.KHOA' table. You can move, or remove it, as needed.
-           
-            this.ds.EnforceConstraints = false;
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.ds.KHOA);
+            this.ds.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
- 
+
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             this.adaterSv.Connection.ConnectionString = Program.connstr;
             this.adaterSv.Fill(this.ds.SINHVIEN);
@@ -88,7 +87,7 @@ namespace ThiTracNghiemBetta.form.student
 
             this.ds.EnforceConstraints = true;
 
-       
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -118,14 +117,14 @@ namespace ThiTracNghiemBetta.form.student
                 }
                 else
                 {
-                   // MessageBox.Show("Thêm Thành Công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("Thêm Thành Công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bds_lop.EndEdit();
                     this.adapterLop.Update(this.ds.LOP);
                     gv_Lop.AddNewRow();
                 }
             }
         }
-       
+
 
         private void barBtnDeleteLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -141,17 +140,38 @@ namespace ThiTracNghiemBetta.form.student
         {
             if (bds_sv.Count > 0)
             {
-                MessageBox.Show(bds_sv.Count.ToString());
+                //MessageBox.Show(bds_sv.Count.ToString());
                 MessageBox.Show("Lớp đã tồn tại sinh viên. Không thể xóa lớp này", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
         }
 
-        
+        private void lOPGridControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right)
+            {
+
+                return;
+            }
+            var rowH = gv_Lop.FocusedRowHandle;
+            var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
+            if (focusRowView == null || focusRowView.IsNew)
+            {
+                return;
+            }
+
+            if (rowH >= 0)
+            {
+                popupMenuLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
+
+            }
+            else popupMenuLop.HidePopup();
+        }
 
         private void barBtnEditLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            trangthaifrmLop = false;
             pressEdit(true);
 
         }
@@ -172,7 +192,7 @@ namespace ThiTracNghiemBetta.form.student
                 pnNhapLop.Enabled = true;
                 txtTenLop.Enabled = true;
                 pnGcLop.Enabled = false;
-                
+
             }
             else
             {
@@ -234,12 +254,12 @@ namespace ThiTracNghiemBetta.form.student
             }
             Regex regex = new Regex("^[a-zA-Z0-9]*$");
 
-/*            if (regex.IsMatch(malop) == false)
+            /*if (regex.IsMatch(malop) == false)
             {
                 message = "Tên lớp không được chứa khoảng trắng hoặc ký tự đặc biệt";
                 return false;
-            }*/
-
+            }
+*/
             if (tenLop.Length == 0)
             {
                 message = "Tên lớp không được để trống!";
@@ -273,15 +293,21 @@ namespace ThiTracNghiemBetta.form.student
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (trangthaifrmLop == false)
+            DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn thoát không? Mọi sự thay đổi sẽ không được lưu!","Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (dialog == DialogResult.Yes)
             {
-                pressEdit(false);
+                if (trangthaifrmLop == false)
+                {
+                    bds_lop.CancelEdit();
+                    pressEdit(false);
+                }
+                else
+                {
+                    bds_lop.CancelEdit();
+                    pressEdit(false);
+                }
             }
-            else
-            {
-                bds_lop.CancelEdit();
-                pressEdit(false);
-            }
+            
         }
 
         private void barBtnThemSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -298,7 +324,7 @@ namespace ThiTracNghiemBetta.form.student
         }
         private void pressEditSV(bool trangthai)
         {
-           
+
             if (trangthai == true)
             {
                 pnGCSV.Enabled = false;
@@ -340,54 +366,37 @@ namespace ThiTracNghiemBetta.form.student
 
         private void gvSV_MouseUp(object sender, MouseEventArgs e)
         {
+
             barBtnThemSV.Enabled = true;
             barBtnSuaSV.Enabled = true;
             barBtnXoaSV.Enabled = true;
 
             if (e.Button != MouseButtons.Right) return;
-            
+
             var rowH = gvSV.Rows.Count;
             var focusRowView = gvSV.CurrentRow;
-            if (focusRowView == null || focusRowView.IsNewRow)
-            {     
-                barBtnSuaSV.Enabled = false;
-                barBtnXoaSV.Enabled = false;
+            if (focusRowView == null|| focusRowView.IsNewRow)
+            {
+                barBtnXoaSV.Enabled = barBtnSuaSV.Enabled = false;
                 popupMenuSV.ShowPopup(new Point(MousePosition.X, MousePosition.Y));
                 return;
             }
+          
 
             if (rowH >= 0)
             {
+                barBtnXoaSV.Enabled = barBtnSuaSV.Enabled = true;
                 popupMenuSV.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
 
             }
-            else {
+            else
+            {
                 popupMenuSV.HidePopup();
-               // popupMenuThemLop.ShowPopup(new Point(MousePosition.X, MousePosition.Y));
+                // popupMenuThemLop.ShowPopup(new Point(MousePosition.X, MousePosition.Y));
             }
-            
-        }
-        private void lOPGridControl_MouseUp(object sender, MouseEventArgs e)
-        {
-            
-            if (e.Button != MouseButtons.Right)
-            {
 
-                return;
-            }
-            var rowH = gv_Lop.FocusedRowHandle;
-            var focusRowView = (DataRowView)gv_Lop.GetFocusedRow();
-            if (focusRowView == null || focusRowView.IsNew)
-            {
-                return;
-            }
-            if (rowH >= 0)
-            {
-                popupMenuLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
-
-            }
-            else popupMenuLop.HidePopup();
         }
+
         private void btnLuuSV_Click(object sender, EventArgs e)
         {
             if (checkValidateSV() == false)
@@ -408,26 +417,10 @@ namespace ThiTracNghiemBetta.form.student
                         MessageBox.Show("Không thể tạo tài khoản cho sinh viên này");
                     }
                 }
-                
+
                 pressEditSV(false);
             }
-           
-        }
-        private bool taologinSinhVien()
-        {
-            int kn = Program.KetNoi();
-            SqlCommand sqlCommand = new SqlCommand("SP_TAOLOGIN", Program.conn);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.Parameters.AddWithValue("@LGNAME",txtMaSV.Text.Trim());
-            sqlCommand.Parameters.AddWithValue("@PASS", "123");
-            sqlCommand.Parameters.AddWithValue("@USERNAME", txtMaSV.Text.Trim());
-            sqlCommand.Parameters.AddWithValue("@ROLE", "SINHVIEN");
-            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
-            if (kq != 0) // ton tai
-            {
-                return false;
-            }
-            return true;
+
         }
         private bool checkValidateSV()
         {
@@ -535,6 +528,7 @@ namespace ThiTracNghiemBetta.form.student
             trangthaifrmLop = true;
             pressEdit(true);
             gv_Lop.AddNewRow();
+            
         }
 
         private void pnNhapLop_Paint(object sender, PaintEventArgs e)
@@ -547,7 +541,10 @@ namespace ThiTracNghiemBetta.form.student
             cbMaKhoa.Text = txtMaKhoa.Text;
         }
 
-    
+        private void txtMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void cbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -555,14 +552,59 @@ namespace ThiTracNghiemBetta.form.student
                 txtMaKhoa.Text = cbMaKhoa.SelectedValue.ToString();
         }
 
-        
-
-
-        private void barbtnRefesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void lOPGridControl_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ds.KHOA' table. You can move, or remove it, as needed.
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnCancelSV_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Mọi sự thay đổi sẽ không được lưu! Bạn có muốn cancel không?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pnNhapSV.Enabled = false;
+                pnGcLop.Enabled = true;
+                pnGCSV.Enabled = true;
+                bds_sv.CancelEdit();
+
+            }
+
+        }
+        private bool taologinSinhVien()
+        {
+            int kn = Program.KetNoi();
+            SqlCommand sqlCommand = new SqlCommand("SP_TAOLOGIN", Program.conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@LGNAME", txtMaSV.Text.Trim());
+            sqlCommand.Parameters.AddWithValue("@PASS", "123");
+            sqlCommand.Parameters.AddWithValue("@USERNAME", txtMaSV.Text.Trim());
+            sqlCommand.Parameters.AddWithValue("@ROLE", "SINHVIEN");
+            int kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+            if (kq != 0) // ton tai
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.ds.KHOA);
             this.ds.EnforceConstraints = false;
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Fill(this.ds.V_DS_PHANMANH);
 
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             this.adaterSv.Connection.ConnectionString = Program.connstr;
@@ -574,44 +616,19 @@ namespace ThiTracNghiemBetta.form.student
             this.ds.EnforceConstraints = true;
         }
 
-        private void cbChiNhanh_SelectedValueChanged(object sender, EventArgs e)
+        private void tENCNComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
-                
-                Program.servername = cbChiNhanh.SelectedValue.ToString();
+            try
+            {
+
+                Program.servername = tENCNComboBox.SelectedValue.ToString();
                 Program.KetNoi();
-                barbtnRefesh.PerformClick();
+                barButtonItem9.PerformClick();
             }
             catch (Exception)
             {
 
             }
-
-        }
-
-        private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //popupMenuThemLop.ShowPopup(barManager1, new Point(MousePosition.X, MousePosition.Y));
-        }
-
-        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelSV_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Mọi sự thay đổi sẽ không được lưu! Bạn có muốn cancel không?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);   
-            if(dialogResult== DialogResult.Yes)
-            {
-                pnNhapSV.Enabled = false;
-                pnGcLop.Enabled = true;
-                pnGCSV.Enabled = true;
-                bds_sv.CancelEdit();
-                
-            }
-            
-                
         }
     }
 }
