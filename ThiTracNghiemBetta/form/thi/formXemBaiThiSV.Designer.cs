@@ -55,6 +55,13 @@
             this.bANGDIEMTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.BANGDIEMTableAdapter();
             this.tableAdapterManager = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DS_PHANMANHTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.cmbCS = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -73,6 +80,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
+            this.layoutControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // tN_CSDLPTDataSet
@@ -82,6 +95,7 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.layoutControl4);
             this.layoutControl2.Controls.Add(this.layoutControl3);
             this.layoutControl2.Controls.Add(this.layoutControl1);
             this.layoutControl2.Controls.Add(this.bANGDIEMGridControl);
@@ -90,27 +104,27 @@
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(939, 763);
+            this.layoutControl2.Size = new System.Drawing.Size(981, 805);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // layoutControl3
             // 
             this.layoutControl3.Controls.Add(this.btnRefresh);
-            this.layoutControl3.Location = new System.Drawing.Point(14, 662);
+            this.layoutControl3.Location = new System.Drawing.Point(12, 713);
             this.layoutControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup1;
-            this.layoutControl3.Size = new System.Drawing.Size(911, 87);
+            this.layoutControl3.Size = new System.Drawing.Size(957, 80);
             this.layoutControl3.TabIndex = 6;
             this.layoutControl3.Text = "layoutControl3";
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(14, 14);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 12);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(883, 59);
+            this.btnRefresh.Size = new System.Drawing.Size(933, 56);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -123,7 +137,7 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(911, 87);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(957, 80);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -131,27 +145,27 @@
             this.layoutControlItem5.Control = this.btnRefresh;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(887, 63);
+            this.layoutControlItem5.Size = new System.Drawing.Size(937, 60);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnXemBaiThi);
-            this.layoutControl1.Location = new System.Drawing.Point(14, 567);
+            this.layoutControl1.Location = new System.Drawing.Point(12, 624);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(911, 91);
+            this.layoutControl1.Size = new System.Drawing.Size(957, 85);
             this.layoutControl1.TabIndex = 5;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnXemBaiThi
             // 
-            this.btnXemBaiThi.Location = new System.Drawing.Point(14, 14);
+            this.btnXemBaiThi.Location = new System.Drawing.Point(12, 12);
             this.btnXemBaiThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXemBaiThi.Name = "btnXemBaiThi";
-            this.btnXemBaiThi.Size = new System.Drawing.Size(883, 63);
+            this.btnXemBaiThi.Size = new System.Drawing.Size(933, 61);
             this.btnXemBaiThi.TabIndex = 4;
             this.btnXemBaiThi.Text = "Xem bài thi";
             this.btnXemBaiThi.UseVisualStyleBackColor = true;
@@ -164,7 +178,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(911, 91);
+            this.Root.Size = new System.Drawing.Size(957, 85);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem3
@@ -172,7 +186,7 @@
             this.layoutControlItem3.Control = this.btnXemBaiThi;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(887, 67);
+            this.layoutControlItem3.Size = new System.Drawing.Size(937, 65);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -180,11 +194,11 @@
             // 
             this.bANGDIEMGridControl.DataSource = this.bANGDIEMBindingSource;
             this.bANGDIEMGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.bANGDIEMGridControl.Location = new System.Drawing.Point(14, 14);
+            this.bANGDIEMGridControl.Location = new System.Drawing.Point(12, 12);
             this.bANGDIEMGridControl.MainView = this.gridView1;
             this.bANGDIEMGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bANGDIEMGridControl.Name = "bANGDIEMGridControl";
-            this.bANGDIEMGridControl.Size = new System.Drawing.Size(911, 549);
+            this.bANGDIEMGridControl.Size = new System.Drawing.Size(957, 560);
             this.bANGDIEMGridControl.TabIndex = 4;
             this.bANGDIEMGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -274,9 +288,10 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem6});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(939, 763);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(981, 805);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem1
@@ -284,25 +299,25 @@
             this.layoutControlItem1.Control = this.bANGDIEMGridControl;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(915, 553);
+            this.layoutControlItem1.Size = new System.Drawing.Size(961, 564);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.layoutControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 553);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 612);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(915, 95);
+            this.layoutControlItem2.Size = new System.Drawing.Size(961, 89);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.layoutControl3;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 648);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 701);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(915, 91);
+            this.layoutControlItem4.Size = new System.Drawing.Size(961, 84);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -325,11 +340,71 @@
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // layoutControl4
+            // 
+            this.layoutControl4.Controls.Add(this.cmbCS);
+            this.layoutControl4.Location = new System.Drawing.Point(12, 576);
+            this.layoutControl4.Name = "layoutControl4";
+            this.layoutControl4.Root = this.layoutControlGroup3;
+            this.layoutControl4.Size = new System.Drawing.Size(957, 44);
+            this.layoutControl4.TabIndex = 7;
+            this.layoutControl4.Text = "layoutControl4";
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.layoutControl4;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 564);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(961, 48);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8});
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(936, 50);
+            this.layoutControlGroup3.TextVisible = false;
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.tN_CSDLPTDataSet;
+            // 
+            // v_DS_PHANMANHTableAdapter
+            // 
+            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // cmbCS
+            // 
+            this.cmbCS.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.cmbCS.DisplayMember = "TENCN";
+            this.cmbCS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCS.FormattingEnabled = true;
+            this.cmbCS.Location = new System.Drawing.Point(60, 12);
+            this.cmbCS.Name = "cmbCS";
+            this.cmbCS.Size = new System.Drawing.Size(864, 24);
+            this.cmbCS.TabIndex = 5;
+            this.cmbCS.ValueMember = "TENSERVER";
+            this.cmbCS.SelectedIndexChanged += new System.EventHandler(this.cmbCS_SelectedIndexChanged_1);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.cmbCS;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(916, 30);
+            this.layoutControlItem8.Text = "TENCN:";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(44, 16);
+            // 
             // formXemBaiThiSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 763);
+            this.ClientSize = new System.Drawing.Size(981, 805);
             this.Controls.Add(this.layoutControl2);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "formXemBaiThiSV";
@@ -354,6 +429,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
+            this.layoutControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,5 +466,12 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControl layoutControl4;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
+        private TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
+        private System.Windows.Forms.ComboBox cmbCS;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

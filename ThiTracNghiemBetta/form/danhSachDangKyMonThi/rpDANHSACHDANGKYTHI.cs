@@ -10,7 +10,7 @@ namespace ThiTracNghiemBetta.form.report
     public partial class rpDANHSACHDANGKYTHI : DevExpress.XtraReports.UI.XtraReport
     {
 
-        public rpDANHSACHDANGKYTHI(DateTime ngaybd, DateTime ngaykt, string chiNhanh)
+        public rpDANHSACHDANGKYTHI(DateTime ngaybd, DateTime ngaykt, int chiNhanh)
         {
             InitializeComponent();  
             this.tN_CSDLPTDataSet1.EnforceConstraints = false;
@@ -18,7 +18,7 @@ namespace ThiTracNghiemBetta.form.report
 
             if (Program.mNhom.Equals("TRUONG"))
             {
-                this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt,"-1");
+                this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt,-1);
             }
             else {
                 this.sP_XEM_DANH_SACH_DANG_KY_THITableAdapter1.Fill(this.tN_CSDLPTDataSet1.SP_XEM_DANH_SACH_DANG_KY_THI, ngaybd, ngaykt, chiNhanh);

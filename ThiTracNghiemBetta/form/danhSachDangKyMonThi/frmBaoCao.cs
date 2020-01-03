@@ -27,11 +27,10 @@ namespace ThiTracNghiemBetta.form.report
             }
             else
             {
-                rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value.Date, dtNgayKT.Value.Date, Program.mChiNhanh.ToString());
+                rpDANHSACHDANGKYTHI f = new rpDANHSACHDANGKYTHI(dtNgayBD.Value.Date, dtNgayKT.Value.Date, Program.mChiNhanh);
                 ReportPrintTool print = new ReportPrintTool(f);
-                MessageBox.Show(Program.mChiNhanh.ToString());
-                f.lbNgayBD.Text = dtNgayBD.Value.ToShortDateString();
-                f.lbNgayKT.Text = dtNgayKT.Value.ToShortDateString();
+                f.lbNgayBD.Text = dtNgayBD.Value.ToString("dd/MM/yyyy");
+                f.lbNgayKT.Text = dtNgayKT.Value.ToString("dd/MM/yyyy");
                
                 print.ShowPreviewDialog();
             }    
@@ -50,7 +49,7 @@ namespace ThiTracNghiemBetta.form.report
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

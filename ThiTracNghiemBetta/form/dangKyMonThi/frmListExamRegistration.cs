@@ -377,5 +377,24 @@ namespace ThiTracNghiemBetta.form.examregistation
 
             }
         }
+
+        private void tENCNComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.servername = tENCNComboBox.SelectedValue.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+           
+            int check=Program.KetNoi();
+            if (check == 0)
+            {
+                MessageBox.Show("Lỗi kết nối");
+            }
+            barButtonItem1.PerformClick();
+        }
     }
 }

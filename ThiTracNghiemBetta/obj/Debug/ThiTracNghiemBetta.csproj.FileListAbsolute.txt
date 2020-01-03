@@ -210,3 +210,4 @@ E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.csproj.CopyComplete
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.exe
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.pdb
 E:\CSDLPT\ThiTracNghiemBetta\obj\Debug\ThiTracNghiemBetta.csprojAssemblyReference.cache
+E:\CSDLPT\ThiTracNghiemBetta\bin\Debug\ThiTracNghiemBetta.pdb

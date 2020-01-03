@@ -19,6 +19,10 @@ namespace ThiTracNghiemBetta.form
         public frmMain()
         {
             InitializeComponent();
+            if (!Program.mNhom.Equals("TRUONG"))
+            {
+                btnXEMDSDANGKY.Enabled = false;
+            }
         }
         private Form CheckExists(Type ftype)
         {

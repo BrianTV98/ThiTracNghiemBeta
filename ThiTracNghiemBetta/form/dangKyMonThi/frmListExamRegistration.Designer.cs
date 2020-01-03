@@ -57,6 +57,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.pnChiNhanh = new System.Windows.Forms.Panel();
+            this.tENCNComboBox = new System.Windows.Forms.ComboBox();
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pnGridView = new System.Windows.Forms.Panel();
@@ -70,7 +71,6 @@
             this.barBtnChinhSua = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenuRightClick = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.tENCNComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_gvdk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGVDK)).BeginInit();
@@ -338,6 +338,19 @@
             this.pnChiNhanh.Size = new System.Drawing.Size(1049, 76);
             this.pnChiNhanh.TabIndex = 6;
             // 
+            // tENCNComboBox
+            // 
+            this.tENCNComboBox.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.tENCNComboBox.DisplayMember = "TENCN";
+            this.tENCNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tENCNComboBox.FormattingEnabled = true;
+            this.tENCNComboBox.Location = new System.Drawing.Point(457, 19);
+            this.tENCNComboBox.Name = "tENCNComboBox";
+            this.tENCNComboBox.Size = new System.Drawing.Size(256, 24);
+            this.tENCNComboBox.TabIndex = 2;
+            this.tENCNComboBox.ValueMember = "TENSERVER";
+            this.tENCNComboBox.SelectedIndexChanged += new System.EventHandler(this.tENCNComboBox_SelectedIndexChanged_1);
+            // 
             // v_DS_PHANMANHBindingSource
             // 
             this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
@@ -450,19 +463,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnXoa)});
             this.popupMenuRightClick.Manager = this.barManagerRightClickItem;
             this.popupMenuRightClick.Name = "popupMenuRightClick";
-            // 
-            // tENCNComboBox
-            // 
-            this.tENCNComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.v_DS_PHANMANHBindingSource, "TENCN", true));
-            this.tENCNComboBox.DataSource = this.v_DS_PHANMANHBindingSource;
-            this.tENCNComboBox.DisplayMember = "TENCN";
-            this.tENCNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tENCNComboBox.FormattingEnabled = true;
-            this.tENCNComboBox.Location = new System.Drawing.Point(457, 19);
-            this.tENCNComboBox.Name = "tENCNComboBox";
-            this.tENCNComboBox.Size = new System.Drawing.Size(256, 24);
-            this.tENCNComboBox.TabIndex = 2;
-            this.tENCNComboBox.ValueMember = "TENSERVER";
             // 
             // frmListExamRegistration
             // 

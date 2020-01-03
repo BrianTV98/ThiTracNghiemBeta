@@ -263,7 +263,7 @@ namespace ThiTracNghiemBetta.form
             else if (Program.mNhom == "COSO")
             {
                 cmbCS.Enabled = false;
-           
+                barbtSave1.Enabled = false;
             }
 
             

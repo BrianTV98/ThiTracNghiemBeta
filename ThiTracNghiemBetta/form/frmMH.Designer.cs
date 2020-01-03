@@ -155,11 +155,6 @@
             this.bar2.FloatSize = new System.Drawing.Size(0, 50);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtAdd),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtDel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtEdit),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtRefesh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.Text = "Tools";

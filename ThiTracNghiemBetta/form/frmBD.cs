@@ -25,6 +25,11 @@ namespace ThiTracNghiemBetta.form
 
             defaultCMB();
             normalMode();
+            if (Program.mNhom == "TRUONG")
+            {
+                barbtCancel.Enabled = false;
+                barbtSave.Enabled = false;
+            }
         }
         private void reloadData()
         {
@@ -44,7 +49,13 @@ namespace ThiTracNghiemBetta.form
             if (Program.mNhom == "GIANGVIEN")
             {
                 bdsBODE.Filter = "MAGV = '" + Program.mUserId + "'";
+            } 
+            if (Program.mNhom == "TRUONG")
+            {
+                barbtCancel.Enabled = false;
+                barbtSave.Enabled = false;
             }
+            
             
         }
         private void defaultCMB()
