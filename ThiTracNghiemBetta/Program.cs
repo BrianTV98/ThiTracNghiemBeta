@@ -4,6 +4,9 @@ using DevExpress.UserSkins;
 using ThiTracNghiemBetta.form;
 using System.Data;
 using System.Data.SqlClient;
+using ThiTracNghiemBetta.models;
+using System.Collections.Generic;
+using ThiTracNghiemBetta.form.report;
 
 namespace ThiTracNghiemBetta
 {
@@ -13,6 +16,7 @@ namespace ThiTracNghiemBetta
         /// The main entry point for the application.
         /// </summary>
         /// 
+        public static String rootSeverName = "Data Source=HIEU\\HIEU;Initial Catalog=TN_CSDLPT;Persist Security Info=True;User ID=sa;Password=123";
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataReader myReader;
@@ -33,14 +37,18 @@ namespace ThiTracNghiemBetta
         public static String mHoTen = "";
         public static String mLoai = ""; // giangvien or sinhvien
         public static int mChiNhanh = 0;
-
-        //
-       
-
+             
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static String Control = "";
 
         public static frmMain frmMain;
+        public static frmLogin frmLogin;
+        public static BangDiemMonHoc bangDiemMonHoc;
+        public static frmBaoCao frmBaoCao=null;
+       
+        //Log
+        public static List<DataLogGVDK> logGVDK = new List<DataLogGVDK>();
+        public static int indexLogGVDK = -1;
 
         public static int KetNoi()
         {
@@ -59,7 +67,7 @@ namespace ThiTracNghiemBetta
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password :(.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password :(.\n " + Program.connstr, "", MessageBoxButtons.OK);
                 return 0;
             }
         }
@@ -120,7 +128,8 @@ namespace ThiTracNghiemBetta
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmLogin());
+            frmLogin = new frmLogin();
+            Application.Run(frmLogin);
         }
     }
 }

@@ -22,8 +22,9 @@ namespace ThiTracNghiemBetta.models
             private String C;
             private String D;
             private String dapAnDung;
-            private String dapAnDaChon;
-            public static ArrayList ct_baiThi = new ArrayList();
+            private String dapAnDaChon = "";
+        public static ArrayList thithu = new ArrayList();
+        public static ArrayList ct_baiThi = new ArrayList();
             public CT_BaiThi(int idCTBaiThi, int idBangDiem, int cauHoi, int thuTu, String noiDung, String A, String B, String C, String D, String dapAnDung, String dapAnDaChon)
             {
                 this.idCTBaiThi = idCTBaiThi;
@@ -127,32 +128,6 @@ namespace ThiTracNghiemBetta.models
             public void setDapDaChon(String dapAn)
             {
                 this.dapAnDaChon = dapAn;
-            }
-
-            public void ghiBaiThi(int idBangDiem)
-            {
-                String strlenh = "EXEC SP_GHIBAITHI @ID_BANGDIEM, @CAUHOI, @THUTU, @NOIDUNG, @A, @B, @C, @D, @DAPANDUNG, @DAPANDACHON";
-                SqlCommand sqlcommand = new SqlCommand(strlenh, Program.conn);
-                sqlcommand.Parameters.AddWithValue("@ID_BANGDIEM", idBangDiem);
-                sqlcommand.Parameters.AddWithValue("@CAUHOI", this.cauHoi);
-                sqlcommand.Parameters.AddWithValue("@THUTU", this.thuTu);
-                sqlcommand.Parameters.AddWithValue("@NOIDUNG", this.noiDung);
-                sqlcommand.Parameters.AddWithValue("@A", this.A);
-                sqlcommand.Parameters.AddWithValue("@B", this.B);
-                sqlcommand.Parameters.AddWithValue("@C", this.C);
-                sqlcommand.Parameters.AddWithValue("@D", this.D);
-                sqlcommand.Parameters.AddWithValue("@DAPANDUNG", this.dapAnDung);
-                sqlcommand.Parameters.AddWithValue("@DAPANDACHON", this.dapAnDaChon);
-                SqlDataReader dataReader = null;
-                try
-                {
-                    dataReader = sqlcommand.ExecuteReader();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                dataReader.Close();
             }
         }
     

@@ -1,0 +1,40 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_SUA_GVDK]    Script Date: 12/31/2019 1:35:30 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_SUA_GVDK] 
+	-- Add the parameters for the stored procedure here
+	@MAGV nchar(8),
+	@MAMH nchar(5),
+	@MALOP nchar(8),
+	@TRINHDO nchar(10),
+	@NGAYTHI datetime,
+	@LAN smallint,
+	@SOCAUTHI smallint,
+	@THOIGIAN smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	BEGIN TRY
+		UPDATE GIAOVIEN_DANGKY
+		SET TRINHDO=@TRINHDO, NGAYTHI=@NGAYTHI, SOCAUTHI=@SOCAUTHI, THOIGIAN=@THOIGIAN
+		WHERE MALOP=@MALOP AND MAMH=@MAMH AND LAN=@LAN
+		RETURN 0;
+	END TRY
+	BEGIN CATCH
+		RETURN 1;
+	END CATCH;
+END
+

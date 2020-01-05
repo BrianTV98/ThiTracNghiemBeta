@@ -14,6 +14,8 @@ namespace ThiTracNghiemBetta.form
     public partial class dialogGV : DevExpress.XtraEditors.XtraForm
     {
         public String type = "add";
+        public String idGV = "";
+        public String maKhoa = "";
         public dialogGV()
         {
             InitializeComponent();
@@ -33,10 +35,12 @@ namespace ThiTracNghiemBetta.form
                 // TODO: add new
 
                 gIAOVIENBindingSource.AddNew();
-                txtMaKHH.Text = kHOAComboBox.SelectedValue.ToString().Trim();
+                txtMaKHH.Text = maKhoa;
                 txtMaGV.Focus();
             } else
             {
+                gIAOVIENBindingSource.Filter = "MAGV = '"+ idGV + "'";
+                gIAOVIENBindingSource.Position = 0;
                 txtMaGV.Enabled = false;  
             }
         }
@@ -129,29 +133,15 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-        private void kHOAComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtMaKHH.Text = kHOAComboBox.SelectedValue.ToString();
-        }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            if (Program.Control == "Add")
-            {
+            
                 if (MessageBox.Show("Dữ liệu đang nhập. Bạn muốn hủy bỏ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     gIAOVIENBindingSource.CancelEdit();
                     this.Close();
                 }
-            }
-            if (Program.Control == "Edit")
-            {
-                if (MessageBox.Show("Dữ liệu đang chỉnh sửa. Bạn muốn hủy bỏ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-                    gIAOVIENBindingSource.CancelEdit();
-                    this.Close();
-                }
-            }
+            
         }
 
         ~dialogGV()

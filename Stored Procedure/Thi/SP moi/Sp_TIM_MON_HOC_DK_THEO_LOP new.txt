@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TIM_MON_HOC_DK_THI_THEO_LOP]    Script Date: 12/29/2019 1:36:10 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_TIM_MON_HOC_DK_THI_THEO_LOP]
+	@MALOP nvarchar(8),
+	@MASINHVIEN nchar(8)
+AS
+BEGIN
+	SELECT * FROM GIAOVIEN_DANGKY WHERE MALOP=@MALOP and MAMH not in (
+		select MAMH  from BANGDIEM where MASV = @MASINHVIEN 
+	) union
+	SELECT * FROM GIAOVIEN_DANGKY WHERE MALOP=@MALOP and MAMH not in (
+		select MAMH  from BANGDIEM where MASV = @MASINHVIEN 
+	)
+END

@@ -1,0 +1,24 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_XEM_CT_BAITHI]    Script Date: 12/29/2019 1:34:39 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_XEM_CT_BAITHI]
+	-- Add the parameters for the stored procedure here
+	@mabt int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * from CHITIETBAITHI where MA_BAI_THI = @mabt order by THUTU
+END

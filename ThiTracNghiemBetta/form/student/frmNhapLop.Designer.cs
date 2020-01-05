@@ -58,16 +58,19 @@
             this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnThem = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.pnGcLop = new System.Windows.Forms.Panel();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
@@ -78,12 +81,12 @@
             this.pnSV = new System.Windows.Forms.Panel();
             this.pnGCSV = new System.Windows.Forms.Panel();
             this.gvSV = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mASVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nGAYSINHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mALOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bds_sv = new System.Windows.Forms.BindingSource(this.components);
             this.pnNhapSV = new System.Windows.Forms.Panel();
             this.btnCancelSV = new System.Windows.Forms.Button();
@@ -297,12 +300,14 @@
             // 
             this.tENCNComboBox.DataSource = this.v_DS_PHANMANHBindingSource;
             this.tENCNComboBox.DisplayMember = "TENCN";
+            this.tENCNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tENCNComboBox.FormattingEnabled = true;
             this.tENCNComboBox.Location = new System.Drawing.Point(768, 16);
             this.tENCNComboBox.Name = "tENCNComboBox";
             this.tENCNComboBox.Size = new System.Drawing.Size(283, 24);
             this.tENCNComboBox.TabIndex = 2;
             this.tENCNComboBox.ValueMember = "TENSERVER";
+            this.tENCNComboBox.SelectedIndexChanged += new System.EventHandler(this.tENCNComboBox_SelectedIndexChanged);
             // 
             // v_DS_PHANMANHBindingSource
             // 
@@ -344,7 +349,7 @@
             this.txtMaKhoa.FormattingEnabled = true;
             this.txtMaKhoa.Location = new System.Drawing.Point(202, 169);
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(0, 25);
+            this.txtMaKhoa.Size = new System.Drawing.Size(0, 24);
             this.txtMaKhoa.TabIndex = 10;
             this.txtMaKhoa.SelectedIndexChanged += new System.EventHandler(this.txtMaKhoa_SelectedIndexChanged);
             this.txtMaKhoa.TextChanged += new System.EventHandler(this.mAKHComboBox_TextChanged);
@@ -353,6 +358,7 @@
             // 
             this.cbMaKhoa.DataSource = this.kHOABindingSource;
             this.cbMaKhoa.DisplayMember = "MAKH";
+            this.cbMaKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaKhoa.FormattingEnabled = true;
             this.cbMaKhoa.Location = new System.Drawing.Point(202, 139);
             this.cbMaKhoa.Name = "cbMaKhoa";
@@ -405,12 +411,15 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1,
+            this.barbtnThem,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5});
-            this.barManager1.MaxItemId = 5;
+            this.barButtonItem5,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9});
+            this.barManager1.MaxItemId = 8;
             // 
             // bar1
             // 
@@ -419,52 +428,35 @@
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem9, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
-            // barButtonItem1
+            // barbtnThem
             // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.Caption = "Thêm";
-            this.barButtonItem1.DropDownControl = this.popupMenu2;
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.barbtnThem.ActAsDropDown = true;
+            this.barbtnThem.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barbtnThem.Caption = "Thêm";
+            this.barbtnThem.DropDownControl = this.popupMenu2;
+            this.barbtnThem.Id = 0;
+            this.barbtnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnThem.ImageOptions.SvgImage")));
+            this.barbtnThem.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barbtnThem.Name = "barbtnThem";
+            this.barbtnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // popupMenu2
             // 
             this.popupMenu2.Manager = this.barManager1;
             this.popupMenu2.Name = "popupMenu2";
             // 
-            // barButtonItem2
+            // barButtonItem9
             // 
-            this.barButtonItem2.Caption = "Sửa";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Xóa";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Lưu";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem9.Caption = "Refresh";
+            this.barButtonItem9.Id = 7;
+            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -507,6 +499,45 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sửa";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Xóa";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barButtonItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Lưu";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(25, 25);
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Undo";
+            this.barButtonItem7.Id = 5;
+            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Redo";
+            this.barButtonItem8.Id = 6;
+            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
             // txtMaLop
             // 
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_lop, "MALOP", true));
@@ -537,6 +568,7 @@
             this.lOPGridControl.TabIndex = 0;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Lop});
+            this.lOPGridControl.Click += new System.EventHandler(this.lOPGridControl_Click);
             this.lOPGridControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lOPGridControl_MouseUp);
             // 
             // gv_Lop
@@ -600,12 +632,12 @@
             this.gvSV.AutoGenerateColumns = false;
             this.gvSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.mASVDataGridViewTextBoxColumn,
+            this.hODataGridViewTextBoxColumn,
+            this.tENDataGridViewTextBoxColumn,
+            this.nGAYSINHDataGridViewTextBoxColumn,
+            this.dIACHIDataGridViewTextBoxColumn,
+            this.mALOPDataGridViewTextBoxColumn});
             this.gvSV.DataSource = this.bds_sv;
             this.gvSV.Location = new System.Drawing.Point(0, 0);
             this.gvSV.Name = "gvSV";
@@ -615,53 +647,53 @@
             this.gvSV.TabIndex = 0;
             this.gvSV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gvSV_MouseUp);
             // 
-            // dataGridViewTextBoxColumn1
+            // mASVDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MASV";
-            this.dataGridViewTextBoxColumn1.HeaderText = "MASV";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.mASVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mASVDataGridViewTextBoxColumn.DataPropertyName = "MASV";
+            this.mASVDataGridViewTextBoxColumn.HeaderText = "MASV";
+            this.mASVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mASVDataGridViewTextBoxColumn.Name = "mASVDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn2
+            // hODataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "HO";
-            this.dataGridViewTextBoxColumn2.HeaderText = "HO";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.hODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hODataGridViewTextBoxColumn.DataPropertyName = "HO";
+            this.hODataGridViewTextBoxColumn.HeaderText = "HO";
+            this.hODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hODataGridViewTextBoxColumn.Name = "hODataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // tENDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TEN";
-            this.dataGridViewTextBoxColumn3.HeaderText = "TEN";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.tENDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tENDataGridViewTextBoxColumn.DataPropertyName = "TEN";
+            this.tENDataGridViewTextBoxColumn.HeaderText = "TEN";
+            this.tENDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENDataGridViewTextBoxColumn.Name = "tENDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // nGAYSINHDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NGAYSINH";
-            this.dataGridViewTextBoxColumn4.HeaderText = "NGAYSINH";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.nGAYSINHDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nGAYSINHDataGridViewTextBoxColumn.DataPropertyName = "NGAYSINH";
+            this.nGAYSINHDataGridViewTextBoxColumn.HeaderText = "NGAYSINH";
+            this.nGAYSINHDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nGAYSINHDataGridViewTextBoxColumn.Name = "nGAYSINHDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn5
+            // dIACHIDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "DIACHI";
-            this.dataGridViewTextBoxColumn5.HeaderText = "DIACHI";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dIACHIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
+            this.dIACHIDataGridViewTextBoxColumn.HeaderText = "DIACHI";
+            this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // mALOPDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MALOP";
-            this.dataGridViewTextBoxColumn6.HeaderText = "MALOP";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.mALOPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mALOPDataGridViewTextBoxColumn.DataPropertyName = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.HeaderText = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mALOPDataGridViewTextBoxColumn.Name = "mALOPDataGridViewTextBoxColumn";
             // 
             // bds_sv
             // 
@@ -698,6 +730,7 @@
             this.btnCancelSV.TabIndex = 13;
             this.btnCancelSV.Text = "Cancel";
             this.btnCancelSV.UseVisualStyleBackColor = true;
+            this.btnCancelSV.Click += new System.EventHandler(this.btnCancelSV_Click);
             // 
             // btnLuuSV
             // 
@@ -1023,7 +1056,7 @@
         private System.Windows.Forms.Panel pnSV;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barbtnThem;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -1055,13 +1088,6 @@
         private DevExpress.XtraBars.PopupMenu popupMenuLop;
         private System.Windows.Forms.BindingSource bds_sv;
         private System.Windows.Forms.Panel pnGCSV;
-        private System.Windows.Forms.DataGridView gvSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Panel pnNhapSV;
         private DevExpress.XtraEditors.TextEdit txtMaSV;
         private System.Windows.Forms.Button btnCancelSV;
@@ -1089,5 +1115,15 @@
         private TN_CSDLPTDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
         private System.Windows.Forms.ComboBox cbMaKhoa;
         private System.Windows.Forms.ComboBox txtMaKhoa;
+        private System.Windows.Forms.DataGridView gvSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mASVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nGAYSINHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dIACHIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }

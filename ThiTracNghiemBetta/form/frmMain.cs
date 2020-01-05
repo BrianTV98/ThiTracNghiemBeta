@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using ThiTracNghiemBetta.form.examregistation;
 using ThiTracNghiemBetta.form.register;
+using ThiTracNghiemBetta.form.report;
 using ThiTracNghiemBetta.form.student;
+using ThiTracNghiemBetta.form.thi;
 
 namespace ThiTracNghiemBetta.form
 {
@@ -17,6 +19,10 @@ namespace ThiTracNghiemBetta.form
         public frmMain()
         {
             InitializeComponent();
+            if (!Program.mNhom.Equals("TRUONG"))
+            {
+                btnXEMDSDANGKY.Enabled = false;
+            }
         }
         private Form CheckExists(Type ftype)
         {
@@ -36,6 +42,9 @@ namespace ThiTracNghiemBetta.form
             {
                 btKHOA.Enabled = btGiaoVien.Enabled = btLOP.Enabled = btMonHoc.Enabled = btlogin.Enabled = false;
                 btnXEMBAITHI.Enabled = btnXEMBANGDIEM.Enabled = btnXEMDSDANGKY.Enabled = false;
+                btDSDK.Enabled = false;
+                btBD.Enabled = true;
+                btCancel.Enabled = true;
             }
         }
         private void btMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -108,59 +117,56 @@ namespace ThiTracNghiemBetta.form
         {
             if (MessageBox.Show("Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                //Program.formDangNhap.Show();
-                this.Close();
+                Program.frmMain.Hide();
+                Program.frmLogin.Show();
             }
         }
 
         private void btnXEMBAITHI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmXemBaiThi));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                frmXemBaiThi f = new frmXemBaiThi();
-                f.MdiParent = this;
-                f.Show();
-            }*/
+            new formXemBaiThiSV().Show();
         }
 
         private void btnXEMBANGDIEM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(frmXemBangDiem));
-            if (frm != null)
+            Form frm = this.CheckExists(typeof(BangDiemMonHoc));
+            if (Program.bangDiemMonHoc != null)
             {
-                frm.Activate();
+                Program.bangDiemMonHoc.Activate();
             }
             else
             {
-                frmXemBangDiem f = new frmXemBangDiem();
-                f.MdiParent = this;
-                f.Show();
-            }*/
+                Program.bangDiemMonHoc = new BangDiemMonHoc();
+                Program.bangDiemMonHoc.MdiParent = this;
+                Program.bangDiemMonHoc.Show();
+            }
         }
 
         private void btnXEMDSDANGKY_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            /*Form frm = this.CheckExists(typeof(frmXemDSDangKy));
-            if (frm != null)
+            if (Program.mNhom.Equals("TRUONG")|| Program.mNhom.Equals("COSO"))
             {
-                frm.Activate();
+                Form frm = this.CheckExists(typeof(frmBaoCao));
+                if (frm != null)
+                {
+                    frm.Activate();
+                }
+                else
+                {
+                    frmBaoCao f = new frmBaoCao();
+                    f.MdiParent = this;
+                    f.Show();
+                }
             }
             else
             {
-                frmXemDSDangKy f = new frmXemDSDangKy();
-                f.MdiParent = this;
-                f.Show();
-            }*/
+                MessageBox.Show("Bạn không có quyền xem mục này!");
+            }
         }
 
-        private void ribbonControl1_Click(object sender, EventArgs e)
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Program.frmLogin.Close();
         }
     }
 }

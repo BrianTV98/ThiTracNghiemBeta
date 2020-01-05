@@ -103,6 +103,7 @@
             this.cHITIETBAITHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
+            this.fKCTBAITHIBODEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBODE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -146,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
             this.dataLayoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fKCTBAITHIBODEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -879,7 +881,7 @@
             // 
             // cHITIETBAITHIBindingSource
             // 
-            this.cHITIETBAITHIBindingSource.DataMember = "FK_CHITIETBAITHI_BODE";
+            this.cHITIETBAITHIBindingSource.DataMember = "FK_CT_BAITHI_BODE";
             this.cHITIETBAITHIBindingSource.DataSource = this.bdsBODE;
             // 
             // dataLayoutControl2
@@ -899,6 +901,11 @@
             // cHITIETBAITHITableAdapter
             // 
             this.cHITIETBAITHITableAdapter.ClearBeforeFill = true;
+            // 
+            // fKCTBAITHIBODEBindingSource
+            // 
+            this.fKCTBAITHIBODEBindingSource.DataMember = "FK_CT_BAITHI_BODE";
+            this.fKCTBAITHIBODEBindingSource.DataSource = this.bdsBODE;
             // 
             // frmBD
             // 
@@ -958,6 +965,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cHITIETBAITHIBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
             this.dataLayoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fKCTBAITHIBODEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1038,5 +1046,6 @@
         private TN_CSDLPTDataSet dS;
         private System.Windows.Forms.BindingSource cHITIETBAITHIBindingSource;
         private TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter cHITIETBAITHITableAdapter;
+        private System.Windows.Forms.BindingSource fKCTBAITHIBODEBindingSource;
     }
 }

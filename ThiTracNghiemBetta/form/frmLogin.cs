@@ -17,6 +17,7 @@ namespace ThiTracNghiemBetta.form
         {
             InitializeComponent();
             this.CenterToScreen();
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace ThiTracNghiemBetta.form
           
             Program.myReader.Close();
 
-            //MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Thành công rực rỡ");
+            //MessageBox.Show("Chào "+Program.mHoTen +"\nBạn đã đăng nhập thành công :)", "Chúc bạn một ngày tốt lành");
             this.Hide();
             switch (Program.mLoai)
             {
@@ -83,7 +84,7 @@ namespace ThiTracNghiemBetta.form
                         break;
                     }
             }
-
+            
         }
 
         private LoginModel getLoginData()

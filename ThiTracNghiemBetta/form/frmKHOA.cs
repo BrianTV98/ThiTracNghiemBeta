@@ -34,7 +34,7 @@ namespace ThiTracNghiemBetta.form
             this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.rootSeverName;
             this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
@@ -43,23 +43,33 @@ namespace ThiTracNghiemBetta.form
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
             this.bODETableAdapter.Fill(this.dS.BODE);
 
+            cmbCS.SelectedIndex = lastCOSO;
         }
 
+        int lastCOSO = Program.mChiNhanh;
         private void cmbCS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (cmbCS.SelectedIndex != Program.mChiNhanh && cmbCS.SelectedIndex >= 0)
+            if (cmbCS.SelectedItem == null)
+            {
+                return;
+            }
+            if (cmbCS.SelectedIndex == 2 )
+            {
+                MessageBox.Show("Cơ sở tra cứu không chứa dữ liệu khoa và giảng viên");
+                cmbCS.SelectedIndex = lastCOSO;
+                return;
+            }
+            if (cmbCS.SelectedIndex != lastCOSO && cmbCS.SelectedIndex >= 0)
             {
                 
                 Program.servername = cmbCS.SelectedValue.ToString();
-                
+                lastCOSO = cmbCS.SelectedIndex;
                 if (Program.KetNoi() == 0)
-                    MessageBox.Show("Lỗi kết nối về cơ sở mới", "", MessageBoxButtons.OK);
+                    return;
                 else
                 {
                     reloadData();
                 }
-
             }
         }
 
@@ -253,7 +263,7 @@ namespace ThiTracNghiemBetta.form
             else if (Program.mNhom == "COSO")
             {
                 cmbCS.Enabled = false;
-           
+                barbtSave1.Enabled = false;
             }
 
             
@@ -351,16 +361,18 @@ namespace ThiTracNghiemBetta.form
         {            
             dialogGV d = new dialogGV();
             d.type = "add";
-
+            d.maKhoa = txtMAK.Text; 
             d.ShowDialog();
             reloadData();
         }
 
         private void btnSuaGV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            var positionGiaoVien = gvGV.FocusedRowHandle;
+            String idGV = txtMAGV.Text;
             dialogGV d = new dialogGV();
+            d.idGV = idGV;
             d.type = "edit";
-
             d.ShowDialog();
             reloadData();
         }
@@ -376,7 +388,7 @@ namespace ThiTracNghiemBetta.form
             {
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa khoa " + txtTENKH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn xóa giáo viên mã: " + txtMAGV.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 bdsGV.RemoveAt(bdsGV.Position);
                 this.gIAOVIENTableAdapter.Update(this.dS.GIAOVIEN);

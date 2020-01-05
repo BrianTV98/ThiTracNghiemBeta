@@ -30,6 +30,7 @@ namespace ThiTracNghiemBetta.models
         public string DapAnDung { get => dapAnDung; set => dapAnDung = value; }
         public string MaGV { get => maGV; set => maGV = value; }
 
+        public static List<BoDe> thithu;
 
         public static List<BoDe> boDe;
         public BoDe(int cauHoi, string maMH, string trinhDo, string noiDung, 

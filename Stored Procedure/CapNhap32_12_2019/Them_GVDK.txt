@@ -1,0 +1,38 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_THEM_GVDK]    Script Date: 12/31/2019 1:35:56 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_THEM_GVDK] @MAGV nchar(8),
+	@MAMH nchar(5),
+	@MALOP nchar(8),
+	@TRINHDO nchar(10),
+	@NGAYTHI datetime,
+	@LAN smallint,
+	@SOCAUTHI smallint,
+	@THOIGIAN smallint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    --thanh cong return 0; that bai return 1;
+	DECLARE  @check int;
+	Exec @check= CHECK_TON_TAI_GV_DK @MAMH,@MALOP,@LAN
+	if(@check=0)
+	BEGIN
+		BEGIN TRY
+			INSERT INTO GIAOVIEN_DANGKY(MAGV,MAMH,MALOP,TRINHDO,NGAYTHI,LAN,SOCAUTHI,THOIGIAN)
+			VALUES (@MAGV,@MAMH, @MALOP,@TRINHDO,@NGAYTHI,@LAN,@SOCAUTHI,@THOIGIAN );
+			RETURN 0;
+		END TRY
+		BEGIN CATCH
+			RETURN 1;
+		END CATCH
+	END
+	ELSE  RETURN 2;
+	
+END

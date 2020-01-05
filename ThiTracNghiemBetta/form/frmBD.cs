@@ -25,17 +25,22 @@ namespace ThiTracNghiemBetta.form
 
             defaultCMB();
             normalMode();
+            if (Program.mNhom == "TRUONG")
+            {
+                barbtCancel.Enabled = false;
+                barbtSave.Enabled = false;
+            }
         }
         private void reloadData()
         {
-            this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
-            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);
+
+            /*this.cHITIETBAITHITableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cHITIETBAITHITableAdapter.Fill(this.dS.CHITIETBAITHI);*/
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.CHITIETBAITHI' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-
             this.gIAOVIENTableAdapter.Fill(this.dS.GIAOVIEN);
 
             this.bODETableAdapter.Connection.ConnectionString = Program.connstr;
@@ -44,7 +49,14 @@ namespace ThiTracNghiemBetta.form
             if (Program.mNhom == "GIANGVIEN")
             {
                 bdsBODE.Filter = "MAGV = '" + Program.mUserId + "'";
+            } 
+            if (Program.mNhom == "TRUONG")
+            {
+                barbtCancel.Enabled = false;
+                barbtSave.Enabled = false;
             }
+            
+            
         }
         private void defaultCMB()
         {
@@ -58,6 +70,7 @@ namespace ThiTracNghiemBetta.form
             enableInputs();
             gc_BD.Enabled = false;
             bdsBODE.AddNew();
+           
             txtIDCH.Enabled = true;
             if (Program.mNhom == "GIANGVIEN")
             {
@@ -68,8 +81,9 @@ namespace ThiTracNghiemBetta.form
             //txtIDCH.Text = "0";
             txtIDCH.Focus();
             Program.Control = "add";
-            
-
+            txtDA.Text = cmbDA.SelectedItem.ToString();
+            txtTRINHDO.Text = cmbTRINHDO.SelectedItem.ToString();
+            txtMAMH.Text = cmbMH.SelectedValue.ToString();
         }
 
         private void disableModify()
@@ -212,11 +226,16 @@ namespace ThiTracNghiemBetta.form
 
         private void barbtSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (bdsBODE.Count == 0) return;
             Program.Control = "edit";
             disableModify();
             enableInputs();
             txtIDCH.Enabled = false;
             gc_BD.Enabled = false;
+
+            cmbDA.SelectedItem = txtDA.Text;
+            cmbTRINHDO.SelectedItem = txtTRINHDO.Text;
+            cmbMH.SelectedValue = txtMAMH.Text;
 
             if (Program.mNhom == "GIANGVIEN")
             {
@@ -227,6 +246,7 @@ namespace ThiTracNghiemBetta.form
 
         private void barbtXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (bdsBODE.Count == 0) return;
             if (isTonTaiChiTietDeThi(txtIDCH.Text))
             {
                 MessageBox.Show("Mã câu hỏi đã tồn tại trong chi tiết bài thi");
@@ -235,7 +255,7 @@ namespace ThiTracNghiemBetta.form
             if (MessageBox.Show("Bạn có muốn xóa câu " + txtIDCH.Text.Trim() + " ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 bdsBODE.RemoveAt(bdsBODE.Position);
-                this.gIAOVIENTableAdapter.Update(this.dS.GIAOVIEN);
+                this.bODETableAdapter.Update(this.dS.BODE);
                 MessageBox.Show("Xóa thành công", "", MessageBoxButtons.OK);
             }
         }
@@ -283,7 +303,13 @@ namespace ThiTracNghiemBetta.form
         {
             if (MessageBox.Show("Thoát sẽ mất hết dữ liệu đang thao tác. Bạn muốn thoát không?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                if (Program.mNhom == "GIANGVIEN") Program.frmMain.btKHOA.Enabled = Program.frmMain.btGiaoVien.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = Program.frmMain.btlogin.Enabled = false;
+                if (Program.mNhom == "GIANGVIEN")
+                {
+                    Program.frmMain.btKHOA.Enabled = Program.frmMain.btGiaoVien.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = Program.frmMain.btlogin.Enabled = false;
+                    Program.frmMain.btDSDK.Enabled = false;
+                    Program.frmMain.btBD.Enabled = true;
+                    Program.frmMain.btCancel.Enabled = true;
+                }
                 else
                 {
                     Program.frmMain.btBD.Enabled = Program.frmMain.btCancel.Enabled = Program.frmMain.btDSDK.Enabled = Program.frmMain.btKHOA.Enabled = Program.frmMain.btlogin.Enabled = Program.frmMain.btLOP.Enabled = Program.frmMain.btMonHoc.Enabled = true;
