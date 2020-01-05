@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace ThiTracNghiemBetta.form
 {
-    public partial class frmMH :Form
+    public partial class frmMH : Form
     {
         public frmMH()
         {
@@ -22,8 +22,9 @@ namespace ThiTracNghiemBetta.form
         private void frmMH_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed.
-            this.v_DS_PHANMANHTableAdapter.Connection.ConnectionString = Program.rootSeverName;
             this.v_DS_PHANMANHTableAdapter.Fill(this.dS.V_DS_PHANMANH);
+
+          
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
@@ -32,7 +33,7 @@ namespace ThiTracNghiemBetta.form
 
             if (Program.mNhom == "TRUONG")
             {
-               btnHuy.Enabled = barbtAdd.Enabled = barbtDel.Enabled = barbtEdit.Enabled = barbtSave.Enabled = groupBox1.Enabled = false;
+                btnHuy.Enabled = barbtAdd.Enabled = barbtDel.Enabled = barbtEdit.Enabled = barbtSave.Enabled = groupBox1.Enabled = false;
 
             }
             else
@@ -41,8 +42,6 @@ namespace ThiTracNghiemBetta.form
                 groupBox1.Enabled = false;
                 barbtSave.Enabled = false;
             }
-
-            cmbCS.SelectedIndex = Program.mChiNhanh;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -63,40 +62,30 @@ namespace ThiTracNghiemBetta.form
         {
             try
             {
+                if (bdsGVDK.Count > 0)
+                {
+                    MessageBox.Show("Mã môn học có đăng kí thi nên không được xóa", "", MessageBoxButtons.OK);
+                    return;
+                }
+                if (bdsBD.Count > 0)
+                {
+                    MessageBox.Show("Mã môn học có câu hỏi thi nên không được xóa", "", MessageBoxButtons.OK);
+                    return;
+                }
                 if (MessageBox.Show("Bạn có muốn xóa mã môn học " + txtMAMH.Text + " không?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     int kq = Program.KetNoi();
                     if (kq == 0) return;
-                    SqlCommand sqlCommand = new SqlCommand("SP_DELETEMAMH", Program.conn);
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@MaMH", txtMAMH.Text.Trim());
-                    kq = Program.execStoreProcedureWithReturnValue(sqlCommand);
+                    String strlenh = "EXEC dbo.SP_DELETEMAMH '" + txtMAMH.Text.Trim() + "'";
+                    SqlCommand cmd = new SqlCommand(strlenh, Program.conn);
+                    int temp = cmd.ExecuteNonQuery();
+                    if (temp == 1)
+                    {
+                        MessageBox.Show("Bạn đã xóa thành công", "", MessageBoxButtons.OK);
+                    }
                     Program.conn.Close();
-                    if (kq == 1) // ton tai
-                    {
-                        MessageBox.Show("Môn học đã có dữ liệu trên bảng điểm");
-                        return;
-                    }
-                    if (kq == 2) // ton tai
-                    {
-                        MessageBox.Show("Môn học đã có dữ liệu trên bộ đề");
-                        return;
-                    }
-                    if (kq == 3) // ton tai
-                    {
-                        MessageBox.Show("Môn học đã có dữ liệu trên giáo viên đăng kí");
-                        return;
-                    }
-
-                    var row = gvMonHoc.FocusedRowHandle;
-                    gvMonHoc.DeleteRow(row);
-                    mONHOCTableAdapterBindingSource.EndEdit();
-                    this.mONHOCTableAdapter.Update(this.dS.MONHOC);
-                   
-                   /* MessageBox.Show("" + mONHOCTableAdapterBindingSource.Position);
-                    mONHOCTableAdapterBindingSource.RemoveAt(mONHOCTableAdapterBindingSource.Position);
                     this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);*/
+                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
                     bdsMH.Filter = "XOA = 0";
                 }
             }
@@ -287,37 +276,6 @@ namespace ThiTracNghiemBetta.form
             }
         }
 
-        int lastCOSO = Program.mChiNhanh;
-        private void tENCNComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCS.SelectedItem == null)
-            {
-                return;
-            }
-            if (cmbCS.SelectedIndex == 2)
-            {
-                MessageBox.Show("Cơ sở tra cứu không chứa dữ liệu môn học");
-                cmbCS.SelectedIndex = lastCOSO;
-                return;
-            }
-            if (cmbCS.SelectedIndex != lastCOSO && cmbCS.SelectedIndex >= 0)
-            {
-
-                Program.servername = cmbCS.SelectedValue.ToString();
-                lastCOSO = cmbCS.SelectedIndex;
-                if (Program.KetNoi() == 0)
-                    return;
-                else
-                {
-                    // TODO: This line of code loads data into the 'dS.V_DS_PHANMANH' table. You can move, or remove it, as needed
-
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
-                    cmbCS.SelectedIndex = lastCOSO;
-                    bdsMH.Filter = "XOA = 0";
-                }
-            }
-        }
 
     }
 }

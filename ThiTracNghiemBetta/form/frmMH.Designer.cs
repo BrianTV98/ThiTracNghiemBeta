@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label tENCNLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMH));
+            System.Windows.Forms.Label tENCNLabel;
             this.mAMHLabel = new System.Windows.Forms.Label();
             this.tENMHLabel = new System.Windows.Forms.Label();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -56,7 +56,7 @@
             this.txtTENMH = new DevExpress.XtraEditors.TextEdit();
             this.txtMAMH = new DevExpress.XtraEditors.TextEdit();
             this.gcMH = new DevExpress.XtraGrid.GridControl();
-            this.gvMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,12 +70,12 @@
             this.fKCHITIETBAITHIBANGDIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cHITIETBAITHITableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.CHITIETBAITHITableAdapter();
             this.pnChiNhanh = new System.Windows.Forms.Panel();
-            this.cmbCS = new System.Windows.Forms.ComboBox();
-            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnEdit = new System.Windows.Forms.Panel();
+            this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DS_PHANMANHTableAdapter = new ThiTracNghiemBetta.TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter();
+            this.tENCNComboBox = new System.Windows.Forms.ComboBox();
             tENCNLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGVDK)).BeginInit();
@@ -87,29 +87,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTENMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCTableAdapterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCHITIETBAITHIBANGDIEMBindingSource)).BeginInit();
             this.pnChiNhanh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tENCNLabel
-            // 
-            tENCNLabel.AutoSize = true;
-            tENCNLabel.Location = new System.Drawing.Point(696, 33);
-            tENCNLabel.Name = "tENCNLabel";
-            tENCNLabel.Size = new System.Drawing.Size(83, 17);
-            tENCNLabel.TabIndex = 0;
-            tENCNLabel.Text = "CHI NHÁNH";
             // 
             // mAMHLabel
             // 
             this.mAMHLabel.AutoSize = true;
             this.mAMHLabel.Location = new System.Drawing.Point(143, 27);
+            this.mAMHLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mAMHLabel.Name = "mAMHLabel";
             this.mAMHLabel.Size = new System.Drawing.Size(50, 17);
             this.mAMHLabel.TabIndex = 0;
@@ -119,6 +111,7 @@
             // 
             this.tENMHLabel.AutoSize = true;
             this.tENMHLabel.Location = new System.Drawing.Point(143, 71);
+            this.tENMHLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tENMHLabel.Name = "tENMHLabel";
             this.tENMHLabel.Size = new System.Drawing.Size(57, 17);
             this.tENMHLabel.TabIndex = 2;
@@ -155,6 +148,11 @@
             this.bar2.FloatSize = new System.Drawing.Size(0, 50);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtAdd),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtDel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtRefesh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThoat)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.Text = "Tools";
@@ -238,17 +236,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(1203, 61);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1202, 61);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 711);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 712);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1203, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1202, 0);
             // 
             // barDockControlLeft
             // 
@@ -256,17 +254,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 650);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 651);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1203, 61);
+            this.barDockControlRight.Location = new System.Drawing.Point(1202, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 650);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 651);
             // 
             // btnPhucHoi
             // 
@@ -311,11 +309,11 @@
             this.groupBox1.Controls.Add(this.txtTENMH);
             this.groupBox1.Controls.Add(this.mAMHLabel);
             this.groupBox1.Controls.Add(this.txtMAMH);
-            this.groupBox1.Location = new System.Drawing.Point(125, 27);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(126, 27);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.ShowCaption = false;
-            this.groupBox1.Size = new System.Drawing.Size(1179, 112);
+            this.groupBox1.Size = new System.Drawing.Size(1178, 112);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.Text = "groupControl1";
             // 
@@ -323,7 +321,7 @@
             // 
             this.txtTENMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "TENMH", true));
             this.txtTENMH.Location = new System.Drawing.Point(291, 63);
-            this.txtTENMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTENMH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTENMH.MenuManager = this.barManager1;
             this.txtTENMH.Name = "txtTENMH";
             this.txtTENMH.Size = new System.Drawing.Size(305, 22);
@@ -332,8 +330,8 @@
             // txtMAMH
             // 
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMH, "MAMH", true));
-            this.txtMAMH.Location = new System.Drawing.Point(291, 25);
-            this.txtMAMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMAMH.Location = new System.Drawing.Point(291, 24);
+            this.txtMAMH.Margin = new System.Windows.Forms.Padding(2);
             this.txtMAMH.MenuManager = this.barManager1;
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Properties.MaxLength = 5;
@@ -344,27 +342,27 @@
             // 
             this.gcMH.DataSource = this.bdsMH;
             this.gcMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gcMH.Location = new System.Drawing.Point(0, 0);
-            this.gcMH.MainView = this.gvMonHoc;
-            this.gcMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcMH.MainView = this.gridView1;
+            this.gcMH.Margin = new System.Windows.Forms.Padding(2);
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1203, 409);
+            this.gcMH.Size = new System.Drawing.Size(1202, 408);
             this.gcMH.TabIndex = 4;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvMonHoc});
+            this.gridView1});
             // 
-            // gvMonHoc
+            // gridView1
             // 
-            this.gvMonHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAMH,
             this.colTENMH,
             this.colrowguid});
-            this.gvMonHoc.DetailHeight = 242;
-            this.gvMonHoc.FixedLineWidth = 1;
-            this.gvMonHoc.GridControl = this.gcMH;
-            this.gvMonHoc.Name = "gvMonHoc";
+            this.gridView1.DetailHeight = 243;
+            this.gridView1.FixedLineWidth = 1;
+            this.gridView1.GridControl = this.gcMH;
+            this.gridView1.Name = "gridView1";
             // 
             // colMAMH
             // 
@@ -446,62 +444,67 @@
             // pnChiNhanh
             // 
             this.pnChiNhanh.Controls.Add(tENCNLabel);
-            this.pnChiNhanh.Controls.Add(this.cmbCS);
+            this.pnChiNhanh.Controls.Add(this.tENCNComboBox);
             this.pnChiNhanh.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnChiNhanh.Location = new System.Drawing.Point(0, 61);
-            this.pnChiNhanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnChiNhanh.Name = "pnChiNhanh";
-            this.pnChiNhanh.Size = new System.Drawing.Size(1203, 76);
+            this.pnChiNhanh.Size = new System.Drawing.Size(1202, 76);
             this.pnChiNhanh.TabIndex = 14;
-            // 
-            // cmbCS
-            // 
-            this.cmbCS.DataSource = this.v_DS_PHANMANHBindingSource;
-            this.cmbCS.DisplayMember = "TENCN";
-            this.cmbCS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCS.FormattingEnabled = true;
-            this.cmbCS.Location = new System.Drawing.Point(809, 30);
-            this.cmbCS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbCS.Name = "cmbCS";
-            this.cmbCS.Size = new System.Drawing.Size(297, 24);
-            this.cmbCS.TabIndex = 1;
-            this.cmbCS.ValueMember = "TENSERVER";
-            this.cmbCS.SelectedIndexChanged += new System.EventHandler(this.tENCNComboBox_SelectedIndexChanged);
-            // 
-            // v_DS_PHANMANHBindingSource
-            // 
-            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
-            this.v_DS_PHANMANHBindingSource.DataSource = this.dS;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.gcMH);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 137);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1203, 409);
+            this.panel3.Size = new System.Drawing.Size(1202, 408);
             this.panel3.TabIndex = 16;
             // 
             // pnEdit
             // 
             this.pnEdit.Controls.Add(this.groupBox1);
             this.pnEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnEdit.Location = new System.Drawing.Point(0, 546);
-            this.pnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnEdit.Location = new System.Drawing.Point(0, 545);
             this.pnEdit.Name = "pnEdit";
-            this.pnEdit.Size = new System.Drawing.Size(1203, 306);
+            this.pnEdit.Size = new System.Drawing.Size(1202, 307);
             this.pnEdit.TabIndex = 17;
+            // 
+            // v_DS_PHANMANHBindingSource
+            // 
+            this.v_DS_PHANMANHBindingSource.DataMember = "V_DS_PHANMANH";
+            this.v_DS_PHANMANHBindingSource.DataSource = this.dS;
             // 
             // v_DS_PHANMANHTableAdapter
             // 
             this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
             // 
+            // tENCNLabel
+            // 
+            tENCNLabel.AutoSize = true;
+            tENCNLabel.Location = new System.Drawing.Point(696, 33);
+            tENCNLabel.Name = "tENCNLabel";
+            tENCNLabel.Size = new System.Drawing.Size(83, 17);
+            tENCNLabel.TabIndex = 0;
+            tENCNLabel.Text = "CHI NHÁNH";
+            // 
+            // tENCNComboBox
+            // 
+            this.tENCNComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.v_DS_PHANMANHBindingSource, "TENCN", true));
+            this.tENCNComboBox.DataSource = this.v_DS_PHANMANHBindingSource;
+            this.tENCNComboBox.DisplayMember = "TENCN";
+            this.tENCNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tENCNComboBox.FormattingEnabled = true;
+            this.tENCNComboBox.Location = new System.Drawing.Point(809, 30);
+            this.tENCNComboBox.Name = "tENCNComboBox";
+            this.tENCNComboBox.Size = new System.Drawing.Size(298, 24);
+            this.tENCNComboBox.TabIndex = 1;
+            this.tENCNComboBox.ValueMember = "TENSERVER";
+            // 
             // frmMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 711);
+            this.ClientSize = new System.Drawing.Size(1202, 712);
             this.Controls.Add(this.pnEdit);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnChiNhanh);
@@ -509,7 +512,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMH";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMH_Load);
@@ -524,15 +527,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTENMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCTableAdapterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bANGDIEMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCHITIETBAITHIBANGDIEMBindingSource)).EndInit();
             this.pnChiNhanh.ResumeLayout(false);
             this.pnChiNhanh.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.pnEdit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,7 +566,7 @@
         private DevExpress.XtraEditors.TextEdit txtTENMH;
         private DevExpress.XtraEditors.TextEdit txtMAMH;
         private DevExpress.XtraGrid.GridControl gcMH;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvMonHoc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private DevExpress.XtraGrid.Columns.GridColumn colrowguid;
@@ -584,6 +587,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.BindingSource v_DS_PHANMANHBindingSource;
         private TN_CSDLPTDataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
-        private System.Windows.Forms.ComboBox cmbCS;
+        private System.Windows.Forms.ComboBox tENCNComboBox;
     }
 }

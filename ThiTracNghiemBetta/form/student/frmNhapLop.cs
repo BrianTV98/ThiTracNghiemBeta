@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThiTracNghiemBetta.utils;
 
 namespace ThiTracNghiemBetta.form.student
 {
@@ -94,7 +95,8 @@ namespace ThiTracNghiemBetta.form.student
         {
             if (trangthaifrmLop == false)
             {
-                if (checkExistTenLop(txtTenLop.Text.Trim())) //luu thất bại
+                
+                if (checkExistTenLop(utils.utils.chuanHoaTen(txtTenLop.Text.Trim()))) //luu thất bại
                 {
                     MessageBox.Show("Tên lớp đã tồn tại!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
